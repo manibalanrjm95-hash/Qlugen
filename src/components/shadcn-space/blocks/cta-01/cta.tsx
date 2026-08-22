@@ -3,12 +3,23 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 type CTAProps = {
   className?: string;
+  title?: string;
+  description?: string;
+  buttonLabel?: string;
+  href?: string;
 };
 
-const CTA = ({ className }: CTAProps) => {
+const CTA = ({
+  className,
+  title = "Build your next AI product with Qlugen",
+  description = "Let's turn your idea into a production-ready AI app, agent, automation, or integration your team can actually use.",
+  buttonLabel = "Start a project",
+  href = "/contact",
+}: CTAProps) => {
   const ref = useRef(null);
 
   const bottomAnimation = {
@@ -31,21 +42,22 @@ const CTA = ({ className }: CTAProps) => {
             >
                 <div className="flex flex-col gap-3 items-center text-center">
                   <h2 className="text-3xl md:text-5xl font-medium">
-                  Build your next AI product with Qlugen
+                  {title}
                   </h2>
                   <p className="max-w-2xl mx-auto">
-                  Let's turn your idea into a production-ready AI app, agent,
-                  automation, or integration your team can actually use.
+                  {description}
                   </p>
                 </div>
-              <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden hover:bg-primary/80 cursor-pointer">
-                <span className="relative z-10 transition-all duration-500">
-                  Start a project
-                </span>
-                <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                  <ArrowUpRight size={16} />
-                </div>
-              </Button>
+              <Link href={href}>
+                <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden hover:bg-primary/80 cursor-pointer">
+                  <span className="relative z-10 transition-all duration-500">
+                    {buttonLabel}
+                  </span>
+                  <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                    <ArrowUpRight size={16} />
+                  </div>
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

@@ -2,160 +2,165 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
-interface ContactFormData {
-  firstName: string;
-  lastName: string;
+const interestOptions = [
+  "AI Product Development",
+  "AI Agents & Automation",
+  "Integration & Deployment",
+  "Partnership",
+  "Careers",
+  "Something else",
+];
+
+type ContactFormData = {
+  name: string;
   email: string;
-  country: string;
+  company: string;
+  phone: string;
+  interest: string;
   message: string;
-  terms: boolean;
-}
+  consent: boolean;
+};
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    country: "",
+    company: "",
+    phone: "",
+    interest: "",
     message: "",
-    terms: false,
+    consent: false,
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCheckboxChange = (checked: boolean) => {
-    setFormData((prev) => ({ ...prev, terms: checked }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
   };
 
   return (
     <div className="w-full">
-      <Card className="ring-0 p-8 gap-6 md:gap-8 border rounded-2xl animate-in fade-in slide-in-from-right-10 duration-1000 delay-100 ease-in-out fill-mode-both">
+      <Card className="animate-in fade-in slide-in-from-right-10 fill-mode-both gap-6 rounded-2xl border p-8 ring-0 duration-1000 ease-in-out md:gap-8">
         <CardHeader className="p-0">
           <CardTitle className="text-2xl font-semibold text-primary">
-            Start a project
+            Send enquiry
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-6">
-                {/* form inputs */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-4">
-                  <div>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      placeholder="First name"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="dark:bg-background h-9 shadow-xs"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      placeholder="Last name"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="dark:bg-background h-9 shadow-xs"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                    <Input
-                      id="email"
-                      name="email"
-                      placeholder="you@company.com"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="dark:bg-background h-9 shadow-xs"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Select
-                    value={formData.country}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, country: value ?? "" }))
-                    }
-                  >
-                    <SelectTrigger id="country" className="w-full h-9! dark:bg-background shadow-xs">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="United States">
-                        United States
-                      </SelectItem>
-                      <SelectItem value="United Kingdom">
-                        United Kingdom
-                      </SelectItem>
-                      <SelectItem value="Canada">Canada</SelectItem>
-                      <SelectItem value="Australia">Australia</SelectItem>
-                      <SelectItem value="Germany">Germany</SelectItem>
-                      <SelectItem value="France">France</SelectItem>
-                      <SelectItem value="India">India</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us what you want to build with AI"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="h-20 resize-none dark:bg-background shadow-xs"
-                    required
-                  />
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Checkbox
-                    id="terms"
-                    checked={formData.terms}
-                    onCheckedChange={handleCheckboxChange}
-                    required
-                  />
-                  <Label
-                    htmlFor="terms"
-                    className="text-sm font-normal text-primary select-none"
-                  >
-                    I agree to be contacted about this project
-                  </Label>
-                </div>
-              </div>
-              {/* submit button */}
-              <Button
-                type="submit"
-                size="lg"
-                className="rounded-xl bg-primary hover:bg-primary/80 text-primary-foreground hover:cursor-pointer h-10"
-              >
-                Submit Project
-              </Button>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <Input
+                id="name"
+                name="name"
+                placeholder="Name *"
+                value={formData.name}
+                onChange={handleChange}
+                className="h-10 shadow-xs dark:bg-background"
+                required
+              />
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Work email *"
+                value={formData.email}
+                onChange={handleChange}
+                className="h-10 shadow-xs dark:bg-background"
+                required
+              />
+              <Input
+                id="company"
+                name="company"
+                placeholder="Company"
+                value={formData.company}
+                onChange={handleChange}
+                className="h-10 shadow-xs dark:bg-background"
+              />
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="h-10 shadow-xs dark:bg-background"
+              />
             </div>
+
+            <Select
+              value={formData.interest}
+              onValueChange={(value) =>
+                setFormData((prev) => ({ ...prev, interest: value ?? "" }))
+              }
+              required
+            >
+              <SelectTrigger className="h-10! w-full shadow-xs dark:bg-background">
+                <SelectValue placeholder="I'm interested in *" />
+              </SelectTrigger>
+              <SelectContent>
+                {interestOptions.map((option) => (
+                  <SelectItem key={option} value={option}>
+                    {option}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <div className="space-y-2">
+              <Label htmlFor="message">Tell us about your project *</Label>
+              <Textarea
+                id="message"
+                name="message"
+                placeholder="What are you trying to build, improve or automate?"
+                value={formData.message}
+                onChange={handleChange}
+                className="min-h-28 resize-none shadow-xs dark:bg-background"
+                required
+              />
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Checkbox
+                id="consent"
+                checked={formData.consent}
+                onCheckedChange={(checked) =>
+                  setFormData((prev) => ({ ...prev, consent: checked === true }))
+                }
+                required
+              />
+              <Label
+                htmlFor="consent"
+                className="text-sm font-normal text-primary"
+              >
+                I agree to be contacted about this enquiry
+              </Label>
+            </div>
+
+            <Button
+              type="submit"
+              size="lg"
+              className="h-11 rounded-xl bg-primary text-primary-foreground hover:cursor-pointer hover:bg-primary/80"
+            >
+              Send enquiry
+            </Button>
           </form>
         </CardContent>
       </Card>

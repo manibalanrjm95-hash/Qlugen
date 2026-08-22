@@ -1,8 +1,8 @@
 import HeroSection from "@/components/shadcn-space/blocks/hero-01/hero";
-import type { NavigationSection } from "@/components/shadcn-space/blocks/hero-01/header";
 import Header from "@/components/shadcn-space/blocks/hero-01/header";
 import BrandSlider, { BrandList } from "@/components/shadcn-space/blocks/hero-01/brand-slider";
 import type { AvatarList } from "@/components/shadcn-space/blocks/hero-01/hero";
+import { siteNavigation } from "@/lib/nav";
 
 const HERO_BACKGROUND_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260210_031346_d87182fb-b0af-4273-84d1-c6fd17d6bf0f.mp4";
@@ -23,33 +23,7 @@ export default function AgencyHeroSection() {
     },
   ];
 
-  const navigationData: NavigationSection[] = [
-    {
-      title: "Home",
-      href: "#",
-      isActive: true,
-    },
-    {
-      title: "Services",
-      href: "#",
-    },
-    {
-      title: "Approach",
-      href: "#",
-    },    
-    {
-      title: "Industries",
-      href: "#",
-    },
-    {
-      title: "Insights",
-      href: "#",
-    },
-    {
-      title: "Contact",
-      href: "#",
-    },
-  ];
+  const navigationData = siteNavigation;
 
   const brandList: BrandList[] = [
     {
