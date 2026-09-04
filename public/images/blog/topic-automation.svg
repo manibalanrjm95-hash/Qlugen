@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#ede9fe" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0.0"/>
+      <stop offset="30%"  stop-color="#a78bfa" stop-opacity="0.8"/>
+      <stop offset="70%"  stop-color="#7c3aed" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.0"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1a1a2e" flood-opacity="0.1"/></filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- Background flow rail -->
+  <line x1="30" y1="200" x2="770" y2="200" stroke="#7c3aed" stroke-opacity="0.08" stroke-width="4"/>
+  <line x1="30" y1="200" x2="770" y2="200" stroke="url(#flow)" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <!-- ── TRIGGER (leftmost) ── -->
+  <rect x="22" y="100" width="120" height="200" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <!-- Header band -->
+  <rect x="22" y="100" width="120" height="36" rx="14" fill="#f5f0ff"/>
+  <rect x="22" y="122" width="120" height="14" fill="#f5f0ff"/>
+  <rect x="22" y="136" width="120" height="1"  fill="#e0d9f7"/>
+  <circle cx="44" cy="118" r="7" fill="#7c3aed" fill-opacity="0.7"/>
+  <rect x="56" y="114" width="64" height="6"  rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <!-- Trigger content -->
+  <rect x="34" y="148" width="96" height="8"  rx="4" fill="#111827" fill-opacity="0.65"/>
+  <rect x="34" y="162" width="80" height="6"  rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="34" y="178" width="88" height="6"  rx="3" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="34" y="198" width="96" height="18" rx="9" fill="#ede9fe"/>
+  <rect x="40" y="203" width="84" height="7"  rx="3" fill="#7c3aed" fill-opacity="0.65"/>
+  <rect x="34" y="226" width="64" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="38" y="230" width="56" height="6"  rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="34" y="246" width="80" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="38" y="250" width="64" height="6"  rx="3" fill="#9ca3af" fill-opacity="0.5"/>
+  <!-- Bottom dot -->
+  <circle cx="82" cy="290" r="5" fill="#7c3aed" fill-opacity="0.6"/>
+  <circle cx="82" cy="290" r="10" fill="#7c3aed" fill-opacity="0.12"/>
+
+  <!-- Connector 1→2 -->
+  <path d="M 144 200 L 178 200" stroke="url(#flow)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 173 195 L 180 200 L 173 205" fill="none" stroke="#7c3aed" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="161" cy="200" r="3.5" fill="#a78bfa" fill-opacity="0.7"/>
+
+  <!-- ── STEP A ── -->
+  <rect x="180" y="100" width="130" height="200" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="180" y="100" width="130" height="36" rx="14" fill="#f8f9fb"/>
+  <rect x="180" y="122" width="130" height="14" fill="#f8f9fb"/>
+  <rect x="180" y="136" width="130" height="1" fill="#e8eaed"/>
+  <rect x="194" y="113" width="56" height="6" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="192" y="148" width="106" height="8"  rx="4" fill="#111827" fill-opacity="0.65"/>
+  <rect x="192" y="162" width="88"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="192" y="174" width="96"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="192" y="190" width="106" height="18" rx="9" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="198" y="195" width="80"  height="7"  rx="3" fill="#6b7280" fill-opacity="0.6"/>
+  <rect x="192" y="216" width="76"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.45"/>
+  <rect x="192" y="228" width="86"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.4"/>
+  <rect x="192" y="250" width="48"  height="18" rx="9" fill="#dcfce7"/>
+  <rect x="198" y="255" width="36"  height="7"  rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <circle cx="245" cy="290" r="5" fill="#7c3aed" fill-opacity="0.6"/>
+
+  <!-- Connector 2→3 -->
+  <path d="M 312 200 L 346 200" stroke="url(#flow)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 341 195 L 348 200 L 341 205" fill="none" stroke="#7c3aed" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="329" cy="200" r="3.5" fill="#a78bfa" fill-opacity="0.7"/>
+
+  <!-- ── STEP B ── -->
+  <rect x="348" y="80" width="130" height="240" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" filter="url(#s)"/>
+  <!-- Active step indicator -->
+  <rect x="348" y="80" width="130" height="6" rx="3" fill="#7c3aed"/>
+  <rect x="348" y="86" width="130" height="38" rx="14" fill="#faf8ff"/>
+  <rect x="348" y="108" width="130" height="16" fill="#faf8ff"/>
+  <rect x="348" y="124" width="130" height="1"  fill="#e0d9f7"/>
+  <!-- Active badge -->
+  <rect x="418" y="96" width="46" height="14" rx="7" fill="#7c3aed"/>
+  <rect x="424" y="100" width="34" height="6" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="360" y="96" width="52" height="7"  rx="3" fill="#7c3aed" fill-opacity="0.8"/>
+  <!-- Content -->
+  <rect x="360" y="134" width="106" height="8"  rx="4" fill="#111827" fill-opacity="0.75"/>
+  <rect x="360" y="148" width="90"  height="6"  rx="3" fill="#374151" fill-opacity="0.6"/>
+  <rect x="360" y="160" width="96"  height="6"  rx="3" fill="#374151" fill-opacity="0.55"/>
+  <rect x="360" y="172" width="80"  height="6"  rx="3" fill="#374151" fill-opacity="0.5"/>
+  <!-- Processing indicator -->
+  <rect x="360" y="192" width="106" height="20" rx="8" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1"/>
+  <rect x="360" y="192" width="78"  height="20" rx="8" fill="#7c3aed" fill-opacity="0.65"/>
+  <rect x="366" y="198" width="62"  height="7"  rx="3" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="360" y="220" width="106" height="6"  rx="3" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="360" y="232" width="88"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.45"/>
+  <rect x="360" y="248" width="106" height="6"  rx="3" fill="#9ca3af" fill-opacity="0.4"/>
+  <!-- Key output -->
+  <rect x="360" y="270" width="106" height="22" rx="8" fill="#7c3aed"/>
+  <rect x="370" y="278" width="86"  height="7"  rx="3" fill="#ffffff" fill-opacity="0.9"/>
+  <circle cx="413" cy="310" r="5" fill="#7c3aed" fill-opacity="0.7"/>
+  <circle cx="413" cy="310" r="10" fill="#7c3aed" fill-opacity="0.15"/>
+
+  <!-- Connector 3→4 -->
+  <path d="M 480 200 L 514 200" stroke="url(#flow)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 509 195 L 516 200 L 509 205" fill="none" stroke="#7c3aed" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="497" cy="200" r="3.5" fill="#a78bfa" fill-opacity="0.7"/>
+
+  <!-- ── STEP C ── -->
+  <rect x="516" y="100" width="130" height="200" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="516" y="100" width="130" height="36" rx="14" fill="#f8f9fb"/>
+  <rect x="516" y="122" width="130" height="14" fill="#f8f9fb"/>
+  <rect x="516" y="136" width="130" height="1"  fill="#e8eaed"/>
+  <rect x="530" y="113" width="60" height="6"  rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="528" y="148" width="106" height="8"  rx="4" fill="#111827" fill-opacity="0.65"/>
+  <rect x="528" y="162" width="88"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="528" y="174" width="96"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="528" y="190" width="106" height="18" rx="9" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="534" y="195" width="80"  height="7"  rx="3" fill="#6b7280" fill-opacity="0.6"/>
+  <rect x="528" y="216" width="76"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.45"/>
+  <rect x="528" y="228" width="84"  height="6"  rx="3" fill="#9ca3af" fill-opacity="0.4"/>
+  <rect x="528" y="250" width="48"  height="18" rx="9" fill="#dcfce7"/>
+  <rect x="534" y="255" width="36"  height="7"  rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <circle cx="581" cy="290" r="5" fill="#7c3aed" fill-opacity="0.6"/>
+
+  <!-- Connector 4→5 -->
+  <path d="M 648 200 L 682 200" stroke="url(#flow)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 677 195 L 684 200 L 677 205" fill="none" stroke="#7c3aed" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="665" cy="200" r="3.5" fill="#a78bfa" fill-opacity="0.7"/>
+
+  <!-- ── OUTPUT ── -->
+  <rect x="682" y="100" width="100" height="200" rx="14" fill="#16a34a" fill-opacity="0.12" stroke="#bbf7d0" stroke-width="1.5" filter="url(#s)"/>
+  <rect x="682" y="100" width="100" height="36" rx="14" fill="#f0fdf4"/>
+  <rect x="682" y="122" width="100" height="14" fill="#f0fdf4"/>
+  <rect x="682" y="136" width="100" height="1"  fill="#bbf7d0"/>
+  <rect x="694" y="113" width="64" height="6"  rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <rect x="694" y="148" width="74" height="8"  rx="4" fill="#16a34a" fill-opacity="0.75"/>
+  <rect x="694" y="162" width="64" height="6"  rx="3" fill="#16a34a" fill-opacity="0.45"/>
+  <rect x="694" y="174" width="72" height="6"  rx="3" fill="#16a34a" fill-opacity="0.4"/>
+  <!-- Check mark area -->
+  <circle cx="732" cy="222" r="22" fill="#16a34a" fill-opacity="0.15"/>
+  <circle cx="732" cy="222" r="14" fill="#16a34a" fill-opacity="0.25"/>
+  <path d="M 722 222 L 729 229 L 742 214" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="694" y="256" width="72" height="7"  rx="3" fill="#16a34a" fill-opacity="0.55"/>
+  <rect x="694" y="268" width="56" height="6"  rx="3" fill="#16a34a" fill-opacity="0.4"/>
+  <rect x="694" y="282" width="64" height="6"  rx="3" fill="#16a34a" fill-opacity="0.38"/>
+  <circle cx="732" cy="294" r="5" fill="#16a34a" fill-opacity="0.7"/>
+</svg>

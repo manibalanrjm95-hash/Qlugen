@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#ede9fe" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1a1a2e" flood-opacity="0.07"/></filter>
+  </defs>
+  <rect width="800" height="180" fill="url(#bg)"/>
+
+  <!-- Top connection label -->
+  <rect x="316" y="10" width="168" height="10" rx="5" fill="#7c3aed" fill-opacity="0.1"/>
+  <rect x="330" y="12" width="140" height="5" rx="2" fill="#7c3aed" fill-opacity="0.5"/>
+
+  <!-- Horizontal connection line -->
+  <line x1="18" y1="90" x2="782" y2="90" stroke="#7c3aed" stroke-opacity="0.08" stroke-width="3"/>
+
+  <!-- Segment connectors with flow dots -->
+  <line x1="190" y1="90" x2="214" y2="90" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="202" cy="90" r="3" fill="#7c3aed" fill-opacity="0.5"/>
+  <line x1="380" y1="90" x2="404" y2="90" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="392" cy="90" r="3" fill="#7c3aed" fill-opacity="0.5"/>
+  <line x1="578" y1="90" x2="602" y2="90" stroke="#7c3aed" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="590" cy="90" r="3" fill="#a78bfa" fill-opacity="0.6"/>
+
+  <!-- ── BLOCK 1: Application Interface ── -->
+  <rect x="14" y="26" width="176" height="128" rx="10" fill="#1e1a35" filter="url(#s)"/>
+  <rect x="14" y="26" width="176" height="30" rx="10" fill="#16112a"/>
+  <rect x="14" y="44" width="176" height="12" fill="#16112a"/>
+  <rect x="26" y="38" width="52" height="6" rx="3" fill="#fff" fill-opacity="0.4"/>
+  <rect x="150" y="36" width="28" height="10" rx="5" fill="#dcfce7" fill-opacity="0.2"/>
+  <rect x="154" y="39" width="20" height="4" rx="2" fill="#16a34a" fill-opacity="0.6"/>
+  <!-- App content -->
+  <rect x="26" y="64" width="152" height="38" rx="7" fill="#7c3aed" fill-opacity="0.18" stroke="#a78bfa" stroke-opacity="0.2" stroke-width="1"/>
+  <rect x="34" y="73" width="80" height="6" rx="3" fill="#a78bfa" fill-opacity="0.7"/>
+  <rect x="34" y="84" width="136" height="4" rx="2" fill="#fff" fill-opacity="0.35"/>
+  <rect x="34" y="93" width="120" height="4" rx="2" fill="#fff" fill-opacity="0.3"/>
+  <!-- Input bar -->
+  <rect x="26" y="108" width="152" height="22" rx="6" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="34" y="115" width="68" height="4" rx="2" fill="#fff" fill-opacity="0.22"/>
+  <rect x="160" y="110" width="12" height="18" rx="4" fill="#7c3aed" fill-opacity="0.7"/>
+  <!-- Label -->
+  <rect x="36" y="136" width="56" height="6" rx="3" fill="#fff" fill-opacity="0.28"/>
+  <rect x="36" y="146" width="44" height="5" rx="2" fill="#fff" fill-opacity="0.16"/>
+
+  <!-- ── BLOCK 2: Integration Layer ── -->
+  <rect x="214" y="26" width="166" height="128" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="226" y="36" width="80" height="7" rx="3" fill="#111827" fill-opacity="0.68"/>
+  <rect x="226" y="48" width="142" height="5" rx="2" fill="#6b7280" fill-opacity="0.5"/>
+  <!-- API connections list -->
+  <rect x="226" y="62" width="142" height="14" rx="7" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1"/>
+  <circle cx="236" cy="69" r="3" fill="#7c3aed" fill-opacity="0.6"/>
+  <rect x="244" y="66" width="116" height="5" rx="2" fill="#374151" fill-opacity="0.55"/>
+  <rect x="226" y="80" width="142" height="14" rx="7" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1"/>
+  <circle cx="236" cy="87" r="3" fill="#7c3aed" fill-opacity="0.55"/>
+  <rect x="244" y="84" width="100" height="5" rx="2" fill="#374151" fill-opacity="0.5"/>
+  <rect x="226" y="98" width="142" height="14" rx="7" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1"/>
+  <circle cx="236" cy="105" r="3" fill="#4338ca" fill-opacity="0.55"/>
+  <rect x="244" y="102" width="108" height="5" rx="2" fill="#374151" fill-opacity="0.5"/>
+  <rect x="226" y="116" width="142" height="14" rx="7" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <circle cx="236" cy="123" r="3" fill="#16a34a" fill-opacity="0.6"/>
+  <rect x="244" y="120" width="88" height="5" rx="2" fill="#16a34a" fill-opacity="0.55"/>
+  <!-- Label -->
+  <rect x="226" y="136" width="80" height="6" rx="3" fill="#374151" fill-opacity="0.6"/>
+  <rect x="226" y="146" width="60" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+
+  <!-- ── BLOCK 3: Monitoring / Eval ── -->
+  <rect x="404" y="26" width="174" height="128" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="416" y="36" width="100" height="7" rx="3" fill="#111827" fill-opacity="0.68"/>
+  <!-- Line chart -->
+  <path d="M416 108 L436 92 L456 98 L476 82 L496 88 L516 72 L536 78 L556 62 L562 62" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M416 108 L436 92 L456 98 L476 82 L496 88 L516 72 L536 78 L556 62 L562 62 L562 108 Z" fill="#7c3aed" fill-opacity="0.08"/>
+  <circle cx="562" cy="62" r="4" fill="#a78bfa"/>
+  <!-- Guide lines -->
+  <line x1="416" y1="108" x2="562" y2="108" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="416" y1="90"  x2="562" y2="90"  stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="416" y1="72"  x2="562" y2="72"  stroke="#e5e7eb" stroke-width="0.8"/>
+  <!-- Status badges -->
+  <rect x="416" y="118" width="52" height="12" rx="6" fill="#dcfce7"/>
+  <rect x="420" y="121" width="44" height="5" rx="2" fill="#16a34a" fill-opacity="0.7"/>
+  <rect x="476" y="118" width="52" height="12" rx="6" fill="#ede9fe"/>
+  <rect x="480" y="121" width="44" height="5" rx="2" fill="#7c3aed" fill-opacity="0.65"/>
+  <!-- Label -->
+  <rect x="416" y="136" width="84" height="6" rx="3" fill="#374151" fill-opacity="0.6"/>
+  <rect x="416" y="146" width="64" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+
+  <!-- ── BLOCK 4: Infrastructure / Reliability ── -->
+  <rect x="602" y="26" width="184" height="128" rx="10" fill="#1e1a35" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1" filter="url(#s)"/>
+  <rect x="614" y="36" width="96" height="7" rx="3" fill="#fff" fill-opacity="0.42"/>
+  <!-- Infrastructure tiles -->
+  <rect x="614" y="50" width="72" height="36" rx="6" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="622" y="58" width="52" height="5" rx="2" fill="#fff" fill-opacity="0.4"/>
+  <rect x="622" y="67" width="40" height="5" rx="2" fill="#7c3aed" fill-opacity="0.5"/>
+  <rect x="622" y="76" width="48" height="5" rx="2" fill="#fff" fill-opacity="0.22"/>
+  <rect x="696" y="50" width="72" height="36" rx="6" fill="#7c3aed" fill-opacity="0.2" stroke="#a78bfa" stroke-opacity="0.2" stroke-width="1"/>
+  <rect x="704" y="58" width="52" height="5" rx="2" fill="#a78bfa" fill-opacity="0.6"/>
+  <rect x="704" y="67" width="44" height="5" rx="2" fill="#fff" fill-opacity="0.3"/>
+  <rect x="704" y="76" width="40" height="5" rx="2" fill="#fff" fill-opacity="0.22"/>
+  <!-- Uptime indicator -->
+  <rect x="614" y="92"  width="154" height="20" rx="6" fill="#dcfce7" fill-opacity="0.12" stroke="#bbf7d0" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="624" cy="102" r="4" fill="#16a34a" fill-opacity="0.7"/>
+  <rect x="634" y="98"  width="80" height="5" rx="2" fill="#16a34a" fill-opacity="0.5"/>
+  <rect x="720" y="98" width="40" height="5" rx="2" fill="#16a34a" fill-opacity="0.65"/>
+  <!-- Security + cost rows -->
+  <rect x="614" y="118" width="72" height="14" rx="7" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="620" y="122" width="56" height="5" rx="2" fill="#fff" fill-opacity="0.35"/>
+  <rect x="696" y="118" width="72" height="14" rx="7" fill="#fff" fill-opacity="0.05" stroke="#fff" stroke-opacity="0.06" stroke-width="1"/>
+  <rect x="702" y="122" width="56" height="5" rx="2" fill="#fff" fill-opacity="0.3"/>
+  <!-- Label -->
+  <rect x="614" y="138" width="96" height="6" rx="3" fill="#fff" fill-opacity="0.28"/>
+  <rect x="614" y="148" width="72" height="5" rx="2" fill="#fff" fill-opacity="0.16"/>
+</svg>

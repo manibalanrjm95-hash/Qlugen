@@ -1,10 +1,11 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
+import CardImage from "@/components/card-image";
 import { cn } from "@/lib/utils";
+import { BOOK_BUILD_CALL_URL } from "@/lib/booking";
 
 export interface ServiceItem {
     heading: string;
@@ -20,22 +21,22 @@ export const servicesData: ServiceItem[] = [
     {
         heading: "AI Product Development",
         descp: "We design and build AI-powered web apps, dashboards, copilots, and product features from concept to launch.",
-        image: "https://images.shadcnspace.com/assets/services/services-1.png"
+        image: "product"
     },
     {
         heading: "Workflow Automation",
         descp: "We turn manual operations into reliable automations that connect your tools, data, approvals, and notifications.",
-        image: "https://images.shadcnspace.com/assets/services/services-2.png"
+        image: "workflow"
     },
     {
         heading: "Custom AI Agents",
         descp: "We develop task-focused agents for research, support, operations, analysis, and internal productivity.",
-        image: "https://images.shadcnspace.com/assets/services/services-3.png"
+        image: "agents"
     },
     {
         heading: "Integration & Deployment",
         descp: "We wire AI into your stack, prepare secure deployments, monitor performance, and iterate after launch.",
-        image: "https://images.shadcnspace.com/assets/services/services-4.png"
+        image: "systems"
     }
 ];
 
@@ -60,32 +61,32 @@ function Services({ data = servicesData }: ServicesProps) {
                                 We help teams move from AI ideas to shipped software, agents, and automations.
                             </p>
                         </div>
-                        <Button
-                            className={"group p-1 bg-primary hover:bg-primary/80 text-white font-medium flex gap-2 lg:gap-3 justify-between items-center rounded-full w-fit ps-5 h-auto border-0 animate-in fade-in slide-in-from-right-10 duration-1000 delay-200 ease-in-out fill-mode-both"}
-                        >
-                            <a href="#" className="flex items-center gap-3 text-primary-foreground text-sm font-medium">
-                                Start a project
-                                <div className="p-2 bg-background rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
-                                    <Icon
-                                        className="text-foreground"
-                                        icon="lucide:arrow-up-right"
-                                        width={16}
-                                        height={16}
-                                    />
-                                </div>
-                            </a>
-                        </Button>
+                        <a href={BOOK_BUILD_CALL_URL} target="_blank" rel="noopener noreferrer">
+                            <Button
+                                className={"group p-1 bg-primary hover:bg-primary/80 text-white font-medium flex gap-2 lg:gap-3 justify-between items-center rounded-full w-fit ps-5 h-auto border-0 animate-in fade-in slide-in-from-right-10 duration-1000 delay-200 ease-in-out fill-mode-both cursor-pointer"}
+                            >
+                                <span className="flex items-center gap-3 text-primary-foreground text-sm font-medium">
+                                    Book a Build Call
+                                    <div className="p-2 bg-background rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+                                        <Icon
+                                            className="text-foreground"
+                                            icon="lucide:arrow-up-right"
+                                            width={16}
+                                            height={16}
+                                        />
+                                    </div>
+                                </span>
+                            </Button>
+                        </a>
                     </div>
                     <div className="grid grid-cols-12 relative gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200 ease-in-out fill-mode-both">
                         <div className="w-full lg:col-span-4 col-span-12 flex items-center justify-center">
                             <div className={`transition-all duration-300 z-10 h-80`} >
                                 {data?.[activeIndex]?.image && (
-                                    <Image
+                                    <CardImage
                                         src={data[activeIndex].image}
-                                        alt="Service Image"
-                                        width={400}
-                                        height={250}
-                                        className="w-full h-full object-cover"
+                                        seed={data[activeIndex].heading}
+                                        className="h-full w-full"
                                     />
                                 )}
                             </div>

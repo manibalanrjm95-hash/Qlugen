@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#ede9fe" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1a1a2e" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- ── TOP: INPUT TRIGGER ── -->
+  <rect x="316" y="24" width="168" height="48" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s)"/>
+  <rect x="332" y="36" width="80" height="8" rx="4" fill="#111827" fill-opacity="0.75"/>
+  <rect x="332" y="50" width="56" height="6" rx="3" fill="#9ca3af" fill-opacity="0.6"/>
+  <!-- Entry arrow indicator -->
+  <rect x="432" y="36" width="36" height="16" rx="8" fill="#ede9fe"/>
+  <rect x="440" y="40" width="20" height="6" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+
+  <!-- Fork point -->
+  <circle cx="400" cy="104" r="10" fill="#7c3aed" fill-opacity="0.8"/>
+  <circle cx="400" cy="104" r="18" fill="#7c3aed" fill-opacity="0.12"/>
+  <!-- Vertical line from trigger to fork -->
+  <line x1="400" y1="72" x2="400" y2="94" stroke="#d1d5db" stroke-width="2" stroke-linecap="round"/>
+  <!-- Fork label -->
+  <rect x="338" y="96" width="52" height="16" rx="8" fill="#fef3c7"/>
+  <rect x="344" y="100" width="40" height="6" rx="3" fill="#d97706" fill-opacity="0.7"/>
+
+  <!-- Left branch line (automation) -->
+  <path d="M 400 114 Q 200 134 200 160" stroke="#d1d5db" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Right branch line (agent) -->
+  <path d="M 400 114 Q 600 134 600 160" stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="0"/>
+
+  <!-- ── LEFT BRANCH: SIMPLE AUTOMATION ── -->
+  <!-- Branch label -->
+  <rect x="82" y="138" width="136" height="18" rx="9" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="92" y="143" width="116" height="6" rx="3" fill="#6b7280" fill-opacity="0.65"/>
+
+  <!-- Step boxes: A → B → C → D -->
+  <!-- Step A -->
+  <rect x="88" y="168" width="88" height="52" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#s)"/>
+  <rect x="102" y="184" width="60" height="7" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="102" y="196" width="44" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <!-- Arrow A→B -->
+  <path d="M 178 194 L 196 194" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 192 190 L 198 194 L 192 198" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Step B -->
+  <rect x="200" y="168" width="88" height="52" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#s)"/>
+  <rect x="214" y="184" width="60" height="7" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="214" y="196" width="48" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <!-- Arrow B→C (goes down) -->
+  <path d="M 244 220 L 244 240" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 240 236 L 244 242 L 248 236" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Step C (below B) -->
+  <rect x="200" y="248" width="88" height="52" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#s)"/>
+  <rect x="214" y="264" width="60" height="7" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="214" y="276" width="44" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <!-- Arrow C→D (goes left) -->
+  <path d="M 200 274 L 184 274" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 188 270 L 182 274 L 188 278" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Step D (result) -->
+  <rect x="88" y="248" width="88" height="52" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.2" filter="url(#s)"/>
+  <rect x="102" y="264" width="60" height="7" rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <rect x="102" y="276" width="44" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <!-- Result badge -->
+  <rect x="88" y="314" width="88" height="22" rx="11" fill="#dcfce7"/>
+  <rect x="96" y="319" width="72" height="6" rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <!-- Label: Deterministic -->
+  <rect x="88" y="344" width="88" height="16" rx="8" fill="#f3f4f6"/>
+  <rect x="96" y="348" width="72" height="6" rx="3" fill="#9ca3af" fill-opacity="0.6"/>
+
+  <!-- ── RIGHT BRANCH: AI AGENT ── -->
+  <!-- Branch label -->
+  <rect x="582" y="138" width="136" height="18" rx="9" fill="#ede9fe" stroke="#ddd6fe" stroke-width="1"/>
+  <rect x="592" y="143" width="116" height="6" rx="3" fill="#7c3aed" fill-opacity="0.65"/>
+
+  <!-- Agent central node -->
+  <circle cx="650" cy="226" r="52" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" filter="url(#s)"/>
+  <circle cx="650" cy="226" r="36" fill="#f5f0ff"/>
+  <circle cx="650" cy="226" r="18" fill="#7c3aed" fill-opacity="0.18"/>
+  <circle cx="650" cy="226" r="8"  fill="#7c3aed" fill-opacity="0.8"/>
+  <!-- Reasoning loop inside agent -->
+  <path d="M 640 214 A 16 16 0 1 1 661 214" stroke="#a78bfa" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 657 208 L 662 215 L 655 217" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Tool nodes (3) radiating out -->
+  <!-- Tool node 1 (top-right) -->
+  <line x1="682" y1="194" x2="716" y2="162" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="708" y="138" width="68" height="46" rx="8" fill="#ffffff" stroke="#ddd6fe" stroke-width="1" filter="url(#s)"/>
+  <rect x="718" y="150" width="48" height="6" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="718" y="160" width="36" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <circle cx="732" cy="174" r="6" fill="#7c3aed" fill-opacity="0.25"/>
+
+  <!-- Tool node 2 (right) -->
+  <line x1="700" y1="226" x2="726" y2="226" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="724" y="204" width="68" height="46" rx="8" fill="#ffffff" stroke="#ddd6fe" stroke-width="1" filter="url(#s)"/>
+  <rect x="734" y="216" width="48" height="6" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="734" y="226" width="36" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="734" y="236" width="48" height="7" rx="3" fill="#ede9fe"/>
+
+  <!-- Tool node 3 (bottom-right) -->
+  <line x1="682" y1="258" x2="716" y2="290" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="708" y="282" width="68" height="46" rx="8" fill="#ffffff" stroke="#ddd6fe" stroke-width="1" filter="url(#s)"/>
+  <rect x="718" y="294" width="48" height="6" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <rect x="718" y="304" width="36" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <circle cx="732" cy="318" r="6" fill="#4338ca" fill-opacity="0.25"/>
+
+  <!-- Agent "context" bubble (left of agent) -->
+  <rect x="526" y="196" width="76" height="60" rx="8" fill="#f5f0ff" stroke="#ddd6fe" stroke-width="1"/>
+  <rect x="526" y="196" width="3" height="60" rx="1" fill="#7c3aed"/>
+  <rect x="536" y="206" width="56" height="5" rx="2" fill="#7c3aed" fill-opacity="0.65"/>
+  <rect x="536" y="215" width="50" height="5" rx="2" fill="#374151" fill-opacity="0.5"/>
+  <rect x="536" y="224" width="54" height="5" rx="2" fill="#374151" fill-opacity="0.45"/>
+  <rect x="536" y="233" width="44" height="5" rx="2" fill="#374151" fill-opacity="0.4"/>
+  <line x1="600" y1="226" x2="598" y2="226" stroke="#a78bfa" stroke-width="1.5"/>
+
+  <!-- Agent badge -->
+  <rect x="582" y="346" width="136" height="22" rx="11" fill="#7c3aed"/>
+  <rect x="594" y="352" width="112" height="7" rx="3" fill="#ffffff" fill-opacity="0.85"/>
+
+  <!-- Center divider -->
+  <line x1="400" y1="140" x2="400" y2="380" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="6 4"/>
+</svg>

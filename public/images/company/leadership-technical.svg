@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0820"/>
+      <stop offset="100%" stop-color="#13102c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#4338ca" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="260" fill="url(#bg)"/>
+  <rect width="600" height="260" fill="url(#grid)"/>
+  <rect width="600" height="260" fill="url(#glow)"/>
+
+  <!-- ── ARCHITECTURE LAYERS ── -->
+
+  <!-- Layer labels (right) -->
+  <rect x="550" y="30"  width="44" height="6" rx="3" fill="#fff" fill-opacity="0.2"/>
+  <rect x="550" y="88"  width="44" height="6" rx="3" fill="#a78bfa" fill-opacity="0.65"/>
+  <rect x="550" y="148" width="44" height="6" rx="3" fill="#7c3aed" fill-opacity="0.75"/>
+  <rect x="550" y="200" width="44" height="6" rx="3" fill="#4338ca" fill-opacity="0.65"/>
+
+  <!-- Layer 1: Client / Interface (top) -->
+  <rect x="18" y="18" width="524" height="52" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- Interface blocks -->
+  <rect x="28" y="28" width="108" height="32" rx="7" fill="#fff" fill-opacity="0.07" stroke="#fff" stroke-opacity="0.1" stroke-width="1"/>
+  <rect x="36" y="36" width="70" height="5" rx="2" fill="#fff" fill-opacity="0.45"/>
+  <rect x="36" y="44" width="56" height="5" rx="2" fill="#fff" fill-opacity="0.28"/>
+  <rect x="148" y="28" width="108" height="32" rx="7" fill="#fff" fill-opacity="0.07" stroke="#fff" stroke-opacity="0.1" stroke-width="1"/>
+  <rect x="156" y="36" width="80" height="5" rx="2" fill="#fff" fill-opacity="0.4"/>
+  <rect x="156" y="44" width="60" height="5" rx="2" fill="#fff" fill-opacity="0.25"/>
+  <rect x="268" y="28" width="108" height="32" rx="7" fill="#fff" fill-opacity="0.07" stroke="#fff" stroke-opacity="0.1" stroke-width="1"/>
+  <rect x="276" y="36" width="64" height="5" rx="2" fill="#fff" fill-opacity="0.4"/>
+  <rect x="276" y="44" width="76" height="5" rx="2" fill="#fff" fill-opacity="0.25"/>
+  <rect x="388" y="28" width="108" height="32" rx="7" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="396" y="36" width="72" height="5" rx="2" fill="#fff" fill-opacity="0.35"/>
+  <rect x="396" y="44" width="56" height="5" rx="2" fill="#fff" fill-opacity="0.2"/>
+
+  <!-- Vertical connectors (layer 1 → 2) -->
+  <line x1="82"  y1="70" x2="82"  y2="86" stroke="#a78bfa" stroke-opacity="0.3" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="202" y1="70" x2="202" y2="86" stroke="#a78bfa" stroke-opacity="0.3" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="322" y1="70" x2="322" y2="86" stroke="#a78bfa" stroke-opacity="0.3" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="442" y1="70" x2="442" y2="86" stroke="#a78bfa" stroke-opacity="0.25" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Layer 2: AI / Logic (center-top) -->
+  <rect x="18" y="78" width="524" height="58" rx="10" fill="#a78bfa" fill-opacity="0.12" stroke="#a78bfa" stroke-opacity="0.28" stroke-width="1.2"/>
+  <!-- LLM core -->
+  <rect x="28" y="88" width="156" height="38" rx="8" fill="#a78bfa" fill-opacity="0.2" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="36" y="96"  width="88" height="6"  rx="3" fill="#a78bfa" fill-opacity="0.8"/>
+  <rect x="36" y="106" width="140" height="4" rx="2" fill="#fff" fill-opacity="0.3"/>
+  <rect x="36" y="114" width="120" height="4" rx="2" fill="#fff" fill-opacity="0.25"/>
+  <!-- Routing logic -->
+  <rect x="196" y="88" width="100" height="38" rx="8" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="204" y="96"  width="64" height="6"  rx="3" fill="#fff" fill-opacity="0.4"/>
+  <rect x="204" y="106" width="84" height="4"  rx="2" fill="#fff" fill-opacity="0.22"/>
+  <rect x="204" y="114" width="72" height="4"  rx="2" fill="#fff" fill-opacity="0.18"/>
+  <!-- Retrieval -->
+  <rect x="308" y="88" width="100" height="38" rx="8" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="316" y="96"  width="72" height="6"  rx="3" fill="#fff" fill-opacity="0.4"/>
+  <rect x="316" y="106" width="80" height="4"  rx="2" fill="#fff" fill-opacity="0.22"/>
+  <rect x="316" y="114" width="64" height="4"  rx="2" fill="#fff" fill-opacity="0.18"/>
+  <!-- Eval layer -->
+  <rect x="420" y="88" width="106" height="38" rx="8" fill="#7c3aed" fill-opacity="0.25" stroke="#a78bfa" stroke-opacity="0.25" stroke-width="1"/>
+  <rect x="428" y="96"  width="80" height="6"  rx="3" fill="#a78bfa" fill-opacity="0.65"/>
+  <rect x="428" y="106" width="88" height="4"  rx="2" fill="#fff" fill-opacity="0.28"/>
+  <rect x="428" y="114" width="72" height="4"  rx="2" fill="#fff" fill-opacity="0.22"/>
+
+  <!-- Vertical connectors (layer 2 → 3) -->
+  <line x1="100" y1="136" x2="100" y2="148" stroke="#7c3aed" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="246" y1="136" x2="246" y2="148" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="358" y1="136" x2="358" y2="148" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="473" y1="136" x2="473" y2="148" stroke="#7c3aed" stroke-opacity="0.3"  stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Layer 3: Data / Integration (center-bottom) -->
+  <rect x="18" y="140" width="524" height="58" rx="10" fill="#7c3aed" fill-opacity="0.18" stroke="#7c3aed" stroke-opacity="0.4" stroke-width="1.5"/>
+  <!-- Data blocks -->
+  <rect x="28" y="150" width="116" height="38" rx="8" fill="#7c3aed" fill-opacity="0.3" stroke="#a78bfa" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="36" y="158"  width="80" height="6"  rx="3" fill="#a78bfa" fill-opacity="0.75"/>
+  <rect x="36" y="168"  width="100" height="4" rx="2" fill="#fff" fill-opacity="0.35"/>
+  <rect x="36" y="176"  width="84"  height="4" rx="2" fill="#fff" fill-opacity="0.28"/>
+  <rect x="156" y="150" width="116" height="38" rx="8" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="164" y="158" width="96"  height="6"  rx="3" fill="#fff" fill-opacity="0.4"/>
+  <rect x="164" y="168" width="100" height="4"  rx="2" fill="#fff" fill-opacity="0.22"/>
+  <rect x="164" y="176" width="80"  height="4"  rx="2" fill="#fff" fill-opacity="0.18"/>
+  <rect x="284" y="150" width="116" height="38" rx="8" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="292" y="158" width="88"  height="6"  rx="3" fill="#fff" fill-opacity="0.38"/>
+  <rect x="292" y="168" width="96"  height="4"  rx="2" fill="#fff" fill-opacity="0.2"/>
+  <rect x="292" y="176" width="72"  height="4"  rx="2" fill="#fff" fill-opacity="0.16"/>
+  <rect x="412" y="150" width="116" height="38" rx="8" fill="#4338ca" fill-opacity="0.25" stroke="#818cf8" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="420" y="158" width="80"  height="6"  rx="3" fill="#818cf8" fill-opacity="0.65"/>
+  <rect x="420" y="168" width="96"  height="4"  rx="2" fill="#fff" fill-opacity="0.28"/>
+  <rect x="420" y="176" width="76"  height="4"  rx="2" fill="#fff" fill-opacity="0.22"/>
+
+  <!-- Vertical connectors (layer 3 → 4) -->
+  <line x1="86"  y1="198" x2="86"  y2="210" stroke="#4338ca" stroke-opacity="0.4" stroke-width="1.2"/>
+  <line x1="214" y1="198" x2="214" y2="210" stroke="#4338ca" stroke-opacity="0.35" stroke-width="1.2"/>
+  <line x1="342" y1="198" x2="342" y2="210" stroke="#4338ca" stroke-opacity="0.35" stroke-width="1.2"/>
+  <line x1="470" y1="198" x2="470" y2="210" stroke="#4338ca" stroke-opacity="0.3"  stroke-width="1.2"/>
+
+  <!-- Layer 4: Infrastructure (bottom, darkest) -->
+  <rect x="18" y="202" width="524" height="44" rx="10" fill="#4338ca" fill-opacity="0.15" stroke="#4338ca" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="28" y="212" width="116" height="24" rx="7" fill="#fff" fill-opacity="0.05" stroke="#fff" stroke-opacity="0.06" stroke-width="1"/>
+  <rect x="36" y="219" width="80" height="5" rx="2" fill="#818cf8" fill-opacity="0.55"/>
+  <rect x="36" y="228" width="64" height="4" rx="2" fill="#fff" fill-opacity="0.2"/>
+  <rect x="156" y="212" width="116" height="24" rx="7" fill="#fff" fill-opacity="0.04" stroke="#fff" stroke-opacity="0.05" stroke-width="1"/>
+  <rect x="164" y="219" width="80" height="5" rx="2" fill="#fff" fill-opacity="0.35"/>
+  <rect x="164" y="228" width="64" height="4" rx="2" fill="#fff" fill-opacity="0.18"/>
+  <rect x="284" y="212" width="116" height="24" rx="7" fill="#fff" fill-opacity="0.04" stroke="#fff" stroke-opacity="0.05" stroke-width="1"/>
+  <rect x="292" y="219" width="80" height="5" rx="2" fill="#fff" fill-opacity="0.32"/>
+  <rect x="292" y="228" width="56" height="4" rx="2" fill="#fff" fill-opacity="0.16"/>
+  <rect x="412" y="212" width="116" height="24" rx="7" fill="#4338ca" fill-opacity="0.2" stroke="#818cf8" stroke-opacity="0.18" stroke-width="1"/>
+  <rect x="420" y="219" width="80" height="5" rx="2" fill="#818cf8" fill-opacity="0.5"/>
+  <rect x="420" y="228" width="64" height="4" rx="2" fill="#818cf8" fill-opacity="0.3"/>
+</svg>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Bot, BrainCircuit, Plug } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import InternalPageHeader from "@/components/internal-page-header";
+import ProcessFlow from "@/components/process-flow";
 
 export const metadata: Metadata = {
   title: "About Qlugen | AI Development Agency",
@@ -12,17 +12,55 @@ export const metadata: Metadata = {
 };
 
 const capabilities = [
-  ["AI Product Development", "Turn AI opportunities into products designed around users and business workflows.", "/capabilities/ai-product-development", BrainCircuit],
-  ["AI Agents & Automation", "Build intelligent systems that can understand, use tools and complete real tasks.", "/capabilities/ai-agents-automation", Bot],
-  ["Integration & Deployment", "Connect AI with business data and systems and move it reliably into production.", "/capabilities/integration-deployment", Plug],
-] as const;
+  {
+    title: "AI Product Development",
+    body: "Turn AI opportunities into products designed around users and business workflows.",
+    href: "/capabilities/ai-product-development",
+    imageSrc: "/images/company/about-ai-product.svg",
+    imageAlt: "Dark-themed AI product interface with sidebar navigation, conversation panel and analytics metrics",
+  },
+  {
+    title: "AI Agents & Automation",
+    body: "Build intelligent systems that can understand, use tools and complete real tasks.",
+    href: "/capabilities/ai-agents-automation",
+    imageSrc: "/images/company/about-ai-agents.svg",
+    imageAlt: "AI agent node at center connected by flow lines to input and three output tool nodes",
+  },
+  {
+    title: "Integration & Deployment",
+    body: "Connect AI with business data and systems and move it reliably into production.",
+    href: "/capabilities/integration-deployment",
+    imageSrc: "/images/company/about-integration.svg",
+    imageAlt: "Three source systems connecting into a central AI platform which routes to three deployment targets",
+  },
+];
 
 const principles = [
-  ["Useful before impressive", "A simple solution solving the right problem is more valuable than an impressive demo nobody uses."],
-  ["Start with the workflow", "Understand people, processes and systems before selecting models or tools."],
-  ["Build to learn", "Prototype early, test assumptions and improve using real feedback."],
-  ["Production is part of the product", "Reliability, integration, monitoring and cost matter from the beginning."],
-] as const;
+  {
+    title: "Useful before impressive",
+    body: "A simple solution solving the right problem is more valuable than an impressive demo nobody uses.",
+    imageSrc: "/images/company/principle-useful.svg",
+    imageAlt: "Clean focused AI interface completing one task clearly, contrasted with a cluttered complex demo",
+  },
+  {
+    title: "Start with the workflow",
+    body: "Understand people, processes and systems before selecting models or tools.",
+    imageSrc: "/images/company/principle-workflow.svg",
+    imageAlt: "Horizontal discovery map showing users, tasks, systems and AI opportunity connected in sequence",
+  },
+  {
+    title: "Build to learn",
+    body: "Prototype early, test assumptions and improve using real feedback.",
+    imageSrc: "/images/company/principle-build-learn.svg",
+    imageAlt: "Three product iterations evolving from a rough wireframe through an improved version to a polished production interface",
+  },
+  {
+    title: "Production is part of the product",
+    body: "Reliability, integration, monitoring and cost matter from the beginning.",
+    imageSrc: "/images/company/principle-production.svg",
+    imageAlt: "Four connected production components: application interface, integration layer, monitoring and infrastructure",
+  },
+];
 
 const stages = [
   ["Discover", "Understand the opportunity and existing workflow."],
@@ -32,17 +70,17 @@ const stages = [
 ] as const;
 
 const industries = [
-  "Banking, Financial Services & Insurance",
-  "Telecom, Media & Entertainment",
-  "Fashion & Luxury",
-  "High-Tech",
-  "Manufacturing & Distribution",
-  "Retail & Consumer Goods",
+  { name: "Banking, Financial Services & Insurance", imageSrc: "/images/industries/bfsi.svg" },
+  { name: "Telecom, Media & Entertainment",         imageSrc: "/images/industries/telecom.svg" },
+  { name: "Fashion & Luxury",                        imageSrc: "/images/industries/fashion.svg" },
+  { name: "High-Tech",                               imageSrc: "/images/industries/hightech.svg" },
+  { name: "Manufacturing & Distribution",            imageSrc: "/images/industries/manufacturing.svg" },
+  { name: "Retail & Consumer Goods",                 imageSrc: "/images/industries/retail.svg" },
 ];
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="About Qlugen"
         title="We turn AI potential into useful products."
@@ -65,17 +103,22 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8">
           <h2 id="what-heading" className="mb-10 text-3xl font-medium tracking-tight md:text-4xl">From idea to production.</h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {capabilities.map(([title, body, href, Icon]) => (
+            {capabilities.map(({ title, body, href, imageSrc, imageAlt }) => (
               <Link key={title} href={href} className="group block">
-                <article className="flex h-full flex-col rounded-2xl border bg-card p-6 transition-shadow hover:shadow-md">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                <article className="flex h-full flex-col rounded-2xl border bg-card overflow-hidden transition-all duration-200 hover:border-primary/20 hover:shadow-md hover:-translate-y-0.5">
+                  <div className="relative w-full aspect-[3/2] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={imageSrc} alt={imageAlt}
+                         className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
+                         loading="lazy"/>
                   </div>
-                  <h3 className="mb-2 font-semibold transition-colors group-hover:text-primary">{title}</h3>
-                  <p className="mb-5 text-sm leading-relaxed text-muted-foreground">{body}</p>
-                  <span className="mt-auto flex items-center gap-1 text-xs font-medium text-primary">
-                    Explore <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
+                  <div className="flex flex-col flex-1 p-6">
+                    <h3 className="mb-2 font-semibold transition-colors group-hover:text-primary">{title}</h3>
+                    <p className="mb-5 text-sm leading-relaxed text-muted-foreground">{body}</p>
+                    <span className="mt-auto flex items-center gap-1 text-xs font-medium text-primary">
+                      Explore <ArrowUpRight className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
                 </article>
               </Link>
             ))}
@@ -90,10 +133,17 @@ export default function AboutPage() {
             <h2 id="principles-heading" className="text-3xl font-medium tracking-tight md:text-4xl">How we approach AI.</h2>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {principles.map(([title, body]) => (
-              <article key={title} className="rounded-xl border bg-card p-5">
-                <h3 className="mb-2 font-semibold">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
+            {principles.map(({ title, body, imageSrc, imageAlt }) => (
+              <article key={title} className="rounded-xl border bg-card overflow-hidden">
+                <div className="relative h-24 w-full overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={imageSrc} alt={imageAlt}
+                       className="h-full w-full object-cover" loading="lazy"/>
+                </div>
+                <div className="p-5">
+                  <h3 className="mb-2 font-semibold">{title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -103,15 +153,7 @@ export default function AboutPage() {
       <section className="border-t bg-muted/30" aria-labelledby="work-heading">
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8">
           <h2 id="work-heading" className="mb-10 text-3xl font-medium tracking-tight md:text-4xl">One team from discovery to deployment.</h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {stages.map(([title, body], index) => (
-              <article key={title} className="rounded-xl border bg-card p-5">
-                <span className="mb-4 block text-sm font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="mb-2 font-semibold">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
-              </article>
-            ))}
-          </div>
+          <ProcessFlow steps={stages.map(([title, body]) => ({ title, body }))} />
         </div>
       </section>
 
@@ -124,14 +166,20 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry) => (
-              <div key={industry} className="rounded-xl border bg-card p-4 text-sm font-medium">{industry}</div>
+            {industries.map(({ name, imageSrc }) => (
+              <div key={name} className="rounded-xl border bg-card overflow-hidden">
+                <div className="relative h-20 w-full overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={imageSrc} alt="" aria-hidden="true"
+                       className="h-full w-full object-cover" loading="lazy"/>
+                </div>
+                <div className="px-4 py-3 text-sm font-medium">{name}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <CTA title="Have an AI opportunity worth exploring?" description="Let's turn it into something useful." buttonLabel="Start a project" />
     </div>
   );
 }

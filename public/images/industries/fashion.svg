@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08070e"/>
+      <stop offset="100%" stop-color="#0f0919"/>
+    </linearGradient>
+    <linearGradient id="diagFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0.0"/>
+      <stop offset="30%"  stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="70%"  stop-color="#4338ca" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.0"/>
+    </linearGradient>
+    <radialGradient id="diamondGlow" cx="50%" cy="50%" r="28%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.0"/>
+    </radialGradient>
+    <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="0" cy="0" r="0.6" fill="#ffffff" fill-opacity="0.055"/>
+    </pattern>
+    <!-- Diagonal line pattern (fabric suggestion) -->
+    <pattern id="diagLines" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <line x1="0" y1="0" x2="0" y2="44" stroke="#7c3aed" stroke-opacity="0.22" stroke-width="0.9"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="338" fill="url(#bg)"/>
+  <rect width="600" height="338" fill="url(#dotGrid)"/>
+  <rect width="600" height="338" fill="url(#diagLines)"/>
+  <rect width="600" height="338" fill="url(#diamondGlow)"/>
+
+  <!-- Outer diamond -->
+  <polygon points="300,82 388,169 300,256 212,169"
+           stroke="#a78bfa" stroke-width="1.6" fill="none" stroke-opacity="0.65"/>
+  <!-- Mid diamond -->
+  <polygon points="300,116 355,169 300,222 245,169"
+           stroke="#a78bfa" stroke-width="1.0" fill="none" stroke-opacity="0.38"/>
+  <!-- Inner diamond -->
+  <polygon points="300,143 326,169 300,195 274,169"
+           stroke="#a78bfa" stroke-width="0.8" fill="none" stroke-opacity="0.22"/>
+
+  <!-- Horizontal measurement lines -->
+  <line x1="40"  y1="169" x2="198" y2="169" stroke="#7c3aed" stroke-opacity="0.16" stroke-width="0.8"/>
+  <line x1="402" y1="169" x2="560" y2="169" stroke="#7c3aed" stroke-opacity="0.16" stroke-width="0.8"/>
+
+  <!-- Tick marks on diamonds (editorial crosshair feel) -->
+  <line x1="296" y1="78"  x2="304" y2="86"  stroke="#a78bfa" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="304" y1="78"  x2="296" y2="86"  stroke="#a78bfa" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="384" y1="165" x2="392" y2="173" stroke="#a78bfa" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="392" y1="165" x2="384" y2="173" stroke="#a78bfa" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="296" y1="252" x2="304" y2="260" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="304" y1="252" x2="296" y2="260" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="208" y1="165" x2="216" y2="173" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="216" y1="165" x2="208" y2="173" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1"/>
+
+  <!-- Center point -->
+  <circle cx="300" cy="169" r="3.5" fill="#a78bfa" fill-opacity="0.85"/>
+  <circle cx="300" cy="169" r="9"   fill="#a78bfa" fill-opacity="0.1"/>
+
+  <rect width="600" height="338" fill="#4c1d95" fill-opacity="0.06"/>
+</svg>

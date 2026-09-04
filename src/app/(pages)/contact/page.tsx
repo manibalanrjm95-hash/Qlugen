@@ -4,6 +4,7 @@ import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/shadcn-space/blocks/contact-01/contact-form";
 import InternalPageHeader from "@/components/internal-page-header";
+import ProcessFlow from "@/components/process-flow";
 
 export const metadata: Metadata = {
   title: "Contact Qlugen",
@@ -25,7 +26,7 @@ const contactDetails = [
 
 export default function ContactPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="Contact"
         title="Let's build something useful with AI."
@@ -56,22 +57,14 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          <ContactForm />
+          <div className="rounded-2xl bg-primary/[0.035] p-2 shadow-[0_0_70px_rgba(115,0,255,0.10)]"><ContactForm /></div>
         </div>
       </section>
 
       <section className="border-t bg-muted/30" aria-labelledby="next-heading">
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8">
           <h2 id="next-heading" className="mb-10 text-3xl font-medium tracking-tight md:text-4xl">What happens next?</h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {nextSteps.map(([number, title, body]) => (
-              <article key={number} className="rounded-xl border bg-card p-5">
-                <span className="mb-4 block text-sm font-semibold text-primary">{number}</span>
-                <h3 className="mb-2 font-semibold">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
-              </article>
-            ))}
-          </div>
+          <ProcessFlow steps={nextSteps.map(([number, title, body]) => ({ number, title, body }))} />
         </div>
       </section>
 

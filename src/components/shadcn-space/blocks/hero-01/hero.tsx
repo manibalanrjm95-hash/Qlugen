@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { CalBookingModal } from "@/components/cal-booking-modal";
 
 export type AvatarList = {
   image: string;
@@ -13,6 +15,7 @@ type HeroSectionProps = {
 };
 
 function HeroSection({ avatarList }: HeroSectionProps) {
+  const [calOpen, setCalOpen] = useState(false);
   return (
     <section>
       <div className="w-full h-full relative">
@@ -24,7 +27,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   initial={{ opacity: 0, y: 32 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeInOut" }}
-                  className="text-[54px] font-bold leading-[70px] text-white drop-shadow-[0_4px_28px_rgba(0,0,0,0.45)] md:text-[78px] md:leading-[98px] lg:text-[102px] lg:leading-[124px]"
+                  className="max-w-[11ch] text-5xl font-bold leading-[1.08] text-white drop-shadow-[0_4px_28px_rgba(0,0,0,0.45)] sm:max-w-none sm:text-6xl md:text-[78px] md:leading-[1.12] lg:text-[102px]"
                 >
                   AI development agency
                   <br />
@@ -51,7 +54,10 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
                 className="flex items-center flex-col md:flex-row justify-center gap-8"
               >
-                <Button className="group relative h-12 w-fit cursor-pointer overflow-hidden rounded-full bg-white p-1 ps-6 pe-14 text-sm font-medium text-black shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition-all duration-500 hover:bg-white/90 hover:ps-14 hover:pe-6">
+                <Button
+                  onClick={() => setCalOpen(true)}
+                  className="group relative h-12 w-fit cursor-pointer overflow-hidden rounded-full bg-white p-1 ps-6 pe-14 text-sm font-medium text-black shadow-[0_16px_40px_rgba(0,0,0,0.25)] transition-all duration-500 hover:bg-white/90 hover:ps-14 hover:pe-6"
+                >
                   <span className="relative z-10 transition-all duration-500">
                     Book a Build Call
                   </span>
@@ -59,7 +65,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                     <ArrowUpRight size={16} />
                   </span>
                 </Button>
-                <div className="flex items-center sm:gap-7 gap-3">
+                <div className="flex flex-wrap items-center justify-center sm:gap-7 gap-3">
                   <ul className="avatar flex flex-row items-center">
                     {avatarList.map((avatar, index) => (
                       <li key={index} className="-mr-2 z-1 avatar-hover:ml-2">
@@ -94,6 +100,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
           </div>
         </div>
       </div>
+      <CalBookingModal open={calOpen} onOpenChange={setCalOpen} />
     </section>
   );
 }

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#ede9fe" stop-opacity="0.35"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1a1a2e" flood-opacity="0.08"/></filter>
+  </defs>
+  <rect width="600" height="260" fill="url(#bg)"/>
+
+  <!-- ── LEFT: 3 SOURCE SYSTEMS ── -->
+  <!-- System A -->
+  <rect x="16" y="28" width="128" height="50" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="28" y="38" width="52" height="7" rx="3" fill="#111827" fill-opacity="0.68"/>
+  <rect x="28" y="50" width="104" height="5" rx="2" fill="#6b7280" fill-opacity="0.5"/>
+  <rect x="28" y="59" width="80" height="5" rx="2" fill="#6b7280" fill-opacity="0.45"/>
+  <rect x="28" y="68" width="36" height="5" rx="2" fill="#6b7280" fill-opacity="0.4"/>
+  <!-- System B -->
+  <rect x="16" y="106" width="128" height="50" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="28" y="116" width="64" height="7" rx="3" fill="#111827" fill-opacity="0.68"/>
+  <rect x="28" y="128" width="96" height="5" rx="2" fill="#6b7280" fill-opacity="0.5"/>
+  <rect x="28" y="137" width="72" height="5" rx="2" fill="#6b7280" fill-opacity="0.45"/>
+  <rect x="28" y="146" width="44" height="5" rx="2" fill="#6b7280" fill-opacity="0.4"/>
+  <!-- System C -->
+  <rect x="16" y="184" width="128" height="50" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="28" y="194" width="48" height="7" rx="3" fill="#111827" fill-opacity="0.68"/>
+  <rect x="28" y="206" width="100" height="5" rx="2" fill="#6b7280" fill-opacity="0.5"/>
+  <rect x="28" y="215" width="76" height="5" rx="2" fill="#6b7280" fill-opacity="0.45"/>
+  <rect x="28" y="224" width="56" height="5" rx="2" fill="#6b7280" fill-opacity="0.4"/>
+
+  <!-- Spoke lines: systems → AI hub -->
+  <line x1="144" y1="53"  x2="224" y2="130" stroke="#7c3aed" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="144" y1="131" x2="222" y2="131" stroke="#7c3aed" stroke-opacity="0.3"  stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="144" y1="209" x2="224" y2="132" stroke="#7c3aed" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <!-- Flow dots -->
+  <circle cx="184" cy="91"  r="3" fill="#a78bfa" fill-opacity="0.6"/>
+  <circle cx="183" cy="131" r="3" fill="#a78bfa" fill-opacity="0.7"/>
+  <circle cx="184" cy="171" r="3" fill="#a78bfa" fill-opacity="0.6"/>
+
+  <!-- ── CENTER: AI PLATFORM HUB ── -->
+  <rect x="226" y="86" width="148" height="90" rx="14" fill="#1e1a35" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="1.5" filter="url(#s)"/>
+  <!-- Hub inner ring -->
+  <rect x="238" y="98"  width="124" height="66" rx="10" fill="#7c3aed" fill-opacity="0.15"/>
+  <!-- Hub label -->
+  <rect x="252" y="110" width="72" height="7"  rx="3" fill="#a78bfa" fill-opacity="0.8"/>
+  <rect x="252" y="122" width="96" height="5"  rx="2" fill="#fff" fill-opacity="0.3"/>
+  <rect x="252" y="131" width="80" height="5"  rx="2" fill="#fff" fill-opacity="0.25"/>
+  <rect x="252" y="142" width="88" height="5"  rx="2" fill="#fff" fill-opacity="0.22"/>
+  <!-- Processing dot -->
+  <circle cx="318" cy="131" r="10" fill="#7c3aed" fill-opacity="0.4"/>
+  <circle cx="318" cy="131" r="5"  fill="#a78bfa"/>
+
+  <!-- Spoke lines: AI hub → deployments -->
+  <line x1="374" y1="110" x2="446" y2="53"  stroke="#7c3aed" stroke-opacity="0.3"  stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="376" y1="131" x2="446" y2="131" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="374" y1="152" x2="446" y2="209" stroke="#7c3aed" stroke-opacity="0.3"  stroke-width="1.5" stroke-dasharray="5 4"/>
+  <!-- Flow dots -->
+  <circle cx="410" cy="91"  r="3" fill="#16a34a" fill-opacity="0.6"/>
+  <circle cx="411" cy="131" r="3" fill="#16a34a" fill-opacity="0.7"/>
+  <circle cx="410" cy="171" r="3" fill="#16a34a" fill-opacity="0.6"/>
+
+  <!-- ── RIGHT: 3 DEPLOYMENT TARGETS ── -->
+  <!-- Target A -->
+  <rect x="448" y="28" width="136" height="50" rx="8" fill="#f5f0ff" stroke="#ddd6fe" stroke-width="1" filter="url(#s)"/>
+  <rect x="460" y="38" width="60" height="7" rx="3" fill="#7c3aed" fill-opacity="0.75"/>
+  <rect x="460" y="50" width="112" height="5" rx="2" fill="#7c3aed" fill-opacity="0.4"/>
+  <rect x="460" y="59" width="88" height="5"  rx="2" fill="#7c3aed" fill-opacity="0.35"/>
+  <rect x="460" y="68" width="36" height="5"  rx="2" fill="#7c3aed" fill-opacity="0.3"/>
+  <!-- Target B (highlighted) -->
+  <rect x="448" y="106" width="136" height="50" rx="8" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1.5" filter="url(#s)"/>
+  <rect x="460" y="116" width="68" height="7" rx="3" fill="#16a34a" fill-opacity="0.75"/>
+  <rect x="460" y="128" width="104" height="5" rx="2" fill="#16a34a" fill-opacity="0.45"/>
+  <rect x="460" y="137" width="80"  height="5" rx="2" fill="#16a34a" fill-opacity="0.4"/>
+  <rect x="460" y="146" width="44" height="8"  rx="4" fill="#16a34a" fill-opacity="0.2"/>
+  <rect x="464" y="148" width="36" height="4"  rx="2" fill="#16a34a" fill-opacity="0.75"/>
+  <!-- Target C -->
+  <rect x="448" y="184" width="136" height="50" rx="8" fill="#f5f0ff" stroke="#ddd6fe" stroke-width="1" filter="url(#s)"/>
+  <rect x="460" y="194" width="56" height="7" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <rect x="460" y="206" width="112" height="5" rx="2" fill="#7c3aed" fill-opacity="0.4"/>
+  <rect x="460" y="215" width="80"  height="5" rx="2" fill="#7c3aed" fill-opacity="0.35"/>
+  <rect x="460" y="224" width="40" height="5"  rx="2" fill="#7c3aed" fill-opacity="0.3"/>
+</svg>

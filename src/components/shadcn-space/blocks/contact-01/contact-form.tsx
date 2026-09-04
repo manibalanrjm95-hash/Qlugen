@@ -44,6 +44,7 @@ const ContactForm = () => {
     message: "",
     consent: false,
   });
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -54,6 +55,26 @@ const ContactForm = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    if (!formData.consent) {
+      setSubmitMessage("Please agree to be contacted before sending.");
+      return;
+    }
+
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Company: ${formData.company || "Not provided"}`,
+      `Phone: ${formData.phone || "Not provided"}`,
+      `Interest: ${formData.interest}`,
+      "",
+      "Message:",
+      formData.message,
+    ].join("\n");
+
+    window.location.href = `mailto:Vinay@qlugen.com?subject=${encodeURIComponent(
+      "Qlugen website enquiry"
+    )}&body=${encodeURIComponent(body)}`;
+    setSubmitMessage("Opening your email app with the enquiry details.");
   };
 
   return (
@@ -161,6 +182,11 @@ const ContactForm = () => {
             >
               Send enquiry
             </Button>
+            {submitMessage ? (
+              <p className="text-sm text-muted-foreground" aria-live="polite">
+                {submitMessage}
+              </p>
+            ) : null}
           </form>
         </CardContent>
       </Card>

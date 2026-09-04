@@ -5,7 +5,6 @@ import Bentogrid from '@/components/shadcn-space/blocks/bento-grid-01/bentogrid'
 import AboutAndStats01 from '@/components/shadcn-space/blocks/about-us-01/index'
 import Blog from '@/components/shadcn-space/blocks/blog-01/blog'
 import Contact from '@/components/shadcn-space/blocks/contact-01/index'
-import CTA from '@/components/shadcn-space/blocks/cta-01/cta'
 import Faq from '@/components/shadcn-space/blocks/faq-01/faq'
 import Feature01 from '@/components/shadcn-space/blocks/feature-01/index'
 import Feature02 from '@/components/shadcn-space/blocks/feature-02/index'
@@ -70,11 +69,6 @@ export default function Page() {
           <Contact />
         </section>
 
-        {/* cta-01 */}
-        <section>
-          <CTA />
-        </section>
-    
         {/* footer-02 */}
         <section>
           <Footer />

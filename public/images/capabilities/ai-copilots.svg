@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bg-copilot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDFDFF"/>
+      <stop offset="100%" stop-color="#F5F3FF"/>
+    </linearGradient>
+    <linearGradient id="panel-copilot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <filter id="shadow-copilot" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#241A46" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="28" fill="url(#bg-copilot)"/>
+  <circle cx="78" cy="320" r="92" fill="#EEF2FF"/>
+  <circle cx="536" cy="64" r="70" fill="#EDE9FE"/>
+
+  <rect x="68" y="48" width="300" height="304" rx="26" fill="#fff" filter="url(#shadow-copilot)"/>
+  <rect x="68" y="48" width="300" height="304" rx="26" stroke="#E5E7EB"/>
+  <circle cx="92" cy="74" r="5" fill="#FCA5A5"/>
+  <circle cx="108" cy="74" r="5" fill="#FCD34D"/>
+  <circle cx="124" cy="74" r="5" fill="#86EFAC"/>
+  <rect x="152" y="68" width="88" height="12" rx="6" fill="#F3F4F6"/>
+
+  <rect x="100" y="108" width="182" height="12" rx="6" fill="#111827" fill-opacity=".82"/>
+  <rect x="100" y="132" width="220" height="8" rx="4" fill="#6B7280" fill-opacity=".44"/>
+  <rect x="100" y="148" width="204" height="8" rx="4" fill="#6B7280" fill-opacity=".34"/>
+  <rect x="100" y="164" width="216" height="8" rx="4" fill="#6B7280" fill-opacity=".34"/>
+  <rect x="100" y="180" width="144" height="8" rx="4" fill="#6B7280" fill-opacity=".24"/>
+
+  <rect x="100" y="210" width="236" height="72" rx="20" fill="#F5F3FF" stroke="#DDD6FE"/>
+  <rect x="100" y="210" width="6" height="72" rx="3" fill="#7C3AED"/>
+  <rect x="120" y="228" width="112" height="8" rx="4" fill="#7C3AED" fill-opacity=".8"/>
+  <rect x="120" y="244" width="174" height="8" rx="4" fill="#6B7280" fill-opacity=".46"/>
+  <rect x="120" y="260" width="152" height="8" rx="4" fill="#6B7280" fill-opacity=".34"/>
+
+  <rect x="100" y="300" width="154" height="10" rx="5" fill="#E5E7EB"/>
+
+  <rect x="392" y="48" width="140" height="304" rx="26" fill="#FAF7FF" filter="url(#shadow-copilot)"/>
+  <rect x="392" y="48" width="140" height="304" rx="26" stroke="#DDD6FE"/>
+  <rect x="414" y="74" width="54" height="10" rx="5" fill="#8B5CF6" fill-opacity=".82"/>
+  <rect x="414" y="94" width="38" height="8" rx="4" fill="#C4B5FD"/>
+
+  <rect x="412" y="120" width="100" height="92" rx="18" fill="#fff" stroke="#E9D5FF"/>
+  <rect x="412" y="120" width="4" height="92" rx="2" fill="#7C3AED"/>
+  <rect x="428" y="138" width="66" height="8" rx="4" fill="#374151" fill-opacity=".7"/>
+  <rect x="428" y="154" width="60" height="8" rx="4" fill="#6B7280" fill-opacity=".44"/>
+  <rect x="428" y="170" width="54" height="8" rx="4" fill="#6B7280" fill-opacity=".32"/>
+  <rect x="428" y="188" width="52" height="12" rx="6" fill="url(#panel-copilot)"/>
+
+  <rect x="412" y="228" width="100" height="38" rx="14" fill="#fff" stroke="#E5E7EB"/>
+  <circle cx="430" cy="247" r="6" fill="#C4B5FD"/>
+  <rect x="444" y="242" width="44" height="8" rx="4" fill="#6B7280" fill-opacity=".5"/>
+
+  <rect x="412" y="278" width="100" height="46" rx="14" fill="url(#panel-copilot)"/>
+  <rect x="428" y="297" width="68" height="8" rx="4" fill="#fff" fill-opacity=".9"/>
+</svg>

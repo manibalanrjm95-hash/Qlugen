@@ -5,6 +5,8 @@ export type BlogPost = {
   category: string;
   readTime: string;
   featured?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
   introduction?: string;
   content?: {
     heading: string;
@@ -22,6 +24,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Product Development",
     readTime: "6 min read",
     featured: true,
+    imageSrc: "/images/blog/ai-prototype-to-production.svg",
+    imageAlt: "Split view showing a rough wireframe prototype on the left transforming into a polished production dashboard with monitoring and integrations on the right",
     introduction:
       "The jump from prototype to production is where AI work becomes a product and engineering problem, not only a model problem.",
     content: [
@@ -48,6 +52,8 @@ export const blogPosts: BlogPost[] = [
       "Not every automation needs an autonomous agent. Learn how to choose between traditional workflows, AI-assisted automation and agentic systems.",
     category: "AI Agents",
     readTime: "5 min read",
+    imageSrc: "/images/blog/when-to-use-ai-agent.svg",
+    imageAlt: "Decision fork showing a simple linear automation flow on the left versus an intelligent AI agent with tools and flexible decision paths on the right",
     introduction:
       "Agentic systems are most useful when a workflow needs context, decisions, tool use and flexible sequencing.",
   },
@@ -58,6 +64,8 @@ export const blogPosts: BlogPost[] = [
       "Good AI UX makes capabilities, limitations and actions understandable instead of hiding complexity behind a chat box.",
     category: "AI Products",
     readTime: "5 min read",
+    imageSrc: "/images/blog/trustworthy-ai-product-design.svg",
+    imageAlt: "AI chat interface with visible source citations, confidence indicators, and human approval controls demonstrating transparent AI UX design",
   },
   {
     slug: "from-automation-to-agentic-workflows",
@@ -66,6 +74,8 @@ export const blogPosts: BlogPost[] = [
       "How AI changes traditional automation by adding context, reasoning and flexible decision-making.",
     category: "Automation",
     readTime: "4 min read",
+    imageSrc: "/images/blog/automation-to-agentic-workflows.svg",
+    imageAlt: "Before and after showing rigid linear automation steps on the left transforming into a dynamic agentic workflow with context, decisions and flexible outputs on the right",
   },
   {
     slug: "connecting-ai-to-enterprise-systems",
@@ -74,6 +84,8 @@ export const blogPosts: BlogPost[] = [
       "Why APIs, permissions, data and existing business applications are critical to making AI genuinely useful.",
     category: "Integration",
     readTime: "6 min read",
+    imageSrc: "/images/blog/ai-enterprise-integration.svg",
+    imageAlt: "Central AI platform connected via spokes to enterprise systems including databases, APIs, documents, cloud services and analytics",
   },
   {
     slug: "what-makes-an-ai-application-production-ready",
@@ -82,6 +94,8 @@ export const blogPosts: BlogPost[] = [
       "Reliability, evaluation, monitoring, latency and cost become just as important as model quality once real users arrive.",
     category: "Production AI",
     readTime: "6 min read",
+    imageSrc: "/images/blog/production-ready-ai.svg",
+    imageAlt: "Layered production AI architecture diagram showing user interface, evaluation, AI models, monitoring and infrastructure stacked from top to bottom",
   },
   {
     slug: "choosing-the-right-model-for-an-ai-product",
@@ -90,6 +104,8 @@ export const blogPosts: BlogPost[] = [
       "The best model is not always the largest. Product requirements should determine the balance between quality, speed and cost.",
     category: "AI Engineering",
     readTime: "5 min read",
+    imageSrc: "/images/blog/choosing-ai-model.svg",
+    imageAlt: "Three AI model options compared across speed, quality and cost dimensions with a routing arrow pointing to the selected balanced model",
   },
 ];
 

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import { blogPosts } from "@/lib/blog-data";
 
 type Props = {
@@ -42,7 +41,7 @@ export default async function BlogArticlePage({ params }: Props) {
     .slice(0, 3);
 
   return (
-    <div>
+    <div className="internal-page">
       <article className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24">
         <Link href="/tech-blogs">
           <Button
@@ -136,11 +135,6 @@ export default async function BlogArticlePage({ params }: Props) {
         </div>
       </section>
 
-      <CTA
-        title="Have an AI problem worth discussing?"
-        description="Tell us what your team is trying to build, improve or automate."
-        buttonLabel="Start a project"
-      />
     </div>
   );
 }

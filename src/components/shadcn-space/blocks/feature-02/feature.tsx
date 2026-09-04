@@ -1,11 +1,15 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import CardImage from "@/components/card-image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Asterisk, LucideIcon } from "lucide-react";
+import { Asterisk } from "lucide-react";
 import { motion } from "motion/react";
+import { BOOK_BUILD_CALL_URL } from "@/lib/booking";
 
 type Features = {
-  icon: LucideIcon;
+  imageSrc: string;
   title: string;
   content: string;
 }[];
@@ -63,10 +67,7 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                   >
                     <Card className="py-10 h-full border-t-4 border-t-transparent transition-all duration-300 hover:border-t-primary hover:shadow-lg">
                       <CardContent className="px-8 flex flex-col gap-6">
-                        <value.icon
-                          className="w-8 h-8 text-primary"
-                          strokeWidth={1.2}
-                        />
+                        <CardImage src={value.imageSrc} seed={value.title} className="h-32 w-full" />
                         <div className="flex flex-col gap-3">
                           <h6 className="text-xl font-semibold">
                             {value.title}
@@ -97,9 +98,11 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                   Practical, secure, and production-focused AI development for modern teams
                 </p>
               </div>
-              <Button className="rounded-full px-5 py-2.5 shadow-xs h-full cursor-pointer">
-                <a href="#">Book a build call</a>
-              </Button>
+              <a href={BOOK_BUILD_CALL_URL} target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full px-5 py-2.5 shadow-xs h-full cursor-pointer">
+                  Book a Build Call
+                </Button>
+              </a>
             </motion.div>
           </div>
         </div>

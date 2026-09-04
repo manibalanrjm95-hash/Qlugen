@@ -1,22 +1,21 @@
 "use client";
 import Feature from "@/components/shadcn-space/blocks/feature-01/feature";
-import { ArrowDownUp, BellRing, RotateCw, Tag } from "lucide-react"
 
 const featureData = [
     {
-      icon: ArrowDownUp,
+      imageSrc: "product",
       content: "Turn product ideas into scoped AI features, prototypes, and production roadmaps.",
     },
     {
-      icon: BellRing,
+      imageSrc: "workflow",
       content: "Build automations that connect apps, data, approvals, and human review where needed.",
     },
     {
-      icon: RotateCw,
+      imageSrc: "agents",
       content: "Develop custom agents with tools, memory, guardrails, and measurable task performance.",
     },
     {
-      icon: Tag,
+      imageSrc: "systems",
       content: "Ship reusable components, integrations, and deployment patterns for faster iteration.",
     },
 ];

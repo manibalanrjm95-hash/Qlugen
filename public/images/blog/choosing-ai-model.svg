@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#ede9fe" stop-opacity="0.35"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1a1a2e" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- Page header -->
+  <rect x="28" y="22" width="160" height="9" rx="4" fill="#111827" fill-opacity="0.65"/>
+  <rect x="28" y="36" width="100" height="6" rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+
+  <!-- ── 3 MODEL OPTION CARDS (left cluster) ── -->
+
+  <!-- Model 1: SMALL / FAST -->
+  <rect x="28" y="62" width="190" height="240" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <!-- Header -->
+  <rect x="28" y="62" width="190" height="38" rx="14" fill="#f8f9fb"/>
+  <rect x="28" y="82" width="190" height="18" fill="#f8f9fb"/>
+  <rect x="28" y="100" width="190" height="1" fill="#e8eaed"/>
+  <rect x="44" y="72" width="56" height="8" rx="4" fill="#374151" fill-opacity="0.7"/>
+  <rect x="176" y="70" width="28" height="12" rx="6" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="180" y="73" width="20" height="5" rx="2" fill="#9ca3af" fill-opacity="0.55"/>
+  <!-- Body -->
+  <rect x="44" y="116" width="68" height="28" rx="6" fill="#f3f4f6"/>
+  <rect x="50" y="124" width="56" height="12" rx="3" fill="#374151" fill-opacity="0.65"/>
+  <!-- Metrics -->
+  <rect x="44" y="154" width="160" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="44" y="154" width="148" height="6" rx="3" fill="#16a34a" fill-opacity="0.65"/>
+  <rect x="44" y="162" width="56" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="44" y="174" width="160" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="44" y="174" width="60" height="6" rx="3" fill="#7c3aed" fill-opacity="0.5"/>
+  <rect x="44" y="182" width="56" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="44" y="194" width="160" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="44" y="194" width="148" height="6" rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <rect x="44" y="202" width="56" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <!-- Use case chip -->
+  <rect x="44" y="218" width="160" height="18" rx="9" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <rect x="52" y="223" width="144" height="6" rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <!-- Price indicator -->
+  <rect x="44" y="244" width="60" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="50" y="247" width="48" height="6" rx="3" fill="#6b7280" fill-opacity="0.6"/>
+  <rect x="112" y="244" width="76" height="14" rx="7" fill="#dcfce7"/>
+  <rect x="118" y="247" width="64" height="6" rx="3" fill="#16a34a" fill-opacity="0.7"/>
+  <!-- Not selected indicator -->
+  <rect x="44" y="270" width="160" height="24" rx="8" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="60" y="278" width="128" height="7" rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+
+  <!-- Model 2: MEDIUM / BALANCED (SELECTED) -->
+  <rect x="240" y="42" width="210" height="280" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="2" filter="url(#s)"/>
+  <!-- Selected indicator at top -->
+  <rect x="240" y="42" width="210" height="6" rx="3" fill="#7c3aed"/>
+  <!-- Selected badge -->
+  <rect x="305" y="28" width="80" height="20" rx="10" fill="#7c3aed"/>
+  <rect x="315" y="33" width="60" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+  <!-- Header -->
+  <rect x="240" y="48" width="210" height="42" rx="14" fill="#faf8ff"/>
+  <rect x="240" y="76" width="210" height="14" fill="#faf8ff"/>
+  <rect x="240" y="90" width="210" height="1" fill="#e0d9f7"/>
+  <rect x="256" y="62" width="68" height="8" rx="4" fill="#7c3aed" fill-opacity="0.85"/>
+  <rect x="392" y="60" width="44" height="14" rx="7" fill="#7c3aed"/>
+  <rect x="398" y="63" width="32" height="6" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+  <!-- Body -->
+  <rect x="256" y="104" width="80" height="36" rx="8" fill="#ede9fe"/>
+  <rect x="264" y="114" width="64" height="16" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+  <rect x="270" y="119" width="52" height="6" rx="3" fill="#7c3aed" fill-opacity="0.8"/>
+  <!-- Metrics (better balanced) -->
+  <rect x="256" y="150" width="178" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="256" y="150" width="128" height="6" rx="3" fill="#7c3aed" fill-opacity="0.65"/>
+  <rect x="256" y="158" width="64" height="5" rx="2" fill="#7c3aed" fill-opacity="0.45"/>
+  <rect x="256" y="170" width="178" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="256" y="170" width="128" height="6" rx="3" fill="#7c3aed" fill-opacity="0.65"/>
+  <rect x="256" y="178" width="60" height="5" rx="2" fill="#7c3aed" fill-opacity="0.4"/>
+  <rect x="256" y="190" width="178" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="256" y="190" width="108" height="6" rx="3" fill="#7c3aed" fill-opacity="0.6"/>
+  <rect x="256" y="198" width="52" height="5" rx="2" fill="#7c3aed" fill-opacity="0.4"/>
+  <!-- Use case -->
+  <rect x="256" y="214" width="178" height="18" rx="9" fill="#ede9fe" stroke="#ddd6fe" stroke-width="1"/>
+  <rect x="264" y="219" width="162" height="6" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <!-- Price + budget chip -->
+  <rect x="256" y="240" width="76" height="14" rx="7" fill="#ede9fe"/>
+  <rect x="262" y="243" width="64" height="6" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <rect x="340" y="240" width="60" height="14" rx="7" fill="#fef3c7"/>
+  <rect x="346" y="243" width="48" height="6" rx="3" fill="#d97706" fill-opacity="0.7"/>
+  <!-- Selected CTA -->
+  <rect x="256" y="262" width="178" height="32" rx="10" fill="#7c3aed"/>
+  <rect x="280" y="273" width="130" height="9" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+  <!-- Confidence metric -->
+  <rect x="256" y="302" width="178" height="12" rx="6" fill="#f5f0ff"/>
+  <rect x="262" y="305" width="100" height="5" rx="2" fill="#7c3aed" fill-opacity="0.5"/>
+  <rect x="368" y="305" width="56" height="5" rx="2" fill="#7c3aed" fill-opacity="0.75"/>
+
+  <!-- Model 3: LARGE / CAPABLE -->
+  <rect x="472" y="62" width="190" height="240" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="472" y="62" width="190" height="38" rx="14" fill="#f8f9fb"/>
+  <rect x="472" y="82" width="190" height="18" fill="#f8f9fb"/>
+  <rect x="472" y="100" width="190" height="1" fill="#e8eaed"/>
+  <rect x="488" y="72" width="56" height="8" rx="4" fill="#374151" fill-opacity="0.7"/>
+  <rect x="620" y="70" width="28" height="12" rx="6" fill="#fef3c7"/>
+  <rect x="624" y="73" width="20" height="5" rx="2" fill="#d97706" fill-opacity="0.7"/>
+  <!-- Body -->
+  <rect x="488" y="116" width="68" height="28" rx="6" fill="#f3f4f6"/>
+  <rect x="494" y="124" width="56" height="12" rx="3" fill="#374151" fill-opacity="0.5"/>
+  <!-- Metrics (high quality, slow, expensive) -->
+  <rect x="488" y="154" width="160" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="488" y="154" width="40" height="6" rx="3" fill="#ef4444" fill-opacity="0.5"/>
+  <rect x="488" y="162" width="56" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="488" y="174" width="160" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="488" y="174" width="156" height="6" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <rect x="488" y="182" width="56" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="488" y="194" width="160" height="6" rx="3" fill="#e5e7eb"/>
+  <rect x="488" y="194" width="28" height="6" rx="3" fill="#ef4444" fill-opacity="0.5"/>
+  <rect x="488" y="202" width="56" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="488" y="218" width="160" height="18" rx="9" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <rect x="496" y="223" width="144" height="6" rx="3" fill="#d97706" fill-opacity="0.7"/>
+  <rect x="488" y="244" width="60" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="494" y="247" width="48" height="6" rx="3" fill="#6b7280" fill-opacity="0.6"/>
+  <rect x="556" y="244" width="76" height="14" rx="7" fill="#fee2e2"/>
+  <rect x="562" y="247" width="64" height="6" rx="3" fill="#ef4444" fill-opacity="0.65"/>
+  <!-- Not selected -->
+  <rect x="488" y="270" width="160" height="24" rx="8" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="504" y="278" width="128" height="7" rx="3" fill="#9ca3af" fill-opacity="0.55"/>
+
+  <!-- ── REQUIREMENT PANEL (right) ── -->
+  <rect x="688" y="62" width="84" height="240" rx="12" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1" filter="url(#s)"/>
+  <rect x="700" y="74" width="60" height="6" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <!-- Requirement sliders -->
+  <rect x="700" y="88" width="44" height="5" rx="2" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="700" y="98" width="60" height="5" rx="3" fill="#e5e7eb"/>
+  <rect x="700" y="98" width="42" height="5" rx="3" fill="#7c3aed" fill-opacity="0.65"/>
+  <circle cx="742" cy="100" r="5" fill="#7c3aed"/>
+  <rect x="700" y="112" width="44" height="5" rx="2" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="700" y="122" width="60" height="5" rx="3" fill="#e5e7eb"/>
+  <rect x="700" y="122" width="28" height="5" rx="3" fill="#7c3aed" fill-opacity="0.55"/>
+  <circle cx="728" cy="124" r="5" fill="#7c3aed"/>
+  <rect x="700" y="136" width="44" height="5" rx="2" fill="#9ca3af" fill-opacity="0.55"/>
+  <rect x="700" y="146" width="60" height="5" rx="3" fill="#e5e7eb"/>
+  <rect x="700" y="146" width="50" height="5" rx="3" fill="#7c3aed" fill-opacity="0.7"/>
+  <circle cx="750" cy="148" r="5" fill="#7c3aed"/>
+  <!-- Routing arrow pointing to selected model -->
+  <path d="M 696 220 L 466 180" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <path d="M 462 176 L 468 182 L 460 185" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Match label -->
+  <rect x="700" y="244" width="60" height="28" rx="8" fill="#7c3aed"/>
+  <rect x="706" y="252" width="48" height="7" rx="3" fill="#ffffff" fill-opacity="0.85"/>
+  <rect x="706" y="262" width="36" height="5" rx="2" fill="#ffffff" fill-opacity="0.5"/>
+
+  <!-- Bottom requirement summary -->
+  <rect x="28" y="328" width="744" height="48" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" filter="url(#s)"/>
+  <rect x="44" y="342" width="80" height="6" rx="3" fill="#111827" fill-opacity="0.65"/>
+  <rect x="44" y="353" width="120" height="5" rx="2" fill="#9ca3af" fill-opacity="0.5"/>
+  <rect x="190" y="338" width="120" height="28" rx="8" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1"/>
+  <rect x="200" y="347" width="100" height="6" rx="3" fill="#7c3aed" fill-opacity="0.6"/>
+  <rect x="200" y="357" width="76" height="5" rx="2" fill="#7c3aed" fill-opacity="0.35"/>
+  <rect x="326" y="338" width="120" height="28" rx="8" fill="#f5f0ff" stroke="#e0d9f7" stroke-width="1"/>
+  <rect x="336" y="347" width="100" height="6" rx="3" fill="#7c3aed" fill-opacity="0.6"/>
+  <rect x="336" y="357" width="76" height="5" rx="2" fill="#7c3aed" fill-opacity="0.35"/>
+  <rect x="462" y="338" width="120" height="28" rx="8" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+  <rect x="472" y="347" width="100" height="6" rx="3" fill="#16a34a" fill-opacity="0.65"/>
+  <rect x="472" y="357" width="76" height="5" rx="2" fill="#16a34a" fill-opacity="0.35"/>
+  <rect x="614" y="338" width="140" height="28" rx="8" fill="#7c3aed"/>
+  <rect x="628" y="347" width="112" height="7" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+  <rect x="636" y="358" width="80" height="5" rx="2" fill="#ffffff" fill-opacity="0.5"/>
+</svg>

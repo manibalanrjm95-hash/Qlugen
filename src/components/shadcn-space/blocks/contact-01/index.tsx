@@ -9,7 +9,7 @@ const Contact = () => {
           <div className="w-full col-span-12 md:col-span-6">
             <ContactInfo />
           </div>
-          <div className="col-span-1"></div>
+          <div className="hidden md:col-span-1 md:block"></div>
           <div className="w-full col-span-12 md:col-span-5">
             <ContactForm />
           </div>

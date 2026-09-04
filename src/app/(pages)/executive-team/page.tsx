@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Blocks, Lightbulb, Rocket } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import InternalPageHeader from "@/components/internal-page-header";
 
 export const metadata: Metadata = {
@@ -20,14 +19,29 @@ const leaders: {
 }[] = [];
 
 const approach = [
-  ["Product Thinking", "Start from user and business needs.", Lightbulb],
-  ["Technical Depth", "Make architecture and engineering decisions appropriate for production.", Blocks],
-  ["Delivery Ownership", "Stay focused on turning plans into working outcomes.", Rocket],
-] as const;
+  {
+    title: "Product Thinking",
+    body: "Start from user and business needs.",
+    imageSrc: "/images/company/leadership-product.svg",
+    imageAlt: "Product strategy view showing user personas, feature priority board and decision framework",
+  },
+  {
+    title: "Technical Depth",
+    body: "Make architecture and engineering decisions appropriate for production.",
+    imageSrc: "/images/company/leadership-technical.svg",
+    imageAlt: "Layered technical architecture diagram showing interface, AI logic, data integration and infrastructure layers",
+  },
+  {
+    title: "Delivery Ownership",
+    body: "Stay focused on turning plans into working outcomes.",
+    imageSrc: "/images/company/leadership-delivery.svg",
+    imageAlt: "Delivery timeline with stages from concept through design and build to an active deployed production state",
+  },
+];
 
 export default function ExecutiveTeamPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="Executive Team"
         title="Leadership focused on building useful technology."
@@ -56,6 +70,9 @@ export default function ExecutiveTeamPage() {
             </div>
           ) : (
             <div className="max-w-2xl rounded-2xl border bg-card p-8">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-2xl font-semibold text-primary">
+                Q
+              </div>
               <h3 className="mb-3 text-xl font-semibold">Leadership profiles are ready to add.</h3>
               <p className="leading-relaxed text-muted-foreground">
                 Verified executive names, roles, biographies, photos and LinkedIn URLs are needed before leadership cards can be published.
@@ -74,13 +91,17 @@ export default function ExecutiveTeamPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {approach.map(([title, body, Icon]) => (
-              <article key={title} className="rounded-2xl border bg-card p-6">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+            {approach.map(({ title, body, imageSrc, imageAlt }) => (
+              <article key={title} className="rounded-2xl border bg-card overflow-hidden">
+                <div className="relative w-full aspect-[3/2] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={imageSrc} alt={imageAlt}
+                       className="h-full w-full object-cover" loading="lazy"/>
                 </div>
-                <h3 className="mb-2 font-semibold">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
+                <div className="p-6">
+                  <h3 className="mb-2 font-semibold">{title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -99,7 +120,6 @@ export default function ExecutiveTeamPage() {
         </div>
       </section>
 
-      <CTA title="Talk to our team." description="Tell us what you're trying to build or improve." buttonLabel="Contact us" />
     </div>
   );
 }

@@ -83,7 +83,7 @@ const Blog = () => {
               );
               return (
                 <motion.a
-                  href={`#`}
+                  href="/tech-blogs"
                   key={index}
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}

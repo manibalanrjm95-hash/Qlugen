@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="100%" stop-color="#0d0a1e"/>
+    </linearGradient>
+    <radialGradient id="chipGlow" cx="50%" cy="50%" r="38%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.0"/>
+    </radialGradient>
+    <pattern id="circuitGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none" stroke="#7c3aed" stroke-opacity="0.07" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="338" fill="url(#bg)"/>
+  <rect width="600" height="338" fill="url(#circuitGrid)"/>
+  <rect width="600" height="338" fill="url(#chipGlow)"/>
+
+  <!-- Circuit traces — left cluster -->
+  <line x1="80"  y1="120" x2="200" y2="120" stroke="#7c3aed" stroke-opacity="0.45" stroke-width="1.5"/>
+  <line x1="200" y1="120" x2="200" y2="169" stroke="#7c3aed" stroke-opacity="0.45" stroke-width="1.5"/>
+  <line x1="200" y1="169" x2="262" y2="169" stroke="#7c3aed" stroke-opacity="0.45" stroke-width="1.5"/>
+  <line x1="80"  y1="220" x2="160" y2="220" stroke="#4338ca" stroke-opacity="0.38" stroke-width="1.5"/>
+  <line x1="160" y1="220" x2="160" y2="169" stroke="#4338ca" stroke-opacity="0.38" stroke-width="1.5"/>
+  <line x1="160" y1="169" x2="262" y2="169" stroke="#4338ca" stroke-opacity="0.38" stroke-width="1.5"/>
+
+  <!-- Circuit traces — right cluster -->
+  <line x1="338" y1="169" x2="400" y2="169" stroke="#7c3aed" stroke-opacity="0.42" stroke-width="1.5"/>
+  <line x1="400" y1="169" x2="400" y2="100" stroke="#7c3aed" stroke-opacity="0.38" stroke-width="1.5"/>
+  <line x1="400" y1="100" x2="520" y2="100" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+  <line x1="400" y1="169" x2="400" y2="240" stroke="#4338ca" stroke-opacity="0.32" stroke-width="1.5"/>
+  <line x1="400" y1="240" x2="520" y2="240" stroke="#4338ca" stroke-opacity="0.3"  stroke-width="1.5"/>
+
+  <!-- Vertical stubs from chip -->
+  <line x1="300" y1="82"  x2="300" y2="131" stroke="#818cf8" stroke-opacity="0.32" stroke-width="1.0"/>
+  <line x1="300" y1="207" x2="300" y2="256" stroke="#818cf8" stroke-opacity="0.32" stroke-width="1.0"/>
+
+  <!-- Processor chip body -->
+  <rect x="262" y="131" width="76" height="76" rx="5"
+        stroke="#7c3aed" stroke-width="2" fill="#7c3aed" fill-opacity="0.09"/>
+  <rect x="272" y="141" width="56" height="56" rx="3"
+        stroke="#a78bfa" stroke-width="1" fill="#a78bfa" fill-opacity="0.05"/>
+
+  <!-- Chip pins — left -->
+  <line x1="242" y1="147" x2="262" y2="147" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="242" y1="162" x2="262" y2="162" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="242" y1="177" x2="262" y2="177" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="242" y1="192" x2="262" y2="192" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <!-- right -->
+  <line x1="338" y1="147" x2="358" y2="147" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="338" y1="162" x2="358" y2="162" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="338" y1="177" x2="358" y2="177" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="338" y1="192" x2="358" y2="192" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <!-- top -->
+  <line x1="284" y1="111" x2="284" y2="131" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="300" y1="111" x2="300" y2="131" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="316" y1="111" x2="316" y2="131" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <!-- bottom -->
+  <line x1="284" y1="207" x2="284" y2="227" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="300" y1="207" x2="300" y2="227" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+  <line x1="316" y1="207" x2="316" y2="227" stroke="#7c3aed" stroke-opacity="0.65" stroke-width="1.5"/>
+
+  <!-- Junction nodes -->
+  <circle cx="200" cy="120" r="3" fill="#a78bfa"/>
+  <circle cx="200" cy="169" r="3" fill="#a78bfa"/>
+  <circle cx="160" cy="169" r="3" fill="#818cf8"/>
+  <circle cx="400" cy="169" r="3" fill="#a78bfa"/>
+  <circle cx="400" cy="100" r="3" fill="#a78bfa"/>
+  <circle cx="400" cy="240" r="3" fill="#818cf8"/>
+
+  <!-- Chip center glow -->
+  <circle cx="300" cy="169" r="22" fill="#7c3aed" fill-opacity="0.14"/>
+  <circle cx="300" cy="169" r="5"  fill="#a78bfa" fill-opacity="0.45"/>
+
+  <!-- Endpoint nodes -->
+  <circle cx="520" cy="100" r="4" fill="#7c3aed" fill-opacity="0.75"/>
+  <circle cx="520" cy="240" r="4" fill="#4338ca" fill-opacity="0.7"/>
+  <circle cx="80"  cy="120" r="4" fill="#7c3aed" fill-opacity="0.7"/>
+  <circle cx="80"  cy="220" r="4" fill="#4338ca" fill-opacity="0.65"/>
+
+  <rect width="600" height="338" fill="#1e1b4b" fill-opacity="0.05"/>
+</svg>

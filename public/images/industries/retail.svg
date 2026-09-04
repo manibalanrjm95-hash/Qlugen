@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07070f"/>
+      <stop offset="100%" stop-color="#0c0a1a"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="45%" r="48%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.0"/>
+    </radialGradient>
+    <linearGradient id="shelfGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0.0"/>
+      <stop offset="50%"  stop-color="#7c3aed" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.0"/>
+    </linearGradient>
+    <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="0" cy="0" r="0.6" fill="#ffffff" fill-opacity="0.055"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="338" fill="url(#bg)"/>
+  <rect width="600" height="338" fill="url(#dotGrid)"/>
+  <rect width="600" height="338" fill="url(#centerGlow)"/>
+
+  <!-- Shelf rails -->
+  <rect x="55" y="88"  width="490" height="2" rx="1" fill="url(#shelfGrad)"/>
+  <rect x="55" y="168" width="490" height="2" rx="1" fill="url(#shelfGrad)"/>
+  <rect x="55" y="248" width="490" height="2" rx="1" fill="url(#shelfGrad)"/>
+
+  <!-- Row 1 (y 18–86) — 6 product slots, item w=64, gap=14, start=58 -->
+  <rect x="58"  y="18" width="64" height="68" rx="4" stroke="#7c3aed" stroke-opacity="0.36" stroke-width="1.2" fill="#7c3aed" fill-opacity="0.06"/>
+  <rect x="136" y="28" width="64" height="58" rx="4" stroke="#4338ca" stroke-opacity="0.28" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="214" y="18" width="64" height="68" rx="4" stroke="#7c3aed" stroke-opacity="0.32" stroke-width="1.0" fill="#7c3aed" fill-opacity="0.05"/>
+  <rect x="292" y="26" width="64" height="60" rx="4" stroke="#4338ca" stroke-opacity="0.3"  stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="370" y="18" width="64" height="68" rx="4" stroke="#7c3aed" stroke-opacity="0.28" stroke-width="1.0" fill="#7c3aed" fill-opacity="0.04"/>
+  <rect x="448" y="24" width="64" height="62" rx="4" stroke="#4338ca" stroke-opacity="0.26" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+
+  <!-- Row 2 (y 96–166) -->
+  <rect x="58"  y="96"  width="64" height="70" rx="4" stroke="#4338ca" stroke-opacity="0.3"  stroke-width="1.0" fill="#4338ca" fill-opacity="0.05"/>
+  <rect x="136" y="100" width="64" height="66" rx="4" stroke="#7c3aed" stroke-opacity="0.42" stroke-width="1.5" fill="#7c3aed" fill-opacity="0.08"/>
+  <rect x="214" y="96"  width="64" height="70" rx="4" stroke="#4338ca" stroke-opacity="0.26" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="292" y="103" width="64" height="63" rx="4" stroke="#7c3aed" stroke-opacity="0.36" stroke-width="1.2" fill="#7c3aed" fill-opacity="0.07"/>
+  <rect x="370" y="96"  width="64" height="70" rx="4" stroke="#4338ca" stroke-opacity="0.26" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="448" y="100" width="64" height="66" rx="4" stroke="#7c3aed" stroke-opacity="0.3"  stroke-width="1.0" fill="#7c3aed" fill-opacity="0.05"/>
+
+  <!-- Row 3 (y 176–246) -->
+  <rect x="58"  y="176" width="64" height="70" rx="4" stroke="#7c3aed" stroke-opacity="0.34" stroke-width="1.2" fill="#7c3aed" fill-opacity="0.06"/>
+  <rect x="136" y="181" width="64" height="65" rx="4" stroke="#4338ca" stroke-opacity="0.24" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="214" y="176" width="64" height="70" rx="4" stroke="#7c3aed" stroke-opacity="0.28" stroke-width="1.0" fill="#7c3aed" fill-opacity="0.05"/>
+  <rect x="292" y="183" width="64" height="63" rx="4" stroke="#4338ca" stroke-opacity="0.38" stroke-width="1.2" fill="#4338ca" fill-opacity="0.07"/>
+  <rect x="370" y="176" width="64" height="70" rx="4" stroke="#7c3aed" stroke-opacity="0.26" stroke-width="1.0" fill="#7c3aed" fill-opacity="0.04"/>
+  <rect x="448" y="181" width="64" height="65" rx="4" stroke="#4338ca" stroke-opacity="0.3"  stroke-width="1.0" fill="#4338ca" fill-opacity="0.05"/>
+
+  <!-- Row 4 (y 256–316) -->
+  <rect x="58"  y="256" width="64" height="60" rx="4" stroke="#4338ca" stroke-opacity="0.24" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="136" y="256" width="64" height="60" rx="4" stroke="#7c3aed" stroke-opacity="0.28" stroke-width="1.0" fill="#7c3aed" fill-opacity="0.05"/>
+  <rect x="214" y="256" width="64" height="60" rx="4" stroke="#4338ca" stroke-opacity="0.3"  stroke-width="1.2" fill="#4338ca" fill-opacity="0.06"/>
+  <rect x="292" y="256" width="64" height="60" rx="4" stroke="#7c3aed" stroke-opacity="0.22" stroke-width="1.0" fill="#7c3aed" fill-opacity="0.04"/>
+  <rect x="370" y="256" width="64" height="60" rx="4" stroke="#4338ca" stroke-opacity="0.26" stroke-width="1.0" fill="#4338ca" fill-opacity="0.04"/>
+  <rect x="448" y="256" width="64" height="60" rx="4" stroke="#7c3aed" stroke-opacity="0.34" stroke-width="1.2" fill="#7c3aed" fill-opacity="0.07"/>
+
+  <!-- Featured product highlight (row 2, slot 2) -->
+  <rect x="136" y="100" width="64" height="66" rx="4"
+        stroke="#a78bfa" stroke-opacity="0.72" stroke-width="2" fill="none"/>
+  <circle cx="168" cy="133" r="13" fill="#a78bfa" fill-opacity="0.13"/>
+
+  <!-- Scan/barcode lines (far right edge) -->
+  <line x1="527" y1="96"  x2="572" y2="96"  stroke="#7c3aed" stroke-opacity="0.32" stroke-width="2.0"/>
+  <line x1="527" y1="101" x2="572" y2="101" stroke="#7c3aed" stroke-opacity="0.14" stroke-width="1.0"/>
+  <line x1="527" y1="106" x2="572" y2="106" stroke="#7c3aed" stroke-opacity="0.26" stroke-width="1.5"/>
+  <line x1="527" y1="111" x2="572" y2="111" stroke="#7c3aed" stroke-opacity="0.10" stroke-width="0.8"/>
+  <line x1="527" y1="116" x2="572" y2="116" stroke="#7c3aed" stroke-opacity="0.30" stroke-width="2.0"/>
+  <line x1="527" y1="121" x2="572" y2="121" stroke="#7c3aed" stroke-opacity="0.18" stroke-width="1.2"/>
+
+  <rect width="600" height="338" fill="#1e1b4b" fill-opacity="0.05"/>
+</svg>

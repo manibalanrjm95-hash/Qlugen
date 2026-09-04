@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BrainCircuit, Building2, CloudCog, Database } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import InternalPageHeader from "@/components/internal-page-header";
 
 export const metadata: Metadata = {
@@ -12,22 +12,22 @@ export const metadata: Metadata = {
 };
 
 const ecosystem = [
-  ["AI Models & Platforms", "Models and AI platforms used to power language, reasoning, vision and intelligent product experiences.", BrainCircuit],
-  ["Cloud & Infrastructure", "Infrastructure for deploying, operating and scaling production AI applications.", CloudCog],
-  ["Data & Knowledge", "Databases, search and knowledge systems that provide AI applications with the right business context.", Database],
-  ["Business Systems & APIs", "Enterprise applications and APIs that allow AI products and agents to work inside existing workflows.", Building2],
+  ["AI Models & Platforms", "Models and AI platforms used to power language, reasoning, vision and intelligent product experiences.", "/images/partners/ai-models-platforms.webp"],
+  ["Cloud & Infrastructure", "Infrastructure for deploying, operating and scaling production AI applications.", "/images/partners/cloud-infrastructure.webp"],
+  ["Data & Knowledge", "Databases, search and knowledge systems that provide AI applications with the right business context.", "/images/partners/data-knowledge.webp"],
+  ["Business Systems & APIs", "Enterprise applications and APIs that allow AI products and agents to work inside existing workflows.", "/images/partners/business-systems-apis.webp"],
 ] as const;
 
 const principles = [
-  ["Model-flexible", "Choose models based on the quality, speed, privacy and cost requirements of the product."],
-  ["Integration-first", "Design around the systems and data teams already use."],
-  ["Production-focused", "Consider reliability, monitoring and operating cost from the beginning."],
-  ["Future-ready", "Keep architecture flexible enough to evolve as AI technology changes."],
+  ["Model-flexible", "Choose models based on the quality, speed, privacy and cost requirements of the product.", "/images/partners/model-flexible.webp"],
+  ["Integration-first", "Design around the systems and data teams already use.", "/images/partners/integration-first.webp"],
+  ["Production-focused", "Consider reliability, monitoring and operating cost from the beginning.", "/images/partners/production-focused.webp"],
+  ["Future-ready", "Keep architecture flexible enough to evolve as AI technology changes.", "/images/partners/future-ready.webp"],
 ] as const;
 
 export default function PartnersPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="Partners"
         title="Better AI starts with the right technology."
@@ -43,10 +43,16 @@ export default function PartnersPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {ecosystem.map(([title, body, Icon]) => (
+            {ecosystem.map(([title, body, image]) => (
               <article key={title} className="rounded-2xl border bg-card p-6">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-2xl border bg-muted/40">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 22vw, (min-width: 768px) 45vw, 92vw"
+                  />
                 </div>
                 <h3 className="mb-2 font-semibold">{title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
@@ -60,8 +66,17 @@ export default function PartnersPage() {
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 lg:px-8">
           <h2 id="technology-heading" className="mb-10 text-3xl font-medium tracking-tight md:text-4xl">Technology should fit the problem.</h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {principles.map(([title, body]) => (
+            {principles.map(([title, body, image]) => (
               <article key={title} className="rounded-xl border bg-card p-5">
+                <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl border bg-muted/40">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 22vw, (min-width: 768px) 45vw, 92vw"
+                  />
+                </div>
                 <h3 className="mb-2 font-semibold">{title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
               </article>
@@ -87,11 +102,6 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <CTA
-        title="Already have a technology stack?"
-        description="We can help connect AI products and agents to the systems your team already relies on."
-        buttonLabel="Start a project"
-      />
     </div>
   );
 }

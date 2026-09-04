@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Bot, BrainCircuit, Cog, Layers } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import { blogCategories, blogPosts } from "@/lib/blog-data";
 import InternalPageHeader from "@/components/internal-page-header";
 
@@ -16,22 +15,26 @@ const topicCards = [
   {
     title: "AI Product Development",
     body: "Designing and building useful AI-powered applications.",
-    Icon: BrainCircuit,
+    imageSrc: "/images/blog/topic-ai-product-development.svg",
+    imageAlt: "Sophisticated AI product interface with dark sidebar, conversation panel and analytics widgets",
   },
   {
     title: "AI Agents",
     body: "Building systems that understand, decide and act.",
-    Icon: Bot,
+    imageSrc: "/images/blog/topic-ai-agents.svg",
+    imageAlt: "Central AI agent node connected to multiple tool and knowledge nodes through radiating network lines",
   },
   {
     title: "Automation",
     body: "Improving business workflows with AI and software.",
-    Icon: Cog,
+    imageSrc: "/images/blog/topic-automation.svg",
+    imageAlt: "Sequential workflow pipeline with business tasks progressing through connected process stages to a completed output",
   },
   {
     title: "AI Engineering",
     body: "Integration, architecture, evaluation and production deployment.",
-    Icon: Layers,
+    imageSrc: "/images/blog/topic-ai-engineering.svg",
+    imageAlt: "Technical AI architecture showing layered system with APIs, retrieval, models, evaluation and infrastructure components",
   },
 ];
 
@@ -47,29 +50,43 @@ function BlogCard({
       <article
         className={
           featured
-            ? "flex h-full flex-col rounded-2xl border bg-card p-8 transition-shadow hover:shadow-lg"
-            : "flex h-full flex-col rounded-2xl border bg-card p-6 transition-shadow hover:shadow-md"
+            ? "flex h-full flex-col rounded-2xl border bg-card overflow-hidden transition-all duration-200 hover:border-primary/20 hover:shadow-lg hover:-translate-y-0.5"
+            : "flex h-full flex-col rounded-2xl border bg-card overflow-hidden transition-all duration-200 hover:border-primary/20 hover:shadow-md hover:-translate-y-0.5"
         }
       >
-        <div className="mb-5 flex flex-wrap items-center gap-3">
-          <Badge variant="secondary">{post.category}</Badge>
-          <span className="text-xs text-muted-foreground">{post.readTime}</span>
+        {/* Unique per-article image */}
+        <div className={`relative w-full overflow-hidden ${featured ? "h-56" : "h-40"}`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.imageSrc ?? ""}
+            alt={post.imageAlt ?? ""}
+            aria-hidden={post.imageAlt ? undefined : "true"}
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
+            loading="lazy"
+          />
         </div>
-        <h2
-          className={
-            featured
-              ? "mb-4 text-2xl font-medium tracking-tight transition-colors group-hover:text-primary md:text-3xl"
-              : "mb-3 text-lg font-medium tracking-tight transition-colors group-hover:text-primary"
-          }
-        >
-          {post.title}
-        </h2>
-        <p className="mb-6 leading-relaxed text-muted-foreground">
-          {post.excerpt}
-        </p>
-        <span className="mt-auto flex items-center gap-1.5 text-sm font-medium text-primary">
-          Read article <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-        </span>
+
+        <div className={featured ? "flex flex-col flex-1 p-8" : "flex flex-col flex-1 p-6"}>
+          <div className="mb-5 flex flex-wrap items-center gap-3">
+            <Badge variant="secondary">{post.category}</Badge>
+            <span className="text-xs text-muted-foreground">{post.readTime}</span>
+          </div>
+          <h2
+            className={
+              featured
+                ? "mb-4 text-2xl font-medium tracking-tight transition-colors group-hover:text-primary md:text-3xl"
+                : "mb-3 text-lg font-medium tracking-tight transition-colors group-hover:text-primary"
+            }
+          >
+            {post.title}
+          </h2>
+          <p className="mb-6 leading-relaxed text-muted-foreground">
+            {post.excerpt}
+          </p>
+          <span className="mt-auto flex items-center gap-1.5 text-sm font-medium text-primary">
+            Read article <ArrowUpRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+          </span>
+        </div>
       </article>
     </Link>
   );
@@ -80,7 +97,7 @@ export default function TechBlogsPage() {
   const latestPosts = blogPosts.filter((post) => post.slug !== featuredPost.slug);
 
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="Tech Blogs"
         title="Practical ideas for building with AI."
@@ -143,26 +160,29 @@ export default function TechBlogsPage() {
             Explore by topic
           </h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {topicCards.map(({ Icon, title, body }) => (
-              <article key={title} className="rounded-2xl border bg-card p-6">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+            {topicCards.map(({ title, body, imageSrc, imageAlt }) => (
+              <article key={title} className="group rounded-2xl border bg-card overflow-hidden transition-all duration-200 hover:border-primary/20 hover:shadow-sm hover:-translate-y-0.5">
+                <div className="relative w-full aspect-[3/2] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="mb-2 font-semibold">{title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {body}
-                </p>
+                <div className="p-6">
+                  <h3 className="mb-2 font-semibold">{title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {body}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <CTA
-        title="Have an AI problem worth discussing?"
-        description="Tell us what your team is trying to build, improve or automate."
-        buttonLabel="Start a project"
-      />
     </div>
   );
 }

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#ede9fe" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1a1a2e" flood-opacity="0.07"/></filter>
+  </defs>
+  <rect width="800" height="180" fill="url(#bg)"/>
+
+  <!-- Top rail label -->
+  <rect x="316" y="10" width="168" height="10" rx="5" fill="#7c3aed" fill-opacity="0.1"/>
+  <rect x="330" y="12" width="140" height="5" rx="2" fill="#7c3aed" fill-opacity="0.55"/>
+
+  <!-- Feedback loop arc (background) -->
+  <path d="M 130 28 Q 400 4 670 28" stroke="#7c3aed" stroke-opacity="0.1" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
+
+  <!-- ── VERSION 1: Prototype (rough) ── -->
+  <rect x="14" y="32" width="196" height="118" rx="10" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="5 4" filter="url(#s)"/>
+  <!-- V1 label -->
+  <rect x="22" y="40" width="28" height="14" rx="7" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="26" y="44" width="20" height="5" rx="2" fill="#9ca3af" fill-opacity="0.6"/>
+  <!-- Rough layout boxes (wireframe-ish) -->
+  <rect x="22" y="60" width="80" height="10" rx="3" fill="#e5e7eb"/>
+  <rect x="22" y="76" width="176" height="38" rx="5" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <!-- X placeholder inside -->
+  <line x1="36" y1="84" x2="52" y2="106" stroke="#d1d5db" stroke-width="1.5"/>
+  <line x1="52" y1="84" x2="36" y2="106" stroke="#d1d5db" stroke-width="1.5"/>
+  <rect x="62" y="86" width="124" height="5" rx="2" fill="#e5e7eb"/>
+  <rect x="62" y="96" width="100" height="5" rx="2" fill="#e5e7eb"/>
+  <rect x="62" y="106" width="110" height="5" rx="2" fill="#e5e7eb"/>
+  <rect x="22" y="120" width="80" height="20" rx="5" fill="#e5e7eb"/>
+  <rect x="26" y="128" width="60" height="5" rx="2" fill="#d1d5db"/>
+  <rect x="108" y="120" width="90" height="20" rx="5" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="114" y="128" width="60" height="5" rx="2" fill="#d1d5db"/>
+  <!-- Feedback tag -->
+  <rect x="22" y="146" width="112" height="14" rx="7" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <rect x="30" y="150" width="96" height="5" rx="2" fill="#d97706" fill-opacity="0.65"/>
+
+  <!-- Arrow 1→2 (iteration) -->
+  <path d="M 212 90 L 290 90" stroke="#7c3aed" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+  <path d="M 286 86 L 292 90 L 286 94" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="251" cy="90" r="3" fill="#7c3aed" fill-opacity="0.5"/>
+  <!-- Feedback loop label -->
+  <rect x="224" y="60" width="56" height="12" rx="6" fill="#ede9fe"/>
+  <rect x="228" y="63" width="48" height="5" rx="2" fill="#7c3aed" fill-opacity="0.65"/>
+
+  <!-- ── VERSION 2: Improved ── -->
+  <rect x="294" y="32" width="196" height="118" rx="10" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.2" filter="url(#s)"/>
+  <!-- V2 label -->
+  <rect x="302" y="40" width="28" height="14" rx="7" fill="#ede9fe"/>
+  <rect x="306" y="44" width="20" height="5" rx="2" fill="#7c3aed" fill-opacity="0.6"/>
+  <!-- App header -->
+  <rect x="302" y="60" width="180" height="20" rx="5" fill="#f5f0ff"/>
+  <rect x="310" y="67" width="60" height="6" rx="3" fill="#7c3aed" fill-opacity="0.6"/>
+  <rect x="452" y="65" width="22" height="10" rx="5" fill="#ede9fe"/>
+  <!-- Content -->
+  <rect x="302" y="86" width="180" height="42" rx="5" fill="#f8f9fb" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="312" y="96"  width="80" height="6" rx="3" fill="#374151" fill-opacity="0.6"/>
+  <rect x="312" y="107" width="160" height="5" rx="2" fill="#6b7280" fill-opacity="0.45"/>
+  <rect x="312" y="116" width="140" height="5" rx="2" fill="#6b7280" fill-opacity="0.4"/>
+  <rect x="302" y="134" width="80" height="12" rx="6" fill="#7c3aed" fill-opacity="0.8"/>
+  <rect x="308" y="138" width="68" height="5" rx="2" fill="#fff" fill-opacity="0.85"/>
+  <!-- Feedback tag -->
+  <rect x="302" y="152" width="96" height="14" rx="7" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <rect x="310" y="156" width="80" height="5" rx="2" fill="#d97706" fill-opacity="0.6"/>
+
+  <!-- Arrow 2→3 -->
+  <path d="M 492 90 L 570 90" stroke="#7c3aed" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 566 86 L 572 90 L 566 94" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="531" cy="90" r="3" fill="#7c3aed" fill-opacity="0.6"/>
+  <rect x="508" y="60" width="52" height="12" rx="6" fill="#ede9fe"/>
+  <rect x="512" y="63" width="44" height="5" rx="2" fill="#7c3aed" fill-opacity="0.65"/>
+
+  <!-- ── VERSION 3: Polished Production ── -->
+  <rect x="574" y="22" width="212" height="136" rx="12" fill="#1e1a35" stroke="#7c3aed" stroke-opacity="0.4" stroke-width="1.5" filter="url(#s)"/>
+  <!-- V3 label (shipped) -->
+  <rect x="582" y="30" width="56" height="16" rx="8" fill="#7c3aed" fill-opacity="0.8"/>
+  <rect x="588" y="35" width="44" height="6" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <!-- Polished header -->
+  <rect x="582" y="52" width="196" height="22" rx="6" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <circle cx="592" cy="63" r="5" fill="#7c3aed" fill-opacity="0.8"/>
+  <rect x="602" y="60" width="64" height="6" rx="3" fill="#fff" fill-opacity="0.55"/>
+  <rect x="728" y="59" width="34" height="8" rx="4" fill="#dcfce7" fill-opacity="0.25"/>
+  <rect x="732" y="61" width="26" height="4" rx="2" fill="#16a34a" fill-opacity="0.7"/>
+  <!-- Polished content -->
+  <rect x="582" y="80" width="196" height="48" rx="6" fill="#7c3aed" fill-opacity="0.15" stroke="#a78bfa" stroke-opacity="0.2" stroke-width="1"/>
+  <rect x="592" y="90"  width="60" height="6" rx="3" fill="#a78bfa" fill-opacity="0.7"/>
+  <rect x="592" y="102" width="176" height="5" rx="2" fill="#fff" fill-opacity="0.4"/>
+  <rect x="592" y="111" width="160" height="5" rx="2" fill="#fff" fill-opacity="0.35"/>
+  <rect x="592" y="120" width="170" height="5" rx="2" fill="#fff" fill-opacity="0.32"/>
+  <!-- Actions -->
+  <rect x="582" y="134" width="80" height="16" rx="8" fill="#7c3aed"/>
+  <rect x="590" y="139" width="64" height="5" rx="2" fill="#fff" fill-opacity="0.9"/>
+  <rect x="670" y="134" width="50" height="16" rx="8" fill="#fff" fill-opacity="0.06" stroke="#fff" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="678" y="139" width="34" height="5" rx="2" fill="#fff" fill-opacity="0.38"/>
+  <!-- Shipped badge -->
+  <rect x="582" y="152" width="80" height="5" rx="2" fill="#dcfce7" fill-opacity="0.55"/>
+  <rect x="668" y="152" width="80" height="5" rx="2" fill="#dcfce7" fill-opacity="0.35"/>
+</svg>

@@ -23,9 +23,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import { blogPosts } from "@/lib/blog-data";
+import CardImage from "@/components/card-image";
 import InternalPageHeader from "@/components/internal-page-header";
+import VisualPanel from "@/components/visual-panel";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -249,7 +250,7 @@ const insightPosts = blogPosts.slice(0, 3);
 
 export default function AIAgentsAutomationPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="AI Agents & Automation"
         title="AI that does the work, not just answers questions."
@@ -272,6 +273,7 @@ export default function AIAgentsAutomationPage() {
             <div className="flex flex-col gap-4">
               {valuePoints.map((vp) => (
                 <div key={vp.title} className="p-5 rounded-xl border bg-muted/40">
+                  <CardImage src="agents" seed={vp.title} className="mb-4 h-24 w-full" />
                   <h3 className="font-semibold mb-1.5">{vp.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{vp.body}</p>
                 </div>
@@ -295,9 +297,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {agentTypes.map(({ Icon, title, body }) => (
               <div key={title} className="rounded-2xl border bg-card p-6 hover:shadow-sm transition-shadow">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
-                  <Icon className="w-5 h-5" aria-hidden="true" />
-                </div>
+                <VisualPanel variant="agents" className="mb-5" label={title} />
                 <h3 className="font-semibold mb-2">{title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
               </div>
@@ -320,6 +320,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {agentSteps.map(({ step, title, body }) => (
               <div key={step} className="rounded-2xl border bg-card p-5 flex flex-col gap-3">
+                <CardImage src="workflow" seed={title} className="mb-2 h-24 w-full" />
                 <span className="text-xs font-bold text-primary tracking-widest">{step}</span>
                 <h3 className="font-semibold text-sm">{title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -340,6 +341,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {automationLevels.map(({ level, title, desc, examples }) => (
               <div key={level} className="rounded-2xl border bg-card p-6 flex flex-col gap-4">
+                <CardImage src="workflow" seed={title} className="h-28 w-full" />
                 <div>
                   <span className="text-xs font-bold text-primary tracking-widest block mb-2">{level}</span>
                   <h3 className="font-semibold mb-2">{title}</h3>
@@ -378,9 +380,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {humanControl.map(({ Icon, title, body }) => (
               <div key={title} className="rounded-xl border bg-card p-5">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3">
-                  <Icon className="w-4 h-4" aria-hidden="true" />
-                </div>
+                <VisualPanel variant="systems" className="mb-4" label={title} />
                 <h3 className="font-semibold text-sm mb-1">{title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
               </div>
@@ -400,9 +400,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {useCases.map(({ Icon, title, body }) => (
               <div key={title} className="rounded-xl border bg-card p-5 flex gap-4">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Icon className="w-4 h-4" aria-hidden="true" />
-                </div>
+                <VisualPanel variant="workflow" className="h-16 w-20 shrink-0" label={title} />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -429,9 +427,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {productionBlocks.map(({ Icon, title, body }) => (
               <div key={title} className="rounded-xl border bg-card p-5 flex gap-4">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Icon className="w-4 h-4" aria-hidden="true" />
-                </div>
+                <VisualPanel variant="data" className="h-16 w-20 shrink-0" label={title} />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -453,6 +449,7 @@ export default function AIAgentsAutomationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {processSteps.map(({ step, title, body }) => (
               <div key={step} className="rounded-2xl border bg-card p-5 flex flex-col gap-3">
+                <CardImage src="workflow" seed={title} className="mb-2 h-24 w-full" />
                 <span className="text-xs font-bold text-primary tracking-widest">{step}</span>
                 <h3 className="font-semibold text-sm">{title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -516,6 +513,7 @@ export default function AIAgentsAutomationPage() {
             {insightPosts.map((post) => (
               <Link key={post.slug} href={`/tech-blogs/${post.slug}`} className="group block">
                 <article className="rounded-2xl border bg-card p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                  <CardImage src="editorial" seed={post.title} className="mb-5 h-40 w-full" />
                   <div className="flex items-center gap-3 mb-4">
                     <Badge variant="secondary">{post.category}</Badge>
                     <span className="text-xs text-muted-foreground">{post.readTime}</span>
@@ -536,8 +534,6 @@ export default function AIAgentsAutomationPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────────── */}
-      <CTA />
     </div>
   );
 }

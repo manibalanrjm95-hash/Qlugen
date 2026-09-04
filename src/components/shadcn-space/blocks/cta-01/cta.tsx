@@ -1,26 +1,25 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { CalBookingModal } from "@/components/cal-booking-modal";
 
 type CTAProps = {
   className?: string;
   title?: string;
   description?: string;
   buttonLabel?: string;
-  href?: string;
 };
 
 const CTA = ({
   className,
   title = "Build your next AI product with Qlugen",
   description = "Let's turn your idea into a production-ready AI app, agent, automation, or integration your team can actually use.",
-  buttonLabel = "Start a project",
-  href = "/contact",
+  buttonLabel = "Book a Build Call",
 }: CTAProps) => {
   const ref = useRef(null);
+  const [calOpen, setCalOpen] = useState(false);
 
   const bottomAnimation = {
     initial: { y: "5%", opacity: 0 },
@@ -48,16 +47,18 @@ const CTA = ({
                   {description}
                   </p>
                 </div>
-              <Link href={href}>
-                <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden hover:bg-primary/80 cursor-pointer">
-                  <span className="relative z-10 transition-all duration-500">
-                    {buttonLabel}
-                  </span>
-                  <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                    <ArrowUpRight size={16} />
-                  </div>
-                </Button>
-              </Link>
+              <Button
+                onClick={() => setCalOpen(true)}
+                className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden hover:bg-primary/80 cursor-pointer"
+              >
+                <span className="relative z-10 transition-all duration-500">
+                  {buttonLabel}
+                </span>
+                <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                  <ArrowUpRight size={16} />
+                </div>
+              </Button>
+              <CalBookingModal open={calOpen} onOpenChange={setCalOpen} />
             </motion.div>
           </div>
         </div>

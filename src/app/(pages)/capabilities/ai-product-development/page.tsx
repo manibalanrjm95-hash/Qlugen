@@ -1,32 +1,11 @@
 import Link from "next/link";
 import {
   ArrowUpRight,
-  AppWindow,
-  MessageSquareMore,
-  BookOpen,
-  ScanText,
-  SearchCode,
-  Wrench,
-  CheckCircle,
-  Zap,
-  ShieldCheck,
-  Database,
-  MousePointerClick,
-  BarChart2,
-  BrainCircuit,
-  Globe,
-  Cloud,
-  Activity,
-  HeadphonesIcon,
-  Settings2,
-  TrendingUp,
-  FileText,
-  LayoutDashboard,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import { blogPosts } from "@/lib/blog-data";
+import CardImage from "@/components/card-image";
 import InternalPageHeader from "@/components/internal-page-header";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -48,32 +27,32 @@ const valuePoints = [
 
 const whatWeBuild = [
   {
-    Icon: AppWindow,
+    imageSrc: "product",
     title: "AI-Powered Applications",
     body: "Custom web or internal applications built around AI capabilities.",
   },
   {
-    Icon: MessageSquareMore,
+    imageSrc: "workflow",
     title: "AI Copilots",
     body: "Assistants embedded into existing workflows to help users research, create, analyse and act faster.",
   },
   {
-    Icon: BookOpen,
+    imageSrc: "editorial",
     title: "Knowledge Assistants",
     body: "AI systems that understand company documents, knowledge bases and internal information.",
   },
   {
-    Icon: ScanText,
+    imageSrc: "data",
     title: "Document Intelligence Products",
     body: "Applications that extract, understand and process information from documents.",
   },
   {
-    Icon: SearchCode,
+    imageSrc: "editorial",
     title: "AI Search & Discovery",
     body: "Natural-language experiences that help users find and understand information faster.",
   },
   {
-    Icon: Wrench,
+    imageSrc: "systems",
     title: "Internal AI Tools",
     body: "Purpose-built AI tools for operations, service, sales, finance and other business teams.",
   },
@@ -109,74 +88,74 @@ const processSteps = [
 
 const productionConcerns = [
   {
-    Icon: CheckCircle,
+    imageSrc: "editorial",
     title: "Quality",
     body: "Evaluate outputs and improve response relevance for real use cases.",
   },
   {
-    Icon: Zap,
+    imageSrc: "workflow",
     title: "Speed",
     body: "Design experiences and architecture around acceptable response times.",
   },
   {
-    Icon: ShieldCheck,
+    imageSrc: "systems",
     title: "Reliability",
     body: "Handle failures, edge cases and inconsistent model behaviour safely.",
   },
   {
-    Icon: Database,
+    imageSrc: "data",
     title: "Context",
     body: "Connect business data and knowledge so AI can provide useful, grounded responses.",
   },
   {
-    Icon: MousePointerClick,
+    imageSrc: "people",
     title: "User Experience",
     body: "Design clear human-AI interactions that users can understand and trust.",
   },
   {
-    Icon: BarChart2,
+    imageSrc: "data",
     title: "Scale & Cost",
     body: "Choose models and infrastructure based on performance, usage and operating cost.",
   },
 ];
 
 const techCategories = [
-  { Icon: BrainCircuit, label: "Large Language Models" },
-  { Icon: SearchCode,   label: "Retrieval & Knowledge Systems" },
-  { Icon: Globe,        label: "APIs & Business Systems" },
-  { Icon: Cloud,        label: "Cloud Infrastructure" },
-  { Icon: Database,     label: "Databases & Vector Search" },
-  { Icon: Activity,     label: "Evaluation & Monitoring" },
+  { imageSrc: "agents", label: "Large Language Models" },
+  { imageSrc: "data", label: "Retrieval & Knowledge Systems" },
+  { imageSrc: "workflow", label: "APIs & Business Systems" },
+  { imageSrc: "systems", label: "Cloud Infrastructure" },
+  { imageSrc: "data", label: "Databases & Vector Search" },
+  { imageSrc: "editorial", label: "Evaluation & Monitoring" },
 ];
 
 const useCases = [
   {
-    Icon: HeadphonesIcon,
+    imageSrc: "people",
     title: "Customer Support",
     body: "Help teams answer, investigate and resolve customer requests faster.",
   },
   {
-    Icon: Settings2,
+    imageSrc: "workflow",
     title: "Operations",
     body: "Reduce manual research, data entry and repetitive operational work.",
   },
   {
-    Icon: BookOpen,
+    imageSrc: "editorial",
     title: "Knowledge Management",
     body: "Make internal company knowledge easier to search and use.",
   },
   {
-    Icon: TrendingUp,
+    imageSrc: "data",
     title: "Sales",
     body: "Give teams faster access to account, product and customer information.",
   },
   {
-    Icon: FileText,
+    imageSrc: "workflow",
     title: "Document Workflows",
     body: "Understand and process high volumes of business documents.",
   },
   {
-    Icon: LayoutDashboard,
+    imageSrc: "editorial",
     title: "Decision Support",
     body: "Bring information together to help teams make better-informed decisions.",
   },
@@ -188,7 +167,7 @@ const insightPosts = blogPosts.slice(0, 3);
 
 export default function AIProductDevelopmentPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="AI Product Development"
         title="Build AI products people actually use."
@@ -215,6 +194,7 @@ export default function AIProductDevelopmentPage() {
             <div className="flex flex-col gap-4">
               {valuePoints.map((vp) => (
                 <div key={vp.title} className="p-5 rounded-xl border bg-muted/40">
+                  <CardImage src="product" seed={vp.title} className="mb-4 h-24 w-full" />
                   <h3 className="font-semibold mb-1.5">{vp.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{vp.body}</p>
                 </div>
@@ -236,13 +216,15 @@ export default function AIProductDevelopmentPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whatWeBuild.map(({ Icon, title, body }) => (
-              <div key={title} className="rounded-2xl border bg-card p-6 hover:shadow-sm transition-shadow">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
-                  <Icon className="w-5 h-5" aria-hidden="true" />
+            {whatWeBuild.map(({ imageSrc, title, body }) => (
+              <div key={title} className="group rounded-2xl border bg-card overflow-hidden transition-all duration-200 hover:border-primary/20 hover:shadow-sm hover:shadow-primary/5 hover:-translate-y-0.5">
+                <div className="relative w-full aspect-[3/2] overflow-hidden">
+                  <CardImage src={imageSrc} seed={title} className="h-full w-full rounded-none border-0" />
                 </div>
-                <h3 className="font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                <div className="p-6">
+                  <h3 className="font-semibold mb-2">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -263,6 +245,7 @@ export default function AIProductDevelopmentPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {processSteps.map(({ step, title, body }) => (
               <div key={step} className="rounded-2xl border bg-card p-5 flex flex-col gap-3">
+                <CardImage src="workflow" seed={title} className="mb-2 h-24 w-full" />
                 <span className="text-xs font-bold text-primary tracking-widest">{step}</span>
                 <h3 className="font-semibold text-sm">{title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -287,11 +270,9 @@ export default function AIProductDevelopmentPage() {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {productionConcerns.map(({ Icon, title, body }) => (
+            {productionConcerns.map(({ imageSrc, title, body }) => (
               <div key={title} className="rounded-xl border bg-card p-5 flex gap-4">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Icon className="w-4 h-4" aria-hidden="true" />
-                </div>
+                <CardImage src={imageSrc} seed={title} className="h-16 w-24 shrink-0" />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -319,13 +300,14 @@ export default function AIProductDevelopmentPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {techCategories.map(({ Icon, label }) => (
+              {techCategories.map(({ imageSrc, label }) => (
                 <div
                   key={label}
                   className="rounded-xl border bg-muted/40 p-4 flex flex-col items-start gap-2.5"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                    <Icon className="w-4 h-4" aria-hidden="true" />
+                  <div className="relative h-14 w-full overflow-hidden rounded-lg border bg-background/80">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <CardImage src={imageSrc} seed={label} className="h-full w-full rounded-none border-0" />
                   </div>
                   <span className="text-xs font-medium leading-snug">{label}</span>
                 </div>
@@ -344,11 +326,9 @@ export default function AIProductDevelopmentPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {useCases.map(({ Icon, title, body }) => (
+            {useCases.map(({ imageSrc, title, body }) => (
               <div key={title} className="rounded-xl border bg-card p-5 flex gap-4">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Icon className="w-4 h-4" aria-hidden="true" />
-                </div>
+                <CardImage src={imageSrc} seed={title} className="h-16 w-24 shrink-0" />
                 <div>
                   <h3 className="font-semibold text-sm mb-1">{title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
@@ -413,6 +393,7 @@ export default function AIProductDevelopmentPage() {
             {insightPosts.map((post) => (
               <Link key={post.slug} href={`/tech-blogs/${post.slug}`} className="group block">
                 <article className="rounded-2xl border bg-card p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                  <CardImage src="editorial" seed={post.title} className="mb-5 h-40 w-full" />
                   <div className="flex items-center gap-3 mb-4">
                     <Badge variant="secondary">{post.category}</Badge>
                     <span className="text-xs text-muted-foreground">{post.readTime}</span>
@@ -433,8 +414,6 @@ export default function AIProductDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── S10: CTA ─────────────────────────────────────────────────────── */}
-      <CTA />
     </div>
   );
 }

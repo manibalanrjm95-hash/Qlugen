@@ -18,8 +18,9 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
 import InternalPageHeader from "@/components/internal-page-header";
+import CardImage from "@/components/card-image";
+import VisualPanel from "@/components/visual-panel";
 
 type Capability = {
   title: string;
@@ -161,9 +162,7 @@ function CapabilityCard({ capability }: { capability: Capability }) {
 
   return (
     <article className="group flex h-full flex-col rounded-2xl border bg-card p-6 transition-shadow hover:shadow-md">
-      <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-        <Icon className="h-5 w-5" aria-hidden="true" />
-      </div>
+      <VisualPanel variant={capability.title.includes("Agents") ? "agents" : capability.title.includes("Integration") ? "systems" : "product"} className="mb-5" label={capability.title} />
       <h3 className="mb-3 text-xl font-semibold tracking-tight">
         {capability.title}
       </h3>
@@ -193,7 +192,7 @@ function CapabilityCard({ capability }: { capability: Capability }) {
 
 export default function CapabilitiesPage() {
   return (
-    <div>
+    <div className="internal-page">
             <InternalPageHeader
         eyebrow="Capabilities"
         title="From AI ideas to production-ready systems."
@@ -249,13 +248,12 @@ export default function CapabilitiesPage() {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map(({ Icon, number, title, body }) => (
               <article key={title} className="rounded-xl border bg-card p-5">
+                <CardImage src="workflow" seed={title} className="mb-4 h-24 w-full" />
                 <div className="mb-5 flex items-center justify-between gap-4">
                   <span className="text-sm font-semibold text-primary">
                     {number}
                   </span>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Icon className="h-4 w-4" aria-hidden="true" />
-                  </span>
+                  <span className="text-xs font-medium text-primary/70">FLOW</span>
                 </div>
                 <h3 className="mb-2 text-base font-semibold">{title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
@@ -281,6 +279,7 @@ export default function CapabilitiesPage() {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {values.map((value) => (
               <article key={value.title} className="rounded-2xl border bg-card p-6">
+                <CardImage src="people" seed={value.title} className="mb-5 h-28 w-full" />
                 <h3 className="mb-3 text-base font-semibold">{value.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {value.body}
@@ -311,9 +310,7 @@ export default function CapabilitiesPage() {
                 key={title}
                 className="flex gap-4 rounded-xl border bg-card p-5"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </span>
+                <VisualPanel variant="workflow" className="h-20 w-24 shrink-0" label={title} />
                 <div>
                   <h3 className="mb-1.5 text-sm font-semibold">{title}</h3>
                   <p className="text-xs leading-relaxed text-muted-foreground">
@@ -326,11 +323,6 @@ export default function CapabilitiesPage() {
         </div>
       </section>
 
-      <CTA
-        title="Have an AI workflow worth building?"
-        description="Tell us what your team wants to improve, automate or turn into a product."
-        buttonLabel="Start a project"
-      />
     </div>
   );
 }

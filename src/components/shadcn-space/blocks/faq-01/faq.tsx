@@ -39,7 +39,7 @@ const FAQ_DATA = [
 export default function Faq() {
   return (
     <section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:py-24 py-8 flex flex-col gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:py-24 py-8 flex flex-col gap-10 md:gap-16">
         <div className="flex flex-col gap-4 items-center animate-in fade-in slide-in-from-top-10 duration-1000 delay-100 ease-in-out fill-mode-both">
           <Badge
             variant="outline"
@@ -47,7 +47,7 @@ export default function Faq() {
           >
             FAQs
           </Badge>
-          <h2 className="text-5xl font-medium text-center max-w-lg">
+          <h2 className="text-3xl font-medium text-center max-w-lg sm:text-4xl md:text-5xl">
             Common questions about AI development
           </h2>
         </div>
@@ -58,7 +58,7 @@ export default function Faq() {
                 key={`item-${index}`}
                 value={`item-${index}`}
                 className={cn(
-                  "p-6 border border-border rounded-2xl flex flex-col gap-3 group/item data-[open]:bg-accent transition-colors animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both",
+                  "p-4 sm:p-6 border border-border rounded-2xl flex flex-col gap-3 group/item data-[open]:bg-accent transition-colors animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both",
                   index === 0 && "delay-100",
                   index === 1 && "delay-200",
                   index === 2 && "delay-300",
@@ -66,7 +66,7 @@ export default function Faq() {
                   index === 4 && "delay-500",
                 )}
               >
-                <AccordionTrigger className="p-0 text-xl font-medium hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden cursor-pointer">
+                <AccordionTrigger className="p-0 text-left text-lg font-medium hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden cursor-pointer sm:text-xl">
                   {faq.question}
                   <PlusIcon className="w-6 h-6 shrink-0 transition-transform duration-200 group-aria-expanded/accordion-trigger:rotate-45" />
                 </AccordionTrigger>
