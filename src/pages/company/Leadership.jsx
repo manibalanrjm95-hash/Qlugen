@@ -1,0 +1,46 @@
+import { Grid, Column } from '@carbon/react'
+import Layout from '../../components/Layout'
+import vinayPortrait from '../../assets/vinay-pachunoori.png'
+import '../../App.css'
+
+export default function Leadership() {
+  return (
+    <Layout>
+      <section className="exec-section leadership-page" aria-labelledby="leadership-heading">
+        <Grid>
+          <Column lg={11} md={5} sm={4}>
+            <p className="section-label">Leadership</p>
+            <h1 id="leadership-heading" className="leadership-title">Executive leadership</h1>
+            <p className="section-lede">Leadership shaped by deep enterprise technology experience.</p>
+          </Column>
+        </Grid>
+
+        <div className="exec-spotlight">
+          <img src={vinayPortrait} alt="Vinay Pachunoori" className="exec-spotlight__image" />
+          <div className="exec-spotlight__overlay" aria-hidden="true" />
+          <div className="exec-spotlight__content">
+            <p className="exec-spotlight__eyebrow">Executive Leadership</p>
+            <h2 className="leader-name">Vinay Pachunoori</h2>
+            <p className="exec-spotlight__descriptor">
+              23+ years of enterprise technology leadership experience across global platforms and high-scale product ecosystems.
+            </p>
+            <div className="exec-spotlight__highlights" aria-label="Experience highlights">
+              <span>Ex Oracle</span>
+              <span>Ex eBay</span>
+              <span>Ex Amazon</span>
+              <span>Ex Walmart</span>
+              <span>Ex Coupang</span>
+            </div>
+            <p className="exec-spotlight__bio">
+              Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems, with leadership experience spanning Oracle, eBay, Amazon, Walmart and Coupang.
+            </p>
+          </div>
+          <div className="exec-spotlight__stat">
+            <strong>23+ Years</strong>
+            <span>Enterprise technology leadership</span>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}

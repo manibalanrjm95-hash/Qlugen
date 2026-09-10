@@ -1,0 +1,54 @@
+/* Font override — beats Carbon's own font-family custom properties */
+:root { --cds-body-font-family:'Outfit',sans-serif; --cds-code-font-family:'Outfit',sans-serif; --cds-heading-font-family:'Outfit',sans-serif; }
+
+:root {
+  /* === IBM Design Language — Primitive color scales === */
+  --ibm-blue-10:#edf5ff; --ibm-blue-20:#d0e2ff; --ibm-blue-30:#a6c8ff; --ibm-blue-40:#78a9ff; --ibm-blue-50:#4589ff; --ibm-blue-60:#0f62fe; --ibm-blue-70:#0043ce; --ibm-blue-80:#002d9c; --ibm-blue-90:#001d6c; --ibm-blue-100:#001141;
+  --ibm-cyan-10:#e5f6ff; --ibm-cyan-20:#bae6ff; --ibm-cyan-30:#82cfff; --ibm-cyan-40:#33b1ff; --ibm-cyan-50:#1192e8; --ibm-cyan-60:#0072c3; --ibm-cyan-70:#00539a; --ibm-cyan-80:#003a6d; --ibm-cyan-90:#012749; --ibm-cyan-100:#061727;
+  --ibm-teal-10:#d9fbfb; --ibm-teal-20:#9ef0f0; --ibm-teal-30:#3ddbd9; --ibm-teal-40:#08bdba; --ibm-teal-50:#009d9a; --ibm-teal-60:#007d79; --ibm-teal-70:#005d5d; --ibm-teal-80:#004144; --ibm-teal-90:#022b30; --ibm-teal-100:#081a1c;
+  --ibm-green-10:#defbe6; --ibm-green-20:#a7f0ba; --ibm-green-30:#6fdc8c; --ibm-green-40:#42be65; --ibm-green-50:#24a148; --ibm-green-60:#198038; --ibm-green-70:#0e6027; --ibm-green-80:#044317; --ibm-green-90:#022d0d; --ibm-green-100:#071908;
+  --ibm-red-10:#fff1f1; --ibm-red-20:#ffd7d9; --ibm-red-30:#ffb3b8; --ibm-red-40:#ff8389; --ibm-red-50:#fa4d56; --ibm-red-60:#da1e28; --ibm-red-70:#a2191f; --ibm-red-80:#750e13; --ibm-red-90:#520408; --ibm-red-100:#2d0709;
+  --ibm-orange-10:#fff2e8; --ibm-orange-20:#ffd9be; --ibm-orange-30:#ffb784; --ibm-orange-40:#ff832b; --ibm-orange-50:#eb6200; --ibm-orange-60:#ba4e00; --ibm-orange-70:#8a3800; --ibm-orange-80:#5e2900; --ibm-orange-90:#3e1a00; --ibm-orange-100:#231000;
+  --ibm-yellow-10:#fcf4d6; --ibm-yellow-20:#fddc69; --ibm-yellow-30:#f1c21b; --ibm-yellow-40:#d2a106; --ibm-yellow-50:#b28600; --ibm-yellow-60:#8e6a00; --ibm-yellow-70:#684e00; --ibm-yellow-80:#483700; --ibm-yellow-90:#302400; --ibm-yellow-100:#1c1500;
+  --ibm-purple-10:#f6f2ff; --ibm-purple-20:#e8daff; --ibm-purple-30:#d4bbff; --ibm-purple-40:#be95ff; --ibm-purple-50:#a56eff; --ibm-purple-60:#8a3ffc; --ibm-purple-70:#6929c4; --ibm-purple-80:#491d8b; --ibm-purple-90:#31135e; --ibm-purple-100:#1c0f30;
+  --ibm-magenta-10:#fff0f7; --ibm-magenta-20:#ffd6e8; --ibm-magenta-30:#ffafd2; --ibm-magenta-40:#ff7eb6; --ibm-magenta-50:#ee5396; --ibm-magenta-60:#d02670; --ibm-magenta-70:#9f1853; --ibm-magenta-80:#740937; --ibm-magenta-90:#510224; --ibm-magenta-100:#2a0a18;
+  --ibm-cool-gray-10:#f2f4f8; --ibm-cool-gray-20:#dde1e6; --ibm-cool-gray-30:#c1c7cd; --ibm-cool-gray-40:#a2a9b0; --ibm-cool-gray-50:#878d96; --ibm-cool-gray-60:#697077; --ibm-cool-gray-70:#4d5358; --ibm-cool-gray-80:#343a3f; --ibm-cool-gray-90:#21272a; --ibm-cool-gray-100:#121619;
+  --ibm-gray-10:#f4f4f4; --ibm-gray-20:#e0e0e0; --ibm-gray-30:#c6c6c6; --ibm-gray-40:#a8a8a8; --ibm-gray-50:#8d8d8d; --ibm-gray-60:#6f6f6f; --ibm-gray-70:#525252; --ibm-gray-80:#393939; --ibm-gray-90:#262626; --ibm-gray-100:#161616;
+  --ibm-warm-gray-10:#f7f3f2; --ibm-warm-gray-20:#e5e0df; --ibm-warm-gray-30:#cac5c4; --ibm-warm-gray-40:#ada8a8; --ibm-warm-gray-50:#8f8b8b; --ibm-warm-gray-60:#726e6e; --ibm-warm-gray-70:#565151; --ibm-warm-gray-80:#3c3838; --ibm-warm-gray-90:#272525; --ibm-warm-gray-100:#171414;
+  --ibm-white:#ffffff; --ibm-black:#000000;
+
+  /* === Functional feedback === */
+  --ibm-success:#198038; --ibm-success-bg:#defbe6;
+  --ibm-warning:#8e6a00; --ibm-warning-bg:#fcf4d6;
+  --ibm-error:#da1e28; --ibm-error-bg:#fff1f1;
+  --ibm-info:#0f62fe; --ibm-info-bg:#edf5ff;
+
+  /* === Qlugen brand primitives === */
+  --qlugen-primary: #022160;
+  --qlugen-core-blue: #0557BA;
+  --qlugen-primary-hover: #0788D6;
+  --qlugen-primary-active: #0D3DA8;
+  --qlugen-accent: #0788D6;
+  --qlugen-surface-1: #F3F8FC;
+  --qlugen-surface-2: #EDF5FB;
+  --qlugen-teal-10: #F3F8FC;
+
+  /* === Semantic tokens — light theme === */
+  --color-background-primary:var(--ibm-white); --color-background-secondary:var(--ibm-gray-10); --color-background-tertiary:var(--ibm-gray-20); --color-background-brand:var(--qlugen-primary);
+  --color-surface-primary:var(--ibm-white); --color-surface-secondary:var(--ibm-gray-10); --color-surface-elevated:var(--ibm-white); --color-surface-selected:var(--qlugen-teal-10); --color-surface-inverse:var(--qlugen-primary);
+  --color-text-primary:var(--ibm-gray-100); --color-text-secondary:var(--ibm-gray-70); --color-text-tertiary:var(--ibm-gray-50); --color-text-placeholder:var(--ibm-gray-40); --color-text-disabled:var(--ibm-gray-30); --color-text-link:var(--qlugen-primary); --color-text-inverse:var(--ibm-white);
+  --color-border-subtle:var(--ibm-gray-20); --color-border-default:var(--ibm-gray-30); --color-border-strong:var(--ibm-gray-50); --color-border-focus:var(--qlugen-primary); --color-border-selected:var(--qlugen-primary);
+  --color-action-primary:var(--qlugen-primary); --color-action-primary-hover:var(--qlugen-primary-hover); --color-action-primary-active:var(--qlugen-primary-active); --color-action-secondary:var(--ibm-gray-100); --color-action-accent:var(--qlugen-accent);
+  --color-feedback-success:var(--ibm-success); --color-feedback-warning:var(--ibm-warning); --color-feedback-error:var(--ibm-error); --color-feedback-info:var(--qlugen-primary);
+
+  /* === Carbon compatibility layer === */
+  --cds-background:var(--color-background-primary); --cds-background-hover:var(--color-background-secondary); --cds-background-selected:var(--color-surface-selected); --cds-layer:var(--color-surface-primary); --cds-layer-01:var(--color-surface-primary); --cds-layer-02:var(--color-surface-secondary); --cds-layer-03:var(--color-background-tertiary); --cds-field:var(--color-surface-primary); --cds-field-01:var(--color-surface-primary); --cds-interactive-01:var(--qlugen-primary); --cds-interactive-02:var(--color-action-secondary); --cds-interactive-03:var(--qlugen-primary); --cds-link-01:var(--qlugen-primary); --cds-focus:var(--qlugen-primary); --cds-text-01:var(--color-text-primary); --cds-text-02:var(--color-text-secondary); --cds-text-03:var(--color-text-tertiary); --cds-text-04:var(--color-text-inverse); --cds-ui-background:var(--color-background-primary); --cds-ui-01:var(--color-surface-primary); --cds-ui-02:var(--color-surface-secondary); --cds-ui-03:var(--color-border-default); --cds-support-01:var(--color-feedback-error); --cds-support-02:var(--color-feedback-success); --cds-support-03:var(--color-feedback-warning); --cds-support-04:var(--color-feedback-info);
+}
+
+[data-theme='dark'] {
+  --color-background-primary:var(--ibm-gray-100); --color-background-secondary:var(--ibm-gray-90); --color-background-tertiary:var(--ibm-gray-80); --color-surface-primary:var(--ibm-gray-90); --color-surface-secondary:var(--ibm-gray-80); --color-surface-elevated:var(--ibm-gray-70); --color-surface-selected:var(--ibm-blue-90); --color-surface-inverse:var(--ibm-white);
+  --color-text-primary:var(--ibm-white); --color-text-secondary:var(--ibm-gray-30); --color-text-tertiary:var(--ibm-gray-40); --color-text-placeholder:var(--ibm-gray-50); --color-text-disabled:var(--ibm-gray-60); --color-text-link:var(--ibm-blue-40); --color-text-inverse:var(--ibm-gray-100);
+  --color-border-subtle:var(--ibm-gray-70); --color-border-default:var(--ibm-gray-60); --color-border-strong:var(--ibm-gray-40); --color-border-focus:var(--ibm-blue-50); --color-border-selected:var(--ibm-blue-50);
+  --color-action-primary:var(--ibm-blue-50); --color-action-primary-hover:var(--ibm-blue-40); --color-action-primary-active:var(--ibm-blue-30); --color-action-secondary:var(--ibm-white); --color-action-accent:var(--ibm-teal-30);
+  --cds-background:var(--color-background-primary); --cds-layer:var(--color-surface-primary); --cds-layer-01:var(--color-surface-primary); --cds-layer-02:var(--color-surface-secondary); --cds-layer-03:var(--color-surface-elevated); --cds-field:var(--color-surface-primary); --cds-field-01:var(--color-surface-primary); --cds-interactive-01:var(--color-action-primary); --cds-text-01:var(--color-text-primary); --cds-text-02:var(--color-text-secondary); --cds-text-03:var(--color-text-tertiary); --cds-ui-background:var(--color-background-primary); --cds-ui-01:var(--color-surface-primary); --cds-ui-02:var(--color-surface-secondary);
+}
