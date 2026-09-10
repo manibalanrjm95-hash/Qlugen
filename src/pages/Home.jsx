@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Analytics, ArrowRight, Building, Chip, Cloud, Code, Dashboard, Earth,
-  Education, Finance, Flash, Network_1, Rocket, Search, Security,
+  Education, Finance, Flash, LogoLinkedin, Network_1, Rocket, Search, Security,
   SettingsAdjust, Store, User, UserMultiple,
 } from '@carbon/icons-react';
 import { Button, Column, Grid } from '@carbon/react';
@@ -38,12 +38,6 @@ const industries = [
   { icon: Flash, label: 'Energy & Utilities', desc: 'Grid modernization and clean energy', image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80', to: '/industries/energy-utilities' },
 ];
 
-const stats = [
-  { value: '200+', label: 'Enterprise clients' },
-  { value: '35', label: 'Countries served' },
-  { value: '18', label: 'Years of expertise' },
-  { value: '3,400', label: 'Specialists worldwide' },
-];
 
 const principles = [
   { num: '01', icon: Analytics, title: 'Start with the outcome', desc: 'Every engagement begins by defining success — measurably and on your terms.', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80' },
@@ -560,17 +554,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Stats bar ── */}
-      <section className="stats-section">
-        <Grid>
-          {stats.map(({ value, label }) => (
-            <Column key={label} lg={4} md={2} sm={2} className="stat-item">
-              <span className="stat-value">{value}</span>
-              <span className="stat-label">{label}</span>
-            </Column>
-          ))}
-        </Grid>
-      </section>
 
       {/* ── Capabilities grid ── */}
       <section className="capabilities-section" id="capabilities">
@@ -865,6 +848,15 @@ export default function Home() {
               <span>Ex Coupang</span>
             </div>
             <p className="exec-spotlight__bio">Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems, with leadership experience spanning Oracle, eBay, Amazon, Walmart and Coupang.</p>
+            <a
+              href="https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="exec-spotlight__linkedin"
+            >
+              <LogoLinkedin size={20} />
+              <span>LinkedIn</span>
+            </a>
           </div>
           <div className="exec-spotlight__stat">
             <strong>23+ Years</strong>

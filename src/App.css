@@ -716,7 +716,6 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
 .aif-scroll-section .hiw-tabs-wrap::after {
   width: calc(var(--aif-scroll-progress, 0) * 100%);
   background: var(--q-primary);
-  transition: width 140ms linear;
 }
 .hiw-tabs-col { padding: 0 !important; }
 .hiw-tabs {
@@ -1720,7 +1719,7 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   width: 45%;
   min-height: 0;
   margin-left: 55%;
@@ -1779,6 +1778,22 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   font-size: .9375rem;
   line-height: 1.7;
 }
+.exec-spotlight__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.25rem;
+  align-self: flex-start;
+  padding: .375rem .75rem;
+  background: #0a66c2;
+  color: #fff;
+  font-size: .8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: .25rem;
+  transition: background .15s ease;
+}
+.exec-spotlight__linkedin:hover { background: #004182; color: #fff; }
 .exec-spotlight__stat {
   position: absolute;
   z-index: 1;
@@ -1857,6 +1872,9 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
 .careers-icon { color: var(--q-accent); margin-bottom: 3rem; }
 .careers-copy { max-width: 38rem; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.65); margin-top: .75rem; }
 .careers-action { display: flex; align-items: flex-end; justify-content: flex-end; }
+.careers-action .cds--btn { background: #fff; color: var(--q-primary); border-color: #fff; }
+.careers-action .cds--btn:hover { background: rgba(255,255,255,.88); color: var(--q-primary); border-color: rgba(255,255,255,.88); }
+.careers-action .cds--btn svg { fill: var(--q-primary); }
 .careers-section .section-label { color: var(--q-accent); }
 
 /* ─────────────────────────────────────────────────────────

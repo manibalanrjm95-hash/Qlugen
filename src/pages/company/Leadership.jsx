@@ -1,4 +1,5 @@
 import { Grid, Column } from '@carbon/react'
+import { LogoLinkedin } from '@carbon/icons-react'
 import Layout from '../../components/Layout'
 import vinayPortrait from '../../assets/vinay-pachunoori.png'
 import '../../App.css'
@@ -34,6 +35,15 @@ export default function Leadership() {
             <p className="exec-spotlight__bio">
               Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems, with leadership experience spanning Oracle, eBay, Amazon, Walmart and Coupang.
             </p>
+            <a
+              href="https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="exec-spotlight__linkedin"
+            >
+              <LogoLinkedin size={20} />
+              <span>LinkedIn</span>
+            </a>
           </div>
           <div className="exec-spotlight__stat">
             <strong>23+ Years</strong>
