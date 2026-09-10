@@ -55,8 +55,8 @@ main {
   top: 0; left: 0; right: 0;
   z-index: 8000;
   height: var(--header-height);
-  background: #fff;
-  border-bottom: 1px solid var(--q-border);
+  background: var(--q-primary);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .site-header-inner {
@@ -86,6 +86,7 @@ main {
   height: 1.25rem;
   width: auto;
   object-fit: contain;
+  filter: brightness(0) invert(1);
   display: block;
   flex-shrink: 0;
 }
@@ -107,13 +108,13 @@ main {
   padding: 0 1rem;
   font-size: .875rem;
   font-weight: 500;
-  color: var(--q-primary);
+  color: #fff;
   text-decoration: none;
   white-space: nowrap;
   transition: color 120ms;
   position: relative;
 }
-.nav-link:hover { color: var(--q-teal-hover); }
+.nav-link:hover { color: rgba(255,255,255,0.75); }
 .nav-link:hover::after {
   content: '';
   position: absolute;
@@ -131,7 +132,7 @@ main {
   padding-right: 0;
   margin-left: .5rem;
 }
-.nav-link--cta:hover { color: var(--q-teal-hover); text-decoration-color: var(--q-teal-hover); }
+.nav-link--cta:hover { color: rgba(255,255,255,0.75); text-decoration-color: rgba(255,255,255,0.75); }
 .nav-link--cta:hover::after { display: none; }
 
 /* Dropdown nav item */
@@ -202,11 +203,11 @@ main {
   border: 0;
   background: transparent;
   cursor: pointer;
-  color: var(--q-primary);
+  color: #fff;
   margin-left: auto;
   flex-shrink: 0;
 }
-.mobile-toggle svg { fill: var(--q-primary); }
+.mobile-toggle svg { fill: #fff; }
 
 /* ── Mobile nav drawer ── */
 .mobile-nav {
