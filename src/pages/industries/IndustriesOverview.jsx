@@ -46,8 +46,8 @@ export default function IndustriesOverview() {
           ))}
           <div className="industry-visual-overlay" />
           <div className="industry-visual-label">
-            <h1 className="section-label" style={{ color: 'var(--q-accent)', margin: '0 0 .5rem' }}>Industries</h1>
-            <h2>{active.label}</h2>
+            <p className="section-label" style={{ color: 'var(--q-accent)', margin: '0 0 .5rem' }}>Industries</p>
+            <h1 className="industry-visual-heading">{active.label}</h1>
           </div>
         </div>
       </div>

@@ -254,6 +254,7 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
 .exec-spotlight__content .leader-name { margin: 0 0 1rem; color: var(--q-primary); font-size: clamp(2rem, 4vw, 4rem); line-height: 1; letter-spacing: -.04em; }
 .inner-section h2.section-label { font-size: .75rem; letter-spacing: .08em; font-weight: 600; line-height: 1.5; margin: .5rem 0 1rem; }
 .industry-visual-label h1.section-label { line-height: 1.5; }
+.industry-visual-label .industry-visual-heading { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
 .diagram-label { display: block; line-height: 1.4; letter-spacing: 0; }
 .contact-context-item .contact-context-heading { line-height: 1.4; }
 .career-area-label, .phase-label, .tile-label { display: block; line-height: 1.25; letter-spacing: 0; }
