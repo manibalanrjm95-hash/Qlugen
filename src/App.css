@@ -1841,10 +1841,14 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   flex-wrap: wrap;
   align-items: center;
   gap: 0;
+  overflow: visible;
+  padding: .25rem 0;
 }
 .exec-prev-exp__item {
   display: inline-flex;
   align-items: center;
+  line-height: 1;
+  padding: .2rem 0;
   white-space: nowrap;
 }
 .exec-prev-exp__item:not(:last-child)::after {
@@ -1852,14 +1856,17 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   margin: 0 .65rem;
   color: rgba(2,33,96,.3);
   font-weight: 400;
+  line-height: 1;
 }
 .exec-prev-exp__logo {
-  height: 22px;
+  height: 20px;
   width: auto;
   max-width: 120px;
   object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
   display: block;
+  overflow: visible;
 }
 
 @media (max-width: 66rem) {
