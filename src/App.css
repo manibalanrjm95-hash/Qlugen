@@ -1854,9 +1854,9 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   font-weight: 400;
 }
 .exec-prev-exp__logo {
-  height: 28px;
+  height: 22px;
   width: auto;
-  max-width: 140px;
+  max-width: 120px;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
