@@ -842,7 +842,7 @@ export default function Home() {
             <p className="exec-spotlight__bio">Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems.</p>
             <div className="exec-prev-exp">
               <p className="exec-prev-exp__label">Previous Experience</p>
-              <ul className="exec-prev-exp__list">
+              <div className="exec-prev-exp__row">
                 {[
                   { name: 'Oracle',  domain: 'oracle.com'  },
                   { name: 'eBay',    domain: 'ebay.com'    },
@@ -850,7 +850,7 @@ export default function Home() {
                   { name: 'Walmart', domain: 'walmart.com' },
                   { name: 'Coupang', domain: 'coupang.com' },
                 ].map(({ name, domain }) => (
-                  <li key={name} className="exec-prev-exp__item">
+                  <span key={name} className="exec-prev-exp__item">
                     <img
                       src={`https://logo.clearbit.com/${domain}`}
                       alt={name}
@@ -858,9 +858,9 @@ export default function Home() {
                       onError={e => { e.currentTarget.style.display = 'none' }}
                     />
                     <span className="exec-prev-exp__name">{name}</span>
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
             <a
               href="https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
