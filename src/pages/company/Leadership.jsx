@@ -37,7 +37,7 @@ export default function Leadership() {
                 ].map(({ name, domain }) => (
                   <span key={name} className="exec-prev-exp__item">
                     <img
-                      src={`https://logo.clearbit.com/${domain}`}
+                      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
                       alt={name}
                       className="exec-prev-exp__logo"
                       onError={e => { e.currentTarget.style.display = 'none' }}
