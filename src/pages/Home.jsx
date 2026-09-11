@@ -513,7 +513,7 @@ export default function Home() {
     <Layout>
       {/* ── HERO ── */}
       <section className="hero-section" id="hero">
-        <video className="hero-video" autoPlay muted loop playsInline aria-hidden="true" poster="/hero-poster.svg">
+        <video className="hero-video" autoPlay muted loop playsInline aria-hidden="true">
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay" aria-hidden="true" />

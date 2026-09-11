@@ -8,7 +8,6 @@ export default defineConfig({
   server: { historyApiFallback: true },
   build: {
     cssMinify: false,
-    cssCodeSplit: false,
     outDir: 'out',
     chunkSizeWarningLimit: 600,
     rollupOptions: {
