@@ -7,7 +7,7 @@ import {
 } from '@carbon/icons-react';
 import { Button, Column, Grid } from '@carbon/react';
 import Layout from '../components/Layout';
-import vinayPortrait from '../assets/vinay-pachunoori.png';
+import vinayPortrait from '../assets/vinay-pachunoori.webp';
 import logoOracle  from '../assets/logos/oracle.svg';
 import logoEbay    from '../assets/logos/ebay.svg';
 import logoAmazon  from '../assets/logos/amazon.svg';
