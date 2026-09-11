@@ -22,9 +22,6 @@ export default function Leadership() {
           <div className="exec-spotlight__content">
             <p className="exec-spotlight__eyebrow">Executive Leadership</p>
             <h2 className="leader-name">Vinay Pachunoori</h2>
-            <p className="exec-spotlight__descriptor">
-              23+ years of enterprise technology leadership experience across global platforms and high-scale product ecosystems.
-            </p>
             <div className="exec-spotlight__highlights" aria-label="Experience highlights">
               <span>Ex Oracle</span>
               <span>Ex eBay</span>

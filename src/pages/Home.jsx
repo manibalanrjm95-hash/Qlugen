@@ -839,7 +839,6 @@ export default function Home() {
           <div className="exec-spotlight__content">
             <p className="exec-spotlight__eyebrow">Executive Leadership</p>
             <h3>Vinay Pachunoori</h3>
-            <p className="exec-spotlight__descriptor">23+ years of enterprise technology leadership experience across global platforms and high-scale product ecosystems.</p>
             <div className="exec-spotlight__highlights" aria-label="Experience highlights">
               <span>Ex Oracle</span>
               <span>Ex eBay</span>
