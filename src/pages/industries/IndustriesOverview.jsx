@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../../App.css'
 
 const industries = [
@@ -16,37 +16,35 @@ const industries = [
 
 export default function IndustriesOverview() {
   const [activeIdx, setActiveIdx] = useState(0)
-  const navigate = useNavigate()
   const active = industries[activeIdx]
 
   return (
     <Layout>
       <div className="industry-index">
-        <div className="industry-nav">
+        <nav className="industry-nav" aria-label="Industries">
           {industries.map((ind, i) => (
-            <button
+            <Link
               key={ind.to}
-              type="button"
+              to={ind.to}
               className={`industry-nav-item${i === activeIdx ? ' industry-nav-item--active' : ''}`}
               onMouseEnter={() => setActiveIdx(i)}
               onFocus={() => setActiveIdx(i)}
-              onClick={() => navigate(ind.to)}
             >
               <span className="industry-nav-num">{String(i + 1).padStart(2, '0')}</span>
               <span>
                 <span className="industry-nav-label">{ind.label}</span>
                 <span className="industry-nav-desc">{ind.desc}</span>
               </span>
-            </button>
+            </Link>
           ))}
-        </div>
+        </nav>
         <div className="industry-visual">
           {industries.map((ind, i) => (
-            <img key={ind.to} src={ind.img} alt="" className="industry-visual-img" style={{ opacity: i === activeIdx ? 1 : 0 }} />
+            <img key={ind.to} src={ind.img} alt={ind.label} className="industry-visual-img" style={{ opacity: i === activeIdx ? 1 : 0 }} />
           ))}
           <div className="industry-visual-overlay" />
           <div className="industry-visual-label">
-            <p className="section-label" style={{ color: 'var(--q-accent)', margin: '0 0 .5rem' }}>Industries</p>
+            <p className="section-label" style={{ color: 'var(--q-accent)', margin: '0 0 .5rem' }}>Qlugen Industries</p>
             <h1 className="industry-visual-heading">{active.label}</h1>
           </div>
         </div>
@@ -54,7 +52,7 @@ export default function IndustriesOverview() {
 
       <CTABanner
         heading="Ready to explore what's possible in your industry?"
-        sub="Talk to our team about your sector priorities."
+        sub="Talk to the Qlugen team about your sector priorities and technology goals."
         btnTo="/contact"
       />
     </Layout>

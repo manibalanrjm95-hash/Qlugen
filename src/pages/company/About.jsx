@@ -33,6 +33,9 @@ export default function About() {
           <Column lg={8} md={4} sm={4}>
             <p className="section-body">Enterprises no longer face isolated technology problems. Data, AI, cloud, security and automation are deeply interconnected — and solving them well requires a partner who can work across all of them as one connected capability.</p>
             <p className="section-body">We bring together specialists across data and analytics, AI and agent development, cloud and infrastructure, cybersecurity, automation, digital transformation and sustainability. Working as one team, we help organisations design and deliver technology that moves the business forward.</p>
+            <Link to="/capabilities" className="cta-btn cta-btn--outline-dark" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+              Explore our capabilities <ArrowRight size={18} />
+            </Link>
           </Column>
         </Grid>
       </section>
@@ -61,9 +64,14 @@ export default function About() {
             <p className="section-label">How we work differently</p>
             <h2>Rigour meets momentum</h2>
             <p className="section-body">Our delivery model creates progress at every stage — combining clear outcomes, thoughtful design and disciplined execution from first conversation to lasting capability.</p>
-            <Link to="/how-we-work" className="cta-btn cta-btn--outline-dark" style={{ marginTop: '1.5rem' }}>
-              See how we work <ArrowRight size={18} />
-            </Link>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginTop: '1.5rem' }}>
+              <Link to="/how-we-work" className="cta-btn cta-btn--outline-dark">
+                See how we work <ArrowRight size={18} />
+              </Link>
+              <Link to="/leadership" className="cta-btn cta-btn--outline-dark">
+                Meet our leadership <ArrowRight size={18} />
+              </Link>
+            </div>
           </Column>
         </Grid>
       </section>

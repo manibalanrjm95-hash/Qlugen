@@ -27,7 +27,7 @@ export default function CapabilitiesOverview() {
               Technology that moves the enterprise forward.
             </h1>
             <p style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,.7)', maxWidth: '42rem', lineHeight: 1.7, margin: 0 }}>
-              Seven connected capabilities. One enterprise technology partner.
+              Seven connected capabilities. One enterprise technology partner — Qlugen.
             </p>
           </Column>
         </Grid>

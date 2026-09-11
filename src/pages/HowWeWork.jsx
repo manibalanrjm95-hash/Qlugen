@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import Layout from '../components/Layout'
 import CTABanner from '../components/CTABanner'
+import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
+import { ArrowRight } from '@carbon/icons-react'
 import '../App.css'
 
 const principles = [
@@ -69,6 +71,9 @@ export default function HowWeWork() {
             <p className="section-label">Our delivery model</p>
             <h2>A structured path from problem to capability</h2>
             <p className="section-body">Qlugen&apos;s delivery model is built to create progress at every stage, not just at the end of a long programme.</p>
+            <Link to="/capabilities" className="cta-btn cta-btn--outline-dark" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+              See our capabilities <ArrowRight size={18} />
+            </Link>
           </Column>
           <Column lg={9} md={3} sm={4}>
             <div className="how-process-visual">

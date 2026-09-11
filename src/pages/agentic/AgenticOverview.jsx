@@ -87,6 +87,19 @@ export default function AgenticOverview() {
         </Grid>
       </section>
 
+      <section className="inner-section inner-section--gray">
+        <Grid>
+          <Column lg={10} md={6} sm={4}>
+            <p className="section-label">Related capability</p>
+            <h2>AI & Agent Development</h2>
+            <p className="section-body">Qlugen&apos;s AI & Agent Development capability covers the full journey from model selection and agent engineering to integration, evaluation and production operations.</p>
+            <Link to="/capabilities/ai-agent-development" className="cta-btn cta-btn--outline-dark" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+              Explore AI & Agent Development <ArrowRight size={18} />
+            </Link>
+          </Column>
+        </Grid>
+      </section>
+
       <CTABanner
         heading="Ready to build your agentic enterprise?"
         sub="Talk to Qlugen about designing and scaling governed agent ecosystems."

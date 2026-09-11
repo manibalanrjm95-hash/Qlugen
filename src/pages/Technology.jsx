@@ -1,8 +1,9 @@
 // Technology matrix / ecosystem bands
 import Layout from '../components/Layout'
 import CTABanner from '../components/CTABanner'
+import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
-import { Cloud, Analytics, Security, SettingsAdjust, Chip } from '@carbon/icons-react'
+import { Cloud, Analytics, Security, SettingsAdjust, Chip, ArrowRight } from '@carbon/icons-react'
 import '../App.css'
 
 const categories = [
@@ -49,6 +50,9 @@ export default function Technology() {
             <p className="section-label">Technology landscape</p>
             <h2>Our technology landscape</h2>
             <p className="section-body">We are technology-informed, not technology-prescribed. The right platform for each organisation depends on its architecture, goals and existing investments.</p>
+            <Link to="/capabilities" className="cta-btn cta-btn--outline-dark" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+              Explore our capabilities <ArrowRight size={18} />
+            </Link>
           </Column>
           <Column lg={9} md={4} sm={4}>
             <div className="tech-architecture-band">
