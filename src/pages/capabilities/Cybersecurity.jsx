@@ -56,7 +56,7 @@ export default function Cybersecurity() {
       </section>
 
       <section className="wide-image-band wide-image-band--dark">
-        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=2200&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
         <div className="wide-image-band__overlay wide-image-band__overlay--dark" />
         <Grid className="wide-image-band__content">
           <Column lg={10} md={6} sm={4}>

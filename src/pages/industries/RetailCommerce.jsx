@@ -59,7 +59,7 @@ export default function RetailCommerce() {
         <div>
           {pairs.map(p => (
             <div key={p.title} className="alt-row">
-              <div className="alt-img"><img src={p.img} alt="" /></div>
+              <div className="alt-img"><img src={p.img} alt="" loading="lazy" decoding="async" /></div>
               <div className="alt-text"><h3>{p.title}</h3><p>{p.desc}</p></div>
             </div>
           ))}

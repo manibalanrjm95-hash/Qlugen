@@ -41,7 +41,7 @@ export default function Sustainability() {
           </Column>
           <Column lg={8} md={4} sm={4}>
             <div className="split-visual-wrap">
-              <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1200&q=80" alt="" style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '.75rem' }} />
+              <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1200&q=80" alt="" style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '.75rem' }} loading="lazy" decoding="async" />
             </div>
           </Column>
         </Grid>

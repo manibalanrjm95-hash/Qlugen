@@ -31,7 +31,7 @@ export default function DigitalTransformation() {
   return (
     <Layout>
       <section className="bleed-hero">
-        <img className="bleed-hero-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80" alt="" />
+        <img className="bleed-hero-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80" alt="" fetchPriority="high" decoding="async" />
         <div className="bleed-hero-scrim" />
         <div className="bleed-hero-content">
           <p className="section-label">Capability · Digital Transformation</p>
@@ -65,7 +65,7 @@ export default function DigitalTransformation() {
         <div style={{ marginTop: '1rem' }}>
           {pairs.map(p => (
             <div key={p.title} className="alt-row">
-              <div className="alt-img"><img src={p.img} alt={p.alt} /></div>
+              <div className="alt-img"><img src={p.img} alt={p.alt} loading="lazy" decoding="async" /></div>
               <div className="alt-text">
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>

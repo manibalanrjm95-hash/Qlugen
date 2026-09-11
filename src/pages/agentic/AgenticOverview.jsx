@@ -51,7 +51,7 @@ export default function AgenticOverview() {
                   onMouseEnter={() => setActiveStage(i)}
                   onClick={() => setActiveStage(i)}
                 >
-                  <img src={s.img} alt="" className="agentic-card-img" />
+                  <img src={s.img} alt="" className="agentic-card-img" loading="lazy" decoding="async" />
                   <div className="agentic-card-overlay" />
                   <div className="agentic-card-content">
                     <span className="agentic-card-num">Stage {s.num}</span>

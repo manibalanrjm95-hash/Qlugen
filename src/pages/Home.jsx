@@ -669,7 +669,7 @@ export default function Home() {
                               <div className="hiw-inner-card hiw-inner-card--media">
                                 <div className="aif-media-layer" aria-hidden="true">
                                   <div className="aif-media-frame">
-                                    <img className="aif-media-image" src={item.mediaPoster} alt="" />
+                                    <img className="aif-media-image" src={item.mediaPoster} alt="" loading="lazy" decoding="async" />
                                     <div className="aif-media-scrim" />
                                   </div>
                                 </div>
@@ -760,7 +760,7 @@ export default function Home() {
               aria-label={title}
               onKeyDown={(e) => e.key === 'Enter' && setActiveApproach(i)}
             >
-              <img src={img} alt="" className="approach-card-img" />
+              <img src={img} alt="" className="approach-card-img" loading="lazy" decoding="async" />
               <div className="approach-card-overlay" />
               <div className="approach-card-content">
                 <span className="approach-card-num">{num}</span>
@@ -812,7 +812,7 @@ export default function Home() {
               {blogs.map(({ tag, title, img, to }) => (
                 <RouterLink key={title} to={to} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="blog-thumb">
-                    <img src={img} alt="" className="blog-thumb-img" />
+                    <img src={img} alt={title} className="blog-thumb-img" loading="lazy" decoding="async" />
                     <span className="blog-thumb-tag">{tag}</span>
                   </div>
                   <div className="blog-body">
@@ -839,7 +839,7 @@ export default function Home() {
           </Column>
         </Grid>
         <div className="exec-spotlight">
-          <img src={vinayPortrait} alt="Vinay Pachunoori" className="exec-spotlight__image" />
+          <img src={vinayPortrait} alt="Vinay Pachunoori" className="exec-spotlight__image" loading="lazy" decoding="async" />
           <div className="exec-spotlight__overlay" aria-hidden="true" />
           <div className="exec-spotlight__content">
             <p className="exec-spotlight__eyebrow">Executive Leadership</p>

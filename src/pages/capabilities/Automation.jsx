@@ -40,9 +40,11 @@ export default function Automation() {
             <div className="split-visual-wrap">
               <div className="workflow-map">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80"
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
                   alt=""
                   className="workflow-map__img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="workflow-map__overlay" />
                 <div className="proc-flow workflow-map__nodes">
@@ -84,7 +86,7 @@ export default function Automation() {
       </section>
 
       <section className="wide-image-band">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
         <div className="wide-image-band__overlay" />
         <Grid className="wide-image-band__content">
           <Column lg={10} md={6} sm={4}>

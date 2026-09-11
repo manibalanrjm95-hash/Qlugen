@@ -77,9 +77,11 @@ export default function AIAgentDev() {
           <Column lg={10} md={4} sm={4}>
             <div className="capability-scene capability-scene--dark">
               <img
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1800&q=80"
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
                 alt=""
                 className="capability-scene__img"
+                loading="lazy"
+                decoding="async"
               />
               <div className="capability-scene__overlay" />
               <div className="capability-scene__caption">

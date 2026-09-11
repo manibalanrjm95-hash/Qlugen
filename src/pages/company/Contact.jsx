@@ -64,9 +64,11 @@ export default function Contact() {
             <div className="contact-left">
               <div className="contact-visual-band">
                 <img
-                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80"
+                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
                   alt=""
                   className="contact-visual-band__img"
+                  fetchPriority="high"
+                  decoding="async"
                 />
                 <div className="contact-visual-band__overlay" />
               </div>

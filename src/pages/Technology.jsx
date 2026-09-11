@@ -31,8 +31,10 @@ export default function Technology() {
               <div className="tech-hero-visual">
                 <div className="tech-hero-visual__image">
                   <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80"
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="tech-badge-grid">

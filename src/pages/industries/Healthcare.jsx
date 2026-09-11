@@ -48,7 +48,7 @@ export default function Healthcare() {
           </Column>
           <Column lg={8} md={4} sm={4}>
             <div className="split-visual-wrap">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80" alt="" style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '.75rem' }} />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80" alt="Healthcare professionals in a clinical environment" style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '.75rem' }} loading="lazy" decoding="async" />
             </div>
           </Column>
         </Grid>

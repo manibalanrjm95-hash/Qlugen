@@ -40,7 +40,7 @@ export default function Government() {
           </Column>
           <Column lg={8} md={4} sm={4}>
             <div className="split-visual-wrap">
-              <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80" alt="" style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '.75rem' }} />
+              <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80" alt="Government building representing public sector services" style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '.75rem' }} loading="lazy" decoding="async" />
             </div>
           </Column>
         </Grid>

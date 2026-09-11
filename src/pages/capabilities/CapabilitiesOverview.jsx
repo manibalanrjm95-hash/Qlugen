@@ -37,7 +37,7 @@ export default function CapabilitiesOverview() {
         <div className="cap-masonry">
           {caps.map(({ cls, eyebrow, title, to, img }) => (
             <Link key={to} to={to} className={`cap-item ${cls}`}>
-              <img src={img} alt="" className="cap-item-img" />
+              <img src={img} alt="" className="cap-item-img" loading="lazy" decoding="async" />
               <div className="cap-item-scrim" />
               <div className="cap-item-content">
                 <span className="cap-item-eyebrow">{eyebrow}</span>

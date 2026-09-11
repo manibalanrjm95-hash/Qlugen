@@ -22,7 +22,7 @@ export default function Leadership() {
         </Grid>
 
         <div className="exec-spotlight">
-          <img src={vinayPortrait} alt="Vinay Pachunoori" className="exec-spotlight__image" />
+          <img src={vinayPortrait} alt="Vinay Pachunoori" className="exec-spotlight__image" loading="lazy" decoding="async" />
           <div className="exec-spotlight__overlay" aria-hidden="true" />
           <div className="exec-spotlight__content">
             <p className="exec-spotlight__eyebrow">Executive Leadership</p>
