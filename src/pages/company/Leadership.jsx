@@ -2,6 +2,11 @@ import { Grid, Column } from '@carbon/react'
 import { LogoLinkedin } from '@carbon/icons-react'
 import Layout from '../../components/Layout'
 import vinayPortrait from '../../assets/vinay-pachunoori.png'
+import logoOracle  from '../../assets/logos/oracle.svg'
+import logoEbay    from '../../assets/logos/ebay.svg'
+import logoAmazon  from '../../assets/logos/amazon.svg'
+import logoWalmart from '../../assets/logos/walmart.svg'
+import logoCoupang from '../../assets/logos/coupang.svg'
 import '../../App.css'
 
 export default function Leadership() {
@@ -29,20 +34,14 @@ export default function Leadership() {
               <p className="exec-prev-exp__label">Previous Experience</p>
               <div className="exec-prev-exp__row">
                 {[
-                  { name: 'Oracle',  domain: 'oracle.com'  },
-                  { name: 'eBay',    domain: 'ebay.com'    },
-                  { name: 'Amazon',  domain: 'amazon.com'  },
-                  { name: 'Walmart', domain: 'walmart.com' },
-                  { name: 'Coupang', domain: 'coupang.com' },
-                ].map(({ name, domain }) => (
+                  { name: 'Oracle',  logo: logoOracle  },
+                  { name: 'eBay',    logo: logoEbay    },
+                  { name: 'Amazon',  logo: logoAmazon  },
+                  { name: 'Walmart', logo: logoWalmart },
+                  { name: 'Coupang', logo: logoCoupang },
+                ].map(({ name, logo }) => (
                   <span key={name} className="exec-prev-exp__item">
-                    <img
-                      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
-                      alt={name}
-                      className="exec-prev-exp__logo"
-                      onError={e => { e.currentTarget.style.display = 'none' }}
-                    />
-                    <span className="exec-prev-exp__name">{name}</span>
+                    <img src={logo} alt={name} className="exec-prev-exp__logo" />
                   </span>
                 ))}
               </div>
