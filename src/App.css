@@ -1859,11 +1859,11 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   line-height: 1;
 }
 .exec-prev-exp__logo {
-  height: 22px;
+  height: 28px;
   width: auto;
-  max-width: 120px;
+  max-width: 130px;
   object-fit: contain;
-  object-position: center;
+  object-position: left center;
   flex-shrink: 0;
   display: block;
   overflow: visible;
