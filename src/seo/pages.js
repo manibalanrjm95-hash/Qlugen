@@ -3,7 +3,7 @@
 export const seoPages = {
   '/': {
     title: 'Qlugen | Enterprise AI, Cloud & Digital Transformation',
-    description: 'Qlugen helps enterprises modernise with AI, data, cloud, cybersecurity, automation and digital transformation services.',
+    description: 'Qlugen is an enterprise technology company helping organisations modernise with AI, data, cloud, cybersecurity, automation and digital transformation.',
   },
   '/capabilities': {
     title: 'Enterprise Technology Capabilities | Qlugen',

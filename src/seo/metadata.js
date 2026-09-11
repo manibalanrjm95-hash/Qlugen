@@ -58,18 +58,43 @@ export function escapeHtml(value) {
   })[character])
 }
 
+function renderJsonLd(pathname, origin) {
+  if (normalisePath(pathname) !== '/') return ''
+  const graphs = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Qlugen',
+      url: origin + '/',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Qlugen',
+      url: origin + '/',
+      logo: origin + '/favicon.svg',
+    },
+  ]
+  return graphs
+    .map(g => `<script type="application/ld+json" data-qlugen-seo>${JSON.stringify(g)}</script>`)
+    .join('\n    ')
+}
+
 export function renderMetadata(pathname, origin) {
-  return metadataTags(pathname, origin).map(({ tag, attrs = {}, text }) => {
+  const tags = metadataTags(pathname, origin).map(({ tag, attrs = {}, text }) => {
     const attributes = Object.entries(attrs).map(([key, value]) => ` ${key}="${escapeHtml(value)}"`).join('')
     return tag === 'title'
       ? `<title data-qlugen-seo>${escapeHtml(text)}</title>`
       : `<${tag} data-qlugen-seo${attributes} />`
   }).join('\n    ')
+  const jsonLd = renderJsonLd(pathname, origin)
+  return jsonLd ? `${tags}\n    ${jsonLd}` : tags
 }
 
 export function replaceMetadata(html, pathname, origin) {
   const clean = html
     .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
     .replace(/<(?:meta|link)\b[^>]*\bdata-qlugen-seo\b[^>]*>/gi, '')
+    .replace(/<script\b[^>]*\bdata-qlugen-seo\b[^>]*>[\s\S]*?<\/script>/gi, '')
   return clean.replace('</head>', `    ${renderMetadata(pathname, origin)}\n  </head>`)
 }

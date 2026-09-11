@@ -566,7 +566,7 @@ export default function Home() {
           <Column lg={11} md={5} sm={4}>
             <p className="section-label">What we do</p>
             <h2>Seven capabilities. One partner.</h2>
-            <p className="section-lede">From cloud infrastructure to AI agent development, from cybersecurity to sustainability — deep expertise across every dimension of enterprise transformation.</p>
+            <p className="section-lede">Qlugen is an enterprise technology company helping organisations build intelligent, scalable and modern digital foundations. From cloud infrastructure to AI agent development, from cybersecurity to sustainability — deep expertise across every dimension of enterprise transformation.</p>
           </Column>
         </Grid>
         <Grid className="capability-grid">
