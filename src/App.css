@@ -1822,6 +1822,47 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
   line-height: 1.45;
 }
 
+/* Previous experience list */
+.exec-prev-exp {
+  margin-top: 1.5rem;
+}
+.exec-prev-exp__label {
+  margin: 0 0 .625rem;
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--q-accent);
+}
+.exec-prev-exp__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.exec-prev-exp__item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .5rem 0;
+  border-bottom: 1px solid rgba(2,33,96,.1);
+}
+.exec-prev-exp__item:first-child {
+  border-top: 1px solid rgba(2,33,96,.1);
+}
+.exec-prev-exp__logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+.exec-prev-exp__name {
+  font-size: .8125rem;
+  font-weight: 500;
+  color: rgba(2,33,96,.8);
+  letter-spacing: .01em;
+}
+
 @media (max-width: 66rem) {
   .exec-spotlight {
     min-height: 0;

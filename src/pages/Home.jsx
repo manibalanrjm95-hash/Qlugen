@@ -839,14 +839,29 @@ export default function Home() {
           <div className="exec-spotlight__content">
             <p className="exec-spotlight__eyebrow">Executive Leadership</p>
             <h3>Vinay Pachunoori</h3>
-            <div className="exec-spotlight__highlights" aria-label="Experience highlights">
-              <span>Ex Oracle</span>
-              <span>Ex eBay</span>
-              <span>Ex Amazon</span>
-              <span>Ex Walmart</span>
-              <span>Ex Coupang</span>
+            <p className="exec-spotlight__bio">Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems.</p>
+            <div className="exec-prev-exp">
+              <p className="exec-prev-exp__label">Previous Experience</p>
+              <ul className="exec-prev-exp__list">
+                {[
+                  { name: 'Oracle',  domain: 'oracle.com'  },
+                  { name: 'eBay',    domain: 'ebay.com'    },
+                  { name: 'Amazon',  domain: 'amazon.com'  },
+                  { name: 'Walmart', domain: 'walmart.com' },
+                  { name: 'Coupang', domain: 'coupang.com' },
+                ].map(({ name, domain }) => (
+                  <li key={name} className="exec-prev-exp__item">
+                    <img
+                      src={`https://logo.clearbit.com/${domain}`}
+                      alt={name}
+                      className="exec-prev-exp__logo"
+                      onError={e => { e.currentTarget.style.display = 'none' }}
+                    />
+                    <span className="exec-prev-exp__name">{name}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="exec-spotlight__bio">Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems, with leadership experience spanning Oracle, eBay, Amazon, Walmart and Coupang.</p>
             <a
               href="https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
               target="_blank"
