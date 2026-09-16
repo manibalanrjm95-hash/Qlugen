@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qlugen.in/sitemap.xml
