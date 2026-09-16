@@ -110,7 +110,7 @@ function renderJsonLd(pathname, origin) {
   if (path === '/') {
     graphs.push(
       { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Qlugen', url: origin + '/' },
-      { '@context': 'https://schema.org', '@type': 'Organization', name: 'Qlugen', url: origin + '/', logo: origin + '/favicon.svg' },
+      { '@context': 'https://schema.org', '@type': 'Organization', name: 'Qlugen', url: origin + '/', logo: origin + '/favicon.png' },
     )
   }
 
@@ -138,7 +138,7 @@ function renderJsonLd(pathname, origin) {
       datePublished: a.datePublished,
       image: origin + '/social/qlugen.png',
       author: qlugenOrg,
-      publisher: { ...qlugenOrg, '@type': 'Organization', logo: { '@type': 'ImageObject', url: origin + '/favicon.svg' } },
+      publisher: { ...qlugenOrg, '@type': 'Organization', logo: { '@type': 'ImageObject', url: origin + '/favicon.png' } },
       url: origin + path,
       mainEntityOfPage: { '@type': 'WebPage', '@id': origin + path },
     })

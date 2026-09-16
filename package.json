@@ -29,6 +29,7 @@
     "firebase-tools": "^15.28.2",
     "oxlint": "^1.79.0",
     "playwright": "^1.62.1",
+    "sharp": "^0.35.4",
     "vite": "^8.2.2"
   }
 }
