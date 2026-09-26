@@ -35,7 +35,7 @@ const articles = [
 export default function InsightsOverview() {
   return (
     <Layout>
-      <section className="insights-hero insights-hero--resources">
+      <section className="insights-hero insights-hero--resources hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={10} md={5} sm={4}>
             <p className="section-label">Resources</p>

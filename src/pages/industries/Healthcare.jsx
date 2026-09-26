@@ -39,7 +39,7 @@ const outcomes = [
 export default function Healthcare() {
   return (
     <Layout>
-      <section className="split-hero split-hero--light">
+      <section className="split-hero split-hero--light hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Industry · Healthcare</p>

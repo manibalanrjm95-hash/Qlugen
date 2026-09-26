@@ -14,7 +14,7 @@ const culture = [
 
 const working = ['Start with the outcome', 'Design for real people', 'Build for scale from day one', 'Leave lasting capability behind']
 
-const areas = ['Data & Analytics', 'AI & Agent Development', 'Cloud & Infrastructure', 'Cybersecurity', 'Automation', 'Enterprise Architecture', 'Consulting & Delivery', 'Digital Transformation']
+const areas = ['Data Engineers', 'AI Engineers', 'Cloud Engineers', 'Software Engineers', 'Analytics Engineers', 'Architects / Leads']
 
 const cultureFrames = [
   'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
@@ -25,11 +25,11 @@ const cultureFrames = [
 export default function Careers() {
   return (
     <Layout>
-      <section className="careers-hero">
+      <section className="careers-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={7} md={4} sm={4}>
             <p className="section-label">Careers</p>
-            <h1>Build what enterprises use next.</h1>
+            <h1>Build enterprise technology that gets reused.</h1>
             <p className="split-hero__sub">
               Qlugen is a place for people who want to solve hard problems, work across the full breadth of enterprise technology, and see their work create real outcomes.
             </p>

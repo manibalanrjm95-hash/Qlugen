@@ -24,7 +24,7 @@ const analyse = [
 export default function Discover() {
   return (
     <Layout>
-      <section className="split-hero split-hero--light">
+      <section className="split-hero split-hero--light hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={9} md={6} sm={4}>
             <p className="section-label">Agentic Enterprise · 03</p>

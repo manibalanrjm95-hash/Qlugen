@@ -31,7 +31,7 @@ const outcomes = [
 export default function Government() {
   return (
     <Layout>
-      <section className="split-hero split-hero--light">
+      <section className="split-hero split-hero--light hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Industry · Government</p>

@@ -24,7 +24,7 @@ const outcomes = [
 export default function Manufacturing() {
   return (
     <Layout>
-      <section className="split-hero" style={{ background: '#001c1e' }}>
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1565793979145-32aea8c3e37a?auto=format&fit=crop&w=1800&q=80)', backgroundColor: '#001c1e' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Industry · Manufacturing</p>

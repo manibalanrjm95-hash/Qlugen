@@ -7,7 +7,7 @@ import '../App.css'
 export default function NotFound() {
   return (
     <Layout>
-      <section style={{ background: 'var(--q-primary)', padding: '8rem 0', color: '#fff', minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+      <section className="hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80)', backgroundColor: 'var(--q-primary)', padding: '8rem 0', color: '#fff', minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
         <Grid>
           <Column lg={8} md={6} sm={4}>
             <p className="section-label" style={{ color: 'var(--q-accent)' }}>404</p>

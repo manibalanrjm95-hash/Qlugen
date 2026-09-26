@@ -20,13 +20,16 @@ const navItems = [
     ],
   },
   {
-    label: 'Products & Platforms', to: '/technology',
+    label: 'Products & Platforms', to: '/products',
     items: [
-      { label: 'Qlugen AI Studio', to: '/technology' },
-      { label: 'Qlugen Data Fabric', to: '/technology' },
-      { label: 'Qlugen CloudOps', to: '/capabilities/cloud-infrastructure' },
-      { label: 'Qlugen AutoFlow', to: '/capabilities/automation' },
-      { label: 'Qlugen SecureEdge', to: '/capabilities/cybersecurity' },
+      { label: 'AI Readiness Assessment', to: '/products/ai-readiness-assessment' },
+      { label: 'Data Migration Factory', to: '/products/data-migration-factory' },
+      { label: 'Analytics Migration Factory', to: '/products/analytics-migration-factory' },
+      { label: 'Cloud Optimize', to: '/products/cloud-optimize' },
+      { label: 'Data Governance', to: '/products/data-governance' },
+      { label: 'AI Governance', to: '/products/ai-governance' },
+      { label: 'Qlugen Context', to: '/products/qlugen-context' },
+      { label: 'Data Agent Platform', to: '/products/data-agent-platform' },
     ],
   },
   {
@@ -41,12 +44,14 @@ const navItems = [
     ],
   },
   { label: 'Tech Blogs', to: '/insights' },
-  { label: 'Partners', to: '/#partners' },
+  { label: 'Technology', to: '/technology' },
   {
     label: 'Company', to: '/company',
     items: [
       { label: 'About Us', to: '/about' },
+      { label: 'How We Work', to: '/how-we-work' },
       { label: 'Executive Team', to: '/leadership' },
+      { label: 'Careers', to: '/careers' },
       { label: 'Contact Us', to: '/contact' },
     ],
   },
@@ -147,7 +152,7 @@ export default function Layout({ children }) {
               <img src={logoWordmark} alt="Qlugen" className="footer-logo-wordmark" />
             </div>
             <span className="footer-tagline">Enterprise, made human.</span>
-            <p className="footer-desc">Enterprise technology for organisations ready to move further.</p>
+            <p className="footer-desc">Products that accelerate transformation. Engineering that makes it real.</p>
           </Column>
           <Column lg={3} md={2} sm={2} className="footer-links-col">
             <p className="footer-heading">Capabilities</p>
@@ -159,6 +164,17 @@ export default function Layout({ children }) {
               <li><Link to="/capabilities/automation">Automation</Link></li>
               <li><Link to="/capabilities/digital-transformation">Digital Transformation</Link></li>
               <li><Link to="/capabilities/sustainability">Sustainability</Link></li>
+            </ul>
+          </Column>
+          <Column lg={3} md={2} sm={2} className="footer-links-col">
+            <p className="footer-heading">Products</p>
+            <ul>
+              <li><Link to="/products/ai-readiness-assessment">AI Readiness Assessment</Link></li>
+              <li><Link to="/products/data-migration-factory">Data Migration Factory</Link></li>
+              <li><Link to="/products/analytics-migration-factory">Analytics Migration Factory</Link></li>
+              <li><Link to="/products/cloud-optimize">Cloud Optimize</Link></li>
+              <li><Link to="/products/data-governance">Data Governance</Link></li>
+              <li><Link to="/products/ai-governance">AI Governance</Link></li>
             </ul>
           </Column>
           <Column lg={3} md={2} sm={2} className="footer-links-col">

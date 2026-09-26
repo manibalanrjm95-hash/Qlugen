@@ -14,6 +14,8 @@ const Cybersecurity = lazy(() => import('./pages/capabilities/Cybersecurity'))
 const Automation = lazy(() => import('./pages/capabilities/Automation'))
 const DigitalTransformation = lazy(() => import('./pages/capabilities/DigitalTransformation'))
 const Sustainability = lazy(() => import('./pages/capabilities/Sustainability'))
+const ProductsOverview = lazy(() => import('./pages/products/ProductsOverview'))
+const ProductDetail = lazy(() => import('./pages/products/ProductDetail'))
 const IndustriesOverview = lazy(() => import('./pages/industries/IndustriesOverview'))
 const FinancialServices = lazy(() => import('./pages/industries/FinancialServices'))
 const Healthcare = lazy(() => import('./pages/industries/Healthcare'))
@@ -57,6 +59,15 @@ createRoot(document.getElementById('root')).render(
           <Route path="/capabilities/automation" element={<Automation />} />
           <Route path="/capabilities/digital-transformation" element={<DigitalTransformation />} />
           <Route path="/capabilities/sustainability" element={<Sustainability />} />
+          <Route path="/products" element={<ProductsOverview />} />
+          <Route path="/products/ai-readiness-assessment" element={<ProductDetail slug="ai-readiness-assessment" />} />
+          <Route path="/products/data-migration-factory" element={<ProductDetail slug="data-migration-factory" />} />
+          <Route path="/products/analytics-migration-factory" element={<ProductDetail slug="analytics-migration-factory" />} />
+          <Route path="/products/cloud-optimize" element={<ProductDetail slug="cloud-optimize" />} />
+          <Route path="/products/data-governance" element={<ProductDetail slug="data-governance" />} />
+          <Route path="/products/ai-governance" element={<ProductDetail slug="ai-governance" />} />
+          <Route path="/products/qlugen-context" element={<ProductDetail slug="qlugen-context" />} />
+          <Route path="/products/data-agent-platform" element={<ProductDetail slug="data-agent-platform" />} />
           <Route path="/industries" element={<IndustriesOverview />} />
           <Route path="/industries/financial-services" element={<FinancialServices />} />
           <Route path="/industries/healthcare" element={<Healthcare />} />

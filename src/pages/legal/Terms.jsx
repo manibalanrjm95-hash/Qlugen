@@ -6,7 +6,7 @@ import '../../App.css'
 export default function Terms() {
   return (
     <Layout>
-      <section className="page-hero">
+      <section className="page-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={12} md={6} sm={4}>
             <p className="section-label">Legal</p>

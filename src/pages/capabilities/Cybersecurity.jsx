@@ -34,7 +34,7 @@ const outcomes = [
 export default function Cybersecurity() {
   return (
     <Layout>
-      <section className="split-hero split-hero--darkest">
+      <section className="split-hero split-hero--darkest hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Capability · Cybersecurity</p>
@@ -56,7 +56,7 @@ export default function Cybersecurity() {
       </section>
 
       <section className="wide-image-band wide-image-band--dark">
-        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
         <div className="wide-image-band__overlay wide-image-band__overlay--dark" />
         <Grid className="wide-image-band__content">
           <Column lg={10} md={6} sm={4}>
@@ -137,3 +137,4 @@ export default function Cybersecurity() {
     </Layout>
   )
 }
+

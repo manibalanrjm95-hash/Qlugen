@@ -8,7 +8,7 @@ import '../../App.css'
 export default function ModerniseArticle() {
   return (
     <Layout>
-      <section className="article-page-hero">
+      <section className="article-page-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={10} md={5} sm={4}>
             <span className="article-category">Cloud</span>

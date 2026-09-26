@@ -26,7 +26,7 @@ const principles = [
 export default function Govern() {
   return (
     <Layout>
-      <section className="split-hero split-hero--darkest">
+      <section className="split-hero split-hero--darkest hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Agentic Enterprise · 04</p>

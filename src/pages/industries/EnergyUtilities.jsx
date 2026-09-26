@@ -41,7 +41,7 @@ function GridVisual() {
 export default function EnergyUtilities() {
   return (
     <Layout>
-      <section className="split-hero" style={{ background: '#012749' }}>
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1800&q=80)', backgroundColor: '#012749' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Industry · Energy &amp; Utilities</p>

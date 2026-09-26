@@ -19,7 +19,7 @@ const caps = [
 export default function CapabilitiesOverview() {
   return (
     <Layout>
-      <section style={{ background: 'var(--q-primary)', padding: '8rem 0 6rem', color: '#fff' }}>
+      <section className="hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80)', backgroundColor: 'var(--q-primary)', padding: '8rem 0 6rem', color: '#fff' }}>
         <Grid>
           <Column lg={14} md={7} sm={4}>
             <p className="section-label" style={{ color: 'var(--q-accent)' }}>Capabilities</p>

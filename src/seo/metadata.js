@@ -77,6 +77,14 @@ const articleData = {
 }
 
 const breadcrumbMap = {
+  '/products/ai-readiness-assessment':      [['Products & Platforms', '/products'], ['AI Readiness Assessment', '/products/ai-readiness-assessment']],
+  '/products/data-migration-factory':       [['Products & Platforms', '/products'], ['Data Migration Factory', '/products/data-migration-factory']],
+  '/products/analytics-migration-factory':  [['Products & Platforms', '/products'], ['Analytics Migration Factory', '/products/analytics-migration-factory']],
+  '/products/cloud-optimize':               [['Products & Platforms', '/products'], ['Cloud Optimize', '/products/cloud-optimize']],
+  '/products/data-governance':              [['Products & Platforms', '/products'], ['Data Governance', '/products/data-governance']],
+  '/products/ai-governance':                [['Products & Platforms', '/products'], ['AI Governance', '/products/ai-governance']],
+  '/products/qlugen-context':               [['Products & Platforms', '/products'], ['Qlugen Context', '/products/qlugen-context']],
+  '/products/data-agent-platform':          [['Products & Platforms', '/products'], ['Data Agent Platform', '/products/data-agent-platform']],
   '/capabilities/data-analytics':           [['Capabilities', '/capabilities'], ['Data & Analytics', '/capabilities/data-analytics']],
   '/capabilities/ai-agent-development':     [['Capabilities', '/capabilities'], ['AI & Agent Development', '/capabilities/ai-agent-development']],
   '/capabilities/cloud-infrastructure':     [['Capabilities', '/capabilities'], ['Cloud & Infrastructure', '/capabilities/cloud-infrastructure']],

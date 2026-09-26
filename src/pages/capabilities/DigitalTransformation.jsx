@@ -6,9 +6,9 @@ import { Grid, Column } from '@carbon/react'
 import '../../App.css'
 
 const pairs = [
-  { title: 'Transformation Strategy', desc: 'Define the vision, priorities and roadmap that turn ambition into a deliverable programme — then design the digital products and platforms that create new value.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80', alt: 'Team planning priorities together using a sticky-note board' },
-  { title: 'Experience & Platforms', desc: 'Reshape customer and employee experiences around real journeys, and implement the core enterprise platforms that run the business day to day.', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80', alt: 'Software team collaborating on digital products and platforms' },
-  { title: 'Modernisation & Operating Model', desc: 'Reduce legacy complexity and change how teams, processes and technology work together — so the change actually sticks.', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80', alt: 'Colleagues reviewing documents and business processes together' },
+  { title: 'Transformation Strategy', desc: 'Define the vision, priorities and roadmap that turn ambition into a deliverable programme — then design the digital products and platforms that create new value.', img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80', alt: 'Team planning priorities together using a sticky-note board' },
+  { title: 'Experience & Platforms', desc: 'Reshape customer and employee experiences around real journeys, and implement the core enterprise platforms that run the business day to day.', img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80', alt: 'Software team collaborating on digital products and platforms' },
+  { title: 'Modernisation & Operating Model', desc: 'Reduce legacy complexity and change how teams, processes and technology work together — so the change actually sticks.', img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80', alt: 'Colleagues reviewing documents and business processes together' },
 ]
 
 const outcomes = [
@@ -31,7 +31,7 @@ export default function DigitalTransformation() {
   return (
     <Layout>
       <section className="bleed-hero">
-        <img className="bleed-hero-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80" alt="" fetchPriority="high" decoding="async" />
+        <img className="bleed-hero-img" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80" alt="" fetchPriority="high" decoding="async" />
         <div className="bleed-hero-scrim" />
         <div className="bleed-hero-content">
           <p className="section-label">Capability · Digital Transformation</p>
@@ -120,3 +120,4 @@ export default function DigitalTransformation() {
     </Layout>
   )
 }
+

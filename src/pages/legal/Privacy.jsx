@@ -6,7 +6,7 @@ import '../../App.css'
 export default function Privacy() {
   return (
     <Layout>
-      <section className="page-hero">
+      <section className="page-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={12} md={6} sm={4}>
             <p className="section-label">Legal</p>

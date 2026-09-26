@@ -32,7 +32,7 @@ const outcomes = [
 export default function Sustainability() {
   return (
     <Layout>
-      <section className="split-hero split-hero--light">
+      <section className="split-hero split-hero--light hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Capability · Sustainability</p>

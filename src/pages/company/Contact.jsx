@@ -6,13 +6,12 @@ import { ArrowRight, Enterprise, Partnership, UserFollow } from '@carbon/icons-r
 import '../../App.css'
 
 const interests = [
-  'Data & Analytics',
-  'AI & Agent Development',
-  'Cloud & Infrastructure',
-  'Cybersecurity',
-  'Automation',
-  'Digital Transformation',
-  'Sustainability',
+  'AI readiness & governance',
+  'Data migration',
+  'Analytics modernisation',
+  'Cloud optimisation',
+  'Engineering teams',
+  'Managed analytics & data platforms',
   'Something else',
 ]
 
@@ -64,7 +63,7 @@ export default function Contact() {
             <div className="contact-left">
               <div className="contact-visual-band">
                 <img
-                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
                   alt=""
                   className="contact-visual-band__img"
                   fetchPriority="high"
@@ -73,8 +72,8 @@ export default function Contact() {
                 <div className="contact-visual-band__overlay" />
               </div>
               <p className="section-label">Start a conversation</p>
-              <h1>What are you looking to transform?</h1>
-              <p>Whether you're exploring a specific challenge or planning a large-scale transformation, our enterprise team is ready to help you define the path forward.</p>
+              <h1>Bring us the transformation problem.</h1>
+              <p>AI readiness, data migration, analytics modernisation, cloud optimisation, governance, engineering teams or managed platforms. Start with a focused conversation.</p>
               {contexts.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="contact-context-item">
                   <Icon size={22} />

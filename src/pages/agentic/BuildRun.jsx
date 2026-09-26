@@ -17,7 +17,7 @@ const sections = [
 export default function BuildRun() {
   return (
     <Layout>
-      <section className="split-hero split-hero--darkest">
+      <section className="split-hero split-hero--darkest hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={7} md={4} sm={4}>
             <p className="section-label">Agentic Enterprise · 02</p>

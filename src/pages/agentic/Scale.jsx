@@ -19,7 +19,7 @@ const enablers = [
 export default function Scale() {
   return (
     <Layout>
-      <section className="split-hero" style={{ background: 'linear-gradient(120deg, #010a23 0%, #022160 60%, #0444C6 100%)' }}>
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80)', backgroundColor: '#022160' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Agentic Enterprise · 05</p>

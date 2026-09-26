@@ -8,7 +8,7 @@ import '../../App.css'
 export default function AgenticOperatingModel() {
   return (
     <Layout>
-      <section className="article-page-hero">
+      <section className="article-page-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={10} md={5} sm={4}>
             <span className="article-category">Agentic AI</span>

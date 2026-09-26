@@ -35,7 +35,7 @@ const metrics = [
 export default function CloudInfra() {
   return (
     <Layout>
-      <section className="split-hero">
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Capability · Cloud &amp; Infrastructure</p>
@@ -46,7 +46,7 @@ export default function CloudInfra() {
             <div className="split-visual-wrap">
               <div className="cloud-hero-stack">
                 <img
-                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
                   alt=""
                   className="cloud-hero-stack__img"
                   loading="lazy"
@@ -74,7 +74,7 @@ export default function CloudInfra() {
           <Column lg={8} md={4} sm={4}>
             <div className="capability-scene">
               <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=1200&q=80"
                 alt=""
                 className="capability-scene__img"
                 loading="lazy"
@@ -87,7 +87,7 @@ export default function CloudInfra() {
       </section>
 
       <section className="wide-image-band">
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
         <div className="wide-image-band__overlay" />
         <Grid className="wide-image-band__content">
           <Column lg={9} md={6} sm={4}>
@@ -156,3 +156,4 @@ export default function CloudInfra() {
     </Layout>
   )
 }
+

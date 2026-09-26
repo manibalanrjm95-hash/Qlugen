@@ -8,11 +8,11 @@ import { ArrowRight } from '@carbon/icons-react'
 import '../../App.css'
 
 const stages = [
-  { num: '01', label: 'Orchestrate', desc: 'Connect agents, systems, tools, workflows and human approvals into coordinated enterprise processes.', to: '/agentic-ai/orchestrate', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80' },
-  { num: '02', label: 'Build & Run', desc: 'Engineer AI agents and systems that operate reliably inside your enterprise environment.', to: '/agentic-ai/build-run', img: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=1400&q=80' },
-  { num: '03', label: 'Discover', desc: 'Identify high-value AI opportunities mapped to real business workflows and measurable outcomes.', to: '/agentic-ai/discover', img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80' },
-  { num: '04', label: 'Govern', desc: 'Build AI systems that operate within trusted boundaries with human oversight at every level.', to: '/agentic-ai/govern', img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=80' },
-  { num: '05', label: 'Scale', desc: 'Extend proven AI capabilities across your enterprise with platform thinking and reusable foundations.', to: '/agentic-ai/scale', img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80' },
+  { num: '01', label: 'Orchestrate', desc: 'Connect agents, systems, tools, workflows and human approvals into coordinated enterprise processes.', to: '/agentic-ai/orchestrate', img: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1400&q=80' },
+  { num: '02', label: 'Build & Run', desc: 'Engineer AI agents and systems that operate reliably inside your enterprise environment.', to: '/agentic-ai/build-run', img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80' },
+  { num: '03', label: 'Discover', desc: 'Identify high-value AI opportunities mapped to real business workflows and measurable outcomes.', to: '/agentic-ai/discover', img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80' },
+  { num: '04', label: 'Govern', desc: 'Build AI systems that operate within trusted boundaries with human oversight at every level.', to: '/agentic-ai/govern', img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80' },
+  { num: '05', label: 'Scale', desc: 'Extend proven AI capabilities across your enterprise with platform thinking and reusable foundations.', to: '/agentic-ai/scale', img: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80' },
 ]
 
 const why = [
@@ -26,7 +26,7 @@ export default function AgenticOverview() {
 
   return (
     <Layout>
-      <section style={{ background: '#001c1e', color: '#fff', minHeight: 'calc(70vh - var(--header-height))', display: 'flex', alignItems: 'center', padding: '6rem 0' }}>
+      <section className="hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1800&q=80)', backgroundColor: '#001c1e', color: '#fff', minHeight: 'calc(70vh - var(--header-height))', display: 'flex', alignItems: 'center', padding: '6rem 0' }}>
         <Grid>
           <Column lg={12} md={7} sm={4}>
             <p className="section-label" style={{ color: 'var(--q-accent)' }}>Agentic Enterprise</p>

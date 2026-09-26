@@ -32,7 +32,7 @@ const outcomes = [
 export default function FinancialServices() {
   return (
     <Layout>
-      <section className="split-hero">
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Industry · Financial Services</p>

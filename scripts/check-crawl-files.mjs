@@ -16,7 +16,7 @@ const routes = [...routeSource.matchAll(/<Route path="([^"]+)"/g)].map(match => 
 
 assert.ok(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'))
 assert.ok(sitemap.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'))
-assert.equal(urls.length, 36)
+assert.equal(urls.length, Object.keys(seoPages).length)
 assert.equal(new Set(urls).size, urls.length)
 assert.deepEqual(urls.toSorted(), routes.map(path => `${origin}${path}`).toSorted())
 for (const path of Object.keys(seoPages)) {

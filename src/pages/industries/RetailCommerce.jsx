@@ -27,7 +27,7 @@ const outcomes = [
 export default function RetailCommerce() {
   return (
     <Layout>
-      <section className="split-hero">
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={6} md={4} sm={4}>
             <p className="section-label">Industry · Retail &amp; Commerce</p>

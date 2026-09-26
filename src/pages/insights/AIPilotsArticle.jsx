@@ -8,7 +8,7 @@ import '../../App.css'
 export default function AIPilotsArticle() {
   return (
     <Layout>
-      <section className="article-page-hero">
+      <section className="article-page-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={10} md={5} sm={4}>
             <span className="article-category">AI &amp; Analytics</span>

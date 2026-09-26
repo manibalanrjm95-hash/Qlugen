@@ -33,7 +33,7 @@ const bars = [42, 58, 35, 71, 49, 64, 80, 55]
 export default function DataAnalytics() {
   return (
     <Layout>
-      <section className="split-hero">
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Capability · Data &amp; Analytics</p>

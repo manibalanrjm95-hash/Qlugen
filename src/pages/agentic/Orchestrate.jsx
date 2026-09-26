@@ -49,7 +49,7 @@ function OrchestrationDiagram() {
 export default function Orchestrate() {
   return (
     <Layout>
-      <section className="split-hero split-hero--darkest">
+      <section className="split-hero split-hero--darkest hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Agentic Enterprise · 01</p>

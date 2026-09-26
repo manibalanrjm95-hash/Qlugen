@@ -15,7 +15,7 @@ const stands = [
 export default function About() {
   return (
     <Layout>
-      <section className="split-hero split-hero--light">
+      <section className="split-hero split-hero--light hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={10} md={6} sm={4}>
             <p className="section-label">About Us</p>

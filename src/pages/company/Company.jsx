@@ -20,7 +20,7 @@ const links = [
 export default function Company() {
   return (
     <Layout>
-      <section style={{ background: 'var(--q-primary)', color: '#fff', padding: '8rem 0 6rem' }}>
+      <section className="hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1800&q=80)', backgroundColor: 'var(--q-primary)', color: '#fff', padding: '8rem 0 6rem' }}>
         <Grid>
           <Column lg={14} md={7} sm={4}>
             <p className="section-label" style={{ color: 'var(--q-accent)' }}>Company</p>

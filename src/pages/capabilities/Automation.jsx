@@ -29,7 +29,7 @@ const outcomes = [
 export default function Automation() {
   return (
     <Layout>
-      <section className="split-hero">
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={8} md={4} sm={4}>
             <p className="section-label">Capability · Automation</p>
@@ -40,7 +40,7 @@ export default function Automation() {
             <div className="split-visual-wrap">
               <div className="workflow-map">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
                   alt=""
                   className="workflow-map__img"
                   loading="lazy"
@@ -86,7 +86,7 @@ export default function Automation() {
       </section>
 
       <section className="wide-image-band">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" decoding="async" />
         <div className="wide-image-band__overlay" />
         <Grid className="wide-image-band__content">
           <Column lg={10} md={6} sm={4}>
@@ -140,3 +140,4 @@ export default function Automation() {
     </Layout>
   )
 }
+

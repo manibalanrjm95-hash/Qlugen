@@ -7,10 +7,10 @@ import { ArrowRight } from '@carbon/icons-react'
 import '../App.css'
 
 const principles = [
-  { num: '01', title: 'Start with the outcome', desc: 'Every engagement begins by defining what success looks like measurably and in business terms.', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80' },
-  { num: '02', title: 'Design for real people', desc: 'Solutions are built around the employees, customers and stakeholders who will actually use them.', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80' },
-  { num: '03', title: 'Build for scale from day one', desc: 'Architecture, security, integration and governance are considered early, not retrofitted later.', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80' },
-  { num: '04', title: 'Leave lasting capability behind', desc: 'Engagements create reusable foundations and transfer knowledge to client teams.', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=80' },
+  { num: '01', title: 'Start with the outcome', desc: 'Every engagement begins by defining what success looks like measurably and in business terms.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80' },
+  { num: '02', title: 'Design for real people', desc: 'Solutions are built around the employees, customers and stakeholders who will actually use them.', img: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80' },
+  { num: '03', title: 'Build for scale from day one', desc: 'Architecture, security, integration and governance are considered early, not retrofitted later.', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80' },
+  { num: '04', title: 'Leave lasting capability behind', desc: 'Engagements create reusable foundations and transfer knowledge to client teams.', img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80' },
 ]
 
 const phases = [
@@ -26,12 +26,12 @@ export default function HowWeWork() {
 
   return (
     <Layout>
-      <section className="page-hero">
+      <section className="page-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1800&q=80)' }}>
         <Grid>
           <Column lg={11} md={6} sm={4}>
             <p className="section-label">How we work</p>
-            <h1>Rigour meets momentum.</h1>
-            <p className="page-hero__sub">The strongest transformations happen when clear outcomes, thoughtful design and disciplined execution move together from first conversation to lasting capability.</p>
+            <h1>Customer problem to reusable IP.</h1>
+            <p className="page-hero__sub">The product-led flywheel turns customer work into better engineering leverage while staying grounded in real enterprise problems.</p>
           </Column>
         </Grid>
       </section>
@@ -69,8 +69,8 @@ export default function HowWeWork() {
         <Grid>
           <Column lg={7} md={5} sm={4}>
             <p className="section-label">Our delivery model</p>
-            <h2>A structured path from problem to capability</h2>
-            <p className="section-body">Qlugen&apos;s delivery model is built to create progress at every stage, not just at the end of a long programme.</p>
+            <h2>Customer problem - reusable IP - measurable delivery.</h2>
+            <p className="section-body">Qlugen builds through a flywheel: customer problem, discover, build accelerator, deploy, learn, productise and reuse.</p>
             <Link to="/capabilities" className="cta-btn cta-btn--outline-dark" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
               See our capabilities <ArrowRight size={18} />
             </Link>
@@ -78,7 +78,7 @@ export default function HowWeWork() {
           <Column lg={9} md={3} sm={4}>
             <div className="how-process-visual">
               <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80"
                 alt=""
                 className="how-process-visual__img"
                 loading="lazy"

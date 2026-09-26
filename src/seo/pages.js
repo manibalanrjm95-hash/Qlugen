@@ -2,8 +2,8 @@
 // Keep this catalogue shared by the HTML build and client-side navigation.
 export const seoPages = {
   '/': {
-    title: 'Qlugen | Enterprise AI, Cloud & Digital Transformation',
-    description: 'Qlugen is an enterprise technology company helping organisations modernise with AI, data, cloud, cybersecurity, automation and digital transformation.',
+    title: 'Qlugen | Enterprise AI, Cloud & Data Engineering',
+    description: 'Qlugen builds enterprise products, accelerators and engineering solutions across Data, AI, Cloud and Analytics.',
   },
   '/capabilities': {
     title: 'Enterprise Technology Capabilities | Qlugen',
@@ -36,6 +36,42 @@ export const seoPages = {
   '/capabilities/sustainability': {
     title: 'Enterprise Sustainability Enablement | Qlugen',
     description: 'Integrate sustainability into enterprise technology strategy with measurement, visibility and operational progress supported by Qlugen.',
+  },
+  '/products': {
+    title: 'Products & Platforms | Qlugen',
+    description: 'Explore Qlugen products, accelerators and roadmap platforms for AI readiness, data migration, analytics modernisation, governance and cloud optimisation.',
+  },
+  '/products/ai-readiness-assessment': {
+    title: 'AI Readiness Assessment | Qlugen',
+    description: 'Baseline data, platform, governance and use-case readiness before scaling AI with a readiness scorecard and prioritised actions.',
+  },
+  '/products/data-migration-factory': {
+    title: 'Data Migration Factory | Qlugen',
+    description: 'Reusable discovery, mapping, migration and validation patterns for measurable enterprise data migration pipelines.',
+  },
+  '/products/analytics-migration-factory': {
+    title: 'Analytics Migration Factory | Qlugen',
+    description: 'Modernise BI estates with controlled report inventory, semantic mapping, validation and adoption across tools including Power BI and Superset.',
+  },
+  '/products/cloud-optimize': {
+    title: 'Cloud Optimize | Qlugen',
+    description: 'Turn cloud cost visibility into a prioritised engineering optimisation backlog with execution behind it.',
+  },
+  '/products/data-governance': {
+    title: 'Data Governance | Qlugen',
+    description: 'Make governance operational through ownership, data quality controls, lineage, policy workflows and access governance integration.',
+  },
+  '/products/ai-governance': {
+    title: 'AI Governance | Qlugen',
+    description: 'Build evidence-based governance around real AI delivery, including use-case registries, approvals, inventory, controls and evaluation hooks.',
+  },
+  '/products/qlugen-context': {
+    title: 'Qlugen Context | Qlugen',
+    description: 'Qlugen Context is a roadmap and early access semantic context layer for more consistent enterprise agent experiences.',
+  },
+  '/products/data-agent-platform': {
+    title: 'Data Agent Platform | Qlugen',
+    description: 'A roadmap platform for governed data agents, conversational analytics and agentic data workflows.',
   },
   '/industries': {
     title: 'Industries We Serve | Qlugen',

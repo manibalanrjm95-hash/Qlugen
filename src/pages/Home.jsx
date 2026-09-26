@@ -17,13 +17,13 @@ import '../App.css';
 
 /* ── Page data ── */
 const capabilities = [
-  { icon: Analytics, eyebrow: 'Data & Analytics', title: 'Turn data into decisions', body: 'Unify your data landscape and build the analytics foundations that power confident, real-time business choices at every level.', artImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(8, 189, 186, 0.16)', to: '/capabilities/data-analytics' },
-  { icon: Chip, eyebrow: 'AI & Agent Development', title: 'Intelligent systems that act', body: 'Deploy purpose-built AI agents and machine-learning models that automate complex workflows and meaningfully augment your teams.', artImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(11, 242, 118, 0.14)', to: '/capabilities/ai-agent-development' },
-  { icon: Cloud, eyebrow: 'Cloud & Infrastructure', title: 'Scale without limits', body: 'Modernize operations with resilient, multi-cloud architecture designed for enterprise performance, flexibility, and cost control.', artImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(69, 137, 255, 0.16)', to: '/capabilities/cloud-infrastructure' },
-  { icon: Security, eyebrow: 'Cybersecurity', title: 'Protect what matters most', body: 'Embed intelligence-led security across every layer — from identity and access to real-time threat detection and compliance.', artImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(238, 83, 150, 0.14)', to: '/capabilities/cybersecurity' },
-  { icon: SettingsAdjust, eyebrow: 'Automation', title: 'Eliminate friction at scale', body: 'Connect systems, automate repetitive processes, and free your workforce to focus on higher-value, strategic work.', artImage: 'https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(255, 131, 43, 0.16)', to: '/capabilities/automation' },
-  { icon: Code, eyebrow: 'Digital Transformation', title: 'Reimagine the enterprise', body: 'Design and deliver end-to-end transformation programmes that modernize operations and unlock new revenue streams.', artImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(61, 219, 217, 0.14)', to: '/capabilities/digital-transformation' },
-  { icon: Earth, eyebrow: 'Sustainability', title: 'Build a responsible future', body: 'Integrate ESG principles into your strategy with measurable targets, technology-driven reporting, and supply-chain visibility.', artImage: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(111, 220, 140, 0.16)', to: '/capabilities/sustainability' },
+  { icon: Analytics, eyebrow: 'Data & Analytics', title: 'Turn data into decisions', body: 'Unify your data landscape and build the analytics foundations that power confident, real-time business choices at every level.', artImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(8, 189, 186, 0.16)', to: '/capabilities/data-analytics' },
+  { icon: Chip, eyebrow: 'AI & Agent Development', title: 'Intelligent systems that act', body: 'Deploy purpose-built AI agents and machine-learning models that automate complex workflows and meaningfully augment your teams.', artImage: 'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(11, 242, 118, 0.14)', to: '/capabilities/ai-agent-development' },
+  { icon: Cloud, eyebrow: 'Cloud & Infrastructure', title: 'Scale without limits', body: 'Modernize operations with resilient, multi-cloud architecture designed for enterprise performance, flexibility, and cost control.', artImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(69, 137, 255, 0.16)', to: '/capabilities/cloud-infrastructure' },
+  { icon: Security, eyebrow: 'Cybersecurity', title: 'Protect what matters most', body: 'Embed intelligence-led security across every layer — from identity and access to real-time threat detection and compliance.', artImage: 'https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(238, 83, 150, 0.14)', to: '/capabilities/cybersecurity' },
+  { icon: SettingsAdjust, eyebrow: 'Automation', title: 'Eliminate friction at scale', body: 'Connect systems, automate repetitive processes, and free your workforce to focus on higher-value, strategic work.', artImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(255, 131, 43, 0.16)', to: '/capabilities/automation' },
+  { icon: Code, eyebrow: 'Digital Transformation', title: 'Reimagine the enterprise', body: 'Design and deliver end-to-end transformation programmes that modernize operations and unlock new revenue streams.', artImage: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(61, 219, 217, 0.14)', to: '/capabilities/digital-transformation' },
+  { icon: Earth, eyebrow: 'Sustainability', title: 'Build a responsible future', body: 'Integrate ESG principles into your strategy with measurable targets, technology-driven reporting, and supply-chain visibility.', artImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(111, 220, 140, 0.16)', to: '/capabilities/sustainability' },
 ];
 
 const aiFeatures = [
@@ -513,9 +513,14 @@ export default function Home() {
     <Layout>
       {/* ── HERO ── */}
       <section className="hero-section" id="hero">
-        <video className="hero-video" autoPlay muted loop playsInline aria-hidden="true">
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
+        <img
+          className="hero-video"
+          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=85"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="hero-overlay" aria-hidden="true" />
 
         <div className="hero-top">
