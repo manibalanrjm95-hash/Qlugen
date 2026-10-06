@@ -886,12 +886,14 @@ export default function Home() {
       {/* ── About ── */}
       <section className="about-section" id="about">
         <Grid>
-          <Column lg={7} md={6} sm={4}>
-            <p className="section-label">About Us</p>
-            <h2>Enterprise services, built on integrity.</h2>
-          </Column>
-          <Column lg={{ span: 7, offset: 1 }} md={6} sm={4}>
-            <p className="about-copy">Founded in 2008, Qlugen has grown from a specialist technology consultancy into a global enterprise services firm. We operate across 35 countries, serving clients in financial services, healthcare, retail, manufacturing, and the public sector. Our people combine deep technical expertise with practical delivery experience — and we measure our success by the outcomes our clients achieve, not just the work we deliver.</p>
+          <Column lg={11} md={6} sm={4}>
+            <p className="section-label">ABOUT US</p>
+            <h2>Enterprise transformation without the blank page.</h2>
+            <p className="about-copy">Founded in 2026, Qlugen is an enterprise technology company focused on AI, data, cloud, analytics and modern engineering.
+
+We build reusable products, accelerators and engineering solutions that help organisations move from strategy to production faster — without starting from a blank page. Our approach brings together products, consulting, engineering and managed operations to solve recurring enterprise challenges with practical, scalable technology.
+
+We believe repeated enterprise problems deserve reusable technology, not repeated reinvention. That is why we focus on building once, learning from delivery, and creating solutions that can be adapted and reused across transformation programs.</p>
             <div className="about-actions">
               <Button kind="ghost" renderIcon={ArrowRight} as={RouterLink} to="/careers">Join our team</Button>
             </div>
