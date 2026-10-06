@@ -847,7 +847,11 @@ export default function Home() {
           <Column lg={8} md={6} sm={4}>
             <p className="section-label">{homeContent.about.eyebrow}</p>
             <h2>{homeContent.about.title}</h2>
-            <p className="about-copy">{homeContent.about.description}</p>
+            <div className="about-copy">
+              {homeContent.about.description.split('\n\n').map(paragraph => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
             <div className="about-actions">
               <Button kind="ghost" renderIcon={ArrowRight} as={RouterLink} to={homeContent.about.ctaUrl}>{homeContent.about.ctaLabel}</Button>
             </div>

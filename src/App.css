@@ -1909,7 +1909,9 @@ h2, h3 { font-weight: 400; letter-spacing: 0; line-height: 1.25; margin: 0; }
    ───────────────────────────────────────────────────────── */
 .about-section { padding: 7rem 0; background: var(--q-surface-1); }
 .about-section h2 { font-size: clamp(1.75rem, 3vw, 2.625rem); margin: 0 0 1rem; color: var(--q-text-primary); }
-.about-copy { font-size: 1rem; line-height: 1.7; color: var(--q-text-secondary); max-width: 38rem; white-space: pre-line; }
+.about-copy { max-width: 38rem; }
+.about-copy p { margin: 0 0 1rem; font-size: 1rem; line-height: 1.7; color: var(--q-text-secondary); }
+.about-copy p:last-child { margin-bottom: 0; }
 .about-actions { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
 
 /* ─────────────────────────────────────────────────────────
