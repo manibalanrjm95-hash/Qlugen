@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import '@carbon/styles/css/styles.css';
+@import './styles/tokens.css';
+html { scroll-behavior: smooth; }
+body { margin: 0; width: 100%; min-width: 320px; font-family: 'Outfit', sans-serif; }
+*, *::before, *::after { box-sizing: border-box; font-family: inherit; }
+img, video { display: block; max-width: 100%; }

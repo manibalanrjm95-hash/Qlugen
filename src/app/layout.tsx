@@ -7,6 +7,11 @@ import { Outfit } from "next/font/google";
 export const metadata: Metadata = {
   title: 'Qlugen - AI Development Agency',
   description: 'Qlugen designs, builds, and ships AI products, agents, automations, and integrations for growing teams.',
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml', sizes: 'any' },
+    ],
+  },
 }
 
 export const viewport: Viewport = {
