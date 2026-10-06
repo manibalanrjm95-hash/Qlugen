@@ -1,0 +1,129 @@
+{
+  "slug": "data-governance",
+  "title": "Data Governance",
+  "hero": {
+    "eyebrow": "Product Concept",
+    "title": "Data Governance",
+    "description": "Make governance operational, not just documented.",
+    "image": "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "Governance embedded in delivery and platform operations.",
+    "items": [
+      {
+        "title": "Ownership & stewardship",
+        "description": "Define accountable owners and stewards for critical data domains, policies and operational decisions."
+      },
+      {
+        "title": "Data quality controls",
+        "description": "Embed quality rules, exceptions and remediation paths into the way data products are delivered."
+      },
+      {
+        "title": "Lineage & dependency views",
+        "description": "Show how data moves, transforms and supports downstream processes so impact is easier to assess."
+      },
+      {
+        "title": "Policy workflows",
+        "description": "Turn governance policies into trackable workflows with approvals, evidence and decision history."
+      },
+      {
+        "title": "Access governance integration",
+        "description": "Connect access decisions to identity, role, policy and platform controls for governed data operations."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Data & AI Engineering",
+      "Architecture & Advisory",
+      "Managed Analytics & Data"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Ownership & stewardship",
+        "description": "Define accountable owners and stewards for critical data domains, policies and operational decisions."
+      },
+      {
+        "title": "Data quality controls",
+        "description": "Embed quality rules, exceptions and remediation paths into the way data products are delivered."
+      },
+      {
+        "title": "Lineage & dependency views",
+        "description": "Show how data moves, transforms and supports downstream processes so impact is easier to assess."
+      },
+      {
+        "title": "Policy workflows",
+        "description": "Turn governance policies into trackable workflows with approvals, evidence and decision history."
+      },
+      {
+        "title": "Access governance integration",
+        "description": "Connect access decisions to identity, role, policy and platform controls for governed data operations."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "ai-governance",
+      "qlugen-context"
+    ]
+  },
+  "cta": {
+    "heading": "Start an Data Governance conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Data Governance | Qlugen",
+    "description": "Make governance operational through ownership, data quality controls, lineage, policy workflows and access governance integration.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Data Governance"
+  }
+}

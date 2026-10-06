@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "eyebrow": "Company",
+    "title": "Technology with enterprise ambition.",
+    "description": "Qlugen exists to help ambitious organisations move further with technology — combining deep technical capability with disciplined delivery and a focus on lasting outcomes.",
+    "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1800&q=80"
+  },
+  "beliefs": {
+    "title": "What we believe",
+    "items": [
+      {
+        "title": "Outcomes over output",
+        "description": "Technology only matters when it changes what an organisation can do. We start with the outcome, not the deliverable."
+      },
+      {
+        "title": "Built for real people",
+        "description": "We design around the people who will actually use what we build. Adoption is the true measure of success."
+      },
+      {
+        "title": "Capability that lasts",
+        "description": "We measure success by the capability we leave behind — not the hours we deliver."
+      }
+    ]
+  },
+  "explore": {
+    "eyebrow": "Explore",
+    "title": "More about Qlugen",
+    "items": [
+      {
+        "title": "How We Work",
+        "description": "The principles and delivery model behind every engagement.",
+        "url": "/how-we-work"
+      },
+      {
+        "title": "Leadership",
+        "description": "The experienced team guiding Qlugen.",
+        "url": "/leadership"
+      },
+      {
+        "title": "Careers",
+        "description": "Build what enterprises use next, alongside exceptional colleagues.",
+        "url": "/careers"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Want to work with Qlugen?",
+    "sub": "Tell us what you're looking to transform.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Our Company & Principles | Qlugen",
+    "description": "Discover the principles behind Qlugen: enterprise ambition, technology built for real people, disciplined delivery and lasting business capability.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Company"
+  }
+}

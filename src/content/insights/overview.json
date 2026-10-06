@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "eyebrow": "Resources",
+    "title": "Insights",
+    "description": "Qlugen perspectives on enterprise AI adoption, cloud modernisation and the operating models behind digital transformation.",
+    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=80",
+    "tags": [
+      "AI & Analytics",
+      "Cloud",
+      "Agentic AI"
+    ]
+  },
+  "related": {
+    "eyebrow": "Related capabilities",
+    "title": "Put these insights to work",
+    "body": "Explore the Qlugen capabilities behind each topic — from AI agent development and cloud infrastructure to agentic enterprise design.",
+    "links": [
+      {
+        "label": "AI & Agent Development",
+        "url": "/capabilities/ai-agent-development"
+      },
+      {
+        "label": "Cloud & Infrastructure",
+        "url": "/capabilities/cloud-infrastructure"
+      },
+      {
+        "label": "Agentic Enterprise",
+        "url": "/agentic-ai"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Want to discuss what you've read?",
+    "sub": "Talk to the Qlugen team about applying these ideas to your enterprise.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Technology Insights | Qlugen",
+    "description": "Read Qlugen perspectives on enterprise AI adoption, cloud modernisation and the operating models behind digital transformation.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Insights"
+  }
+}

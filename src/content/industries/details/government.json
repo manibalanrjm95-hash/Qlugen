@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "eyebrow": "Industry · Government",
+    "title": "Technology designed around public outcomes.",
+    "description": "Qlugen works with public sector organisations to design and deliver technology that improves services, connects information and builds digital capability at scale.",
+    "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1800&q=80",
+    "visualImage": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80",
+    "visualImageAlt": "Government building representing public sector services"
+  },
+  "principles": {
+    "eyebrow": "Citizen-first technology",
+    "title": "Public sector organisations must deliver more with constrained resources, legacy systems and rising citizen expectations.",
+    "items": [
+      {
+        "title": "Accessible by design",
+        "description": "Services built around citizens, not around organisational structure."
+      },
+      {
+        "title": "Connected information",
+        "description": "Data that flows across agencies to reduce friction and duplication."
+      },
+      {
+        "title": "Efficient delivery",
+        "description": "Doing more with constrained resources through modern technology."
+      }
+    ]
+  },
+  "architecture": {
+    "eyebrow": "Service architecture",
+    "title": "Layered public service delivery",
+    "layers": [
+      {
+        "title": "Citizen Layer",
+        "description": "Accessible digital public services"
+      },
+      {
+        "title": "Service Delivery",
+        "description": "Workflows and case management"
+      },
+      {
+        "title": "Data & Integration",
+        "description": "Connected information across agencies"
+      },
+      {
+        "title": "Infrastructure",
+        "description": "Secure, scalable cloud foundations"
+      }
+    ]
+  },
+  "help": {
+    "eyebrow": "Where we help",
+    "title": "Focused on public value",
+    "areas": [
+      "Citizen Experiences",
+      "Digital Public Services",
+      "Data Platforms",
+      "Workflow Modernisation",
+      "Cloud",
+      "Secure Infrastructure",
+      "Analytics"
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Business priorities",
+    "title": "What government leaders focus on",
+    "items": [
+      {
+        "title": "Better Citizen Services"
+      },
+      {
+        "title": "Connected Information"
+      },
+      {
+        "title": "Modernised Infrastructure"
+      },
+      {
+        "title": "Improved Efficiency"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Digital Transformation",
+        "description": "Modernise public services end to end.",
+        "url": "/capabilities/digital-transformation"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Secure, scalable platforms for public services.",
+        "url": "/capabilities/cloud-infrastructure"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Connect information for better decisions.",
+        "url": "/capabilities/data-analytics"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Transform what comes next.",
+    "sub": "Tell us about your industry challenge.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Government & Public Sector Technology | Qlugen",
+    "description": "Design and deliver public sector technology that improves services, connects information and builds digital capability around public outcomes.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Government"
+  }
+}

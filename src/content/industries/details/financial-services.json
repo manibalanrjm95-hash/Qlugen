@@ -1,0 +1,106 @@
+{
+  "hero": {
+    "eyebrow": "Industry · Financial Services",
+    "title": "Technology for a more intelligent financial enterprise.",
+    "description": "From core system modernisation to AI-enabled operations, Qlugen helps financial organisations build foundations that support performance, compliance and customer expectation.",
+    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1800&q=80",
+    "priorities": [
+      "Speed to Market",
+      "Risk Control",
+      "Customer Experience",
+      "Operational Efficiency"
+    ]
+  },
+  "challenge": {
+    "eyebrow": "The challenge",
+    "title": "Competing on technology in financial services",
+    "body": "Financial services organisations face pressure on multiple fronts — legacy infrastructure, growing regulatory complexity, digital-first competition and increasingly sophisticated customer expectations. The technology decisions made now will determine competitive position for years ahead."
+  },
+  "help": {
+    "eyebrow": "Where we help",
+    "title": "Focused on what moves the business",
+    "areas": [
+      "Data & Analytics",
+      "AI-Assisted Operations",
+      "Cloud Modernisation",
+      "Cybersecurity",
+      "Compliance-Oriented Technology",
+      "Automation"
+    ]
+  },
+  "priorities": {
+    "eyebrow": "Technology priorities",
+    "title": "What financial services leaders focus on",
+    "items": [
+      {
+        "title": "Intelligent Operations",
+        "description": "AI-enabled processes across the front and back office."
+      },
+      {
+        "title": "Resilient Infrastructure",
+        "description": "Cloud foundations built for availability and control."
+      },
+      {
+        "title": "Trusted Data",
+        "description": "Governed data for confident, compliant decisions."
+      },
+      {
+        "title": "Modern Digital Channels",
+        "description": "Experiences that meet rising customer expectation."
+      }
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Business priorities",
+    "title": "Outcomes that matter",
+    "items": [
+      {
+        "title": "Intelligent Operations"
+      },
+      {
+        "title": "Resilient Infrastructure"
+      },
+      {
+        "title": "Trusted Data"
+      },
+      {
+        "title": "Modern Digital Channels"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Trusted data foundations for confident decisions.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "AI & Agent Development",
+        "description": "Intelligent systems that act across operations.",
+        "url": "/capabilities/ai-agent-development"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cybersecurity",
+        "description": "Intelligence-led security across every layer.",
+        "url": "/capabilities/cybersecurity"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Transform what comes next.",
+    "sub": "Tell us about your industry challenge.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Financial Services Technology | Qlugen",
+    "description": "Modernise financial operations with data, AI and cloud foundations that support performance, compliance and evolving customer expectations.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Financial Services"
+  }
+}

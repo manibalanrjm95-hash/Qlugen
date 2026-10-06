@@ -1,0 +1,129 @@
+{
+  "slug": "cloud-optimize",
+  "title": "Cloud Optimize",
+  "hero": {
+    "eyebrow": "Product / Accelerator",
+    "title": "Cloud Optimize",
+    "description": "Turn cloud cost visibility into an engineering optimization backlog.",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "A prioritized savings backlog with engineering execution behind it.",
+    "items": [
+      {
+        "title": "Cost allocation",
+        "description": "Connect cloud spend to products, teams and environments so ownership is clear and actionable."
+      },
+      {
+        "title": "Workload profiling",
+        "description": "Analyze usage patterns, workload behavior and service configuration to find optimization opportunities."
+      },
+      {
+        "title": "Compute & storage optimization",
+        "description": "Tune compute and storage decisions against performance needs, resilience requirements and cost controls."
+      },
+      {
+        "title": "Data lifecycle policies",
+        "description": "Apply retention, tiering and archival policies that reduce waste without weakening operational access."
+      },
+      {
+        "title": "FinOps operating cadence",
+        "description": "Establish review rhythms where finance, platform and engineering teams manage optimization as ongoing work."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Cloud & Platform Engineering",
+      "Managed Operations",
+      "Architecture & Advisory"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Cost allocation",
+        "description": "Connect cloud spend to products, teams and environments so ownership is clear and actionable."
+      },
+      {
+        "title": "Workload profiling",
+        "description": "Analyze usage patterns, workload behavior and service configuration to find optimization opportunities."
+      },
+      {
+        "title": "Compute & storage optimization",
+        "description": "Tune compute and storage decisions against performance needs, resilience requirements and cost controls."
+      },
+      {
+        "title": "Data lifecycle policies",
+        "description": "Apply retention, tiering and archival policies that reduce waste without weakening operational access."
+      },
+      {
+        "title": "FinOps operating cadence",
+        "description": "Establish review rhythms where finance, platform and engineering teams manage optimization as ongoing work."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "data-migration-factory",
+      "data-governance"
+    ]
+  },
+  "cta": {
+    "heading": "Start an Cloud Optimize conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Cloud Optimize | Qlugen",
+    "description": "Turn cloud cost visibility into a prioritised engineering optimisation backlog with execution behind it.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Cloud Optimize"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "eyebrow": "Agentic Enterprise · 04",
+    "title": "Govern intelligence by design.",
+    "description": "Build AI systems that operate within trusted boundaries with human oversight at every level.",
+    "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80",
+    "diagramBoundary": "GOVERNANCE BOUNDARY",
+    "diagramNode": "Agent"
+  },
+  "why": {
+    "eyebrow": "Why it matters",
+    "title": "Governance is infrastructure, not an afterthought",
+    "body": "As agents take on more responsibility, governance becomes foundational. Permissions, security, traceability and human oversight established early create the conditions for safe scaling. Governance built retrospectively tends to slow adoption at exactly the moment momentum is needed."
+  },
+  "dimensions": {
+    "eyebrow": "Governance dimensions",
+    "title": "Six dimensions of trusted AI",
+    "items": [
+      {
+        "title": "Permissions",
+        "description": "Least-privilege access, explicit and auditable."
+      },
+      {
+        "title": "Security",
+        "description": "Protection across the agent lifecycle."
+      },
+      {
+        "title": "Traceability",
+        "description": "Every action logged and explainable."
+      },
+      {
+        "title": "Human Oversight",
+        "description": "People in the loop where judgement matters."
+      },
+      {
+        "title": "AI Governance",
+        "description": "Policies that define what agents may do."
+      },
+      {
+        "title": "Responsible Deployment",
+        "description": "Safe, staged rollout with clear boundaries."
+      }
+    ]
+  },
+  "principles": {
+    "eyebrow": "Responsible AI principles",
+    "title": "The commitments that keep AI trustworthy",
+    "items": [
+      "Governance is designed in, not bolted on afterwards.",
+      "Agents receive the minimum access required for their task.",
+      "Every action is traceable, logged and explainable.",
+      "Humans stay in the loop for decisions that carry risk.",
+      "Expanding autonomy is a deliberate decision, never a default."
+    ]
+  },
+  "related": {
+    "heading": "Explore the agentic stages",
+    "items": [
+      {
+        "eyebrow": "Stage 01",
+        "title": "Orchestrate",
+        "description": "Coordinate agents and human approvals.",
+        "url": "/agentic-ai/orchestrate"
+      },
+      {
+        "eyebrow": "Stage 05",
+        "title": "Scale",
+        "description": "Extend governed capabilities enterprise-wide.",
+        "url": "/agentic-ai/scale"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to govern AI by design?",
+    "sub": "Talk to Qlugen about building trusted, well-governed agent systems.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise AI Governance | Qlugen",
+    "description": "Build trusted AI agent systems with clear permissions, human oversight and traceability, keeping enterprise intelligence within defined boundaries.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Govern"
+  }
+}

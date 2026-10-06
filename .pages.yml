@@ -1,0 +1,279 @@
+media:
+  input: public
+  output: /
+
+content:
+  - name: global
+    label: Global
+    type: group
+    items:
+      - name: navigation
+        label: Navigation
+        type: file
+        path: src/content/global/navigation.json
+        fields:
+          - { name: logoAlt, label: Logo Alt Text, type: string }
+          - { name: homeLabel, label: Home Label, type: string }
+          - name: items
+            label: Navigation Items
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: url, label: Link, type: string }
+              - name: items
+                label: Dropdown Items
+                type: object
+                list: true
+                required: false
+                fields:
+                  - { name: label, label: Label, type: string }
+                  - { name: url, label: Link, type: string }
+          - name: cta
+            label: CTA
+            type: object
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: url, label: Link, type: string }
+      - name: footer
+        label: Footer
+        type: file
+        path: src/content/global/footer.json
+        fields:
+          - name: brand
+            label: Brand
+            type: object
+            fields:
+              - { name: logoAlt, label: Logo Alt Text, type: string }
+              - { name: tagline, label: Tagline, type: string }
+              - { name: description, label: Description, type: text }
+          - name: sections
+            label: Footer Sections
+            type: object
+            list: true
+            fields:
+              - { name: heading, label: Heading, type: string }
+              - name: links
+                label: Links
+                type: object
+                list: true
+                fields:
+                  - { name: label, label: Label, type: string }
+                  - { name: url, label: Link, type: string }
+          - { name: copyright, label: Copyright, type: string }
+
+  - name: home
+    label: Home
+    type: file
+    path: src/content/home.json
+    fields: &pageFields
+      - { name: title, label: Title, type: string, required: false }
+      - { name: hero, label: Hero, type: object, required: false }
+      - { name: sections, label: Sections, type: object, list: true, required: false }
+      - { name: cta, label: CTA, type: object, required: false }
+      - { name: seo, label: SEO, type: object, required: false }
+
+  - name: productsOverview
+    label: Products Overview
+    type: file
+    path: src/content/products/overview.json
+    fields:
+      - &heroField
+        name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: description, label: Subheading, type: text }
+          - { name: image, label: Banner Image, type: image }
+          - { name: imageAlt, label: Banner Image Alt Text, type: string, required: false }
+      - name: portfolio
+        label: Portfolio
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: body, label: Paragraph, type: text }
+      - name: model
+        label: Model
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: body, label: Paragraph, type: text }
+          - name: steps
+            label: Steps
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: desc, label: Description, type: text }
+      - &ctaField
+        name: cta
+        label: CTA
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: sub, label: Subheading, type: text }
+          - { name: label, label: Button Label, type: string }
+          - { name: url, label: Button Link, type: string }
+      - &seoField
+        name: seo
+        label: SEO
+        type: object
+        fields:
+          - { name: title, label: SEO Title, type: string }
+          - { name: description, label: Meta Description, type: text }
+          - { name: ogImage, label: OG Image, type: image }
+
+  - name: productDetails
+    label: Product Details
+    type: collection
+    path: src/content/products/details
+    filename: "{fields.slug}.json"
+    fields:
+      - { name: slug, label: Slug, type: string }
+      - { name: title, label: Title, type: string }
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: description, label: Subheading, type: text }
+          - { name: image, label: Banner Image, type: image }
+          - { name: imageAlt, label: Banner Image Alt Text, type: string, required: false }
+          - name: cta
+            label: Hero CTA
+            type: object
+            fields:
+              - { name: label, label: Button Label, type: string }
+              - { name: url, label: Button Link, type: string }
+      - &productSectionItems
+        name: outcome
+        label: Outcome
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - name: items
+            label: Items
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: text }
+      - name: deliveryFlow
+        label: Delivery Flow
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: body, label: Paragraph, type: text }
+          - name: steps
+            label: Steps
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: description, label: Description, type: text }
+      - name: engagementModel
+        label: Engagement Model
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: services, label: Services, type: string, list: true }
+      - name: operations
+        label: Operations
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: body, label: Paragraph, type: text }
+          - name: items
+            label: Items
+            type: object
+            list: true
+            required: false
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: text }
+      - name: coreCapabilities
+        label: Core Capabilities
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Heading, type: string }
+          - name: items
+            label: Items
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: description, label: Description, type: text }
+      - name: related
+        label: Related Products
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: items, label: Products, type: string, list: true }
+      - *ctaField
+      - *seoField
+
+  - name: capabilitiesOverview
+    label: Capabilities Overview
+    type: file
+    path: src/content/capabilities/overview.json
+    fields: *pageFields
+  - name: capabilityDetails
+    label: Capability Details
+    type: collection
+    path: src/content/capabilities/details
+    filename: "{fields.slug}.json"
+    fields: *pageFields
+  - name: industriesOverview
+    label: Industries Overview
+    type: file
+    path: src/content/industries/overview.json
+    fields: *pageFields
+  - name: industryDetails
+    label: Industry Details
+    type: collection
+    path: src/content/industries/details
+    filename: "{fields.slug}.json"
+    fields: *pageFields
+  - name: agenticOverview
+    label: Agentic AI Overview
+    type: file
+    path: src/content/agentic-ai/overview.json
+    fields: *pageFields
+  - name: agenticDetails
+    label: Agentic AI Details
+    type: collection
+    path: src/content/agentic-ai/details
+    filename: "{fields.slug}.json"
+    fields: *pageFields
+  - name: insightsOverview
+    label: Insights Overview
+    type: file
+    path: src/content/insights/overview.json
+    fields: *pageFields
+  - name: insightDetails
+    label: Insight Details
+    type: collection
+    path: src/content/insights/details
+    filename: "{fields.slug}.json"
+    fields: *pageFields
+  - name: companyOverview
+    label: Company Overview
+    type: file
+    path: src/content/company/overview.json
+    fields: *pageFields
+  - name: companyPages
+    label: Company Pages
+    type: collection
+    path: src/content/company/pages
+    filename: "{fields.slug}.json"
+    fields: *pageFields

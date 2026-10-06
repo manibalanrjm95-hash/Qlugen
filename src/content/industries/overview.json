@@ -1,0 +1,56 @@
+{
+  "index": {
+    "ariaLabel": "Industries",
+    "eyebrow": "Qlugen Industries",
+    "items": [
+      {
+        "label": "Financial Services",
+        "description": "Banking, insurance and capital markets",
+        "url": "/industries/financial-services",
+        "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "label": "Healthcare",
+        "description": "Providers, payers and life sciences",
+        "url": "/industries/healthcare",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "label": "Retail & Commerce",
+        "description": "Omnichannel, supply chain and loyalty",
+        "url": "/industries/retail-commerce",
+        "image": "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "label": "Manufacturing",
+        "description": "Smart factory, operations and logistics",
+        "url": "/industries/manufacturing",
+        "image": "https://images.unsplash.com/photo-1565793979145-32aea8c3e37a?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "label": "Government",
+        "description": "Public sector and civic services",
+        "url": "/industries/government",
+        "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=80"
+      },
+      {
+        "label": "Energy & Utilities",
+        "description": "Grid modernisation and clean energy",
+        "url": "/industries/energy-utilities",
+        "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1600&q=80"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to explore what's possible in your industry?",
+    "sub": "Talk to the Qlugen team about your sector priorities and technology goals.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Industries We Serve | Qlugen",
+    "description": "Explore Qlugen technology services for financial services, healthcare, retail, manufacturing, government, and energy and utilities.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Industries"
+  }
+}

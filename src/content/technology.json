@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "eyebrow": "Technology",
+    "title": "Architecture depth across the modern enterprise stack.",
+    "description": "Qlugen works across the cloud, data, governance, analytics, AI, agent and software technologies that shape enterprise delivery.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80",
+    "visualImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    "visualImageAlt": "",
+    "badges": [
+      "Azure",
+      "GCP",
+      "AWS",
+      "Databricks",
+      "Fabric",
+      "BigQuery"
+    ]
+  },
+  "landscape": {
+    "eyebrow": "Technology landscape",
+    "title": "Technologies we work with",
+    "body": "We are technology-informed, not technology-prescribed. These tools represent the architecture ecosystem we work across, not an official partner claim.",
+    "linkLabel": "Explore our capabilities",
+    "linkUrl": "/capabilities",
+    "layers": [
+      "Experience",
+      "Data + AI",
+      "Security + Integration",
+      "Cloud + Platforms"
+    ],
+    "categories": [
+      {
+        "title": "Cloud",
+        "tags": [
+          "AWS",
+          "Microsoft Azure",
+          "Google Cloud",
+          "Hybrid & multi-cloud"
+        ],
+        "description": "Scalable, resilient and cost-effective infrastructure across major cloud environments."
+      },
+      {
+        "title": "Data & AI",
+        "tags": [
+          "Data platforms",
+          "Analytics & BI",
+          "ML frameworks",
+          "Vector stores"
+        ],
+        "description": "Decision-ready data foundations and AI model development."
+      },
+      {
+        "title": "Enterprise Platforms",
+        "tags": [
+          "SAP",
+          "Salesforce",
+          "ServiceNow",
+          "Snowflake"
+        ],
+        "description": "Implement, extend and integrate mission-critical business applications."
+      },
+      {
+        "title": "Security",
+        "tags": [
+          "IAM",
+          "Cloud posture",
+          "AppSec",
+          "SecOps"
+        ],
+        "description": "Security across the stack, from identity to cloud workload protection."
+      },
+      {
+        "title": "Integration & Automation",
+        "tags": [
+          "API management",
+          "RPA",
+          "Event-driven",
+          "Orchestration"
+        ],
+        "description": "Connecting systems and orchestrating workflows across the enterprise."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Looking for the right technology foundation?",
+    "sub": "Qlugen can help you evaluate, design and build the technology architecture that fits your organisation.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Technology & Platforms | Qlugen",
+    "description": "Explore the cloud, data, AI, security and enterprise platforms Qlugen works with to build solutions suited to your architecture and goals.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

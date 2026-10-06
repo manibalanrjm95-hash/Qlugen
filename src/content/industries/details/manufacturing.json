@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "eyebrow": "Industry · Manufacturing",
+    "title": "Build smarter, connected operations.",
+    "description": "Qlugen helps manufacturers connect factory floor to enterprise systems, using data, AI and automation to improve performance, visibility and operational resilience.",
+    "image": "https://images.unsplash.com/photo-1565793979145-32aea8c3e37a?auto=format&fit=crop&w=1800&q=80",
+    "architecture": {
+      "cloud": "Cloud Intelligence",
+      "enterprise": "Enterprise Systems",
+      "floor": "Factory Floor"
+    }
+  },
+  "layers": [
+    {
+      "title": "Cloud Intelligence",
+      "description": "Analytics, AI and enterprise visibility that turn operational data into decisions."
+    },
+    {
+      "title": "Enterprise Systems",
+      "description": "The ERP, MES and business systems that coordinate planning and operations."
+    },
+    {
+      "title": "Factory Floor",
+      "description": "The machines, sensors and control systems where production actually happens."
+    }
+  ],
+  "help": {
+    "eyebrow": "Where we help",
+    "title": "Focused on connected operations",
+    "areas": [
+      "Smart Operations",
+      "Factory Analytics",
+      "Industrial Data",
+      "Supply Chain Visibility",
+      "Automation",
+      "AI",
+      "Cloud Infrastructure",
+      "Operational Resilience"
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Business priorities",
+    "title": "What manufacturing leaders focus on",
+    "items": [
+      {
+        "title": "Operational Visibility"
+      },
+      {
+        "title": "Improved Efficiency"
+      },
+      {
+        "title": "Better Supply Chain"
+      },
+      {
+        "title": "Smarter Decisions"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Turn industrial data into operational insight.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Automation",
+        "description": "Streamline and orchestrate operations.",
+        "url": "/capabilities/automation"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Scalable foundations for connected operations.",
+        "url": "/capabilities/cloud-infrastructure"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Transform what comes next.",
+    "sub": "Tell us about your industry challenge.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Manufacturing Technology Services | Qlugen",
+    "description": "Connect the factory floor to enterprise systems with data, AI and automation that improve manufacturing visibility, performance and resilience.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Manufacturing"
+  }
+}

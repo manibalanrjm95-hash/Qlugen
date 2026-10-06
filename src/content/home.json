@@ -1,0 +1,376 @@
+{
+  "hero": {
+    "titleLines": [
+      "Powering the next",
+      "generation of",
+      "enterprise."
+    ],
+    "descriptionBeforeLink": "The next-generation",
+    "descriptionLinkLabel": "enterprise services platform",
+    "descriptionLinkUrl": "/capabilities",
+    "descriptionAfterLink": "for ambitious global organisations — across industries, geographies, and technologies.",
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=85",
+    "imageAlt": "",
+    "bottomTextBeforeAccent": "Run your entire enterprise transformation from one unified partner — powered by",
+    "bottomTextAccent": "Qlugen",
+    "formAriaLabel": "Get started",
+    "emailPlaceholder": "Enter your work email address",
+    "emailAriaLabel": "Work email address",
+    "ctaLabel": "Get started",
+    "ctaUrl": "/contact"
+  },
+  "capabilities": {
+    "eyebrow": "What we do",
+    "title": "Seven capabilities. One partner.",
+    "description": "Qlugen is an enterprise technology company helping organisations build intelligent, scalable and modern digital foundations. From cloud infrastructure to AI agent development, from cybersecurity to sustainability — deep expertise across every dimension of enterprise transformation.",
+    "linkLabel": "Learn more",
+    "items": [
+      {
+        "icon": "Analytics",
+        "eyebrow": "Data & Analytics",
+        "title": "Turn data into decisions",
+        "body": "Unify your data landscape and build the analytics foundations that power confident, real-time business choices at every level.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "icon": "Chip",
+        "eyebrow": "AI & Agent Development",
+        "title": "Intelligent systems that act",
+        "body": "Deploy purpose-built AI agents and machine-learning models that automate complex workflows and meaningfully augment your teams.",
+        "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/ai-agent-development"
+      },
+      {
+        "icon": "Cloud",
+        "eyebrow": "Cloud & Infrastructure",
+        "title": "Scale without limits",
+        "body": "Modernize operations with resilient, multi-cloud architecture designed for enterprise performance, flexibility, and cost control.",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/cloud-infrastructure"
+      },
+      {
+        "icon": "Security",
+        "eyebrow": "Cybersecurity",
+        "title": "Protect what matters most",
+        "body": "Embed intelligence-led security across every layer — from identity and access to real-time threat detection and compliance.",
+        "image": "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/cybersecurity"
+      },
+      {
+        "icon": "SettingsAdjust",
+        "eyebrow": "Automation",
+        "title": "Eliminate friction at scale",
+        "body": "Connect systems, automate repetitive processes, and free your workforce to focus on higher-value, strategic work.",
+        "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/automation"
+      },
+      {
+        "icon": "Code",
+        "eyebrow": "Digital Transformation",
+        "title": "Reimagine the enterprise",
+        "body": "Design and deliver end-to-end transformation programmes that modernize operations and unlock new revenue streams.",
+        "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/digital-transformation"
+      },
+      {
+        "icon": "Earth",
+        "eyebrow": "Sustainability",
+        "title": "Build a responsible future",
+        "body": "Integrate ESG principles into your strategy with measurable targets, technology-driven reporting, and supply-chain visibility.",
+        "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/capabilities/sustainability"
+      }
+    ]
+  },
+  "agenticAi": {
+    "eyebrow": "Capabilities",
+    "tabAriaLabel": "Capabilities steps",
+    "linkLabel": "Learn more",
+    "slides": [
+      {
+        "step": "01",
+        "label": "Orchestrate",
+        "heading": "Orchestrate your agent ecosystem",
+        "description": "Coordinate agents, tools, and workflows across systems — turning fragmented AI into connected, end-to-end business execution that scales with your enterprise.",
+        "icon": "Network_1",
+        "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/agentic-ai/orchestrate"
+      },
+      {
+        "step": "02",
+        "label": "Build & Run",
+        "heading": "Build and run AI agents your way",
+        "description": "Deploy purpose-built agents using your choice of model, framework, and infrastructure — with full enterprise governance and auditability built in from day one.",
+        "icon": "Chip",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/agentic-ai/build-run"
+      },
+      {
+        "step": "03",
+        "label": "Discover",
+        "heading": "Discover trusted agents and tools",
+        "description": "Access a curated ecosystem of pre-built agents and connectors that integrate with your existing enterprise stack and accelerate time to value.",
+        "icon": "Search",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/agentic-ai/discover"
+      },
+      {
+        "step": "04",
+        "label": "Govern",
+        "heading": "Control and govern every agent",
+        "description": "Monitor, audit, and control every agent action with role-based access controls, explainability dashboards, and automated compliance reporting.",
+        "icon": "Security",
+        "image": "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/agentic-ai/govern"
+      },
+      {
+        "step": "05",
+        "label": "Scale",
+        "heading": "Scale AI across your entire enterprise",
+        "description": "Move from proof-of-concept to production at enterprise scale — with the infrastructure, governance, and support to deploy AI responsibly across every business unit.",
+        "icon": "Rocket",
+        "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": "",
+        "url": "/agentic-ai/scale"
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "Who we serve",
+    "title": "Built for every industry.",
+    "ariaLabel": "Industries",
+    "items": [
+      {
+        "icon": "Finance",
+        "label": "Financial Services",
+        "description": "Banking, insurance, and capital markets",
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": "Financial Services",
+        "url": "/industries/financial-services"
+      },
+      {
+        "icon": "UserMultiple",
+        "label": "Healthcare",
+        "description": "Providers, payers, and life sciences",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": "Healthcare",
+        "url": "/industries/healthcare"
+      },
+      {
+        "icon": "Store",
+        "label": "Retail & Commerce",
+        "description": "Omnichannel, supply chain, and loyalty",
+        "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": "Retail & Commerce",
+        "url": "/industries/retail-commerce"
+      },
+      {
+        "icon": "Dashboard",
+        "label": "Manufacturing",
+        "description": "Smart factory, operations, and logistics",
+        "image": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": "Manufacturing",
+        "url": "/industries/manufacturing"
+      },
+      {
+        "icon": "Building",
+        "label": "Government",
+        "description": "Public sector and civic services",
+        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": "Government",
+        "url": "/industries/government"
+      },
+      {
+        "icon": "Flash",
+        "label": "Energy & Utilities",
+        "description": "Grid modernization and clean energy",
+        "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": "Energy & Utilities",
+        "url": "/industries/energy-utilities"
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "How we work",
+    "title": "Rigour meets momentum.",
+    "description": "The strongest transformations don't happen overnight. They happen when strategy meets practical delivery — every decision grounded in measurable outcomes, every programme built to scale.",
+    "cards": [
+      {
+        "number": "01",
+        "icon": "Analytics",
+        "title": "Start with the outcome",
+        "description": "Every engagement begins by defining success — measurably and on your terms.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "number": "02",
+        "icon": "User",
+        "title": "Design for real people",
+        "description": "Solutions built for how teams actually work, not how we think they should.",
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "number": "03",
+        "icon": "Cloud",
+        "title": "Build for scale from day one",
+        "description": "Architecture and delivery models that grow with your enterprise without rework.",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "number": "04",
+        "icon": "Education",
+        "title": "Leave lasting capability behind",
+        "description": "We transfer knowledge and ownership so your teams lead what comes next.",
+        "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "partners": {
+    "eyebrow": "Our ecosystem",
+    "title": "Technology alliances that go further.",
+    "description": "We work with the world's leading technology platforms to deliver solutions that are proven, scalable, and enterprise-ready.",
+    "items": [
+      {
+        "name": "IBM"
+      },
+      {
+        "name": "Microsoft"
+      },
+      {
+        "name": "Google Cloud"
+      },
+      {
+        "name": "AWS"
+      },
+      {
+        "name": "SAP"
+      },
+      {
+        "name": "Salesforce"
+      },
+      {
+        "name": "ServiceNow"
+      },
+      {
+        "name": "Snowflake"
+      }
+    ]
+  },
+  "blogs": {
+    "eyebrow": "Tech Blogs",
+    "title": "Thinking from the front lines.",
+    "allArticlesLabel": "All articles",
+    "allArticlesUrl": "/insights",
+    "readArticleLabel": "Read article",
+    "items": [
+      {
+        "tag": "AI & Analytics",
+        "title": "From AI pilots to enterprise impact",
+        "date": "Aug 2026",
+        "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
+        "imageAlt": "From AI pilots to enterprise impact",
+        "url": "/insights/ai-pilots-to-enterprise-impact"
+      },
+      {
+        "tag": "Cloud",
+        "title": "Modernise without slowing the business",
+        "date": "Jul 2026",
+        "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
+        "imageAlt": "Modernise without slowing the business",
+        "url": "/insights/modernise-without-slowing-business"
+      },
+      {
+        "tag": "Agentic AI",
+        "title": "Designing the operating model for an agentic enterprise",
+        "date": "Jun 2026",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80",
+        "imageAlt": "Designing the operating model for an agentic enterprise",
+        "url": "/insights/agentic-enterprise-operating-model"
+      }
+    ]
+  },
+  "leadership": {
+    "eyebrow": "Leadership",
+    "title": "Executive leadership",
+    "description": "Leadership shaped by deep enterprise technology experience.",
+    "portrait": "/uploads/vinay-pachunoori.webp",
+    "portraitAlt": "Vinay Pachunoori",
+    "spotlightEyebrow": "Executive Leadership",
+    "name": "Vinay Pachunoori",
+    "bio": "Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems.",
+    "experienceLabel": "Previous Experience",
+    "experience": [
+      {
+        "name": "Oracle",
+        "logo": "/uploads/logos/oracle.svg",
+        "logoAlt": "Oracle"
+      },
+      {
+        "name": "eBay",
+        "logo": "/uploads/logos/ebay.svg",
+        "logoAlt": "eBay"
+      },
+      {
+        "name": "Amazon",
+        "logo": "/uploads/logos/amazon.svg",
+        "logoAlt": "Amazon"
+      },
+      {
+        "name": "Walmart",
+        "logo": "/uploads/logos/walmart.svg",
+        "logoAlt": "Walmart"
+      },
+      {
+        "name": "Coupang",
+        "logo": "/uploads/logos/coupang.svg",
+        "logoAlt": "Coupang"
+      }
+    ],
+    "linkedinLabel": "LinkedIn",
+    "linkedinUrl": "https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "statValue": "23+ Years",
+    "statLabel": "Enterprise technology leadership"
+  },
+  "about": {
+    "eyebrow": "ABOUT US",
+    "title": "Enterprise transformation without the blank page.",
+    "description": "Founded in 2026, Qlugen is an enterprise technology company focused on AI, data, cloud, analytics and modern engineering.\n\nWe build reusable products, accelerators and engineering solutions that help organisations move from strategy to production faster — without starting from a blank page. Our approach brings together products, consulting, engineering and managed operations to solve recurring enterprise challenges with practical, scalable technology.\n\nWe believe repeated enterprise problems deserve reusable technology, not repeated reinvention. That is why we focus on building once, learning from delivery, and creating solutions that can be adapted and reused across transformation programs.",
+    "ctaLabel": "Join our team",
+    "ctaUrl": "/careers"
+  },
+  "careers": {
+    "eyebrow": "Careers",
+    "title": "Shape the future of enterprise.",
+    "description": "We're always looking for sharp minds who want to solve hard problems alongside exceptional colleagues. Explore roles across strategy, engineering, data science, and enterprise architecture.",
+    "ctaLabel": "Explore open roles",
+    "ctaUrl": "/careers"
+  },
+  "cta": {
+    "eyebrow": "Start a conversation",
+    "title": "Ready to move forward?",
+    "description": "Whether you're exploring a specific challenge or planning a large-scale transformation, our enterprise team is ready to help you define the path forward.",
+    "label": "Connect with Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Qlugen | Enterprise AI, Cloud & Data Engineering",
+    "description": "Qlugen builds enterprise products, accelerators and engineering solutions across Data, AI, Cloud and Analytics.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

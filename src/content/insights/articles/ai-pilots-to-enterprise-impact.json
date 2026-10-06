@@ -1,0 +1,108 @@
+{
+  "slug": "ai-pilots-to-enterprise-impact",
+  "title": "From AI pilots to enterprise impact",
+  "category": "AI & Analytics",
+  "subtitle": "Why enterprise AI depends on operating models, integration and governance as much as the models themselves.",
+  "dateLabel": "August 2026",
+  "readTime": "8 min read",
+  "publishedDate": "2026-08-01",
+  "heroImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1800&q=80",
+  "body": [
+    {
+      "type": "heading",
+      "text": "The pilot problem"
+    },
+    {
+      "type": "paragraph",
+      "text": "Most enterprise AI programmes begin with focused pilots. A use case is identified, a model is selected, and a small team proves value in a controlled environment. The pilot works. And then very little happens."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gap between a successful proof of concept and a deployed enterprise capability is one of the most consistent patterns in AI adoption. Understanding why that gap exists — and how to close it — is essential for organisations that want AI to move beyond experimentation."
+    },
+    {
+      "type": "quote",
+      "text": "\"AI that produces an output no one acts on creates no value. The value is in the decision, the action, the workflow change the output makes possible.\""
+    },
+    {
+      "type": "heading",
+      "text": "From model to workflow"
+    },
+    {
+      "type": "paragraph",
+      "text": "The transition from AI pilot to enterprise capability requires treating the model as one component of a larger system. Integration with the systems where work actually happens — ERP, CRM, operational platforms — becomes as important as model quality. The data pipelines that feed the model require the same discipline as the model itself."
+    },
+    {
+      "type": "divider",
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "text": "Integration matters"
+    },
+    {
+      "type": "paragraph",
+      "text": "Embedding AI into enterprise operations requires connecting it to the systems, data sources and workflows where decisions are actually made. This is rarely straightforward in organisations with complex, heterogeneous technology estates."
+    },
+    {
+      "type": "paragraph",
+      "text": "Integration architecture needs to address latency, reliability, access control and auditability — not just data flow. An AI capability that is technically impressive but operationally fragile will not sustain adoption."
+    },
+    {
+      "type": "heading",
+      "text": "Governance is infrastructure"
+    },
+    {
+      "type": "paragraph",
+      "text": "At scale, AI governance is not a compliance exercise — it is infrastructure. Without consistent policies for model evaluation, data access, auditability and human oversight, AI programmes accumulate technical and operational debt that becomes increasingly difficult to manage."
+    },
+    {
+      "type": "paragraph",
+      "text": "Governance frameworks established early create the conditions for safe scaling. Those established retrospectively tend to generate friction and slow adoption at exactly the moment momentum is needed."
+    },
+    {
+      "type": "divider",
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "text": "Design for adoption"
+    },
+    {
+      "type": "paragraph",
+      "text": "Technology that employees do not trust or understand will not change behaviour. Adoption requires designing around real workflows and giving people enough transparency to develop confidence in AI-assisted decisions."
+    },
+    {
+      "type": "paragraph",
+      "text": "The organisations that achieve lasting AI adoption treat change management and workflow design as first-class work — not as secondary to technical delivery."
+    },
+    {
+      "type": "heading",
+      "text": "Scale what proves value"
+    },
+    {
+      "type": "paragraph",
+      "text": "Once an AI capability has demonstrated measurable impact in one part of the organisation, the question becomes how to extend that capability without rebuilding it each time. The answer lies in building reusable foundations — shared data pipelines, common evaluation frameworks, governance policies that apply across use cases."
+    },
+    {
+      "type": "paragraph",
+      "text": "Platform thinking, applied to AI, is what separates organisations that compound their investments from those that repeat expensive experimentation indefinitely."
+    }
+  ],
+  "endCta": {
+    "text": "Ready to move AI from pilot to enterprise capability?",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "card": {
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "",
+    "dateLabel": "Aug 2026",
+    "excerpt": "Why enterprise AI depends on operating models, integration and governance as much as the models themselves."
+  },
+  "seo": {
+    "title": "From AI Pilots to Enterprise Impact | Qlugen",
+    "description": "Explore why enterprise AI adoption depends on operating models, integration, governance and workflow design as much as the models themselves.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

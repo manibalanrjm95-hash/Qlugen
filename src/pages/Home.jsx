@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Analytics, ArrowRight, Building, Chip, Cloud, Code, Dashboard, Earth,
@@ -7,57 +7,21 @@ import {
 } from '@carbon/icons-react';
 import { Button, Column, Grid } from '@carbon/react';
 import Layout from '../components/Layout';
-import vinayPortrait from '../assets/vinay-pachunoori.webp';
-import logoOracle  from '../assets/logos/oracle.svg';
-import logoEbay    from '../assets/logos/ebay.svg';
-import logoAmazon  from '../assets/logos/amazon.svg';
-import logoWalmart from '../assets/logos/walmart.svg';
-import logoCoupang from '../assets/logos/coupang.svg';
+import homeContent from '../content/home.json';
 import '../App.css';
 
-/* ── Page data ── */
-const capabilities = [
-  { icon: Analytics, eyebrow: 'Data & Analytics', title: 'Turn data into decisions', body: 'Unify your data landscape and build the analytics foundations that power confident, real-time business choices at every level.', artImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(8, 189, 186, 0.16)', to: '/capabilities/data-analytics' },
-  { icon: Chip, eyebrow: 'AI & Agent Development', title: 'Intelligent systems that act', body: 'Deploy purpose-built AI agents and machine-learning models that automate complex workflows and meaningfully augment your teams.', artImage: 'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(11, 242, 118, 0.14)', to: '/capabilities/ai-agent-development' },
-  { icon: Cloud, eyebrow: 'Cloud & Infrastructure', title: 'Scale without limits', body: 'Modernize operations with resilient, multi-cloud architecture designed for enterprise performance, flexibility, and cost control.', artImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(69, 137, 255, 0.16)', to: '/capabilities/cloud-infrastructure' },
-  { icon: Security, eyebrow: 'Cybersecurity', title: 'Protect what matters most', body: 'Embed intelligence-led security across every layer — from identity and access to real-time threat detection and compliance.', artImage: 'https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(238, 83, 150, 0.14)', to: '/capabilities/cybersecurity' },
-  { icon: SettingsAdjust, eyebrow: 'Automation', title: 'Eliminate friction at scale', body: 'Connect systems, automate repetitive processes, and free your workforce to focus on higher-value, strategic work.', artImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(255, 131, 43, 0.16)', to: '/capabilities/automation' },
-  { icon: Code, eyebrow: 'Digital Transformation', title: 'Reimagine the enterprise', body: 'Design and deliver end-to-end transformation programmes that modernize operations and unlock new revenue streams.', artImage: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(61, 219, 217, 0.14)', to: '/capabilities/digital-transformation' },
-  { icon: Earth, eyebrow: 'Sustainability', title: 'Build a responsible future', body: 'Integrate ESG principles into your strategy with measurable targets, technology-driven reporting, and supply-chain visibility.', artImage: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80', artPosition: 'center', artSize: 'cover', accent: 'rgba(111, 220, 140, 0.16)', to: '/capabilities/sustainability' },
-];
-
-const aiFeatures = [
-  { step: '01', label: 'Orchestrate', heading: 'Orchestrate your agent ecosystem', desc: 'Coordinate agents, tools, and workflows across systems — turning fragmented AI into connected, end-to-end business execution that scales with your enterprise.', icon: Network_1, mediaPoster: capabilities[1].artImage, surface: 'var(--q-teal-10)', to: '/agentic-ai/orchestrate' },
-  { step: '02', label: 'Build & Run', heading: 'Build and run AI agents your way', desc: 'Deploy purpose-built agents using your choice of model, framework, and infrastructure — with full enterprise governance and auditability built in from day one.', icon: Chip, mediaPoster: capabilities[2].artImage, surface: 'var(--ibm-blue-10)', to: '/agentic-ai/build-run' },
-  { step: '03', label: 'Discover', heading: 'Discover trusted agents and tools', desc: 'Access a curated ecosystem of pre-built agents and connectors that integrate with your existing enterprise stack and accelerate time to value.', icon: Search, mediaPoster: capabilities[0].artImage, surface: 'var(--ibm-yellow-10)', to: '/agentic-ai/discover' },
-  { step: '04', label: 'Govern', heading: 'Control and govern every agent', desc: 'Monitor, audit, and control every agent action with role-based access controls, explainability dashboards, and automated compliance reporting.', icon: Security, mediaPoster: capabilities[3].artImage, surface: 'var(--ibm-purple-10)', to: '/agentic-ai/govern' },
-  { step: '05', label: 'Scale', heading: 'Scale AI across your entire enterprise', desc: 'Move from proof-of-concept to production at enterprise scale — with the infrastructure, governance, and support to deploy AI responsibly across every business unit.', icon: Rocket, mediaPoster: capabilities[4].artImage, surface: 'var(--ibm-green-10)', to: '/agentic-ai/scale' },
-];
-
-const industries = [
-  { icon: Finance, label: 'Financial Services', desc: 'Banking, insurance, and capital markets', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80', to: '/industries/financial-services' },
-  { icon: UserMultiple, label: 'Healthcare', desc: 'Providers, payers, and life sciences', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80', to: '/industries/healthcare' },
-  { icon: Store, label: 'Retail & Commerce', desc: 'Omnichannel, supply chain, and loyalty', image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80', to: '/industries/retail-commerce' },
-  { icon: Dashboard, label: 'Manufacturing', desc: 'Smart factory, operations, and logistics', image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1400&q=80', to: '/industries/manufacturing' },
-  { icon: Building, label: 'Government', desc: 'Public sector and civic services', image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1400&q=80', to: '/industries/government' },
-  { icon: Flash, label: 'Energy & Utilities', desc: 'Grid modernization and clean energy', image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80', to: '/industries/energy-utilities' },
-];
-
-
-const principles = [
-  { num: '01', icon: Analytics, title: 'Start with the outcome', desc: 'Every engagement begins by defining success — measurably and on your terms.', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80' },
-  { num: '02', icon: User, title: 'Design for real people', desc: 'Solutions built for how teams actually work, not how we think they should.', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80' },
-  { num: '03', icon: Cloud, title: 'Build for scale from day one', desc: 'Architecture and delivery models that grow with your enterprise without rework.', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80' },
-  { num: '04', icon: Education, title: 'Leave lasting capability behind', desc: 'We transfer knowledge and ownership so your teams lead what comes next.', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=80' },
-];
-
-const blogs = [
-  { tag: 'AI & Analytics', title: 'From AI pilots to enterprise impact', date: 'Aug 2026', img: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80', to: '/insights/ai-pilots-to-enterprise-impact' },
-  { tag: 'Cloud', title: 'Modernise without slowing the business', date: 'Jul 2026', img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80', to: '/insights/modernise-without-slowing-business' },
-  { tag: 'Agentic AI', title: 'Designing the operating model for an agentic enterprise', date: 'Jun 2026', img: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80', to: '/insights/agentic-enterprise-operating-model' },
-];
-
-const partners = ['IBM', 'Microsoft', 'Google Cloud', 'AWS', 'SAP', 'Salesforce', 'ServiceNow', 'Snowflake'];
+const iconMap = {
+  Analytics, Building, Chip, Cloud, Code, Dashboard, Earth, Education, Finance, Flash,
+  Network_1, Rocket, Search, Security, SettingsAdjust, Store, User, UserMultiple,
+};
+const accents = ['rgba(8, 189, 186, 0.16)', 'rgba(11, 242, 118, 0.14)', 'rgba(69, 137, 255, 0.16)', 'rgba(238, 83, 150, 0.14)', 'rgba(255, 131, 43, 0.16)', 'rgba(61, 219, 217, 0.14)', 'rgba(111, 220, 140, 0.16)'];
+const surfaces = ['var(--q-teal-10)', 'var(--ibm-blue-10)', 'var(--ibm-yellow-10)', 'var(--ibm-purple-10)', 'var(--ibm-green-10)'];
+const capabilities = homeContent.capabilities.items.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Analytics, artImage: item.image, artPosition: 'center', artSize: 'cover', accent: accents[index % accents.length], to: item.url }));
+const aiFeatures = homeContent.agenticAi.slides.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Chip, desc: item.description, mediaPoster: item.image, surface: surfaces[index % surfaces.length], to: item.url }));
+const industries = homeContent.industries.items.map(item => ({ ...item, icon: iconMap[item.icon] || Building, desc: item.description, to: item.url }));
+const principles = homeContent.approach.cards.map(item => ({ ...item, num: item.number, icon: iconMap[item.icon] || Analytics, desc: item.description, img: item.image }));
+const blogs = homeContent.blogs.items.map(item => ({ ...item, img: item.image, to: item.url }));
+const partners = homeContent.partners.items.map(item => item.name);
 export default function Home() {
   const [activeApproach, setActiveApproach] = useState(0);
   const [activeCapability, setActiveCapability] = useState(0);
@@ -515,9 +479,9 @@ export default function Home() {
       <section className="hero-section" id="hero">
         <img
           className="hero-video"
-          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=85"
-          alt=""
-          aria-hidden="true"
+          src={homeContent.hero.image}
+          alt={homeContent.hero.imageAlt}
+          aria-hidden={homeContent.hero.imageAlt ? undefined : 'true'}
           fetchPriority="high"
           decoding="async"
         />
@@ -527,14 +491,14 @@ export default function Home() {
           <Grid>
             <Column lg={9} md={7} sm={4}>
               <h1>
-                Powering the next<br />
-                generation of<br />
-                enterprise.
+                {homeContent.hero.titleLines.map((line, index) => (
+                  <Fragment key={line}>{index > 0 && <br />}{line}</Fragment>
+                ))}
               </h1>
               <p className="hero-sub">
-                The next-generation{' '}
-                <RouterLink to="/capabilities" className="hero-sub-link">enterprise services platform</RouterLink>
-                {' '}for ambitious global organisations — across industries, geographies, and technologies.
+                {homeContent.hero.descriptionBeforeLink}{' '}
+                <RouterLink to={homeContent.hero.descriptionLinkUrl} className="hero-sub-link">{homeContent.hero.descriptionLinkLabel}</RouterLink>
+                {' '}{homeContent.hero.descriptionAfterLink}
               </p>
             </Column>
           </Grid>
@@ -544,20 +508,20 @@ export default function Home() {
           <Grid>
             <Column lg={9} md={4} sm={4} className="hero-bottom-left">
               <p className="hero-bottom-desc">
-                Run your entire enterprise transformation from one unified partner — powered by <span className="hero-accent">Qlugen</span>
+                {homeContent.hero.bottomTextBeforeAccent} <span className="hero-accent">{homeContent.hero.bottomTextAccent}</span>
               </p>
             </Column>
             <Column lg={7} md={4} sm={4} className="hero-bottom-right">
-              <form className="hero-email-form" onSubmit={e => e.preventDefault()} aria-label="Get started">
+              <form className="hero-email-form" onSubmit={e => e.preventDefault()} aria-label={homeContent.hero.formAriaLabel}>
                 <input
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  placeholder="Enter your work email address"
+                  placeholder={homeContent.hero.emailPlaceholder}
                   className="hero-email-input"
-                  aria-label="Work email address"
+                  aria-label={homeContent.hero.emailAriaLabel}
                 />
-                <RouterLink to="/contact" className="hero-cta-btn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>Get started</RouterLink>
+                <RouterLink to={homeContent.hero.ctaUrl} className="hero-cta-btn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>{homeContent.hero.ctaLabel}</RouterLink>
               </form>
             </Column>
           </Grid>
@@ -569,9 +533,9 @@ export default function Home() {
       <section className="capabilities-section" id="capabilities">
         <Grid>
           <Column lg={11} md={5} sm={4}>
-            <p className="section-label">What we do</p>
-            <h2>Seven capabilities. One partner.</h2>
-            <p className="section-lede">Qlugen is an enterprise technology company helping organisations build intelligent, scalable and modern digital foundations. From cloud infrastructure to AI agent development, from cybersecurity to sustainability — deep expertise across every dimension of enterprise transformation.</p>
+            <p className="section-label">{homeContent.capabilities.eyebrow}</p>
+            <h2>{homeContent.capabilities.title}</h2>
+            <p className="section-lede">{homeContent.capabilities.description}</p>
           </Column>
         </Grid>
         <Grid className="capability-grid">
@@ -610,7 +574,7 @@ export default function Home() {
                   <p className="capability-card__detail-eyebrow">{eyebrow}</p>
                   <span data-heading-visual className="capability-card__title">{title}</span>
                   <p>{body}</p>
-                  <RouterLink to={to} className="capability-card__link">Learn more <ArrowRight size={16} /></RouterLink>
+                  <RouterLink to={to} className="capability-card__link">{homeContent.capabilities.linkLabel} <ArrowRight size={16} /></RouterLink>
                 </div>
               </article>
             </Column>
@@ -631,14 +595,14 @@ export default function Home() {
         <div ref={aifStickyShellRef} className="aif-sticky-shell">
             <Grid>
               <Column lg={16} md={8} sm={4}>
-                <p className="hiw-label">Capabilities</p>
+                <p className="hiw-label">{homeContent.agenticAi.eyebrow}</p>
               </Column>
             </Grid>
 
             <div className="hiw-tabs-wrap">
               <Grid>
                 <Column lg={16} md={8} sm={4} className="hiw-tabs-col">
-                  <div className="hiw-tabs" role="tablist" aria-label="Capabilities steps">
+                  <div className="hiw-tabs" role="tablist" aria-label={homeContent.agenticAi.tabAriaLabel}>
                     {aiFeatures.map((item, i) => (
                       <button
                         key={item.label}
@@ -689,7 +653,7 @@ export default function Home() {
                             <div className="aif-stage aif-stage--copy">
                               <h2>{item.heading}</h2>
                               <p className="hiw-desc">{item.desc}</p>
-                              <RouterLink to={item.to} className="hiw-learn-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Learn more</RouterLink>
+                              <RouterLink to={item.to} className="hiw-learn-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>{homeContent.agenticAi.linkLabel}</RouterLink>
                             </div>
                           </div>
                         </div>
@@ -708,10 +672,10 @@ export default function Home() {
           <Column lg={16} md={8} sm={4}>
             <div className="industries-showcase">
               <div className="industries-copy">
-                <p className="section-label">Who we serve</p>
-                <h2>Built for every industry.</h2>
+                <p className="section-label">{homeContent.industries.eyebrow}</p>
+                <h2>{homeContent.industries.title}</h2>
 
-                <div className="industries-list" role="tablist" aria-label="Industries">
+                <div className="industries-list" role="tablist" aria-label={homeContent.industries.ariaLabel}>
                   {industries.map(({ label, to }, index) => {
                     const isActive = index === activeIndustry;
                     return (
@@ -735,7 +699,7 @@ export default function Home() {
               </div>
 
               <div className="industry-visual-panel">
-                <img src={activeIndustryItem.image} alt={activeIndustryItem.label} className="industry-visual-image" />
+                <img src={activeIndustryItem.image} alt={activeIndustryItem.imageAlt} className="industry-visual-image" />
               </div>
             </div>
           </Column>
@@ -747,9 +711,9 @@ export default function Home() {
         <Grid>
           <Column lg={11} md={6} sm={4}>
             <Network_1 size={22} className="approach-icon" aria-hidden="true" />
-            <p className="section-label">How we work</p>
-            <h2>Rigour meets momentum.</h2>
-            <p className="approach-copy">The strongest transformations don't happen overnight. They happen when strategy meets practical delivery — every decision grounded in measurable outcomes, every programme built to scale.</p>
+            <p className="section-label">{homeContent.approach.eyebrow}</p>
+            <h2>{homeContent.approach.title}</h2>
+            <p className="approach-copy">{homeContent.approach.description}</p>
           </Column>
         </Grid>
 
@@ -786,9 +750,9 @@ export default function Home() {
       <section className="partners-section" id="partners">
         <Grid>
           <Column lg={16} md={8} sm={4}>
-            <p className="section-label">Our ecosystem</p>
-            <h2>Technology alliances that go further.</h2>
-            <p className="section-lede">We work with the world's leading technology platforms to deliver solutions that are proven, scalable, and enterprise-ready.</p>
+            <p className="section-label">{homeContent.partners.eyebrow}</p>
+            <h2>{homeContent.partners.title}</h2>
+            <p className="section-lede">{homeContent.partners.description}</p>
           </Column>
         </Grid>
         <Grid className="partners-grid">
@@ -804,11 +768,11 @@ export default function Home() {
       <section className="blogs-section" id="blogs">
         <Grid>
           <Column lg={12} md={6} sm={4}>
-            <p className="section-label">Tech Blogs</p>
-            <h2>Thinking from the front lines.</h2>
+            <p className="section-label">{homeContent.blogs.eyebrow}</p>
+            <h2>{homeContent.blogs.title}</h2>
           </Column>
           <Column lg={4} md={2} sm={4} className="blogs-cta-col">
-            <RouterLink to="/insights" className="capability-card__link">All articles <ArrowRight size={16} /></RouterLink>
+            <RouterLink to={homeContent.blogs.allArticlesUrl} className="capability-card__link">{homeContent.blogs.allArticlesLabel} <ArrowRight size={16} /></RouterLink>
           </Column>
         </Grid>
         <Grid>
@@ -824,7 +788,7 @@ export default function Home() {
                     <h3 className="blog-title">{title}</h3>
                     <div className="blog-hover-arrow">
                       <ArrowRight size={18} aria-hidden="true" />
-                      <span>Read article</span>
+                      <span>{homeContent.blogs.readArticleLabel}</span>
                     </div>
                   </div>
                 </RouterLink>
@@ -838,47 +802,41 @@ export default function Home() {
       <section className="exec-section" id="executive-team">
         <Grid>
           <Column lg={11} md={5} sm={4}>
-            <p className="section-label">Leadership</p>
-            <h2>Executive leadership</h2>
-            <p className="section-lede">Leadership shaped by deep enterprise technology experience.</p>
+            <p className="section-label">{homeContent.leadership.eyebrow}</p>
+            <h2>{homeContent.leadership.title}</h2>
+            <p className="section-lede">{homeContent.leadership.description}</p>
           </Column>
         </Grid>
         <div className="exec-spotlight">
-          <img src={vinayPortrait} alt="Vinay Pachunoori" className="exec-spotlight__image" loading="lazy" decoding="async" />
+          <img src={homeContent.leadership.portrait} alt={homeContent.leadership.portraitAlt} className="exec-spotlight__image" loading="lazy" decoding="async" />
           <div className="exec-spotlight__overlay" aria-hidden="true" />
           <div className="exec-spotlight__content">
-            <p className="exec-spotlight__eyebrow">Executive Leadership</p>
-            <h3>Vinay Pachunoori</h3>
-            <p className="exec-spotlight__bio">Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems.</p>
+            <p className="exec-spotlight__eyebrow">{homeContent.leadership.spotlightEyebrow}</p>
+            <h3>{homeContent.leadership.name}</h3>
+            <p className="exec-spotlight__bio">{homeContent.leadership.bio}</p>
             <div className="exec-prev-exp">
-              <p className="exec-prev-exp__label">Previous Experience</p>
+              <p className="exec-prev-exp__label">{homeContent.leadership.experienceLabel}</p>
               <div className="exec-prev-exp__row">
-                {[
-                  { name: 'Oracle',  logo: logoOracle  },
-                  { name: 'eBay',    logo: logoEbay    },
-                  { name: 'Amazon',  logo: logoAmazon  },
-                  { name: 'Walmart', logo: logoWalmart },
-                  { name: 'Coupang', logo: logoCoupang },
-                ].map(({ name, logo }) => (
+                {homeContent.leadership.experience.map(({ name, logo, logoAlt }) => (
                   <span key={name} className="exec-prev-exp__item">
-                    <img src={logo} alt={name} className="exec-prev-exp__logo" />
+                    <img src={logo} alt={logoAlt} className="exec-prev-exp__logo" />
                   </span>
                 ))}
               </div>
             </div>
             <a
-              href="https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              href={homeContent.leadership.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="exec-spotlight__linkedin"
             >
               <LogoLinkedin size={20} />
-              <span>LinkedIn</span>
+              <span>{homeContent.leadership.linkedinLabel}</span>
             </a>
           </div>
           <div className="exec-spotlight__stat">
-            <strong>23+ Years</strong>
-            <span>Enterprise technology leadership</span>
+            <strong>{homeContent.leadership.statValue}</strong>
+            <span>{homeContent.leadership.statLabel}</span>
           </div>
         </div>
       </section>
@@ -886,14 +844,12 @@ export default function Home() {
       {/* ── About ── */}
       <section className="about-section" id="about">
         <Grid>
-          <Column lg={7} md={6} sm={4}>
-            <p className="section-label">About Us</p>
-            <h2>Enterprise services, built on integrity.</h2>
-          </Column>
-          <Column lg={{ span: 7, offset: 1 }} md={6} sm={4}>
-            <p className="about-copy">Founded in 2008, Qlugen has grown from a specialist technology consultancy into a global enterprise services firm. We operate across 35 countries, serving clients in financial services, healthcare, retail, manufacturing, and the public sector. Our people combine deep technical expertise with practical delivery experience — and we measure our success by the outcomes our clients achieve, not just the work we deliver.</p>
+          <Column lg={8} md={6} sm={4}>
+            <p className="section-label">{homeContent.about.eyebrow}</p>
+            <h2>{homeContent.about.title}</h2>
+            <p className="about-copy">{homeContent.about.description}</p>
             <div className="about-actions">
-              <Button kind="ghost" renderIcon={ArrowRight} as={RouterLink} to="/careers">Join our team</Button>
+              <Button kind="ghost" renderIcon={ArrowRight} as={RouterLink} to={homeContent.about.ctaUrl}>{homeContent.about.ctaLabel}</Button>
             </div>
           </Column>
         </Grid>
@@ -904,12 +860,12 @@ export default function Home() {
         <Grid>
           <Column lg={10} md={6} sm={4}>
             <Education size={32} className="careers-icon" />
-            <p className="section-label">Careers</p>
-            <h2>Shape the future of enterprise.</h2>
-            <p className="careers-copy">We're always looking for sharp minds who want to solve hard problems alongside exceptional colleagues. Explore roles across strategy, engineering, data science, and enterprise architecture.</p>
+            <p className="section-label">{homeContent.careers.eyebrow}</p>
+            <h2>{homeContent.careers.title}</h2>
+            <p className="careers-copy">{homeContent.careers.description}</p>
           </Column>
           <Column lg={6} md={2} sm={4} className="careers-action">
-            <Button kind="secondary" renderIcon={ArrowRight} as={RouterLink} to="/careers">Explore open roles</Button>
+            <Button kind="secondary" renderIcon={ArrowRight} as={RouterLink} to={homeContent.careers.ctaUrl}>{homeContent.careers.ctaLabel}</Button>
           </Column>
         </Grid>
       </section>
@@ -918,12 +874,12 @@ export default function Home() {
       <section className="contact-section" id="contact">
         <Grid>
           <Column lg={11} md={6} sm={4}>
-            <p className="section-label">Start a conversation</p>
-            <h2>Ready to move forward?</h2>
-            <p className="contact-copy">Whether you're exploring a specific challenge or planning a large-scale transformation, our enterprise team is ready to help you define the path forward.</p>
+            <p className="section-label">{homeContent.cta.eyebrow}</p>
+            <h2>{homeContent.cta.title}</h2>
+            <p className="contact-copy">{homeContent.cta.description}</p>
           </Column>
           <Column lg={5} md={2} sm={4} className="contact-action">
-            <Button kind="primary" renderIcon={ArrowRight} as={RouterLink} to="/contact">Connect with Qlugen</Button>
+            <Button kind="primary" renderIcon={ArrowRight} as={RouterLink} to={homeContent.cta.url}>{homeContent.cta.label}</Button>
           </Column>
         </Grid>
       </section>

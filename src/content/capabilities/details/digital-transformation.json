@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "eyebrow": "Capability · Digital Transformation",
+    "title": "Reimagine the enterprise.",
+    "description": "Design and deliver end-to-end transformation programmes that modernise operations and unlock new digital capabilities.",
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+    "imageAlt": ""
+  },
+  "gap": {
+    "eyebrow": "The transformation gap",
+    "title": "Technology without change rarely sticks",
+    "body": "Digital transformation programmes often stall because they focus on technology rather than the business change needed to make technology stick. The gap is rarely technical — it is organisational.",
+    "quote": "\"The organisations that succeed treat transformation as a change in capability, not a change in tooling.\""
+  },
+  "delivers": {
+    "eyebrow": "What Qlugen delivers",
+    "title": "End-to-end, from strategy to adoption",
+    "items": [
+      {
+        "title": "Transformation Strategy",
+        "description": "Define the vision, priorities and roadmap that turn ambition into a deliverable programme — then design the digital products and platforms that create new value.",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Team planning priorities together using a sticky-note board"
+      },
+      {
+        "title": "Experience & Platforms",
+        "description": "Reshape customer and employee experiences around real journeys, and implement the core enterprise platforms that run the business day to day.",
+        "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Software team collaborating on digital products and platforms"
+      },
+      {
+        "title": "Modernisation & Operating Model",
+        "description": "Reduce legacy complexity and change how teams, processes and technology work together — so the change actually sticks.",
+        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Colleagues reviewing documents and business processes together"
+      }
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Transformation outcomes",
+    "title": "What strong transformation enables",
+    "items": [
+      {
+        "title": "Faster Innovation",
+        "description": "New capabilities reach customers sooner."
+      },
+      {
+        "title": "Modern Experiences",
+        "description": "Experiences built around real needs."
+      },
+      {
+        "title": "Simplified Operations",
+        "description": "Less complexity across the estate."
+      },
+      {
+        "title": "New Capabilities",
+        "description": "Foundations for future growth."
+      }
+    ]
+  },
+  "roadmap": {
+    "eyebrow": "Transformation roadmap",
+    "title": "Six phases from ambition to capability",
+    "phaseLabel": "Phase",
+    "phases": [
+      {
+        "title": "Assess",
+        "description": "Understand the current state, ambition and constraints."
+      },
+      {
+        "title": "Envision",
+        "description": "Define the target operating model and roadmap."
+      },
+      {
+        "title": "Design",
+        "description": "Shape products, platforms and experiences."
+      },
+      {
+        "title": "Build",
+        "description": "Deliver iteratively with continuous validation."
+      },
+      {
+        "title": "Adopt",
+        "description": "Embed change across teams and processes."
+      },
+      {
+        "title": "Scale",
+        "description": "Extend and compound the capability built."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Build the resilient foundations transformation depends on.",
+        "url": "/capabilities/cloud-infrastructure"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Automation",
+        "description": "Remove friction from the processes you modernise.",
+        "url": "/capabilities/automation"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn digital transformation into business impact.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Digital Transformation Services | Qlugen",
+    "description": "Design and deliver end-to-end transformation programmes that modernise operations and build digital capabilities, from strategy to adoption.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Digital Transformation"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "eyebrow": "Legal",
+    "title": "Privacy Policy",
+    "updated": "Last updated: August 2026",
+    "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1800&q=80"
+  },
+  "body": [
+    {
+      "type": "heading",
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "This Privacy Policy explains how Qlugen (\"we\", \"us\", \"our\") handles personal information collected through this website. It is intended to help you understand what information we collect, how we use it, and the choices available to you. This is a general policy template and should be reviewed with legal counsel before use."
+    },
+    {
+      "type": "heading",
+      "text": "Information we collect"
+    },
+    {
+      "type": "paragraph",
+      "text": "We may collect information that you provide directly, such as when you complete a contact form. This can include your name, work email address, company, role and the content of your message. We may also collect limited technical information automatically, such as basic usage data, to help operate and improve the website."
+    },
+    {
+      "type": "heading",
+      "text": "How we use information"
+    },
+    {
+      "type": "paragraph",
+      "text": "We use the information we collect to respond to enquiries, communicate with you about your request, operate and improve our website, and for other legitimate business purposes described at the point of collection."
+    },
+    {
+      "type": "list",
+      "items": [
+        "To respond to and manage your enquiries.",
+        "To operate, maintain and improve the website.",
+        "To communicate relevant information you have requested."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Sharing"
+    },
+    {
+      "type": "paragraph",
+      "text": "We do not sell personal information. We may share information with service providers who support our operations, and where required to comply with applicable law. Any such sharing is limited to what is necessary for the relevant purpose."
+    },
+    {
+      "type": "heading",
+      "text": "Cookies"
+    },
+    {
+      "type": "paragraph",
+      "text": "Our website may use cookies and similar technologies. You can find more detail in our [Cookie Policy](/cookies), including information about how to manage your preferences."
+    },
+    {
+      "type": "heading",
+      "text": "Your rights"
+    },
+    {
+      "type": "paragraph",
+      "text": "Depending on your location, you may have rights relating to your personal information, such as the right to access, correct or request deletion of your data. To exercise any such rights, please contact us using the details below."
+    },
+    {
+      "type": "heading",
+      "text": "Contact"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you have questions about this Privacy Policy, please [get in touch](/contact) and a member of our team will respond."
+    }
+  ],
+  "seo": {
+    "title": "Privacy Policy | Qlugen",
+    "description": "Read how Qlugen handles personal information collected through this website, including enquiries, information sharing and privacy choices.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

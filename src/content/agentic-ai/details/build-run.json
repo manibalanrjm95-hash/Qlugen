@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "eyebrow": "Agentic Enterprise · 02",
+    "title": "Build intelligence that performs.",
+    "description": "Engineer AI agents and systems that operate reliably inside your enterprise environment.",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=80",
+    "pipeline": [
+      "Code",
+      "Build",
+      "Test",
+      "Deploy",
+      "Monitor"
+    ]
+  },
+  "why": {
+    "eyebrow": "Why it matters",
+    "title": "Reliability is the difference between demo and production",
+    "body": "An agent that performs in a controlled test rarely survives the messiness of real enterprise systems. Building agents that run reliably requires engineering discipline — integration, evaluation, observability and operations — not just a capable model."
+  },
+  "process": {
+    "eyebrow": "Engineering process",
+    "title": "How we build for production",
+    "items": [
+      {
+        "title": "Engineering for integration",
+        "description": "Agents that perform in a demo rarely survive the messiness of real enterprise systems. We engineer for the integrations, data contracts and edge cases that production demands.",
+        "deliverables": [
+          "Agent Engineering",
+          "Enterprise Integration"
+        ]
+      },
+      {
+        "title": "Confidence through evaluation",
+        "description": "Reliability is measurable. We build evaluation and observability into every agent so behaviour, quality and cost stay understood in production.",
+        "deliverables": [
+          "Evaluation",
+          "Observability"
+        ]
+      },
+      {
+        "title": "Operating in production",
+        "description": "Deployment is the beginning, not the end. We run agents with the operational discipline enterprise systems require.",
+        "deliverables": [
+          "Deployment",
+          "Runtime Operations"
+        ]
+      }
+    ]
+  },
+  "related": {
+    "heading": "Explore the agentic stages",
+    "items": [
+      {
+        "eyebrow": "Stage 01",
+        "title": "Orchestrate",
+        "description": "Coordinate agents into end-to-end processes.",
+        "url": "/agentic-ai/orchestrate"
+      },
+      {
+        "eyebrow": "Stage 05",
+        "title": "Scale",
+        "description": "Extend proven capabilities across the enterprise.",
+        "url": "/agentic-ai/scale"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to build agents that perform?",
+    "sub": "Talk to Qlugen about engineering reliable enterprise AI.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Build & Run Enterprise AI Agents | Qlugen",
+    "description": "Engineer AI agents and systems that operate reliably inside your enterprise environment, with integration, evaluation and operational monitoring.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Build & Run"
+  }
+}

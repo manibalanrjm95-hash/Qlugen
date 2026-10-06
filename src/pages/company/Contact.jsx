@@ -3,27 +3,16 @@ import { useState } from 'react'
 import Layout from '../../components/Layout'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight, Enterprise, Partnership, UserFollow } from '@carbon/icons-react'
+import content from '../../content/contact.json'
 import '../../App.css'
 
-const interests = [
-  'AI readiness & governance',
-  'Data migration',
-  'Analytics modernisation',
-  'Cloud optimisation',
-  'Engineering teams',
-  'Managed analytics & data platforms',
-  'Something else',
-]
-
-const contexts = [
-  { icon: Enterprise, title: 'For enterprise enquiries', desc: 'Discuss a technology challenge or transformation priority.' },
-  { icon: Partnership, title: 'For partnership', desc: 'Explore working with Qlugen as a technology partner.' },
-  { icon: UserFollow, title: 'For careers', desc: 'Introduce yourself and tell us what you\'d like to build.' },
-]
+const contextIcons = [Enterprise, Partnership, UserFollow]
 
 const initial = { firstName: '', lastName: '', email: '', company: '', role: '', interest: '', message: '', resumeName: '' }
 
 export default function Contact() {
+  const { intro, form, location, closing } = content
+  const { labels, errors: messages } = form
   const [values, setValues] = useState(initial)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -36,13 +25,13 @@ export default function Contact() {
 
   const validate = () => {
     const next = {}
-    if (!values.firstName.trim()) next.firstName = 'First name is required.'
-    if (!values.lastName.trim()) next.lastName = 'Last name is required.'
-    if (!values.email.trim()) next.email = 'Work email is required.'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) next.email = 'Enter a valid email address.'
-    if (!values.company.trim()) next.company = 'Company is required.'
-    if (!values.interest) next.interest = 'Please select an area of interest.'
-    if (!values.message.trim()) next.message = 'Please tell us a little about your challenge.'
+    if (!values.firstName.trim()) next.firstName = messages.firstName
+    if (!values.lastName.trim()) next.lastName = messages.lastName
+    if (!values.email.trim()) next.email = messages.emailRequired
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) next.email = messages.emailInvalid
+    if (!values.company.trim()) next.company = messages.company
+    if (!values.interest) next.interest = messages.interest
+    if (!values.message.trim()) next.message = messages.message
     return next
   }
 
@@ -63,41 +52,44 @@ export default function Contact() {
             <div className="contact-left">
               <div className="contact-visual-band">
                 <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
-                  alt=""
+                  src={intro.image}
+                  alt={intro.imageAlt || ''}
                   className="contact-visual-band__img"
                   fetchPriority="high"
                   decoding="async"
                 />
                 <div className="contact-visual-band__overlay" />
               </div>
-              <p className="section-label">Start a conversation</p>
-              <h1>Bring us the transformation problem.</h1>
-              <p>AI readiness, data migration, analytics modernisation, cloud optimisation, governance, engineering teams or managed platforms. Start with a focused conversation.</p>
-              {contexts.map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="contact-context-item">
-                  <Icon size={22} />
-                  <div><h2 className="contact-context-heading">{title}</h2><p>{desc}</p></div>
-                </div>
-              ))}
+              <p className="section-label">{intro.eyebrow}</p>
+              <h1>{intro.title}</h1>
+              <p>{intro.description}</p>
+              {intro.contexts.map(({ title, description }, i) => {
+                const Icon = contextIcons[i % contextIcons.length]
+                return (
+                  <div key={title} className="contact-context-item">
+                    <Icon size={22} />
+                    <div><h2 className="contact-context-heading">{title}</h2><p>{description}</p></div>
+                  </div>
+                )
+              })}
             </div>
 
             <div className="contact-form-wrap">
               {submitted ? (
                 <div className="form-success" style={{ marginTop: 0 }}>
-                  <h2 className="form-success-heading">Thanks — your message is on its way.</h2>
-                  <p>We've received your details and a member of the Qlugen team will be in touch shortly.</p>
+                  <h2 className="form-success-heading">{form.success.title}</h2>
+                  <p>{form.success.body}</p>
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit} noValidate>
                   <div className="form-row">
                     <div className={`form-field${errors.firstName ? ' has-error' : ''}`}>
-                      <label htmlFor="firstName">First name</label>
+                      <label htmlFor="firstName">{labels.firstName}</label>
                       <input id="firstName" type="text" value={values.firstName} onChange={update('firstName')} />
                       {errors.firstName && <span className="form-error-msg">{errors.firstName}</span>}
                     </div>
                     <div className={`form-field${errors.lastName ? ' has-error' : ''}`}>
-                      <label htmlFor="lastName">Last name</label>
+                      <label htmlFor="lastName">{labels.lastName}</label>
                       <input id="lastName" type="text" value={values.lastName} onChange={update('lastName')} />
                       {errors.lastName && <span className="form-error-msg">{errors.lastName}</span>}
                     </div>
@@ -105,12 +97,12 @@ export default function Contact() {
 
                   <div className="form-row">
                     <div className={`form-field${errors.email ? ' has-error' : ''}`}>
-                      <label htmlFor="email">Work email</label>
+                      <label htmlFor="email">{labels.email}</label>
                       <input id="email" type="email" value={values.email} onChange={update('email')} />
                       {errors.email && <span className="form-error-msg">{errors.email}</span>}
                     </div>
                     <div className={`form-field${errors.company ? ' has-error' : ''}`}>
-                      <label htmlFor="company">Company</label>
+                      <label htmlFor="company">{labels.company}</label>
                       <input id="company" type="text" value={values.company} onChange={update('company')} />
                       {errors.company && <span className="form-error-msg">{errors.company}</span>}
                     </div>
@@ -118,36 +110,36 @@ export default function Contact() {
 
                   <div className="form-row">
                     <div className="form-field">
-                      <label htmlFor="role">Role</label>
+                      <label htmlFor="role">{labels.role}</label>
                       <input id="role" type="text" value={values.role} onChange={update('role')} />
                     </div>
                     <div className={`form-field${errors.interest ? ' has-error' : ''}`}>
-                      <label htmlFor="interest">Area of interest</label>
+                      <label htmlFor="interest">{labels.interest}</label>
                       <select id="interest" value={values.interest} onChange={update('interest')}>
-                        <option value="">Select an area</option>
-                        {interests.map(i => <option key={i} value={i}>{i}</option>)}
+                        <option value="">{form.interestPlaceholder}</option>
+                        {form.interests.map(i => <option key={i} value={i}>{i}</option>)}
                       </select>
                       {errors.interest && <span className="form-error-msg">{errors.interest}</span>}
                     </div>
                   </div>
 
                   <div className="form-field">
-                    <label htmlFor="resume">Resume</label>
+                    <label htmlFor="resume">{labels.resume}</label>
                     <input id="resume" type="file" accept=".pdf,.doc,.docx" onChange={updateResume} />
                     <span className="form-help-text">
-                      {values.resumeName || 'Optional — upload PDF, DOC, or DOCX.'}
+                      {values.resumeName || form.resumeHelp}
                     </span>
                   </div>
 
                   <div className={`form-field${errors.message ? ' has-error' : ''}`}>
-                    <label htmlFor="message">Message</label>
+                    <label htmlFor="message">{labels.message}</label>
                     <textarea id="message" value={values.message} onChange={update('message')} />
                     {errors.message && <span className="form-error-msg">{errors.message}</span>}
                   </div>
 
                   <div>
                     <button type="submit" className="cta-btn cta-btn--primary">
-                      Send message <ArrowRight size={18} />
+                      {form.submitLabel} <ArrowRight size={18} />
                     </button>
                   </div>
                 </form>
@@ -156,20 +148,20 @@ export default function Contact() {
           </div>
           <section id="our-location" className="contact-location" aria-labelledby="contact-location-heading">
             <div className="contact-location__header">
-              <h2 id="contact-location-heading">Find us</h2>
+              <h2 id="contact-location-heading">{location.title}</h2>
               <a
-                href="https://maps.app.goo.gl/8kiQbfDHqUVA6MDU9"
+                href={location.mapLinkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-location__link"
               >
-                Open in Google Maps <ArrowRight size={18} />
+                {location.mapLinkLabel} <ArrowRight size={18} />
               </a>
             </div>
             <iframe
               className="contact-location__map"
-              title="Qlugen location on Google Maps"
-              src="https://www.google.com/maps?q=12.9478593,77.5936611&z=17&output=embed"
+              title={location.mapTitle}
+              src={location.mapEmbedUrl}
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
@@ -182,7 +174,7 @@ export default function Contact() {
         <Grid>
           <Column lg={16} md={8} sm={4}>
             <p style={{ margin: 0, fontSize: '1rem', color: 'rgba(255,255,255,.75)' }}>
-              <span style={{ color: 'var(--q-accent)', fontWeight: 700 }}>Qlugen</span> — enterprise technology for organisations ready to move further.
+              <span style={{ color: 'var(--q-accent)', fontWeight: 700 }}>{closing.accent}</span> {closing.text}
             </p>
           </Column>
         </Grid>

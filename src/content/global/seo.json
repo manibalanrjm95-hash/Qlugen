@@ -1,0 +1,10 @@
+{
+  "siteName": "Qlugen",
+  "defaultOgImage": "/social/qlugen.png",
+  "ogImageAlt": "Qlugen logo",
+  "notFound": {
+    "title": "Page Not Found | Qlugen",
+    "description": "The requested Qlugen page could not be found. Explore our enterprise technology capabilities or contact our team."
+  },
+  "homeBreadcrumbLabel": "Home"
+}

@@ -4,58 +4,9 @@ import { ChevronDown, Close, Menu } from '@carbon/icons-react'
 import { Grid, Column } from '@carbon/react'
 import logoIcon from '../assets/logo-icon.svg'
 import logoWordmark from '../assets/logo-wordmark.svg'
+import navigation from '../content/global/navigation.json'
+import footer from '../content/global/footer.json'
 import '../App.css'
-
-const navItems = [
-  {
-    label: 'Capabilities', to: '/capabilities',
-    items: [
-      { label: 'Data & Analytics', to: '/capabilities/data-analytics' },
-      { label: 'AI & Agent Development', to: '/capabilities/ai-agent-development' },
-      { label: 'Cloud & Infrastructure', to: '/capabilities/cloud-infrastructure' },
-      { label: 'Cybersecurity', to: '/capabilities/cybersecurity' },
-      { label: 'Automation', to: '/capabilities/automation' },
-      { label: 'Digital Transformation', to: '/capabilities/digital-transformation' },
-      { label: 'Sustainability', to: '/capabilities/sustainability' },
-    ],
-  },
-  {
-    label: 'Products & Platforms', to: '/products',
-    items: [
-      { label: 'AI Readiness Assessment', to: '/products/ai-readiness-assessment' },
-      { label: 'Data Migration Factory', to: '/products/data-migration-factory' },
-      { label: 'Analytics Migration Factory', to: '/products/analytics-migration-factory' },
-      { label: 'Cloud Optimize', to: '/products/cloud-optimize' },
-      { label: 'Data Governance', to: '/products/data-governance' },
-      { label: 'AI Governance', to: '/products/ai-governance' },
-      { label: 'Qlugen Context', to: '/products/qlugen-context' },
-      { label: 'Data Agent Platform', to: '/products/data-agent-platform' },
-    ],
-  },
-  {
-    label: 'Industries', to: '/industries',
-    items: [
-      { label: 'Financial Services', to: '/industries/financial-services' },
-      { label: 'Healthcare', to: '/industries/healthcare' },
-      { label: 'Retail & Commerce', to: '/industries/retail-commerce' },
-      { label: 'Manufacturing', to: '/industries/manufacturing' },
-      { label: 'Government', to: '/industries/government' },
-      { label: 'Energy & Utilities', to: '/industries/energy-utilities' },
-    ],
-  },
-  { label: 'Tech Blogs', to: '/insights' },
-  { label: 'Technology', to: '/technology' },
-  {
-    label: 'Company', to: '/company',
-    items: [
-      { label: 'About Us', to: '/about' },
-      { label: 'How We Work', to: '/how-we-work' },
-      { label: 'Executive Team', to: '/leadership' },
-      { label: 'Careers', to: '/careers' },
-      { label: 'Contact Us', to: '/contact' },
-    ],
-  },
-]
 
 export default function Layout({ children }) {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -74,42 +25,42 @@ export default function Layout({ children }) {
     <>
       <header className="site-header" role="banner">
         <div className="site-header-inner">
-          <Link to="/" className="site-logo" aria-label="Qlugen home">
+          <Link to="/" className="site-logo" aria-label={navigation.homeLabel}>
             <img src={logoIcon} alt="" className="site-logo-icon" aria-hidden="true" />
-            <img src={logoWordmark} alt="Qlugen" className="site-logo-wordmark" />
+            <img src={logoWordmark} alt={navigation.logoAlt} className="site-logo-wordmark" />
           </Link>
 
-          <nav className="site-nav" aria-label="Primary navigation">
-            {navItems.map(item =>
+          <nav className="site-nav" aria-label={navigation.accessibility.primaryNavLabel}>
+            {navigation.items.map(item =>
               item.items ? (
                 <div key={item.label} className="nav-item nav-has-dropdown">
-                  <Link to={item.to} className="nav-trigger" style={{ textDecoration: 'none' }}>
+                  <Link to={item.url} className="nav-trigger" style={{ textDecoration: 'none' }}>
                     {item.label}
                     <ChevronDown size={14} className="nav-chevron" />
                   </Link>
                   <div className="nav-dropdown" role="menu">
                     {item.items.map(child => (
-                      <Link key={child.label} to={child.to} className="nav-dropdown-link" role="menuitem">
+                      <Link key={child.label} to={child.url} className="nav-dropdown-link" role="menuitem">
                         {child.label}
                       </Link>
                     ))}
                   </div>
                 </div>
               ) : (
-                <Link key={item.label} to={item.to} className="nav-link">
+                <Link key={item.label} to={item.url} className="nav-link">
                   {item.label}
                 </Link>
               )
             )}
 
-            <Link to="/contact" className="nav-link nav-link--cta">Contact Us</Link>
+            <Link to={navigation.cta.url} className="nav-link nav-link--cta">{navigation.cta.label}</Link>
           </nav>
 
           <button
             className="mobile-toggle"
             type="button"
             onClick={() => setMobileOpen(o => !o)}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-label={mobileOpen ? navigation.accessibility.closeMenuLabel : navigation.accessibility.openMenuLabel}
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? <Close size={20} /> : <Menu size={20} />}
@@ -118,8 +69,8 @@ export default function Layout({ children }) {
       </header>
 
       {mobileOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          {navItems.map(item =>
+        <nav className="mobile-nav" aria-label={navigation.accessibility.mobileNavLabel}>
+          {navigation.items.map(item =>
             item.items ? (
               <details key={item.label} className="mobile-nav-group">
                 <summary className="mobile-nav-heading">
@@ -129,16 +80,16 @@ export default function Layout({ children }) {
                 <ul className="mobile-nav-sub">
                   {item.items.map(child => (
                     <li key={child.label}>
-                      <Link to={child.to} className="mobile-nav-sub-link" onClick={() => setMobileOpen(false)}>{child.label}</Link>
+                      <Link to={child.url} className="mobile-nav-sub-link" onClick={() => setMobileOpen(false)}>{child.label}</Link>
                     </li>
                   ))}
                 </ul>
               </details>
             ) : (
-              <Link key={item.label} to={item.to} className="mobile-nav-link" onClick={() => setMobileOpen(false)}>{item.label}</Link>
+              <Link key={item.label} to={item.url} className="mobile-nav-link" onClick={() => setMobileOpen(false)}>{item.label}</Link>
             )
           )}
-          <Link to="/contact" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+          <Link to={navigation.cta.url} className="mobile-nav-link" onClick={() => setMobileOpen(false)}>{navigation.cta.label}</Link>
         </nav>
       )}
 
@@ -149,69 +100,25 @@ export default function Layout({ children }) {
           <Column lg={4} md={8} sm={4} className="footer-brand-col">
             <div className="footer-logo-row">
               <img src={logoIcon} alt="" className="footer-logo-icon" aria-hidden="true" />
-              <img src={logoWordmark} alt="Qlugen" className="footer-logo-wordmark" />
+              <img src={logoWordmark} alt={footer.brand.logoAlt} className="footer-logo-wordmark" />
             </div>
-            <span className="footer-tagline">Enterprise, made human.</span>
-            <p className="footer-desc">Products that accelerate transformation. Engineering that makes it real.</p>
+            <span className="footer-tagline">{footer.brand.tagline}</span>
+            <p className="footer-desc">{footer.brand.description}</p>
           </Column>
-          <Column lg={3} md={2} sm={2} className="footer-links-col">
-            <p className="footer-heading">Capabilities</p>
-            <ul>
-              <li><Link to="/capabilities/data-analytics">Data & Analytics</Link></li>
-              <li><Link to="/capabilities/ai-agent-development">AI & Agent Development</Link></li>
-              <li><Link to="/capabilities/cloud-infrastructure">Cloud & Infrastructure</Link></li>
-              <li><Link to="/capabilities/cybersecurity">Cybersecurity</Link></li>
-              <li><Link to="/capabilities/automation">Automation</Link></li>
-              <li><Link to="/capabilities/digital-transformation">Digital Transformation</Link></li>
-              <li><Link to="/capabilities/sustainability">Sustainability</Link></li>
-            </ul>
-          </Column>
-          <Column lg={3} md={2} sm={2} className="footer-links-col">
-            <p className="footer-heading">Products</p>
-            <ul>
-              <li><Link to="/products/ai-readiness-assessment">AI Readiness Assessment</Link></li>
-              <li><Link to="/products/data-migration-factory">Data Migration Factory</Link></li>
-              <li><Link to="/products/analytics-migration-factory">Analytics Migration Factory</Link></li>
-              <li><Link to="/products/cloud-optimize">Cloud Optimize</Link></li>
-              <li><Link to="/products/data-governance">Data Governance</Link></li>
-              <li><Link to="/products/ai-governance">AI Governance</Link></li>
-            </ul>
-          </Column>
-          <Column lg={3} md={2} sm={2} className="footer-links-col">
-            <p className="footer-heading">Industries</p>
-            <ul>
-              <li><Link to="/industries/financial-services">Financial Services</Link></li>
-              <li><Link to="/industries/healthcare">Healthcare</Link></li>
-              <li><Link to="/industries/retail-commerce">Retail & Commerce</Link></li>
-              <li><Link to="/industries/manufacturing">Manufacturing</Link></li>
-              <li><Link to="/industries/government">Government</Link></li>
-              <li><Link to="/industries/energy-utilities">Energy & Utilities</Link></li>
-            </ul>
-          </Column>
-          <Column lg={3} md={2} sm={2} className="footer-links-col">
-            <p className="footer-heading">Company</p>
-            <ul>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/how-we-work">How We Work</Link></li>
-              <li><Link to="/insights">Insights</Link></li>
-              <li><Link to="/leadership">Leadership</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/contact#our-location">Our location</Link></li>
-            </ul>
-          </Column>
-          <Column lg={3} md={2} sm={2} className="footer-links-col">
-            <p className="footer-heading">Legal</p>
-            <ul>
-              <li><Link to="/privacy">Privacy</Link></li>
-              <li><Link to="/terms">Terms</Link></li>
-              <li><Link to="/cookies">Cookies</Link></li>
-            </ul>
-          </Column>
+          {footer.sections.map(section => (
+            <Column key={section.heading} lg={3} md={2} sm={2} className="footer-links-col">
+              <p className="footer-heading">{section.heading}</p>
+              <ul>
+                {section.links.map(link => (
+                  <li key={`${section.heading}-${link.url}`}><Link to={link.url}>{link.label}</Link></li>
+                ))}
+              </ul>
+            </Column>
+          ))}
         </Grid>
         <Grid className="footer-bottom">
           <Column lg={16} md={8} sm={4}>
-            <span>© 2026 Qlugen. All rights reserved.</span>
+            <span>{footer.copyright}</span>
           </Column>
         </Grid>
       </footer>

@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "eyebrow": "Capability · Cybersecurity",
+    "title": "Protect what matters most.",
+    "description": "Embed intelligence-led security across every layer of your enterprise from identity and access to real-time threat detection.",
+    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1800&q=80",
+    "flow": [
+      "Threat",
+      "Detection",
+      "Response"
+    ]
+  },
+  "band": {
+    "eyebrow": "Security journey",
+    "title": "Security posture is built across layers, not added at the end.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
+    "imageAlt": ""
+  },
+  "model": {
+    "eyebrow": "Security posture model",
+    "title": "Defence, layer by layer",
+    "body": "Enterprise security is not a single control. It is a posture built across layers, each one reinforcing the next from physical infrastructure to governance.",
+    "layers": [
+      "Physical",
+      "Network",
+      "Application",
+      "Data",
+      "Identity",
+      "Governance"
+    ]
+  },
+  "services": {
+    "eyebrow": "What we deliver",
+    "title": "Our cybersecurity services",
+    "items": [
+      {
+        "title": "Security Strategy",
+        "description": "Assess risk, define target-state security architecture and build a prioritised improvement roadmap."
+      },
+      {
+        "title": "Identity & Access",
+        "description": "Implement modern identity, authentication and access controls across users, services and machines."
+      },
+      {
+        "title": "Application Security",
+        "description": "Embed security into the software lifecycle with secure design, testing and dependency management."
+      },
+      {
+        "title": "Cloud Security",
+        "description": "Protect cloud environments with posture management, workload protection and secure configuration."
+      },
+      {
+        "title": "Data Protection",
+        "description": "Safeguard sensitive data through classification, encryption and access governance."
+      },
+      {
+        "title": "Security Monitoring",
+        "description": "Detect and respond to threats with monitoring, alerting and incident response capability."
+      },
+      {
+        "title": "Governance & Compliance",
+        "description": "Align security controls with regulatory requirements and demonstrate ongoing compliance."
+      }
+    ]
+  },
+  "challenge": {
+    "eyebrow": "The challenge",
+    "title": "An expanding threat landscape",
+    "body": "Growing attack surface, skills gaps, and increasing regulatory requirements challenge existing security programmes. Intelligence-led security keeps pace.",
+    "quote": "Modern security must help the enterprise move confidently, not just add checkpoints.",
+    "outcomes": [
+      {
+        "title": "Reduced Enterprise Risk",
+        "description": "A smaller, better-managed attack surface."
+      },
+      {
+        "title": "Stronger Resilience",
+        "description": "Faster detection and recovery."
+      },
+      {
+        "title": "Secure Transformation",
+        "description": "Security that enables change rather than blocking it."
+      },
+      {
+        "title": "Compliance Visibility",
+        "description": "Clear evidence of control effectiveness."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Secure the platforms your workloads run on.",
+        "url": "/capabilities/cloud-infrastructure"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "AI & Agent Development",
+        "description": "Build AI systems with security and governance by design.",
+        "url": "/capabilities/ai-agent-development"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn cybersecurity into business impact.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Cybersecurity Services | Qlugen",
+    "description": "Embed intelligence-led security across your enterprise, from identity and access to cloud protection and real-time threat detection.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Cybersecurity"
+  }
+}

@@ -4,43 +4,28 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
+import content from '../../content/industries/details/retail-commerce.json'
+import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
-const journey = ['Physical Store', 'Online', 'Mobile', 'Supply Chain', 'Analytics']
-
-const pairs = [
-  { title: 'A widening set of channels', desc: 'Retail and commerce organisations operate across more channels, fulfilment models and customer expectations than ever. The organisations that compete effectively connect their operations most coherently.', img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80' },
-  { title: 'Experience meets operations', desc: 'Customer experience is only as strong as the inventory, supply chain and intelligence behind it. Connecting the front and back of commerce is where advantage is built.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80' },
-]
-
-const helps = ['Customer Experience', 'Commerce Platforms', 'Inventory Visibility', 'Supply Chain', 'Retail Analytics', 'AI', 'Store Technology', 'Automation']
-
-const bubbles = ['Customer Experience', 'Commerce Engine', 'Inventory', 'Supply Chain', 'Intelligence']
-
-const outcomes = [
-  { num: '01', title: 'Connected Commerce' },
-  { num: '02', title: 'Better Experience' },
-  { num: '03', title: 'Inventory Visibility' },
-  { num: '04', title: 'Operational Efficiency' },
-]
-
 export default function RetailCommerce() {
+  const { hero, challenge, help, connected, outcomes, related, cta } = content
   return (
     <Layout>
-      <section className="split-hero hero-image-bg" style={{ '--hero-image': 'url(https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=1800&q=80)' }}>
+      <section className="split-hero hero-image-bg" style={{ '--hero-image': `url(${hero.image})` }}>
         <Grid>
           <Column lg={6} md={4} sm={4}>
-            <p className="section-label">Industry · Retail &amp; Commerce</p>
-            <h1>Connect every part of commerce.</h1>
-            <p className="split-hero__sub">From customer experience to supply chain, Qlugen helps retail and commerce organisations build the connected operations and intelligence needed to compete.</p>
+            <p className="section-label">{hero.eyebrow}</p>
+            <h1>{hero.title}</h1>
+            <p className="split-hero__sub">{hero.description}</p>
           </Column>
           <Column lg={10} md={4} sm={4}>
             <div className="split-visual-wrap">
               <div className="proc-flow" style={{ justifyContent: 'center' }}>
-                {journey.map((n, i) => (
+                {hero.journey.map((n, i) => (
                   <span key={n} style={{ display: 'inline-flex', alignItems: 'center' }}>
                     <span className="proc-node" style={{ background: 'rgba(255,255,255,.08)', color: '#fff' }}>{n}</span>
-                    {i < journey.length - 1 && <ArrowRight size={16} className="proc-arrow" style={{ color: 'rgba(255,255,255,.35)' }} />}
+                    {i < hero.journey.length - 1 && <ArrowRight size={16} className="proc-arrow" style={{ color: 'rgba(255,255,255,.35)' }} />}
                   </span>
                 ))}
               </div>
@@ -52,15 +37,15 @@ export default function RetailCommerce() {
       <section className="inner-section" style={{ paddingBottom: 0 }}>
         <Grid>
           <Column lg={12} md={8} sm={4}>
-            <p className="section-label">Commerce challenge</p>
-            <h2 style={{ marginBottom: '2.5rem' }}>Competing on connected operations</h2>
+            <p className="section-label">{challenge.eyebrow}</p>
+            <h2 style={{ marginBottom: '2.5rem' }}>{challenge.title}</h2>
           </Column>
         </Grid>
         <div>
-          {pairs.map(p => (
+          {challenge.items.map(p => (
             <div key={p.title} className="alt-row">
-              <div className="alt-img"><img src={p.img} alt="" loading="lazy" decoding="async" /></div>
-              <div className="alt-text"><h3>{p.title}</h3><p>{p.desc}</p></div>
+              <div className="alt-img"><img src={p.image} alt={p.imageAlt || ''} loading="lazy" decoding="async" /></div>
+              <div className="alt-text"><h3>{p.title}</h3><p>{p.description}</p></div>
             </div>
           ))}
         </div>
@@ -69,12 +54,12 @@ export default function RetailCommerce() {
       <section className="inner-section inner-section--gray">
         <Grid>
           <Column lg={16} md={8} sm={4}>
-            <p className="section-label">Where we help</p>
-            <h2>Connected commerce, end to end</h2>
+            <p className="section-label">{help.eyebrow}</p>
+            <h2>{help.title}</h2>
             <div className="tile-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
-              {helps.map((h, i) => (
+              {help.areas.map((h, i) => (
                 <div key={h} className="tile-card" style={{ borderTop: '3px solid var(--q-accent)' }}>
-                  <span className="tile-card-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="tile-card-num">{stepNumber(i)}</span>
                   <span data-heading-visual className="tile-label">{h}</span>
                 </div>
               ))}
@@ -86,13 +71,13 @@ export default function RetailCommerce() {
       <section className="inner-section inner-section--dark">
         <Grid>
           <Column lg={16} md={8} sm={4}>
-            <p className="section-label">Connected commerce</p>
-            <h2>Five interconnected capabilities</h2>
+            <p className="section-label">{connected.eyebrow}</p>
+            <h2>{connected.title}</h2>
             <div className="bubble-row">
-              {bubbles.map((b, i) => (
+              {connected.steps.map((b, i) => (
                 <span key={b} style={{ display: 'inline-flex', alignItems: 'center' }}>
                   <div className="bubble">{b}</div>
-                  {i < bubbles.length - 1 && <div className="bubble-link" />}
+                  {i < connected.steps.length - 1 && <div className="bubble-link" />}
                 </span>
               ))}
             </div>
@@ -103,12 +88,12 @@ export default function RetailCommerce() {
       <section className="inner-section">
         <Grid>
           <Column lg={16} md={8} sm={4}>
-            <p className="section-label">Business priorities</p>
-            <h2>What retail &amp; commerce leaders focus on</h2>
+            <p className="section-label">{outcomes.eyebrow}</p>
+            <h2>{outcomes.title}</h2>
             <div className="outcome-grid">
-              {outcomes.map(({ num, title }) => (
-                <div key={num} className="outcome-card">
-                  <span className="outcome-num">{num}</span>
+              {outcomes.items.map(({ title }, i) => (
+                <div key={title} className="outcome-card">
+                  <span className="outcome-num">{stepNumber(i)}</span>
                   <p className="outcome-title">{title}</p>
                 </div>
               ))}
@@ -117,13 +102,9 @@ export default function RetailCommerce() {
         </Grid>
       </section>
 
-      <RelatedCards heading="Related capabilities" items={[
-        { eyebrow: 'Capability', title: 'Data & Analytics', desc: 'Turn commerce data into timely decisions.', to: '/capabilities/data-analytics' },
-        { eyebrow: 'Capability', title: 'Automation', desc: 'Remove friction across commerce operations.', to: '/capabilities/automation' },
-        { eyebrow: 'Capability', title: 'AI & Agent Development', desc: 'Intelligent systems for demand and service.', to: '/capabilities/ai-agent-development' },
-      ]} />
+      <RelatedCards heading={related.heading} items={toRelated(related.items)} />
 
-      <CTABanner heading="Transform what comes next." sub="Tell us about your industry challenge." btnTo="/contact" />
+      <CTABanner heading={cta.heading} sub={cta.sub} btnText={cta.label} btnTo={cta.url} />
     </Layout>
   )
 }

@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "eyebrow": "How we work",
+    "title": "Customer problem to reusable IP.",
+    "description": "The product-led flywheel turns customer work into better engineering leverage while staying grounded in real enterprise problems.",
+    "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1800&q=80"
+  },
+  "principles": {
+    "eyebrow": "Our principles",
+    "title": "Four commitments behind every engagement",
+    "principleLabel": "Principle",
+    "items": [
+      {
+        "title": "Start with the outcome",
+        "description": "Every engagement begins by defining what success looks like measurably and in business terms.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Design for real people",
+        "description": "Solutions are built around the employees, customers and stakeholders who will actually use them.",
+        "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Build for scale from day one",
+        "description": "Architecture, security, integration and governance are considered early, not retrofitted later.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Leave lasting capability behind",
+        "description": "Engagements create reusable foundations and transfer knowledge to client teams.",
+        "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "deliveryModel": {
+    "eyebrow": "Our delivery model",
+    "title": "Customer problem - reusable IP - measurable delivery.",
+    "body": "Qlugen builds through a flywheel: customer problem, discover, build accelerator, deploy, learn, productise and reuse.",
+    "linkLabel": "See our capabilities",
+    "linkUrl": "/capabilities",
+    "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "",
+    "phaseLabel": "Phase",
+    "phases": [
+      {
+        "title": "Discover",
+        "description": "Understand the business challenge, current state, stakeholder priorities and constraints."
+      },
+      {
+        "title": "Define",
+        "description": "Establish the outcomes, scope, approach and success measures for the engagement."
+      },
+      {
+        "title": "Design",
+        "description": "Create the solution architecture, user experience and implementation plan."
+      },
+      {
+        "title": "Build",
+        "description": "Deliver the solution iteratively with continuous integration of feedback and validation."
+      },
+      {
+        "title": "Scale",
+        "description": "Extend, optimise and hand over the solution with full capability transfer."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to start with the outcome?",
+    "sub": "Tell us about your challenge and we will help identify the strongest path forward.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Our Enterprise Delivery Approach | Qlugen",
+    "description": "See how Qlugen combines clear outcomes, thoughtful design and disciplined delivery across discovery, definition, design, build and scale.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "eyebrow": "Agentic Enterprise · 03",
+    "title": "Find where intelligence creates value.",
+    "description": "Identify high-value AI opportunities mapped to real business workflows and measurable outcomes.",
+    "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1800&q=80"
+  },
+  "why": {
+    "eyebrow": "Why it matters",
+    "title": "Not every workflow is worth automating",
+    "body": "The organisations that get the most from AI start by finding the right opportunities — the workflows where intelligence creates measurable value and is feasible to deliver. Disciplined discovery prevents wasted investment in capabilities that never move a business metric."
+  },
+  "methodology": {
+    "eyebrow": "Discovery methodology",
+    "title": "Five phases from question to prioritised roadmap",
+    "steps": [
+      "Opportunity Discovery",
+      "Workflow Analysis",
+      "Use-Case Prioritisation",
+      "Feasibility",
+      "Value Assessment"
+    ]
+  },
+  "analysis": {
+    "eyebrow": "What we analyse",
+    "title": "Finding the right opportunities",
+    "items": [
+      {
+        "title": "Business workflows",
+        "description": "Where does effort concentrate, and where would intelligence create leverage?"
+      },
+      {
+        "title": "Data readiness",
+        "description": "Is the data available, accessible and good enough to support the use case?"
+      },
+      {
+        "title": "Feasibility",
+        "description": "Can this be delivered reliably with acceptable effort and risk?"
+      },
+      {
+        "title": "Measurable value",
+        "description": "Will it move a business metric that matters — and can we prove it?"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Explore the agentic stages",
+    "items": [
+      {
+        "eyebrow": "Stage 02",
+        "title": "Build & Run",
+        "description": "Engineer the opportunities you prioritise.",
+        "url": "/agentic-ai/build-run"
+      },
+      {
+        "eyebrow": "Stage 04",
+        "title": "Govern",
+        "description": "Keep intelligence within trusted boundaries.",
+        "url": "/agentic-ai/govern"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to find where AI creates value?",
+    "sub": "Talk to Qlugen about discovering and prioritising high-value use cases.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "AI Opportunity Discovery | Qlugen",
+    "description": "Identify and prioritise high-value AI opportunities mapped to real business workflows, enterprise constraints and measurable outcomes.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Discover"
+  }
+}

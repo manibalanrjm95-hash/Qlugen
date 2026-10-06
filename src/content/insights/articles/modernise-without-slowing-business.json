@@ -1,0 +1,100 @@
+{
+  "slug": "modernise-without-slowing-business",
+  "title": "Modernise without slowing the business",
+  "category": "Cloud",
+  "subtitle": "How organisations can reduce legacy complexity while protecting the operations they depend on today.",
+  "dateLabel": "July 2026",
+  "readTime": "7 min read",
+  "publishedDate": "2026-07-01",
+  "heroImage": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1800&q=80",
+  "body": [
+    {
+      "type": "heading",
+      "text": "Why modernisation stalls"
+    },
+    {
+      "type": "paragraph",
+      "text": "Modernisation programmes often begin with ambition and end in caution. Once teams understand how deeply legacy systems are woven into daily operations, the risk of disruption starts to outweigh the appetite for change. Programmes slow, scope narrows, and the original goals quietly recede."
+    },
+    {
+      "type": "paragraph",
+      "text": "The underlying problem is rarely technical capability. It is the difficulty of changing critical systems while the business continues to depend on them every hour of every day."
+    },
+    {
+      "type": "quote",
+      "text": "\"Big-bang replacements concentrate risk into a single event. Incremental modernisation spreads that risk across many smaller, reversible steps.\""
+    },
+    {
+      "type": "heading",
+      "text": "Prioritise by business value"
+    },
+    {
+      "type": "paragraph",
+      "text": "Not all legacy is equally worth modernising. Some systems constrain growth, raise cost or create risk; others work quietly and reliably. Treating modernisation as an all-or-nothing rewrite wastes effort on components that deliver little return."
+    },
+    {
+      "type": "paragraph",
+      "text": "The stronger approach starts by mapping legacy systems against business value and risk, then sequencing work so that the highest-impact, most-constraining systems are addressed first."
+    },
+    {
+      "type": "divider",
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "text": "Modernise incrementally"
+    },
+    {
+      "type": "paragraph",
+      "text": "Incremental modernisation spreads risk across many smaller, reversible steps — each of which delivers value and builds confidence. Patterns such as strangler-fig migration, where new capability is built alongside the old and traffic is shifted gradually, let organisations modernise without a single high-stakes cutover."
+    },
+    {
+      "type": "heading",
+      "text": "Design for coexistence"
+    },
+    {
+      "type": "paragraph",
+      "text": "For much of a modernisation journey, old and new systems must operate side by side. Designing deliberately for coexistence — with clear integration boundaries, consistent data contracts and reliable synchronisation — is what makes incremental change safe."
+    },
+    {
+      "type": "paragraph",
+      "text": "Coexistence is not a temporary inconvenience to rush through. It is a core design concern that determines whether modernisation can proceed steadily without destabilising the business."
+    },
+    {
+      "type": "divider",
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "text": "Create reusable platforms"
+    },
+    {
+      "type": "paragraph",
+      "text": "Modernisation is an opportunity to replace point solutions with reusable foundations. Shared platforms for integration, data and deployment reduce the cost of every subsequent change. Each modernisation step becomes easier than the last, because the capabilities built along the way compound rather than expire."
+    },
+    {
+      "type": "heading",
+      "text": "Measure operational impact"
+    },
+    {
+      "type": "paragraph",
+      "text": "Modernisation should be measured by its effect on the business, not by systems retired. Deployment speed, reliability, cost and the ability to deliver new capability are the metrics that matter. Tracking operational impact keeps modernisation honest and focused."
+    }
+  ],
+  "endCta": {
+    "text": "Ready to modernise without the disruption?",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "card": {
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "",
+    "dateLabel": "Jul 2026",
+    "excerpt": "How organisations can reduce legacy complexity while protecting the operations they depend on today."
+  },
+  "seo": {
+    "title": "Modernise Without Slowing the Business | Qlugen",
+    "description": "Learn how incremental modernisation can reduce legacy complexity while protecting the business operations your organisation depends on today.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

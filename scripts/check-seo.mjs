@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import { readFile, access } from 'node:fs/promises'
+import { publicRoutes } from './public-routes.mjs'
 import { seoPages } from '../src/seo/pages.js'
 import { metadataTags, normalisePath, replaceMetadata, validateOrigin } from '../src/seo/metadata.js'
 
 const origin = 'https://seo-check.example'
-const routesSource = await readFile(new URL('../src/main.jsx', import.meta.url), 'utf8')
-const routes = [...routesSource.matchAll(/<Route path="([^"]+)"/g)].map(match => match[1]).filter(path => path !== '*')
+const routes = await publicRoutes()
 assert.deepEqual(Object.keys(seoPages).sort(), [...routes].sort(), 'Every public route must have metadata')
 assert.equal(new Set(Object.values(seoPages).map(page => page.title)).size, routes.length, 'Titles must be unique')
 assert.equal(new Set(Object.values(seoPages).map(page => page.description)).size, routes.length, 'Descriptions must be unique')

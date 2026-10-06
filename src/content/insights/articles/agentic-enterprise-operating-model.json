@@ -1,0 +1,92 @@
+{
+  "slug": "agentic-enterprise-operating-model",
+  "title": "Designing the operating model for an agentic enterprise",
+  "category": "Agentic AI",
+  "subtitle": "What changes when AI agents become active participants in enterprise workflows.",
+  "dateLabel": "June 2026",
+  "readTime": "9 min read",
+  "publishedDate": "2026-06-01",
+  "heroImage": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=1800&q=80",
+  "body": [
+    {
+      "type": "heading",
+      "text": "From assistants to agents"
+    },
+    {
+      "type": "paragraph",
+      "text": "Most enterprises have grown comfortable with AI assistants — tools that respond to prompts and help people work faster. Agents are different. They take actions, make decisions within defined boundaries, and carry out multi-step tasks with a degree of autonomy."
+    },
+    {
+      "type": "quote",
+      "text": "\"An assistant that produces a poor answer wastes a moment; an agent that takes a poor action affects a system. Designing for agents means designing for consequence.\""
+    },
+    {
+      "type": "heading",
+      "text": "Human and agent responsibilities"
+    },
+    {
+      "type": "paragraph",
+      "text": "An agentic operating model needs a clear division of responsibility between people and agents. Which decisions can an agent make independently? Which require human approval? Where does accountability sit when an agent acts?"
+    },
+    {
+      "type": "paragraph",
+      "text": "These questions are organisational as much as technical. The most effective designs define explicit boundaries for agent autonomy and keep humans firmly in the loop for decisions that carry significant risk or judgement."
+    },
+    {
+      "type": "divider",
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "text": "Governance"
+    },
+    {
+      "type": "paragraph",
+      "text": "As agents take on more responsibility, governance moves from the periphery to the centre of the operating model. Policies for what agents may do, what data they may access and how their actions are constrained become foundational rather than optional. Effective governance is designed in, not bolted on."
+    },
+    {
+      "type": "heading",
+      "text": "Tool access"
+    },
+    {
+      "type": "paragraph",
+      "text": "Agents create value through the tools and systems they can act on — but every tool an agent can use is also a capability that must be controlled. Principled approaches grant agents the minimum access required for their task, make that access explicit and auditable, and treat the expansion of tool access as a deliberate decision rather than a default."
+    },
+    {
+      "type": "divider",
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "text": "Observability"
+    },
+    {
+      "type": "paragraph",
+      "text": "You cannot govern what you cannot see. An agentic enterprise depends on observability — the ability to understand what agents are doing, why, and with what effect. Traceability of agent actions, clear logging and meaningful monitoring are what make it possible to trust agents with greater responsibility."
+    },
+    {
+      "type": "heading",
+      "text": "Scaling agent ecosystems"
+    },
+    {
+      "type": "paragraph",
+      "text": "A single well-governed agent is a manageable thing. An ecosystem of many agents, interacting with each other and with human workflows, is a different order of complexity. Scaling requires shared foundations — common governance, reusable capabilities and consistent observability. Organisations that approach agents with platform thinking are positioned to scale coherently."
+    }
+  ],
+  "endCta": {
+    "text": "Ready to design your agentic operating model?",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "card": {
+    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "",
+    "dateLabel": "Jun 2026",
+    "excerpt": "What changes when AI agents become active participants in enterprise workflows."
+  },
+  "seo": {
+    "title": "Designing the Agentic Enterprise Operating Model | Qlugen",
+    "description": "Examine how responsibilities, governance, tool access and observability change when AI agents become active participants in enterprise workflows.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

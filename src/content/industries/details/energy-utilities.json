@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "eyebrow": "Industry · Energy & Utilities",
+    "title": "Power more resilient operations.",
+    "description": "From asset intelligence to operational automation, Qlugen helps energy and utilities organisations build the data and technology foundations that support reliable, efficient operations.",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1800&q=80"
+  },
+  "challenge": {
+    "eyebrow": "The operational challenge",
+    "title": "Reliability meets a changing energy system",
+    "body": "Energy and utilities organisations operate critical infrastructure that demands reliability, visibility and increasingly sophisticated operational intelligence. The shift towards more distributed energy systems creates new technology requirements alongside legacy modernisation priorities."
+  },
+  "flow": {
+    "eyebrow": "Field → Grid → Intelligence",
+    "title": "From asset to insight",
+    "phaseLabel": "Phase",
+    "phases": [
+      {
+        "title": "Field",
+        "description": "Assets, sensors and distributed infrastructure across the network."
+      },
+      {
+        "title": "Grid",
+        "description": "The connected network that moves and balances energy."
+      },
+      {
+        "title": "Intelligence",
+        "description": "Analytics and AI that turn operational data into decisions."
+      }
+    ]
+  },
+  "help": {
+    "eyebrow": "Where we help",
+    "title": "Focused on reliable operations",
+    "areas": [
+      "Asset Intelligence",
+      "Field Operations",
+      "Operational Data",
+      "Operations Visibility",
+      "Automation",
+      "AI",
+      "Sustainability Enablement"
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Business priorities",
+    "title": "What energy & utilities leaders focus on",
+    "items": [
+      {
+        "title": "Operational Reliability"
+      },
+      {
+        "title": "Asset Intelligence"
+      },
+      {
+        "title": "Improved Efficiency"
+      },
+      {
+        "title": "Stronger Resilience"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Turn operational data into asset intelligence.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Automation",
+        "description": "Automate and orchestrate field operations.",
+        "url": "/capabilities/automation"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Sustainability",
+        "description": "Measure and improve operational efficiency.",
+        "url": "/capabilities/sustainability"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Transform what comes next.",
+    "sub": "Tell us about your industry challenge.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Energy & Utilities Technology | Qlugen",
+    "description": "Build data and technology foundations for reliable energy and utility operations, from asset intelligence to operational automation.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Energy & Utilities"
+  }
+}

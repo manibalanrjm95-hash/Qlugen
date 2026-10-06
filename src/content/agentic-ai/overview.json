@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "eyebrow": "Agentic Enterprise",
+    "title": "From isolated AI to connected enterprise intelligence.",
+    "description": "Qlugen helps organisations design, build and scale governed AI agent ecosystems that operate across data, applications, workflows and human decisions.",
+    "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1800&q=80"
+  },
+  "stages": {
+    "stageLabel": "Stage",
+    "linkLabel": "Explore stage",
+    "items": [
+      {
+        "title": "Orchestrate",
+        "description": "Connect agents, systems, tools, workflows and human approvals into coordinated enterprise processes.",
+        "url": "/agentic-ai/orchestrate",
+        "image": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Build & Run",
+        "description": "Engineer AI agents and systems that operate reliably inside your enterprise environment.",
+        "url": "/agentic-ai/build-run",
+        "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Discover",
+        "description": "Identify high-value AI opportunities mapped to real business workflows and measurable outcomes.",
+        "url": "/agentic-ai/discover",
+        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Govern",
+        "description": "Build AI systems that operate within trusted boundaries with human oversight at every level.",
+        "url": "/agentic-ai/govern",
+        "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Scale",
+        "description": "Extend proven AI capabilities across your enterprise with platform thinking and reusable foundations.",
+        "url": "/agentic-ai/scale",
+        "image": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "Why agentic?",
+    "title": "Three shifts that change how the enterprise operates",
+    "items": [
+      {
+        "title": "From answers to action",
+        "description": "Assistants respond. Agents act — carrying out multi-step tasks within defined boundaries."
+      },
+      {
+        "title": "Connected, not isolated",
+        "description": "Value emerges when agents, tools, data and people are coordinated into end-to-end processes."
+      },
+      {
+        "title": "Governed by design",
+        "description": "Permissions, oversight and traceability built in from the start make safe scaling possible."
+      }
+    ]
+  },
+  "relatedCapability": {
+    "eyebrow": "Related capability",
+    "title": "AI & Agent Development",
+    "body": "Qlugen's AI & Agent Development capability covers the full journey from model selection and agent engineering to integration, evaluation and production operations.",
+    "linkLabel": "Explore AI & Agent Development",
+    "linkUrl": "/capabilities/ai-agent-development"
+  },
+  "cta": {
+    "heading": "Ready to build your agentic enterprise?",
+    "sub": "Talk to Qlugen about designing and scaling governed agent ecosystems.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Agentic AI | Qlugen",
+    "description": "Design, build and scale governed AI agent ecosystems that connect enterprise data, applications, workflows and human decisions.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Agentic AI"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "brand": {
+    "logoAlt": "Qlugen",
+    "tagline": "Enterprise, made human.",
+    "description": "Products that accelerate transformation. Engineering that makes it real."
+  },
+  "sections": [
+    {
+      "heading": "Capabilities",
+      "links": [
+        { "label": "Data & Analytics", "url": "/capabilities/data-analytics" },
+        { "label": "AI & Agent Development", "url": "/capabilities/ai-agent-development" },
+        { "label": "Cloud & Infrastructure", "url": "/capabilities/cloud-infrastructure" },
+        { "label": "Cybersecurity", "url": "/capabilities/cybersecurity" },
+        { "label": "Automation", "url": "/capabilities/automation" },
+        { "label": "Digital Transformation", "url": "/capabilities/digital-transformation" },
+        { "label": "Sustainability", "url": "/capabilities/sustainability" }
+      ]
+    },
+    {
+      "heading": "Products",
+      "links": [
+        { "label": "AI Readiness Assessment", "url": "/products/ai-readiness-assessment" },
+        { "label": "Data Migration Factory", "url": "/products/data-migration-factory" },
+        { "label": "Analytics Migration Factory", "url": "/products/analytics-migration-factory" },
+        { "label": "Cloud Optimize", "url": "/products/cloud-optimize" },
+        { "label": "Data Governance", "url": "/products/data-governance" },
+        { "label": "AI Governance", "url": "/products/ai-governance" }
+      ]
+    },
+    {
+      "heading": "Industries",
+      "links": [
+        { "label": "Financial Services", "url": "/industries/financial-services" },
+        { "label": "Healthcare", "url": "/industries/healthcare" },
+        { "label": "Retail & Commerce", "url": "/industries/retail-commerce" },
+        { "label": "Manufacturing", "url": "/industries/manufacturing" },
+        { "label": "Government", "url": "/industries/government" },
+        { "label": "Energy & Utilities", "url": "/industries/energy-utilities" }
+      ]
+    },
+    {
+      "heading": "Company",
+      "links": [
+        { "label": "About", "url": "/about" },
+        { "label": "How We Work", "url": "/how-we-work" },
+        { "label": "Insights", "url": "/insights" },
+        { "label": "Leadership", "url": "/leadership" },
+        { "label": "Careers", "url": "/careers" },
+        { "label": "Contact", "url": "/contact" },
+        { "label": "Our location", "url": "/contact#our-location" }
+      ]
+    },
+    {
+      "heading": "Legal",
+      "links": [
+        { "label": "Privacy", "url": "/privacy" },
+        { "label": "Terms", "url": "/terms" },
+        { "label": "Cookies", "url": "/cookies" }
+      ]
+    }
+  ],
+  "copyright": "© 2026 Qlugen. All rights reserved."
+}

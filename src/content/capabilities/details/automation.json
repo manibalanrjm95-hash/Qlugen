@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "eyebrow": "Capability · Automation",
+    "title": "Eliminate friction at scale.",
+    "description": "Connect systems, automate repetitive processes, and free your workforce to focus on higher-value strategic work.",
+    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1800&q=80",
+    "visualImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    "visualImageAlt": "",
+    "flow": [
+      "Manual",
+      "Connected",
+      "Automated",
+      "Optimised",
+      "Scaled"
+    ]
+  },
+  "beforeAfter": {
+    "eyebrow": "Before & after",
+    "title": "What changes with AI automation",
+    "beforeHeading": "Before automation",
+    "before": [
+      "Repetitive manual data entry",
+      "Disconnected systems and handoffs",
+      "Slow, error-prone processes",
+      "Teams stuck on low-value tasks",
+      "No visibility across operations"
+    ],
+    "afterHeading": "After Qlugen",
+    "after": [
+      "Automated, rules-based workflows",
+      "Systems integrated end to end",
+      "Fast, consistent, auditable processes",
+      "People freed for strategic work",
+      "Real-time operational visibility"
+    ]
+  },
+  "band": {
+    "eyebrow": "Workflow journey",
+    "title": "Connected processes create speed, control and visibility across the enterprise.",
+    "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80",
+    "imageAlt": ""
+  },
+  "services": {
+    "eyebrow": "What we deliver",
+    "title": "Our automation services",
+    "items": [
+      {
+        "title": "Workflow Automation",
+        "description": "Automate repetitive, rules-based tasks to remove manual effort and reduce error."
+      },
+      {
+        "title": "Process Orchestration",
+        "description": "Coordinate end-to-end processes across systems, teams and approvals."
+      },
+      {
+        "title": "System Integration",
+        "description": "Connect applications and data so information flows without manual handoffs."
+      },
+      {
+        "title": "Intelligent Automation",
+        "description": "Combine automation with AI to handle judgement-based and unstructured work."
+      },
+      {
+        "title": "AI-Enabled Operations",
+        "description": "Embed intelligence into operational workflows to improve speed and consistency."
+      },
+      {
+        "title": "Process Optimisation",
+        "description": "Redesign processes for efficiency before and alongside automating them."
+      }
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Outcomes",
+    "title": "What strong automation enables",
+    "items": [
+      {
+        "title": "Reduced Manual Work",
+        "description": "Less time spent on repetitive tasks."
+      },
+      {
+        "title": "Faster Operations",
+        "description": "Work completes in less time."
+      },
+      {
+        "title": "Improved Consistency",
+        "description": "Fewer errors and exceptions."
+      },
+      {
+        "title": "Increased Capacity",
+        "description": "People freed for higher-value work."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "AI & Agent Development",
+        "description": "Extend automation with agents that handle complex work.",
+        "url": "/capabilities/ai-agent-development"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Digital Transformation",
+        "description": "Modernise the operating model automation runs on.",
+        "url": "/capabilities/digital-transformation"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn automation into business impact.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Automation Services | Qlugen",
+    "description": "Connect systems, automate repetitive processes and orchestrate workflows with Qlugen, freeing your workforce for higher-value strategic work.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Automation"
+  }
+}

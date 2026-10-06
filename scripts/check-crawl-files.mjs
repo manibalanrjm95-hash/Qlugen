@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { readFile, mkdtemp, mkdir, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { publicRoutes } from './public-routes.mjs'
 import { seoPages } from '../src/seo/pages.js'
 import { metadataTags } from '../src/seo/metadata.js'
 import { renderSitemap, renderRobots } from '../src/seo/crawl.js'
@@ -11,8 +12,7 @@ const origin = 'https://crawl-check.example'
 const sitemap = renderSitemap(origin)
 const robots = renderRobots(origin)
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1])
-const routeSource = await readFile(new URL('../src/main.jsx', import.meta.url), 'utf8')
-const routes = [...routeSource.matchAll(/<Route path="([^"]+)"/g)].map(match => match[1]).filter(path => path !== '*')
+const routes = await publicRoutes()
 
 assert.ok(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'))
 assert.ok(sitemap.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'))

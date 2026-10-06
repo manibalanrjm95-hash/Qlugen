@@ -32,9 +32,7 @@ const Scale = lazy(() => import('./pages/agentic/Scale'))
 const HowWeWork = lazy(() => import('./pages/HowWeWork'))
 const Technology = lazy(() => import('./pages/Technology'))
 const InsightsOverview = lazy(() => import('./pages/insights/InsightsOverview'))
-const AIPilotsArticle = lazy(() => import('./pages/insights/AIPilotsArticle'))
-const ModerniseArticle = lazy(() => import('./pages/insights/ModerniseArticle'))
-const AgenticOperatingModel = lazy(() => import('./pages/insights/AgenticOperatingModel'))
+const InsightArticle = lazy(() => import('./pages/insights/InsightArticle'))
 const Company = lazy(() => import('./pages/company/Company'))
 const About = lazy(() => import('./pages/company/About'))
 const Leadership = lazy(() => import('./pages/company/Leadership'))
@@ -60,14 +58,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/capabilities/digital-transformation" element={<DigitalTransformation />} />
           <Route path="/capabilities/sustainability" element={<Sustainability />} />
           <Route path="/products" element={<ProductsOverview />} />
-          <Route path="/products/ai-readiness-assessment" element={<ProductDetail slug="ai-readiness-assessment" />} />
-          <Route path="/products/data-migration-factory" element={<ProductDetail slug="data-migration-factory" />} />
-          <Route path="/products/analytics-migration-factory" element={<ProductDetail slug="analytics-migration-factory" />} />
-          <Route path="/products/cloud-optimize" element={<ProductDetail slug="cloud-optimize" />} />
-          <Route path="/products/data-governance" element={<ProductDetail slug="data-governance" />} />
-          <Route path="/products/ai-governance" element={<ProductDetail slug="ai-governance" />} />
-          <Route path="/products/qlugen-context" element={<ProductDetail slug="qlugen-context" />} />
-          <Route path="/products/data-agent-platform" element={<ProductDetail slug="data-agent-platform" />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/industries" element={<IndustriesOverview />} />
           <Route path="/industries/financial-services" element={<FinancialServices />} />
           <Route path="/industries/healthcare" element={<Healthcare />} />
@@ -84,9 +75,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/how-we-work" element={<HowWeWork />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/insights" element={<InsightsOverview />} />
-          <Route path="/insights/ai-pilots-to-enterprise-impact" element={<AIPilotsArticle />} />
-          <Route path="/insights/modernise-without-slowing-business" element={<ModerniseArticle />} />
-          <Route path="/insights/agentic-enterprise-operating-model" element={<AgenticOperatingModel />} />
+          <Route path="/insights/:slug" element={<InsightArticle />} />
           <Route path="/company" element={<Company />} />
           <Route path="/about" element={<About />} />
           <Route path="/leadership" element={<Leadership />} />

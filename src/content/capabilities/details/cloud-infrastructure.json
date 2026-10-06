@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "eyebrow": "Capability · Cloud & Infrastructure",
+    "title": "Scale without limits.",
+    "description": "Build resilient cloud and infrastructure foundations capable of supporting modern enterprise workloads at any scale.",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80",
+    "visualImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    "visualImageAlt": "",
+    "layers": [
+      "Applications",
+      "Services",
+      "Platform",
+      "Infrastructure",
+      "Cloud",
+      "Physical"
+    ]
+  },
+  "challenge": {
+    "eyebrow": "The challenge",
+    "title": "Legacy infrastructure constrains growth",
+    "body": "Rising costs, poor reliability, and slow deployment cycles make it difficult for enterprises to compete. Modern cloud foundations change the equation.",
+    "image": "https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": ""
+  },
+  "band": {
+    "eyebrow": "Cloud strategy",
+    "title": "Architecture that connects flexibility, resilience and control.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80",
+    "imageAlt": ""
+  },
+  "approach": {
+    "eyebrow": "Cloud strategy",
+    "title": "A layered approach to the cloud",
+    "items": [
+      {
+        "title": "Cloud Strategy",
+        "description": "Define the cloud operating model, target architecture and roadmap aligned to business and cost objectives."
+      },
+      {
+        "title": "Migration & Modernisation",
+        "description": "Move workloads to the cloud and modernise applications to unlock flexibility and reduce technical debt."
+      },
+      {
+        "title": "Hybrid & Multi-Cloud",
+        "description": "Design environments that balance performance, control and portability across providers."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we deliver",
+    "title": "Engineering for reliability at scale",
+    "items": [
+      {
+        "title": "Platform Engineering",
+        "description": "Build internal platforms and paved paths that let teams ship reliably and securely at speed."
+      },
+      {
+        "title": "Infrastructure Automation",
+        "description": "Automate provisioning, configuration and delivery with infrastructure-as-code and CI/CD."
+      },
+      {
+        "title": "Reliability & Optimisation",
+        "description": "Improve resilience and control cost through observability, tuning and FinOps practices."
+      }
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Outcomes",
+    "title": "What strong cloud & infrastructure enables",
+    "items": [
+      {
+        "value": "99.9%",
+        "title": "Improved Resilience",
+        "description": "Infrastructure that stays available under load."
+      },
+      {
+        "value": "10x",
+        "title": "Faster Deployment",
+        "description": "Shorter cycles from build to release."
+      },
+      {
+        "value": "∞",
+        "title": "Better Scalability",
+        "description": "Capacity that grows with demand."
+      },
+      {
+        "value": "-30%",
+        "title": "Optimised Cost",
+        "description": "Spend aligned to real usage."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Digital Transformation",
+        "description": "Modernise operations on top of resilient foundations.",
+        "url": "/capabilities/digital-transformation"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cybersecurity",
+        "description": "Secure cloud workloads from identity to runtime.",
+        "url": "/capabilities/cybersecurity"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn cloud & infrastructure into business impact.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Cloud & Infrastructure Services | Qlugen",
+    "description": "Build resilient cloud and infrastructure foundations with Qlugen to support modern enterprise workloads, migration and growth at scale.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Cloud & Infrastructure"
+  }
+}
