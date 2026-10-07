@@ -1,12 +1,16 @@
 import productsOverviewContent from '../content/products/overview.json'
+import { cmsContent } from '../cms/runtime'
 
 const productDetailModules = import.meta.glob('../content/products/details/*.json', {
   eager: true,
   import: 'default',
 })
 
-const products = Object.values(productDetailModules)
-const productMap = Object.fromEntries(products.map(product => [product.slug, product]))
+// Each product resolves to its published CMS version (id `product-<file name>`) when the CMS
+// runtime is enabled, otherwise to the local JSON file.
+const products = () => Object.entries(productDetailModules)
+  .map(([file, local]) => cmsContent(`product-${file.split('/').pop().replace(/\.json$/, '')}`, local))
+const productMap = () => Object.fromEntries(products().map(product => [product.slug, product]))
 
 const fallbackImage = 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1800&q=80'
 const fallbackSeoImage = '/social/qlugen.png'
@@ -15,7 +19,7 @@ const isString = value => typeof value === 'string' && value.trim().length > 0
 const text = (value, fallback = '') => (isString(value) ? value : fallback)
 const list = value => (Array.isArray(value) ? value : [])
 
-function validateProduct(raw) {
+export function validateProduct(raw) {
   if (!raw) return null
 
   const slug = text(raw.slug, 'product')
@@ -145,7 +149,7 @@ function validateOverview(raw, productItems) {
 }
 
 export function getValidatedProducts() {
-  return products.map(validateProduct).filter(Boolean)
+  return products().map(validateProduct).filter(Boolean)
 }
 
 export function getValidatedProductMap() {
@@ -153,9 +157,9 @@ export function getValidatedProductMap() {
 }
 
 export function getValidatedProduct(slug) {
-  return validateProduct(productMap[slug])
+  return validateProduct(productMap()[slug])
 }
 
 export function getValidatedProductsOverview() {
-  return validateOverview(productsOverviewContent, getValidatedProducts())
+  return validateOverview(cmsContent('products-overview', productsOverviewContent), getValidatedProducts())
 }

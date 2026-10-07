@@ -1,10 +1,10 @@
 import { Grid, Column } from '@carbon/react'
 import { LogoLinkedin } from '@carbon/icons-react'
 import Layout from '../../components/Layout'
-import content from '../../content/company/leadership.json'
+import defaultContent from '../../content/company/leadership.json'
 import '../../App.css'
 
-export default function Leadership() {
+export default function Leadership({ content = defaultContent }) {
   const { intro, leader } = content
   return (
     <Layout>

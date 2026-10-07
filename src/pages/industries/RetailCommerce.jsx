@@ -4,11 +4,11 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/industries/details/retail-commerce.json'
+import defaultContent from '../../content/industries/details/retail-commerce.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
-export default function RetailCommerce() {
+export default function RetailCommerce({ content = defaultContent }) {
   const { hero, challenge, help, connected, outcomes, related, cta } = content
   return (
     <Layout>

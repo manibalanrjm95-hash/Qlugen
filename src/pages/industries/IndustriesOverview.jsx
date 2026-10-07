@@ -3,11 +3,11 @@ import { useState } from 'react'
 import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
 import { Link } from 'react-router-dom'
-import content from '../../content/industries/overview.json'
+import defaultContent from '../../content/industries/overview.json'
 import { stepNumber } from '../../lib/content'
 import '../../App.css'
 
-export default function IndustriesOverview() {
+export default function IndustriesOverview({ content = defaultContent }) {
   const { index, cta } = content
   const [activeIdx, setActiveIdx] = useState(0)
   const active = index.items[activeIdx]

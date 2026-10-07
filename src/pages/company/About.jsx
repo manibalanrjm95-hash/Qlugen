@@ -4,10 +4,10 @@ import CTABanner from '../../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/company/about.json'
+import defaultContent from '../../content/company/about.json'
 import '../../App.css'
 
-export default function About() {
+export default function About({ content = defaultContent }) {
   const { hero, partner, values, approach, cta } = content
   return (
     <Layout>

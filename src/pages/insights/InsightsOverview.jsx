@@ -3,11 +3,12 @@ import CTABanner from '../../components/CTABanner'
 import { Grid, Column } from '@carbon/react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/insights/overview.json'
-import { articles } from '../../lib/insights'
+import defaultContent from '../../content/insights/overview.json'
+import { getArticles } from '../../lib/insights'
 import '../../App.css'
 
-export default function InsightsOverview() {
+export default function InsightsOverview({ content = defaultContent }) {
+  const articles = getArticles()
   const { hero, related, cta } = content
   return (
     <Layout>

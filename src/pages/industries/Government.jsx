@@ -4,14 +4,14 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { Checkmark } from '@carbon/icons-react'
-import content from '../../content/industries/details/government.json'
+import defaultContent from '../../content/industries/details/government.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
 // Service layers fade from teal (citizen) to neutral (infrastructure).
 const layerSurfaces = ['var(--q-teal-10)', 'var(--q-teal-20)', 'rgba(179,227,228,.5)', '#f4f4f4']
 
-export default function Government() {
+export default function Government({ content = defaultContent }) {
   const { hero, principles, architecture, help, outcomes, related, cta } = content
   return (
     <Layout>

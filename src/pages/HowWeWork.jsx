@@ -4,11 +4,11 @@ import CTABanner from '../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../content/how-we-work.json'
+import defaultContent from '../content/how-we-work.json'
 import { stepNumber } from '../lib/content'
 import '../App.css'
 
-export default function HowWeWork() {
+export default function HowWeWork({ content = defaultContent }) {
   const { hero, principles, deliveryModel, cta } = content
   const [active, setActive] = useState(0)
 

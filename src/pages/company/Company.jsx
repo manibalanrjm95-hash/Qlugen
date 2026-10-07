@@ -3,11 +3,11 @@ import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
-import content from '../../content/company/overview.json'
+import defaultContent from '../../content/company/overview.json'
 import { stepNumber } from '../../lib/content'
 import '../../App.css'
 
-export default function Company() {
+export default function Company({ content = defaultContent }) {
   const { hero, beliefs, explore, cta } = content
   return (
     <Layout>

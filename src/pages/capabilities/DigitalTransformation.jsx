@@ -3,11 +3,11 @@ import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
-import content from '../../content/capabilities/details/digital-transformation.json'
+import defaultContent from '../../content/capabilities/details/digital-transformation.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
-export default function DigitalTransformation() {
+export default function DigitalTransformation({ content = defaultContent }) {
   const { hero, gap, delivers, outcomes, roadmap, related, cta } = content
   return (
     <Layout>

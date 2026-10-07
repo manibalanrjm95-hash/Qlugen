@@ -4,11 +4,11 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/agentic-ai/details/scale.json'
+import defaultContent from '../../content/agentic-ai/details/scale.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
-export default function Scale() {
+export default function Scale({ content = defaultContent }) {
   const { hero, why, model, enablers, related, cta } = content
   const stages = model.stages
   return (

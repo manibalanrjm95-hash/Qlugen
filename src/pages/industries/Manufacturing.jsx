@@ -4,14 +4,14 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { Analytics, Enterprise, Industry, ArrowDown } from '@carbon/icons-react'
-import content from '../../content/industries/details/manufacturing.json'
+import defaultContent from '../../content/industries/details/manufacturing.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
 // Layer bands alternate dark → teal → light, top of the stack first.
 const layerSurfaces = ['inner-section--dark', 'inner-section--teal', '']
 
-export default function Manufacturing() {
+export default function Manufacturing({ content = defaultContent }) {
   const { hero, layers, help, outcomes, related, cta } = content
   const { architecture } = hero
   return (

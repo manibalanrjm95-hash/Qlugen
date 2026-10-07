@@ -14,6 +14,8 @@ out/
 .tmp/
 tmp/
 .firebase/
+worker/.tmp/
+worker/.wrangler/
 graphify-out/
 .agents/
 .claude/

@@ -4,13 +4,13 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { Password, Security, View, User, Rule, CheckmarkOutline } from '@carbon/icons-react'
-import content from '../../content/agentic-ai/details/govern.json'
+import defaultContent from '../../content/agentic-ai/details/govern.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
 const dimensionIcons = [Password, Security, View, User, Rule, CheckmarkOutline]
 
-export default function Govern() {
+export default function Govern({ content = defaultContent }) {
   const { hero, why, dimensions, principles, related, cta } = content
   return (
     <Layout>

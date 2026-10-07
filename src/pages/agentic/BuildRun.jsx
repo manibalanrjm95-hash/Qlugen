@@ -4,11 +4,11 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/agentic-ai/details/build-run.json'
+import defaultContent from '../../content/agentic-ai/details/build-run.json'
 import { toRelated } from '../../lib/content'
 import '../../App.css'
 
-export default function BuildRun() {
+export default function BuildRun({ content = defaultContent }) {
   const { hero, why, process, related, cta } = content
   return (
     <Layout>

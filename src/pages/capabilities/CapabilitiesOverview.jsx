@@ -4,13 +4,13 @@ import CTABanner from '../../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/capabilities/overview.json'
+import defaultContent from '../../content/capabilities/overview.json'
 import '../../App.css'
 
 // Masonry rhythm is design, not content: tiles take these shapes in order.
 const tileShapes = ['cap-item--wide', 'cap-item--med', 'cap-item--med', 'cap-item--wide', 'cap-item--half cap-item--tall', 'cap-item--half', 'cap-item--full']
 
-export default function CapabilitiesOverview() {
+export default function CapabilitiesOverview({ content = defaultContent }) {
   const { hero, grid, cta } = content
   return (
     <Layout>

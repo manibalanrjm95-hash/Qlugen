@@ -4,7 +4,7 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/industries/details/energy-utilities.json'
+import defaultContent from '../../content/industries/details/energy-utilities.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
@@ -33,7 +33,7 @@ function GridVisual() {
   )
 }
 
-export default function EnergyUtilities() {
+export default function EnergyUtilities({ content = defaultContent }) {
   const { hero, challenge, flow, help, outcomes, related, cta } = content
   return (
     <Layout>

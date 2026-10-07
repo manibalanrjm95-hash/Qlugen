@@ -4,13 +4,13 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { DataShare, Earth, Growth, Report, ChartLineData } from '@carbon/icons-react'
-import content from '../../content/capabilities/details/sustainability.json'
+import defaultContent from '../../content/capabilities/details/sustainability.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
 const serviceIcons = [DataShare, Earth, Growth, Report, ChartLineData]
 
-export default function Sustainability() {
+export default function Sustainability({ content = defaultContent }) {
   const { hero, challenge, impact, services, outcomes, related, cta } = content
   return (
     <Layout>

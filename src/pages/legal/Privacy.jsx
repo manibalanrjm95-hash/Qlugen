@@ -1,6 +1,6 @@
 import LegalPage from '../../components/LegalPage'
-import content from '../../content/legal/privacy.json'
+import defaultContent from '../../content/legal/privacy.json'
 
-export default function Privacy() {
+export default function Privacy({ content = defaultContent }) {
   return <LegalPage content={content} />
 }

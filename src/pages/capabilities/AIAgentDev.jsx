@@ -4,7 +4,7 @@ import RelatedCards from '../../components/RelatedCards'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/capabilities/details/ai-agent-development.json'
+import defaultContent from '../../content/capabilities/details/ai-agent-development.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
@@ -38,7 +38,7 @@ function AgentNetwork({ center, labels }) {
   )
 }
 
-export default function AIAgentDev() {
+export default function AIAgentDev({ content = defaultContent }) {
   const { hero, challenge, statement, services, agentic, outcomes, related, cta } = content
   return (
     <Layout>

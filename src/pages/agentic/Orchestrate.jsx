@@ -3,7 +3,7 @@ import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
-import content from '../../content/agentic-ai/details/orchestrate.json'
+import defaultContent from '../../content/agentic-ai/details/orchestrate.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
@@ -38,7 +38,7 @@ function OrchestrationDiagram({ center, caption, labels }) {
   )
 }
 
-export default function Orchestrate() {
+export default function Orchestrate({ content = defaultContent }) {
   const { hero, why, process, deliverables, related, cta } = content
   return (
     <Layout>

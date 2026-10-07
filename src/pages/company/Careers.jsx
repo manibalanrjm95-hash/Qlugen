@@ -4,12 +4,12 @@ import CTABanner from '../../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight, Tools, Growth, Certificate } from '@carbon/icons-react'
-import content from '../../content/company/careers.json'
+import defaultContent from '../../content/company/careers.json'
 import '../../App.css'
 
 const cultureIcons = [Tools, Growth, Certificate]
 
-export default function Careers() {
+export default function Careers({ content = defaultContent }) {
   const { hero, culture, working, areas, openRoles, cta } = content
   return (
     <Layout>

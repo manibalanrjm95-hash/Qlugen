@@ -4,7 +4,7 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/capabilities/details/cybersecurity.json'
+import defaultContent from '../../content/capabilities/details/cybersecurity.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
@@ -24,7 +24,7 @@ const threatNodeClass = (i, count) => {
   return 'threat-node'
 }
 
-export default function Cybersecurity() {
+export default function Cybersecurity({ content = defaultContent }) {
   const { hero, band, model, services, challenge, related, cta } = content
   return (
     <Layout>

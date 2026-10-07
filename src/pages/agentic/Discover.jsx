@@ -4,13 +4,13 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { Search, Analytics, ListChecked, Rule, ChartLineData } from '@carbon/icons-react'
-import content from '../../content/agentic-ai/details/discover.json'
+import defaultContent from '../../content/agentic-ai/details/discover.json'
 import { toRelated } from '../../lib/content'
 import '../../App.css'
 
 const stepIcons = [Search, Analytics, ListChecked, Rule, ChartLineData]
 
-export default function Discover() {
+export default function Discover({ content = defaultContent }) {
   const { hero, why, methodology, analysis, related, cta } = content
   return (
     <Layout>

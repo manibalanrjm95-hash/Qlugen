@@ -3,11 +3,11 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight, Close, Checkmark } from '@carbon/icons-react'
-import content from '../../content/capabilities/details/automation.json'
+import defaultContent from '../../content/capabilities/details/automation.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
-export default function Automation() {
+export default function Automation({ content = defaultContent }) {
   const { hero, beforeAfter, band, services, outcomes, related, cta } = content
   return (
     <Layout>

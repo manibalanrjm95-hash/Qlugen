@@ -1,6 +1,6 @@
 import LegalPage from '../../components/LegalPage'
-import content from '../../content/legal/terms.json'
+import defaultContent from '../../content/legal/terms.json'
 
-export default function Terms() {
+export default function Terms({ content = defaultContent }) {
   return <LegalPage content={content} />
 }

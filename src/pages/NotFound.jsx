@@ -2,10 +2,11 @@ import Layout from '../components/Layout'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../content/global/not-found.json'
+import defaultContent from '../content/global/not-found.json'
+import { cmsContent } from '../cms/runtime'
 import '../App.css'
 
-export default function NotFound() {
+export default function NotFound({ content = cmsContent('global-not-found', defaultContent) }) {
   const { eyebrow, title, description, image, primaryLink, secondaryLink } = content
   return (
     <Layout>

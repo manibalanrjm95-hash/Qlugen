@@ -17,7 +17,13 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "deploy:firebase": "npm run build && firebase deploy --only hosting --project qlugen-enterprise"
+    "cms:migrate": "wrangler d1 migrations apply qlugen-cms-local --local --config worker/wrangler.toml",
+    "cms:seed": "node worker/scripts/seed-d1.mjs",
+    "cms:dev": "wrangler dev --local --config worker/wrangler.toml",
+    "cms:test": "node worker/scripts/test-api.mjs",
+    "cms:test:admin": "node worker/scripts/test-admin-ui.mjs",
+    "deploy:firebase": "npm run build && firebase deploy --only hosting --project qlugen-enterprise",
+    "cms:test:runtime": "node worker/scripts/test-runtime.mjs"
   },
   "dependencies": {
     "@carbon/icons-react": "^11.86.0",
@@ -40,6 +46,7 @@
     "oxlint": "^1.79.0",
     "playwright": "^1.62.1",
     "sharp": "^0.35.4",
-    "vite": "^8.2.2"
+    "vite": "^8.2.2",
+    "wrangler": "^4.148.0"
   }
 }

@@ -4,14 +4,14 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { Analytics, Bot, DevicesApps, Cloud, Security, Rule, SettingsAdjust } from '@carbon/icons-react'
-import content from '../../content/industries/details/financial-services.json'
+import defaultContent from '../../content/industries/details/financial-services.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
 const helpIcons = [Analytics, Bot, Cloud, Security, Rule, SettingsAdjust]
 const priorityIcons = [Analytics, Cloud, Analytics, DevicesApps]
 
-export default function FinancialServices() {
+export default function FinancialServices({ content = defaultContent }) {
   const { hero, challenge, help, priorities, outcomes, related, cta } = content
   return (
     <Layout>

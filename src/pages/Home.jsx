@@ -7,7 +7,7 @@ import {
 } from '@carbon/icons-react';
 import { Button, Column, Grid } from '@carbon/react';
 import Layout from '../components/Layout';
-import homeContent from '../content/home.json';
+import defaultHomeContent from '../content/home.json';
 import '../App.css';
 
 const iconMap = {
@@ -16,13 +16,14 @@ const iconMap = {
 };
 const accents = ['rgba(8, 189, 186, 0.16)', 'rgba(11, 242, 118, 0.14)', 'rgba(69, 137, 255, 0.16)', 'rgba(238, 83, 150, 0.14)', 'rgba(255, 131, 43, 0.16)', 'rgba(61, 219, 217, 0.14)', 'rgba(111, 220, 140, 0.16)'];
 const surfaces = ['var(--q-teal-10)', 'var(--ibm-blue-10)', 'var(--ibm-yellow-10)', 'var(--ibm-purple-10)', 'var(--ibm-green-10)'];
-const capabilities = homeContent.capabilities.items.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Analytics, artImage: item.image, artPosition: 'center', artSize: 'cover', accent: accents[index % accents.length], to: item.url }));
-const aiFeatures = homeContent.agenticAi.slides.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Chip, desc: item.description, mediaPoster: item.image, surface: surfaces[index % surfaces.length], to: item.url }));
-const industries = homeContent.industries.items.map(item => ({ ...item, icon: iconMap[item.icon] || Building, desc: item.description, to: item.url }));
-const principles = homeContent.approach.cards.map(item => ({ ...item, num: item.number, icon: iconMap[item.icon] || Analytics, desc: item.description, img: item.image }));
-const blogs = homeContent.blogs.items.map(item => ({ ...item, img: item.image, to: item.url }));
-const partners = homeContent.partners.items.map(item => item.name);
-export default function Home() {
+export default function Home({ content = defaultHomeContent }) {
+  const homeContent = content
+  const capabilities = homeContent.capabilities.items.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Analytics, artImage: item.image, artPosition: 'center', artSize: 'cover', accent: accents[index % accents.length], to: item.url }));
+  const aiFeatures = homeContent.agenticAi.slides.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Chip, desc: item.description, mediaPoster: item.image, surface: surfaces[index % surfaces.length], to: item.url }));
+  const industries = homeContent.industries.items.map(item => ({ ...item, icon: iconMap[item.icon] || Building, desc: item.description, to: item.url }));
+  const principles = homeContent.approach.cards.map(item => ({ ...item, num: item.number, icon: iconMap[item.icon] || Analytics, desc: item.description, img: item.image }));
+  const blogs = homeContent.blogs.items.map(item => ({ ...item, img: item.image, to: item.url }));
+  const partners = homeContent.partners.items.map(item => item.name);
   const [activeApproach, setActiveApproach] = useState(0);
   const [activeCapability, setActiveCapability] = useState(0);
   const [activeAif, setActiveAif] = useState(0);

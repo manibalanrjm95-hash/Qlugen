@@ -15,8 +15,9 @@ function BodyBlock({ type, text }) {
   return <p>{text}</p>
 }
 
-export default function InsightArticle() {
-  const article = findArticle(useParams().slug)
+export default function InsightArticle({ content }) {
+  const { slug } = useParams()
+  const article = content || findArticle(slug)
   if (!article) return <NotFound />
 
   return (

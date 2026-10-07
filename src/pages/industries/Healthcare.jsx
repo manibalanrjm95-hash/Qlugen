@@ -4,13 +4,13 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { User, Activity, Enterprise, Chip, Awake } from '@carbon/icons-react'
-import content from '../../content/industries/details/healthcare.json'
+import defaultContent from '../../content/industries/details/healthcare.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
 const pathwayIcons = [User, Activity, Enterprise, Chip, Awake]
 
-export default function Healthcare() {
+export default function Healthcare({ content = defaultContent }) {
   const { hero, challenges, help, pathway, outcomes, related, cta } = content
   return (
     <Layout>

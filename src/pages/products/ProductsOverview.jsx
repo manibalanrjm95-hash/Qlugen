@@ -3,11 +3,17 @@ import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
 import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
-import { getValidatedProductsOverview } from '../../data/productContent'
+import { getValidatedProducts, getValidatedProductsOverview } from '../../data/productContent'
 import '../../App.css'
 
 export default function ProductsOverview({ content = getValidatedProductsOverview() }) {
-  const { hero, portfolio, model, cta } = content
+  const { hero, portfolio, model, cta } = {
+    ...content,
+    portfolio: {
+      ...content.portfolio,
+      products: content.portfolio?.products || getValidatedProducts(),
+    },
+  }
 
   return (
     <Layout>

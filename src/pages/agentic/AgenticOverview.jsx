@@ -5,11 +5,11 @@ import CTABanner from '../../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight } from '@carbon/icons-react'
-import content from '../../content/agentic-ai/overview.json'
+import defaultContent from '../../content/agentic-ai/overview.json'
 import { stepNumber } from '../../lib/content'
 import '../../App.css'
 
-export default function AgenticOverview() {
+export default function AgenticOverview({ content = defaultContent }) {
   const { hero, stages, why, relatedCapability, cta } = content
   const [activeStage, setActiveStage] = useState(0)
 

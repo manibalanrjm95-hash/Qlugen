@@ -4,11 +4,14 @@ import { ChevronDown, Close, Menu } from '@carbon/icons-react'
 import { Grid, Column } from '@carbon/react'
 import logoIcon from '../assets/logo-icon.svg'
 import logoWordmark from '../assets/logo-wordmark.svg'
-import navigation from '../content/global/navigation.json'
-import footer from '../content/global/footer.json'
+import localNavigation from '../content/global/navigation.json'
+import localFooter from '../content/global/footer.json'
+import { cmsContent } from '../cms/runtime'
 import '../App.css'
 
 export default function Layout({ children }) {
+  const navigation = cmsContent('global-navigation', localNavigation)
+  const footer = cmsContent('global-footer', localFooter)
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
 

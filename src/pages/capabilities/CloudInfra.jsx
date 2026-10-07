@@ -2,7 +2,7 @@ import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
-import content from '../../content/capabilities/details/cloud-infrastructure.json'
+import defaultContent from '../../content/capabilities/details/cloud-infrastructure.json'
 import { stepNumber, toRelated } from '../../lib/content'
 import '../../App.css'
 
@@ -16,7 +16,7 @@ const layerStyles = [
   { bg: '#010a23' },
 ]
 
-export default function CloudInfra() {
+export default function CloudInfra({ content = defaultContent }) {
   const { hero, challenge, band, approach, services, outcomes, related, cta } = content
   return (
     <Layout>

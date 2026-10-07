@@ -4,14 +4,14 @@ import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import { Grid, Column } from '@carbon/react'
 import { DataShare, Dashboard, MachineLearning } from '@carbon/icons-react'
-import content from '../../content/capabilities/details/data-analytics.json'
+import defaultContent from '../../content/capabilities/details/data-analytics.json'
 import { toRelated } from '../../lib/content'
 import '../../App.css'
 
 const helpIcons = [DataShare, Dashboard, MachineLearning]
 const bars = [42, 58, 35, 71, 49, 64, 80, 55]
 
-export default function DataAnalytics() {
+export default function DataAnalytics({ content = defaultContent }) {
   const { hero, challenge, services, help, outcomes, related, cta } = content
   return (
     <Layout>

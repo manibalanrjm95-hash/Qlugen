@@ -3,14 +3,14 @@ import { useState } from 'react'
 import Layout from '../../components/Layout'
 import { Grid, Column } from '@carbon/react'
 import { ArrowRight, Enterprise, Partnership, UserFollow } from '@carbon/icons-react'
-import content from '../../content/contact.json'
+import defaultContent from '../../content/contact.json'
 import '../../App.css'
 
 const contextIcons = [Enterprise, Partnership, UserFollow]
 
 const initial = { firstName: '', lastName: '', email: '', company: '', role: '', interest: '', message: '', resumeName: '' }
 
-export default function Contact() {
+export default function Contact({ content = defaultContent }) {
   const { intro, form, location, closing } = content
   const { labels, errors: messages } = form
   const [values, setValues] = useState(initial)

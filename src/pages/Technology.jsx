@@ -4,14 +4,14 @@ import CTABanner from '../components/CTABanner'
 import { Link } from 'react-router-dom'
 import { Grid, Column } from '@carbon/react'
 import { Cloud, Analytics, Security, SettingsAdjust, Chip, ArrowRight } from '@carbon/icons-react'
-import content from '../content/technology.json'
+import defaultContent from '../content/technology.json'
 import '../App.css'
 
 const categoryIcons = [Cloud, Analytics, Chip, Security, SettingsAdjust]
 // Architecture band panels run top (primary) to foundation (base).
 const layerTones = ['primary', 'secondary', 'tertiary', 'base']
 
-export default function Technology() {
+export default function Technology({ content = defaultContent }) {
   const { hero, landscape, cta } = content
   return (
     <Layout>

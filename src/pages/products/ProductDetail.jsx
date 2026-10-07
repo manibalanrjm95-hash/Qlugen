@@ -5,13 +5,13 @@ import Layout from '../../components/Layout'
 import CTABanner from '../../components/CTABanner'
 import RelatedCards from '../../components/RelatedCards'
 import NotFound from '../NotFound'
-import { getValidatedProduct, getValidatedProductMap } from '../../data/productContent'
+import { getValidatedProduct, getValidatedProductMap, validateProduct } from '../../data/productContent'
 import '../../App.css'
 
 export default function ProductDetail({ content }) {
   const { slug } = useParams()
   const productMap = getValidatedProductMap()
-  const product = content || getValidatedProduct(slug)
+  const product = content ? validateProduct(content) : getValidatedProduct(slug)
   if (!product) return <NotFound />
 
   const related = product.related.items.map(key => productMap[key]).filter(Boolean).map(item => ({
