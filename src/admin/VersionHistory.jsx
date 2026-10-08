@@ -45,11 +45,10 @@ export default function VersionHistory({ pageId, pageTitle, refreshKey, busy, on
             <li key={version.id} className={`cms-versions__item is-${version.status}`} data-version-number={version.versionNumber}>
               <div className="cms-versions__head">
                 <strong>Version {version.versionNumber} — {version.status === 'published' ? 'Published' : 'Archived'}</strong>
-                {version.status === 'published' && <span className="cms-versions__current">Live in CMS</span>}
+                {version.status === 'published' && <span className="cms-versions__current">Current</span>}
               </div>
               <dl>
-                <div><dt>Created</dt><dd>{formatDate(version.createdAt)}</dd></div>
-                <div><dt>Published</dt><dd>{formatDate(version.publishedAt)}</dd></div>
+                <div><dt>{version.status === 'published' ? 'Published' : 'Was published'}</dt><dd>{formatDate(version.publishedAt)}</dd></div>
                 {version.createdBy && <div><dt>By</dt><dd>{version.createdBy}</dd></div>}
                 {version.restoredFromVersion && <div><dt>Restored from</dt><dd>Version {version.restoredFromVersion}</dd></div>}
               </dl>
@@ -66,5 +65,6 @@ export default function VersionHistory({ pageId, pageTitle, refreshKey, busy, on
 }
 
 function formatDate(value) {
-  return value ? new Date(value).toLocaleString() : '—'
+  if (!value) return '—'
+  return new Date(value).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' })
 }

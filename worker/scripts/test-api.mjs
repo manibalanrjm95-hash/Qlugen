@@ -2,9 +2,13 @@ import { spawn, spawnSync } from 'node:child_process'
 import { setTimeout as wait } from 'node:timers/promises'
 import { fileURLToPath } from 'node:url'
 import { mkdirSync, writeFileSync } from 'node:fs'
+import http from 'node:http'
 import path from 'node:path'
 import sharp from 'sharp'
 import { contentRegistry } from './content-registry.mjs'
+import { authRequired, authenticate, isLocalDevelopment } from '../src/services/auth.js'
+import { runStagingRehearsal } from './test-staging-local.mjs'
+import { cleanupTestMedia, isTestMediaFilename } from './cleanup-test-media.mjs'
 
 const lifecyclePages = [
   'home',
@@ -14,7 +18,7 @@ const lifecyclePages = [
   'company-leadership',
   'insight-ai-pilots-to-enterprise-impact',
 ]
-const port = 8787
+const port = 8797
 const baseUrl = `http://127.0.0.1:${port}`
 const testStartedAt = new Date().toISOString()
 const workerDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -35,7 +39,10 @@ try {
   await waitForWorker()
 
   const pages = await request('/api/admin/pages')
-  assertEqual(pages.pages.length, contentRegistry.length, 'seeded page count')
+  // Every seeded page exists (pages created later through the CMS may also be present).
+  const pageIds = new Set(pages.pages.map(page => page.id))
+  const missingSeeded = contentRegistry.filter(entry => !pageIds.has(entry.id)).map(entry => entry.id)
+  assertEqual(missingSeeded.length, 0, `seeded pages present (missing: ${missingSeeded.join(', ')})`)
 
   const home = await request('/api/admin/pages/home')
   assertEqual(home.page.id, 'home', 'home page id')
@@ -73,12 +80,56 @@ try {
     await testPublishLifecycle(pageId)
   }
   await testHistoricalMediaProtection()
+  await testCleanupTestMedia()
   await testAuditLog()
+  await testLocalAuthIsolation()
 
   console.log(`API tests passed. Seeded page count: ${pages.pages.length}`)
 } finally {
   stopWorker(worker)
   await wait(500)
+}
+
+// Remote/staging protection: the real `--env staging` config with (simulated) Firebase sign-in.
+await runStagingRehearsal()
+
+async function testLocalAuthIsolation() {
+  // Local dev needs no sign-in token...
+  const me = await request('/api/admin/me')
+  assertEqual(`${me.mode}/${me.actor}`, 'local/local-admin', 'local admin works without sign-in')
+  assertEqual((await withHost('GET', '/api/admin/me', `localhost:${port}`)).status, 200, 'localhost host allowed locally')
+
+  // ...but the very same local Worker fails closed when addressed by any non-loopback hostname.
+  for (const host of ['qlugen-cms-api.example.workers.dev', 'cms-staging.qlugen.test', 'localhost.evil.test', '127.0.0.1.nip.io']) {
+    for (const [method, path] of [['GET', '/api/admin/pages'], ['PUT', '/api/admin/pages/home/draft'], ['GET', '/api/admin/me']]) {
+      const response = await withHost(method, path, host, method === 'PUT' ? '{}' : undefined)
+      assert(response.status === 401 || response.status === 503, `${method} ${path} via ${host} rejected (got ${response.status})`)
+    }
+  }
+  assertEqual((await withHost('GET', '/api/public/pages?ids=home', 'cms-staging.qlugen.test')).status, 200, 'public API stays open on any host')
+
+  // Unit checks: the bypass needs BOTH CMS_ENV="local" AND a loopback host.
+  const at = url => new Request(url)
+  assert(isLocalDevelopment({ CMS_ENV: 'local' }, at('http://127.0.0.1:8787/api/admin/me')), '127.0.0.1 is local')
+  assert(isLocalDevelopment({ CMS_ENV: 'local' }, at('http://localhost:5173/api/admin/me')), 'localhost is local')
+  assert(isLocalDevelopment({ CMS_ENV: 'local' }, at('http://[::1]:8787/api/admin/me')), '::1 is local')
+  assert(!isLocalDevelopment({}, at('http://127.0.0.1:8787/')), 'missing CMS_ENV is never local')
+  assert(!isLocalDevelopment({ CMS_ENV: 'staging' }, at('http://127.0.0.1:8787/')), 'staging on loopback still requires sign-in')
+  assert(!isLocalDevelopment({ CMS_ENV: 'local' }, at('https://qlugen-cms-staging.example.workers.dev/')), 'local config on a remote host requires sign-in')
+  assert(authRequired({ CMS_ENV: 'LOCAL' }, at('http://127.0.0.1/')), 'CMS_ENV match is exact')
+  for (const env of [{}, { CMS_ENV: 'staging' }, { CMS_ENV: 'local' }]) {
+    const remote = at('https://qlugen-cms-staging.example.workers.dev/api/admin/pages')
+    const error = await authenticate(remote, env).then(() => null, caught => caught)
+    assertEqual(error?.status, 503, `unconfigured remote sign-in fails closed (${JSON.stringify(env)})`)
+  }
+  const firebaseEnv = { CMS_ENV: 'staging', FIREBASE_PROJECT_ID: 'qlugen-test', CMS_ADMIN_UIDS: 'admin-uid' }
+  const noToken = await authenticate(at('https://cms.example.com/api/admin/pages'), firebaseEnv).then(() => null, caught => caught)
+  assertEqual(noToken?.status, 401, 'configured staging without a token is rejected')
+  const noAdmins = await authenticate(at('https://cms.example.com/'), { CMS_ENV: 'staging', FIREBASE_PROJECT_ID: 'qlugen-test' }).then(() => null, caught => caught)
+  assertEqual(noAdmins?.status, 503, 'no approved admins configured: fails closed')
+  const spoofed = new Request('https://cms.example.com/api/admin/pages', { headers: { 'X-User-Email': 'admin@qlugen.test', 'X-Firebase-Uid': 'admin-uid' } })
+  assertEqual((await authenticate(spoofed, firebaseEnv).then(() => null, caught => caught))?.status, 401, 'identity headers without a verified token are ignored')
+  console.log('Local auth isolation passed: no sign-in locally on loopback only; any remote host or non-local config needs a verified Firebase admin, or fails closed.')
 }
 
 async function testMedia() {
@@ -166,6 +217,18 @@ async function testMedia() {
   console.log(`Media tests passed: ${formats.length} formats uploaded, unsafe uploads rejected.`)
 }
 
+// fetch() silently drops a custom Host header, so host-based checks use node:http directly.
+function withHost(method, requestPath, host, body) {
+  return new Promise((resolve, reject) => {
+    const req = http.request({ host: '127.0.0.1', port, method, path: requestPath, headers: { Host: host, 'Content-Type': 'application/json' } }, res => {
+      res.resume()
+      res.on('end', () => resolve({ status: res.statusCode }))
+    })
+    req.on('error', reject)
+    req.end(body)
+  })
+}
+
 async function testPublishLifecycle(pageId) {
   const base = `/api/admin/pages/${pageId}`
   const initial = (await request(base)).page
@@ -231,12 +294,19 @@ async function testHistoricalMediaProtection() {
   await request(`${base}/draft`, { method: 'DELETE' })
   await request(`/api/admin/media/${draftOnly.id}`, { method: 'DELETE' })
 
-  const historical = (await upload(bytes, 'phase4-historical.png', 'image/png')).body.media
+  // History is permanent, so an image published here can never be deleted. Reuse the test image
+  // already protected by earlier runs instead of leaving a new undeletable file on every run.
+  const existing = (await request('/api/admin/media?q=phase4-historical')).media
+    .find(item => item.filename === 'phase4-historical.png' && item.inUse)
+  const historical = existing || (await upload(bytes, 'phase4-historical.png', 'image/png')).body.media
   const withMedia = structuredClone(initial.content)
   withMedia.hero.image = { id: historical.id, url: historical.publicUrl, alt: 'History test' }
   await request(`${base}/draft`, { method: 'PUT', body: JSON.stringify({ content: withMedia }) })
-  await request(`${base}/publish`, { method: 'POST' })
-  assertEqual((await send('DELETE', `/api/admin/media/${historical.id}`)).status, 409, 'published media cannot be deleted')
+  const publishedVersion = (await request(`${base}/publish`, { method: 'POST' })).page.version.versionNumber
+  const whilePublished = await send('DELETE', `/api/admin/media/${historical.id}`)
+  assertEqual(whilePublished.status, 409, 'published media cannot be deleted')
+  assert(whilePublished.body.usage.some(usage => usage.pageId === 'legal-cookies' && usage.versionNumber === publishedVersion && usage.status === 'published'),
+    'usage lists the version just published')
 
   const previous = (await request(`${base}/versions`)).versions.find(version => version.versionNumber === initial.version.versionNumber)
   await request(`${base}/versions/${previous.id}/restore`, { method: 'POST' })
@@ -245,9 +315,34 @@ async function testHistoricalMediaProtection() {
 
   const blocked = await send('DELETE', `/api/admin/media/${historical.id}`)
   assertEqual(blocked.status, 409, 'archived-version media cannot be deleted')
-  assert(blocked.body.usage.some(usage => usage.status === 'archived'), 'usage lists the archived version')
+  assert(blocked.body.usage.some(usage => usage.pageId === 'legal-cookies' && usage.versionNumber === publishedVersion && usage.status === 'archived'),
+    'usage lists the version this run archived')
   assertEqual((await fetch(`${baseUrl}${historical.publicUrl}`)).status, 200, 'archived-version media still served from R2')
-  console.log('Historical media protection passed (draft, published and archived references).')
+  console.log(`Historical media protection passed (draft, published and archived references; ${existing ? 'reused' : 'uploaded'} protected test image).`)
+}
+
+async function testCleanupTestMedia() {
+  const bytes = await sharp({ create: { width: 12, height: 12, channels: 3, background: '#24a148' } }).png().toBuffer()
+  const orphan = (await upload(bytes, 'cms-test-orphan.png', 'image/png')).body.media
+  const real = (await upload(bytes, 'Team Photo.png', 'image/png')).body.media
+  assert(isTestMediaFilename(orphan.filename) && !isTestMediaFilename(real.filename), 'test media pattern matches only test files')
+  for (const name of ['team-photo.png', 'hero.jpg', 'phase4-historical-final.png', 'ui-test.png', 'my-phase3-test-png.png']) {
+    assert(!isTestMediaFilename(name), `real filename not treated as test media: ${name}`)
+  }
+
+  for (const remote of ['https://qlugen-cms-staging.example.workers.dev', 'https://cms-staging.qlugen.test']) {
+    const refused = await cleanupTestMedia(remote, { log: () => {} }).then(() => false, () => true)
+    assert(refused, `cleanup refuses non-local target ${remote}`)
+  }
+
+  const result = await cleanupTestMedia(baseUrl, { log: () => {} })
+  const remaining = new Set((await request('/api/admin/media?limit=500')).media.map(item => item.id))
+  assert(!remaining.has(orphan.id), 'unused test media deleted')
+  assert(remaining.has(real.id), 'real uploads never deleted by cleanup')
+  assert(result.protected.some(item => item.filename === 'phase4-historical.png'), 'history-referenced test media reported as protected')
+  assert(result.protected.every(item => remaining.has(item.id) && item.usage.length > 0), 'protected test media kept')
+  await request(`/api/admin/media/${real.id}`, { method: 'DELETE' })
+  console.log(`Test media cleanup passed: removed ${result.deleted.length} unused, kept ${result.protected.length} protected, real uploads untouched.`)
 }
 
 async function testAuditLog() {

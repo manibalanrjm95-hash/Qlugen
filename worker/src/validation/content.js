@@ -1,5 +1,6 @@
 import { isImageKey, isMediaRef } from '../../../src/lib/media.js'
 import { findDesignKeys } from '../../../src/lib/designLock.js'
+import { getTemplate, templateContentErrors, templateContentTypes } from '../../../src/cms/templateRegistry.js'
 
 const CONTENT_TYPES = new Set([
   'home',
@@ -25,8 +26,18 @@ const CONTENT_TYPES = new Set([
   'careers',
   'contact',
   'legal',
+  ...templateContentTypes(),
 ])
 
+
+// Validation for a page's draft: the general content rules, plus the template schema for pages
+// created with "+ Add Page" (only the template's fields, with the template's field types).
+export function validatePageContent(page, content) {
+  const result = validateContent(page.contentType, content)
+  const template = page.id.startsWith('custom-') ? getTemplate(page.templateId) : null
+  if (template && result.ok) result.errors.push(...templateContentErrors(template, content))
+  return { ok: result.errors.length === 0, errors: result.errors }
+}
 
 export function validateContent(contentType, content) {
   const errors = []
@@ -45,6 +56,7 @@ export function validateContent(contentType, content) {
   }
   findInvalidImages(content, [], errors)
   findInvalidIcons(content, [], errors)
+  findInvalidLinks(content, [], errors)
   return { ok: errors.length === 0, errors }
 }
 
@@ -87,6 +99,27 @@ function isSafeImageUrl(url) {
   const trimmed = url.trim()
   if (trimmed === '') return true
   return /^(https?:\/\/|\/(?!\/))/i.test(trimmed) && !/[\s"'()\\;{}<>`]/.test(trimmed)
+}
+
+// Link fields (url, linkUrl, ctaUrl, ...) may only point to a site path, an anchor, a web page,
+// an email address or a phone number - never javascript:, data: or other executable schemes.
+const LINK_KEY = /^(url|href|link)$|(Url|Href)$/
+const SAFE_LINK = /^(\/(?!\/)|#|https?:\/\/|mailto:|tel:)/i
+
+function findInvalidLinks(value, path, errors) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => findInvalidLinks(item, [...path, String(index)], errors))
+    return
+  }
+  if (!isPlainObject(value)) return
+  for (const [key, child] of Object.entries(value)) {
+    if (LINK_KEY.test(key) && typeof child === 'string') {
+      const link = child.trim()
+      if (link && (!SAFE_LINK.test(link) || /[\s"'<>`\\]/.test(link))) errors.push(`Link is not allowed: ${[...path, key].join('.')}`)
+    } else {
+      findInvalidLinks(child, [...path, key], errors)
+    }
+  }
 }
 
 // Icons are chosen from code-defined icon sets; content may only name one, never supply markup or URLs.

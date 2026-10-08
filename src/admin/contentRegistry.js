@@ -1,14 +1,12 @@
+// Admin sidebar for the coded site's pages. Pages created with "+ Add Page" are added to the
+// group named by their template (see src/cms/templateRegistry.js).
 export const adminGroups = [
   {
-    label: 'Global',
+    label: 'Home',
     items: [
-      item('global-navigation', 'Navigation'),
-      item('global-footer', 'Footer'),
-      item('global-seo', 'SEO'),
-      item('global-not-found', 'Not Found'),
+      item('home', 'Overview'),
     ],
   },
-  { label: 'Home', items: [item('home', 'Overview')] },
   {
     label: 'Capabilities',
     items: [
@@ -59,8 +57,6 @@ export const adminGroups = [
       item('agentic-scale', 'Scale'),
     ],
   },
-  { label: 'How We Work', items: [item('how-we-work', 'Overview')] },
-  { label: 'Technology', items: [item('technology', 'Overview')] },
   {
     label: 'Insights',
     items: [
@@ -77,15 +73,26 @@ export const adminGroups = [
       item('company-about', 'About'),
       item('company-leadership', 'Leadership'),
       item('company-careers', 'Careers'),
+      item('how-we-work', 'How We Work'),
+      item('technology', 'Technology'),
+      item('contact', 'Contact'),
     ],
   },
-  { label: 'Contact', items: [item('contact', 'Contact')] },
   {
     label: 'Legal',
     items: [
       item('legal-privacy', 'Privacy'),
       item('legal-terms', 'Terms'),
       item('legal-cookies', 'Cookies'),
+    ],
+  },
+  {
+    label: 'Global',
+    items: [
+      item('global-navigation', 'Navigation'),
+      item('global-footer', 'Footer'),
+      item('global-seo', 'SEO'),
+      item('global-not-found', 'Not Found'),
     ],
   },
 ]

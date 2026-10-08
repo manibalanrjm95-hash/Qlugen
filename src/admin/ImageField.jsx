@@ -6,7 +6,7 @@ import { ACCEPTED_IMAGE_TYPES, MediaLibraryContext, checkImageFile } from './med
 
 // Edits one image field. `altKey` names the sibling `<key>Alt` field when the content has one;
 // otherwise alt text lives on the media reference itself.
-export default function ImageField({ label, path, value, altKey, altValue, onChange }) {
+export default function ImageField({ label, path, value, altKey, altValue, onChange, allowRemove = true, showAdvanced = true }) {
   const { openLibrary } = useContext(MediaLibraryContext)
   const inputRef = useRef(null)
   const [notice, setNotice] = useState(null)
@@ -66,41 +66,42 @@ export default function ImageField({ label, path, value, altKey, altValue, onCha
     }
   }
 
+  // Portraits and logos are shown whole; banners and other images as a wide preview.
+  const shape = /portrait|logo/i.test(String(path.at(-1))) ? 'contain' : 'wide'
+
   return (
-    <div className="cms-admin__image-field" data-image-field={path.join('.')}>
+    <div className={`cms-admin__image-field is-${shape}`} data-image-field={path.join('.')}>
       <span className="cms-admin__image-label">{label}</span>
-      <div className="cms-admin__image-body">
-        <div className="cms-admin__image-thumb">
-          {url ? <img src={mediaSrc(url)} alt={alt} /> : <span>No image</span>}
-        </div>
-        <div className="cms-admin__image-controls">
-          <p className="cms-admin__image-source">
-            {isMediaRef(value) && value.id ? 'Media library image' : url ? 'Existing image URL' : 'No image selected'}
-          </p>
-          <div className="cms-admin__image-actions">
-            <button type="button" onClick={() => inputRef.current?.click()} disabled={notice?.kind === 'busy'}>Replace Image</button>
-            <button type="button" onClick={() => openLibrary(applyMedia)}>Choose from Media Library</button>
-            {url && <button type="button" onClick={removeImage}>Remove Image</button>}
-          </div>
-          <input
-            ref={inputRef}
-            type="file"
-            accept={ACCEPTED_IMAGE_TYPES.join(',')}
-            hidden
-            data-image-upload={path.join('.')}
-            onChange={handleFile}
-          />
-          {notice && <p className={`cms-admin__image-notice is-${notice.kind}`} role="status">{notice.text}</p>}
-          <label className="cms-admin__field" htmlFor={`${id}-alt`}>
-            <span>Alt Text</span>
-            <input id={`${id}-alt`} type="text" value={alt} onChange={event => setAlt(event.target.value)} />
-          </label>
-          <details className="cms-admin__image-advanced">
-            <summary>Advanced: edit image URL</summary>
-            <input id={id} type="text" value={url} onChange={event => setUrl(event.target.value)} aria-label={`${label} URL`} />
-          </details>
-        </div>
+      <div className="cms-admin__image-preview">
+        {url ? <img src={mediaSrc(url)} alt={alt} /> : <span>No image selected</span>}
       </div>
+      <div className="cms-admin__image-actions">
+        <button type="button" onClick={() => inputRef.current?.click()} disabled={notice?.kind === 'busy'}>Replace Image</button>
+        <button type="button" onClick={() => openLibrary(applyMedia)}>Choose Media</button>
+        {allowRemove && url && <button type="button" className="cms-admin__quiet" onClick={removeImage}>Remove</button>}
+      </div>
+      <input
+        ref={inputRef}
+        type="file"
+        accept={ACCEPTED_IMAGE_TYPES.join(',')}
+        hidden
+        data-image-upload={path.join('.')}
+        onChange={handleFile}
+      />
+      {notice && <p className={`cms-admin__image-notice is-${notice.kind}`} role="status">{notice.text}</p>}
+      <label className="cms-admin__field" htmlFor={`${id}-alt`}>
+        <span>Alt Text</span>
+        <input id={`${id}-alt`} type="text" value={alt} placeholder="Describe the image for screen readers" onChange={event => setAlt(event.target.value)} />
+      </label>
+      {showAdvanced && (
+        <details className="cms-admin__advanced">
+          <summary>Advanced</summary>
+          <label className="cms-admin__field" htmlFor={id}>
+            <span>Image address</span>
+            <input id={id} type="text" value={url} onChange={event => setUrl(event.target.value)} />
+          </label>
+        </details>
+      )}
     </div>
   )
 }

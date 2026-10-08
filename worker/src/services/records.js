@@ -1,5 +1,5 @@
-// Until Cloudflare Access supplies an authenticated identity, every write is attributed to this
-// placeholder. Actor values sent by the browser are never trusted.
+// Actor for local development (CMS_ENV="local"). Everywhere else the actor is the identity
+// verified from the signed-in user's Firebase ID token (see auth.js). Actor values sent by the browser are never trusted.
 export const SYSTEM_ACTOR = 'local-admin'
 
 export function nowIso() {
@@ -23,7 +23,9 @@ export function toPageDto(row) {
     route: row.route,
     slug: row.slug,
     contentType: row.content_type,
+    templateId: row.template_id,
     title: row.title,
+    status: row.page_status || (row.published_version_id ? 'published' : 'draft'),
     createdAt: row.created_at,
     updatedAt: row.updated_at,
     latestVersion: row.latest_version ?? undefined,
@@ -49,12 +51,12 @@ export function toVersionDto(row, includeContent = true) {
 }
 
 // Returns an unexecuted statement so audit rows can join the same atomic batch as the change they record.
-export function auditStatement(db, { pageId = null, action, before = null, after = null }) {
+export function auditStatement(db, { pageId = null, action, before = null, after = null, actor = SYSTEM_ACTOR }) {
   return db.prepare(
     `INSERT INTO cms_audit_log
      (id, page_id, action, before_json, after_json, created_at, actor)
      VALUES (?, ?, ?, ?, ?, ?, ?)`
-  ).bind(cryptoRandomId('audit'), pageId, action, toJson(before), toJson(after), nowIso(), SYSTEM_ACTOR)
+  ).bind(cryptoRandomId('audit'), pageId, action, toJson(before), toJson(after), nowIso(), actor)
 }
 
 function toJson(value) {

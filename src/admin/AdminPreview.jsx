@@ -38,6 +38,8 @@ import Privacy from '../pages/legal/Privacy'
 import Terms from '../pages/legal/Terms'
 import ProductDetail from '../pages/products/ProductDetail'
 import ProductsOverview from '../pages/products/ProductsOverview'
+import TemplatePage from '../cms/TemplatePage'
+import { getTemplate } from '../cms/templateRegistry'
 
 export const previewAdapters = {
   'agentic-build-run': BuildRun,
@@ -91,7 +93,8 @@ export const previewAdapters = {
 export const structuredPreviewIds = ['global-navigation', 'global-footer', 'global-seo']
 export const realPreviewRecordIds = Object.keys(previewAdapters)
 
-export default function AdminPreview({ page, content }) {
+// editMode: the live editor asks the page component to tag its CMS-backed elements (cmsEditMode).
+export default function AdminPreview({ page, content, editMode = false }) {
   // Draft image fields may hold media references; public components expect URL strings.
   const previewContent = useMemo(
     () => (content ? normalizeMediaContent(content, { resolveUrl: mediaSrc }) : content),
@@ -100,16 +103,21 @@ export default function AdminPreview({ page, content }) {
 
   return (
     <div className="cms-admin__preview-frame">
-      {renderPreview(page, previewContent)}
+      {renderPreview(page, previewContent, editMode)}
     </div>
   )
 }
 
-function renderPreview(page, content) {
+function renderPreview(page, content, editMode) {
   if (!page || !content) return <PreviewMessage title="No page selected" />
 
   const Component = previewAdapters[page.id]
-  if (Component) return <Component content={content} />
+  if (Component) return <Component content={content} cmsEditMode={editMode || undefined} />
+
+  // Pages created with "+ Add Page" preview with their approved template.
+  if (page.id.startsWith('custom-') && getTemplate(page.templateId)) {
+    return <TemplatePage templateKey={page.templateId} content={content} cmsEditMode={editMode || undefined} />
+  }
 
   if (page.id === 'global-navigation') return <GlobalNavigationPreview content={content} />
   if (page.id === 'global-footer') return <GlobalFooterPreview content={content} />

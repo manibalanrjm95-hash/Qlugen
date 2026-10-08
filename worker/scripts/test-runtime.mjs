@@ -2,11 +2,15 @@
 // Frontends: "cms" (runtime on), "fallback" (runtime on, API unreachable), "local" (runtime off).
 import { spawn, spawnSync } from 'node:child_process'
 import { setTimeout as wait } from 'node:timers/promises'
+import { mkdirSync, openSync } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { chromium } from 'playwright'
 import { contentRegistry } from './content-registry.mjs'
 import { findDesignKeys, stripDesignKeys } from '../../src/lib/designLock.js'
 
-const cmsPort = 8787
+const cmsPort = 8797
+const logDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../.tmp')
 const cmsBase = `http://127.0.0.1:${cmsPort}`
 const frontends = {
   cms: { port: 5274, env: { VITE_CMS_RUNTIME_ENABLED: 'true', VITE_CMS_API_BASE: cmsBase } },
@@ -69,8 +73,14 @@ function testDesignLockUnit() {
 }
 
 async function testPublicApi() {
-  const { pages } = await getJson('/api/public/content')
-  assertEqual(Object.keys(pages).length, contentRegistry.length, 'public API returns every page')
+  for (let index = 0; index < contentRegistry.length; index += 20) {
+    const ids = contentRegistry.slice(index, index + 20).map(entry => entry.id)
+    const chunk = (await getJson(`/api/public/pages?ids=${ids.join(',')}`)).pages
+    assertEqual(Object.keys(chunk).length, ids.length, 'public API returns each requested published page')
+  }
+  const { pages } = await getJson('/api/public/pages?ids=home')
+  assertEqual(Object.keys(pages).join(), 'home', 'public API returns only requested pages')
+  assertEqual((await fetch(`${cmsBase}/api/public/content`)).status, 404, 'fetch-everything endpoint removed')
   const home = (await getJson('/api/admin/pages/home')).page
   assertEqual(JSON.stringify(pages.home), JSON.stringify(home.content), 'public API returns the current published version')
   assert(!('version' in pages.home) && !('id' in pages.home && pages.home.id?.startsWith?.('ver_')), 'no admin metadata')
@@ -79,16 +89,16 @@ async function testPublicApi() {
   const draft = structuredClone(home.content)
   draft.hero.titleLines[0] = 'Draft only text'
   await sendJson('PUT', '/api/admin/pages/home/draft', { content: draft })
-  assert(!JSON.stringify(await getJson('/api/public/content')).includes('Draft only text'), 'public API never returns drafts')
+  assert(!JSON.stringify(await getJson('/api/public/pages?ids=home')).includes('Draft only text'), 'public API never returns drafts')
   assert(!JSON.stringify(await getJson('/api/public/pages/home/content')).includes('Draft only text'), 'single-page API never returns drafts')
   await sendJson('DELETE', '/api/admin/pages/home/draft')
 
   // Archived versions are never exposed.
   const versions = (await getJson('/api/admin/pages/home/versions')).versions
   assert(versions.some(version => version.status === 'archived'), 'home has archived versions')
-  assertEqual((await fetch(`${cmsBase}/api/public/content`, { method: 'POST' })).status, 405, 'public API is read-only')
+  assertEqual((await fetch(`${cmsBase}/api/public/pages?ids=home`, { method: 'POST' })).status, 405, 'public API is read-only')
   assertEqual((await fetch(`${cmsBase}/api/public/pages/home/draft`)).status, 404, 'no draft route on public API')
-  assertEqual((await fetch(`${cmsBase}/api/public/content`)).headers.get('cache-control'), 'no-store', 'public API is not cached')
+  assertEqual((await fetch(`${cmsBase}/api/public/pages?ids=home`)).headers.get('cache-control'), 'no-store', 'public API is not cached')
 
   // Design fields cannot be saved into content.
   const styled = structuredClone(home.content)
@@ -144,27 +154,43 @@ async function testFullSite() {
 
   const page = await newPage()
   // Mark every title/heading/label in the published payload; each page must render CMS-provided text.
-  await page.route('**/api/public/content', async routeRequest => {
+  const requestedIds = []
+  await page.route('**/api/public/pages?*', routeRequest => ignoreCancelled(async () => {
+    requestedIds.push(...new URL(routeRequest.request().url()).searchParams.get('ids').split(','))
     const response = await routeRequest.fetch()
     const data = await response.json()
     for (const content of Object.values(data.pages)) markText(content)
     await routeRequest.fulfill({ response, json: data })
-  })
+  }))
 
   for (const { id, route } of routes) {
+    requestedIds.length = 0
     await page.goto(url('cms', route))
     await page.locator('.site-header').waitFor()
     await page.waitForFunction(marker => document.body.innerText.includes(marker), MARKER, { timeout: 10000 })
       .catch(() => { throw new Error(`${id} (${route}) did not render published CMS content`) })
+    const expected = route.startsWith('/products') ? 11 : route === '/insights' ? 6 : 3
+    assert(requestedIds.includes(id) && requestedIds.length <= expected, `${id}: fetched only its own records (${requestedIds.length})`)
   }
+
+  // In-app navigation loads just the next page's record (navigation/footer are already cached).
+  await page.goto(url('cms', '/'))
+  await page.locator('.site-header').waitFor()
+  requestedIds.length = 0
+  const technologyResponse = page.waitForResponse(response => response.url().includes('/api/public/pages?ids=technology'))
+  await page.locator('.site-header a[href="/technology"]:visible').first().click()
+  await technologyResponse
+  await page.waitForURL('**/technology')
+  assertEqual(requestedIds.join(), 'technology', 'client-side navigation fetches only the new page')
   assert((await page.locator('.site-header').innerText()).includes(MARKER), 'navigation renders published content')
   assert((await page.locator('.site-footer').innerText()).includes(MARKER), 'footer renders published content')
 
   // Design fields smuggled into a published payload must have no visual effect.
-  await page.unroute('**/api/public/content')
-  await page.route('**/api/public/content', async routeRequest => {
+  await page.unroute('**/api/public/pages?*')
+  await page.route('**/api/public/pages?*', routeRequest => ignoreCancelled(async () => {
     const response = await routeRequest.fetch()
     const data = await response.json()
+    if (!data.pages.home) return routeRequest.fulfill({ response, json: data })
     Object.assign(data.pages.home.hero, {
       style: { color: 'rgb(255, 0, 0)', fontSize: '99px' },
       className: 'injected-class',
@@ -174,12 +200,12 @@ async function testFullSite() {
       variant: 'dark',
     })
     await routeRequest.fulfill({ response, json: data })
-  })
+  }))
   await page.goto(url('cms', '/'))
   await page.locator('h1').waitFor()
   assertEqual(await page.locator('.injected-class').count(), 0, 'injected className ignored')
   const injected = await captureStyles(page, 'h1')
-  await page.unroute('**/api/public/content')
+  await page.unroute('**/api/public/pages?*')
   await page.goto(url('local', '/'))
   await page.locator('h1').waitFor()
   assertSameStyles(await captureStyles(page, 'h1'), injected, 'injected style/color fields have no visual effect')
@@ -214,6 +240,15 @@ async function testRuntimeDisabledAndFallback() {
     await runtime.close()
   }
   console.log('Runtime off / fallback passed: local JSON used, no CMS requests when off, identical styles in all modes.')
+}
+
+// A request still in flight when the test navigates away is cancelled by the browser.
+async function ignoreCancelled(handler) {
+  try {
+    await handler()
+  } catch (error) {
+    if (!/already handled|Target page, context or browser has been closed|Request context disposed/i.test(error.message)) throw error
+  }
 }
 
 async function captureStyles(page, selector) {
@@ -307,8 +342,11 @@ async function sendJson(method, path, body) {
   return { status: response.status, body: await response.json() }
 }
 
+// Server output goes to worker/.tmp/*.log: unread pipes fill up and stall long-running servers.
 function spawnCommand(command, cwd, env = {}) {
-  const options = { cwd, env: { ...process.env, ...env }, stdio: ['ignore', 'pipe', 'pipe'] }
+  mkdirSync(logDir, { recursive: true })
+  const log = openSync(path.join(logDir, `runtime-${command.match(/--port (\d+)/)?.[1] || 'server'}.log`), 'w')
+  const options = { cwd, env: { ...process.env, ...env }, stdio: ['ignore', log, log] }
   return process.platform === 'win32'
     ? spawn('cmd.exe', ['/d', '/s', '/c', command], options)
     : spawn('sh', ['-c', command], options)

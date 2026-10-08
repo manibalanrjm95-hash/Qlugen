@@ -16,8 +16,12 @@ const iconMap = {
 };
 const accents = ['rgba(8, 189, 186, 0.16)', 'rgba(11, 242, 118, 0.14)', 'rgba(69, 137, 255, 0.16)', 'rgba(238, 83, 150, 0.14)', 'rgba(255, 131, 43, 0.16)', 'rgba(61, 219, 217, 0.14)', 'rgba(111, 220, 140, 0.16)'];
 const surfaces = ['var(--q-teal-10)', 'var(--ibm-blue-10)', 'var(--ibm-yellow-10)', 'var(--ibm-purple-10)', 'var(--ibm-green-10)'];
-export default function Home({ content = defaultHomeContent }) {
+export default function Home({ content = defaultHomeContent, cmsEditMode = false }) {
   const homeContent = content
+  // Admin live editor only: tags CMS-backed elements with non-visual data-cms-field metadata.
+  // On the public site cmsEditMode is false and no attribute is added.
+  // textField: a link whose text is a shared label stored elsewhere (e.g. one "Learn more" for all cards).
+  const cms = (field, textField) => (cmsEditMode ? { 'data-cms-field': field, ...(textField && { 'data-cms-text-field': textField }) } : undefined)
   const capabilities = homeContent.capabilities.items.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Analytics, artImage: item.image, artPosition: 'center', artSize: 'cover', accent: accents[index % accents.length], to: item.url }));
   const aiFeatures = homeContent.agenticAi.slides.map((item, index) => ({ ...item, icon: iconMap[item.icon] || Chip, desc: item.description, mediaPoster: item.image, surface: surfaces[index % surfaces.length], to: item.url }));
   const industries = homeContent.industries.items.map(item => ({ ...item, icon: iconMap[item.icon] || Building, desc: item.description, to: item.url }));
@@ -479,6 +483,7 @@ export default function Home({ content = defaultHomeContent }) {
       {/* ── HERO ── */}
       <section className="hero-section" id="hero">
         <img
+          {...cms('hero.image')}
           className="hero-video"
           src={homeContent.hero.image}
           alt={homeContent.hero.imageAlt}
@@ -491,14 +496,14 @@ export default function Home({ content = defaultHomeContent }) {
         <div className="hero-top">
           <Grid>
             <Column lg={9} md={7} sm={4}>
-              <h1>
+              <h1 {...cms('hero.titleLines')}>
                 {homeContent.hero.titleLines.map((line, index) => (
                   <Fragment key={line}>{index > 0 && <br />}{line}</Fragment>
                 ))}
               </h1>
-              <p className="hero-sub">
+              <p className="hero-sub" {...cms('hero.description')}>
                 {homeContent.hero.descriptionBeforeLink}{' '}
-                <RouterLink to={homeContent.hero.descriptionLinkUrl} className="hero-sub-link">{homeContent.hero.descriptionLinkLabel}</RouterLink>
+                <RouterLink {...cms('hero.descriptionLink')} to={homeContent.hero.descriptionLinkUrl} className="hero-sub-link">{homeContent.hero.descriptionLinkLabel}</RouterLink>
                 {' '}{homeContent.hero.descriptionAfterLink}
               </p>
             </Column>
@@ -508,13 +513,14 @@ export default function Home({ content = defaultHomeContent }) {
         <div className="hero-bottom-strip">
           <Grid>
             <Column lg={9} md={4} sm={4} className="hero-bottom-left">
-              <p className="hero-bottom-desc">
-                {homeContent.hero.bottomTextBeforeAccent} <span className="hero-accent">{homeContent.hero.bottomTextAccent}</span>
+              <p className="hero-bottom-desc" {...cms('hero.bottomTextBeforeAccent')}>
+                {homeContent.hero.bottomTextBeforeAccent} <span className="hero-accent" {...cms('hero.bottomTextAccent')}>{homeContent.hero.bottomTextAccent}</span>
               </p>
             </Column>
             <Column lg={7} md={4} sm={4} className="hero-bottom-right">
               <form className="hero-email-form" onSubmit={e => e.preventDefault()} aria-label={homeContent.hero.formAriaLabel}>
                 <input
+                  {...cms('hero.emailPlaceholder')}
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
@@ -522,7 +528,7 @@ export default function Home({ content = defaultHomeContent }) {
                   className="hero-email-input"
                   aria-label={homeContent.hero.emailAriaLabel}
                 />
-                <RouterLink to={homeContent.hero.ctaUrl} className="hero-cta-btn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>{homeContent.hero.ctaLabel}</RouterLink>
+                <RouterLink {...cms('hero.button')} to={homeContent.hero.ctaUrl} className="hero-cta-btn" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>{homeContent.hero.ctaLabel}</RouterLink>
               </form>
             </Column>
           </Grid>
@@ -534,15 +540,16 @@ export default function Home({ content = defaultHomeContent }) {
       <section className="capabilities-section" id="capabilities">
         <Grid>
           <Column lg={11} md={5} sm={4}>
-            <p className="section-label">{homeContent.capabilities.eyebrow}</p>
-            <h2>{homeContent.capabilities.title}</h2>
-            <p className="section-lede">{homeContent.capabilities.description}</p>
+            <p className="section-label" {...cms('capabilities.eyebrow')}>{homeContent.capabilities.eyebrow}</p>
+            <h2 {...cms('capabilities.title')}>{homeContent.capabilities.title}</h2>
+            <p className="section-lede" {...cms('capabilities.description')}>{homeContent.capabilities.description}</p>
           </Column>
         </Grid>
         <Grid className="capability-grid">
           {capabilities.map(({ icon: Icon, eyebrow, title, body, artImage, artPosition, artSize, accent, to }, index) => (
             <Column key={title} lg={16} md={8} sm={4} className={`capability-grid-item capability-grid-item--${index + 1}`}>
               <article
+                {...cms(`capabilities.items.${index}`)}
                 className={`capability-card${activeCapability === index ? ' is-active' : ''}`}
                 onClick={() => setActiveCapability(index)}
                 onKeyDown={event => {
@@ -565,17 +572,17 @@ export default function Home({ content = defaultHomeContent }) {
 
                 <div className="capability-card__summary">
                   <div className="capability-card__eyebrow-row">
-                    <p className="capability-card__eyebrow">{eyebrow}</p>
+                    <p className="capability-card__eyebrow" {...cms(`capabilities.items.${index}.eyebrow`)}>{eyebrow}</p>
                     <Icon size={20} className="capability-card__icon" aria-hidden="true" />
                   </div>
-                  <h3>{title}</h3>
+                  <h3 {...cms(`capabilities.items.${index}.title`)}>{title}</h3>
                 </div>
 
                 <div className="capability-card__details">
-                  <p className="capability-card__detail-eyebrow">{eyebrow}</p>
-                  <span data-heading-visual className="capability-card__title">{title}</span>
-                  <p>{body}</p>
-                  <RouterLink to={to} className="capability-card__link">{homeContent.capabilities.linkLabel} <ArrowRight size={16} /></RouterLink>
+                  <p className="capability-card__detail-eyebrow" {...cms(`capabilities.items.${index}.eyebrow`)}>{eyebrow}</p>
+                  <span data-heading-visual className="capability-card__title" {...cms(`capabilities.items.${index}.title`)}>{title}</span>
+                  <p {...cms(`capabilities.items.${index}.body`)}>{body}</p>
+                  <RouterLink {...cms(`capabilities.items.${index}.url`, 'capabilities.linkLabel')} to={to} className="capability-card__link">{homeContent.capabilities.linkLabel} <ArrowRight size={16} /></RouterLink>
                 </div>
               </article>
             </Column>
@@ -596,7 +603,7 @@ export default function Home({ content = defaultHomeContent }) {
         <div ref={aifStickyShellRef} className="aif-sticky-shell">
             <Grid>
               <Column lg={16} md={8} sm={4}>
-                <p className="hiw-label">{homeContent.agenticAi.eyebrow}</p>
+                <p className="hiw-label" {...cms('agenticAi.eyebrow')}>{homeContent.agenticAi.eyebrow}</p>
               </Column>
             </Grid>
 
@@ -606,6 +613,7 @@ export default function Home({ content = defaultHomeContent }) {
                   <div className="hiw-tabs" role="tablist" aria-label={homeContent.agenticAi.tabAriaLabel}>
                     {aiFeatures.map((item, i) => (
                       <button
+                        {...cms(`agenticAi.slides.${i}.label`)}
                         key={item.label}
                         className={`hiw-tab${activeAif === i ? ' hiw-tab--active' : ''}${activeAif > i ? ' hiw-tab--complete' : ''}`}
                         onClick={() => handleAifTabClick(i)}
@@ -625,7 +633,7 @@ export default function Home({ content = defaultHomeContent }) {
             <div className="hiw-content">
               <div ref={aifViewportRef} className="aif-slides-viewport">
                 <div ref={aifTrackRef} className="aif-slides-track">
-                  {aiFeatures.map((item) => (
+                  {aiFeatures.map((item, index) => (
                     <article
                       key={item.step}
                       className="aif-slide"
@@ -635,11 +643,11 @@ export default function Home({ content = defaultHomeContent }) {
                         <div className="aif-slide-shell__inner">
                           <div className="aif-slide-visual">
                             <div className="hiw-visual-card">
-                              <span className="hiw-step">{item.step}</span>
+                              <span className="hiw-step" {...cms(`agenticAi.slides.${index}.step`)}>{item.step}</span>
                               <div className="hiw-inner-card hiw-inner-card--media">
                                 <div className="aif-media-layer" aria-hidden="true">
                                   <div className="aif-media-frame">
-                                    <img className="aif-media-image" src={item.mediaPoster} alt="" loading="lazy" decoding="async" />
+                                    <img {...cms(`agenticAi.slides.${index}.image`)} className="aif-media-image" src={item.mediaPoster} alt="" loading="lazy" decoding="async" />
                                     <div className="aif-media-scrim" />
                                   </div>
                                 </div>
@@ -652,9 +660,9 @@ export default function Home({ content = defaultHomeContent }) {
 
                           <div className="hiw-text-col aif-slide-copy">
                             <div className="aif-stage aif-stage--copy">
-                              <h2>{item.heading}</h2>
-                              <p className="hiw-desc">{item.desc}</p>
-                              <RouterLink to={item.to} className="hiw-learn-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>{homeContent.agenticAi.linkLabel}</RouterLink>
+                              <h2 {...cms(`agenticAi.slides.${index}.heading`)}>{item.heading}</h2>
+                              <p className="hiw-desc" {...cms(`agenticAi.slides.${index}.description`)}>{item.desc}</p>
+                              <RouterLink {...cms(`agenticAi.slides.${index}.url`, 'agenticAi.linkLabel')} to={item.to} className="hiw-learn-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>{homeContent.agenticAi.linkLabel}</RouterLink>
                             </div>
                           </div>
                         </div>
@@ -673,21 +681,22 @@ export default function Home({ content = defaultHomeContent }) {
           <Column lg={16} md={8} sm={4}>
             <div className="industries-showcase">
               <div className="industries-copy">
-                <p className="section-label">{homeContent.industries.eyebrow}</p>
-                <h2>{homeContent.industries.title}</h2>
+                <p className="section-label" {...cms('industries.eyebrow')}>{homeContent.industries.eyebrow}</p>
+                <h2 {...cms('industries.title')}>{homeContent.industries.title}</h2>
 
                 <div className="industries-list" role="tablist" aria-label={homeContent.industries.ariaLabel}>
                   {industries.map(({ label, to }, index) => {
                     const isActive = index === activeIndustry;
                     return (
                       <RouterLink
+                        {...cms(`industries.items.${index}`)}
                         key={label}
                         to={to}
                         className={`industry-option${isActive ? ' industry-option--active' : ''}`}
                         onMouseEnter={() => setActiveIndustry(index)}
                         onFocus={() => setActiveIndustry(index)}
                       >
-                        <span>{label}</span>
+                        <span {...cms(`industries.items.${index}.label`)}>{label}</span>
                         <ArrowRight
                           size={18}
                           className={`industry-option-arrow${isActive ? ' industry-option-arrow--active' : ''}`}
@@ -700,7 +709,7 @@ export default function Home({ content = defaultHomeContent }) {
               </div>
 
               <div className="industry-visual-panel">
-                <img src={activeIndustryItem.image} alt={activeIndustryItem.imageAlt} className="industry-visual-image" />
+                <img {...cms(`industries.items.${activeIndustry}.image`)} src={activeIndustryItem.image} alt={activeIndustryItem.imageAlt} className="industry-visual-image" />
               </div>
             </div>
           </Column>
@@ -712,15 +721,16 @@ export default function Home({ content = defaultHomeContent }) {
         <Grid>
           <Column lg={11} md={6} sm={4}>
             <Network_1 size={22} className="approach-icon" aria-hidden="true" />
-            <p className="section-label">{homeContent.approach.eyebrow}</p>
-            <h2>{homeContent.approach.title}</h2>
-            <p className="approach-copy">{homeContent.approach.description}</p>
+            <p className="section-label" {...cms('approach.eyebrow')}>{homeContent.approach.eyebrow}</p>
+            <h2 {...cms('approach.title')}>{homeContent.approach.title}</h2>
+            <p className="approach-copy" {...cms('approach.description')}>{homeContent.approach.description}</p>
           </Column>
         </Grid>
 
         <div className="approach-gallery" onMouseLeave={() => setActiveApproach(0)}>
           {principles.map(({ num, icon: Icon, title, desc, img }, i) => (
             <div
+              {...cms(`approach.cards.${i}`)}
               key={num}
               className={`approach-card${activeApproach === i ? ' approach-card--active' : ''}`}
               onMouseEnter={() => setActiveApproach(i)}
@@ -730,16 +740,16 @@ export default function Home({ content = defaultHomeContent }) {
               aria-label={title}
               onKeyDown={(e) => e.key === 'Enter' && setActiveApproach(i)}
             >
-              <img src={img} alt="" className="approach-card-img" loading="lazy" decoding="async" />
+              <img {...cms(`approach.cards.${i}.image`)} src={img} alt="" className="approach-card-img" loading="lazy" decoding="async" />
               <div className="approach-card-overlay" />
               <div className="approach-card-content">
-                <span className="approach-card-num">{num}</span>
+                <span className="approach-card-num" {...cms(`approach.cards.${i}.number`)}>{num}</span>
                 <div className="approach-card-foot">
                   <div className="approach-card-icon-wrap" aria-hidden="true">
                     <Icon size={18} />
                   </div>
-                  <h3 className="approach-card-title">{title}</h3>
-                  <p className="approach-card-desc">{desc}</p>
+                  <h3 className="approach-card-title" {...cms(`approach.cards.${i}.title`)}>{title}</h3>
+                  <p className="approach-card-desc" {...cms(`approach.cards.${i}.description`)}>{desc}</p>
                 </div>
               </div>
             </div>
@@ -751,15 +761,15 @@ export default function Home({ content = defaultHomeContent }) {
       <section className="partners-section" id="partners">
         <Grid>
           <Column lg={16} md={8} sm={4}>
-            <p className="section-label">{homeContent.partners.eyebrow}</p>
-            <h2>{homeContent.partners.title}</h2>
-            <p className="section-lede">{homeContent.partners.description}</p>
+            <p className="section-label" {...cms('partners.eyebrow')}>{homeContent.partners.eyebrow}</p>
+            <h2 {...cms('partners.title')}>{homeContent.partners.title}</h2>
+            <p className="section-lede" {...cms('partners.description')}>{homeContent.partners.description}</p>
           </Column>
         </Grid>
         <Grid className="partners-grid">
-          {partners.map(name => (
+          {partners.map((name, index) => (
             <Column key={name} lg={4} md={2} sm={2}>
-              <div className="partner-badge">{name}</div>
+              <div className="partner-badge" {...cms(`partners.items.${index}.name`)}>{name}</div>
             </Column>
           ))}
         </Grid>
@@ -769,27 +779,27 @@ export default function Home({ content = defaultHomeContent }) {
       <section className="blogs-section" id="blogs">
         <Grid>
           <Column lg={12} md={6} sm={4}>
-            <p className="section-label">{homeContent.blogs.eyebrow}</p>
-            <h2>{homeContent.blogs.title}</h2>
+            <p className="section-label" {...cms('blogs.eyebrow')}>{homeContent.blogs.eyebrow}</p>
+            <h2 {...cms('blogs.title')}>{homeContent.blogs.title}</h2>
           </Column>
           <Column lg={4} md={2} sm={4} className="blogs-cta-col">
-            <RouterLink to={homeContent.blogs.allArticlesUrl} className="capability-card__link">{homeContent.blogs.allArticlesLabel} <ArrowRight size={16} /></RouterLink>
+            <RouterLink {...cms('blogs.allArticles')} to={homeContent.blogs.allArticlesUrl} className="capability-card__link">{homeContent.blogs.allArticlesLabel} <ArrowRight size={16} /></RouterLink>
           </Column>
         </Grid>
         <Grid>
           <Column lg={16} md={8} sm={4}>
             <div className="blogs-grid">
-              {blogs.map(({ tag, title, img, to }) => (
-                <RouterLink key={title} to={to} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              {blogs.map(({ tag, title, img, to }, index) => (
+                <RouterLink {...cms(`blogs.items.${index}`)} key={title} to={to} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="blog-thumb">
-                    <img src={img} alt={title} className="blog-thumb-img" loading="lazy" decoding="async" />
-                    <span className="blog-thumb-tag">{tag}</span>
+                    <img {...cms(`blogs.items.${index}.image`)} src={img} alt={title} className="blog-thumb-img" loading="lazy" decoding="async" />
+                    <span className="blog-thumb-tag" {...cms(`blogs.items.${index}.tag`)}>{tag}</span>
                   </div>
                   <div className="blog-body">
-                    <h3 className="blog-title">{title}</h3>
+                    <h3 className="blog-title" {...cms(`blogs.items.${index}.title`)}>{title}</h3>
                     <div className="blog-hover-arrow">
                       <ArrowRight size={18} aria-hidden="true" />
-                      <span>{homeContent.blogs.readArticleLabel}</span>
+                      <span {...cms('blogs.readArticleLabel')}>{homeContent.blogs.readArticleLabel}</span>
                     </div>
                   </div>
                 </RouterLink>
@@ -803,29 +813,30 @@ export default function Home({ content = defaultHomeContent }) {
       <section className="exec-section" id="executive-team">
         <Grid>
           <Column lg={11} md={5} sm={4}>
-            <p className="section-label">{homeContent.leadership.eyebrow}</p>
-            <h2>{homeContent.leadership.title}</h2>
-            <p className="section-lede">{homeContent.leadership.description}</p>
+            <p className="section-label" {...cms('leadership.eyebrow')}>{homeContent.leadership.eyebrow}</p>
+            <h2 {...cms('leadership.title')}>{homeContent.leadership.title}</h2>
+            <p className="section-lede" {...cms('leadership.description')}>{homeContent.leadership.description}</p>
           </Column>
         </Grid>
         <div className="exec-spotlight">
-          <img src={homeContent.leadership.portrait} alt={homeContent.leadership.portraitAlt} className="exec-spotlight__image" loading="lazy" decoding="async" />
+          <img {...cms('leadership.portrait')} src={homeContent.leadership.portrait} alt={homeContent.leadership.portraitAlt} className="exec-spotlight__image" loading="lazy" decoding="async" />
           <div className="exec-spotlight__overlay" aria-hidden="true" />
           <div className="exec-spotlight__content">
-            <p className="exec-spotlight__eyebrow">{homeContent.leadership.spotlightEyebrow}</p>
-            <h3>{homeContent.leadership.name}</h3>
-            <p className="exec-spotlight__bio">{homeContent.leadership.bio}</p>
+            <p className="exec-spotlight__eyebrow" {...cms('leadership.spotlightEyebrow')}>{homeContent.leadership.spotlightEyebrow}</p>
+            <h3 {...cms('leadership.name')}>{homeContent.leadership.name}</h3>
+            <p className="exec-spotlight__bio" {...cms('leadership.bio')}>{homeContent.leadership.bio}</p>
             <div className="exec-prev-exp">
-              <p className="exec-prev-exp__label">{homeContent.leadership.experienceLabel}</p>
+              <p className="exec-prev-exp__label" {...cms('leadership.experienceLabel')}>{homeContent.leadership.experienceLabel}</p>
               <div className="exec-prev-exp__row">
-                {homeContent.leadership.experience.map(({ name, logo, logoAlt }) => (
+                {homeContent.leadership.experience.map(({ name, logo, logoAlt }, index) => (
                   <span key={name} className="exec-prev-exp__item">
-                    <img src={logo} alt={logoAlt} className="exec-prev-exp__logo" />
+                    <img {...cms(`leadership.experience.${index}.logo`)} src={logo} alt={logoAlt} className="exec-prev-exp__logo" />
                   </span>
                 ))}
               </div>
             </div>
             <a
+              {...cms('leadership.linkedin')}
               href={homeContent.leadership.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -836,8 +847,8 @@ export default function Home({ content = defaultHomeContent }) {
             </a>
           </div>
           <div className="exec-spotlight__stat">
-            <strong>{homeContent.leadership.statValue}</strong>
-            <span>{homeContent.leadership.statLabel}</span>
+            <strong {...cms('leadership.statValue')}>{homeContent.leadership.statValue}</strong>
+            <span {...cms('leadership.statLabel')}>{homeContent.leadership.statLabel}</span>
           </div>
         </div>
       </section>
@@ -846,15 +857,15 @@ export default function Home({ content = defaultHomeContent }) {
       <section className="about-section" id="about">
         <Grid>
           <Column lg={8} md={6} sm={4}>
-            <p className="section-label">{homeContent.about.eyebrow}</p>
-            <h2>{homeContent.about.title}</h2>
-            <div className="about-copy">
+            <p className="section-label" {...cms('about.eyebrow')}>{homeContent.about.eyebrow}</p>
+            <h2 {...cms('about.title')}>{homeContent.about.title}</h2>
+            <div className="about-copy" {...cms('about.description')}>
               {homeContent.about.description.split('\n\n').map(paragraph => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <div className="about-actions">
-              <Button kind="ghost" renderIcon={ArrowRight} as={RouterLink} to={homeContent.about.ctaUrl}>{homeContent.about.ctaLabel}</Button>
+              <Button {...cms('about.button')} kind="ghost" renderIcon={ArrowRight} as={RouterLink} to={homeContent.about.ctaUrl}>{homeContent.about.ctaLabel}</Button>
             </div>
           </Column>
         </Grid>
@@ -865,12 +876,12 @@ export default function Home({ content = defaultHomeContent }) {
         <Grid>
           <Column lg={10} md={6} sm={4}>
             <Education size={32} className="careers-icon" />
-            <p className="section-label">{homeContent.careers.eyebrow}</p>
-            <h2>{homeContent.careers.title}</h2>
-            <p className="careers-copy">{homeContent.careers.description}</p>
+            <p className="section-label" {...cms('careers.eyebrow')}>{homeContent.careers.eyebrow}</p>
+            <h2 {...cms('careers.title')}>{homeContent.careers.title}</h2>
+            <p className="careers-copy" {...cms('careers.description')}>{homeContent.careers.description}</p>
           </Column>
           <Column lg={6} md={2} sm={4} className="careers-action">
-            <Button kind="secondary" renderIcon={ArrowRight} as={RouterLink} to={homeContent.careers.ctaUrl}>{homeContent.careers.ctaLabel}</Button>
+            <Button {...cms('careers.button')} kind="secondary" renderIcon={ArrowRight} as={RouterLink} to={homeContent.careers.ctaUrl}>{homeContent.careers.ctaLabel}</Button>
           </Column>
         </Grid>
       </section>
@@ -879,12 +890,12 @@ export default function Home({ content = defaultHomeContent }) {
       <section className="contact-section" id="contact">
         <Grid>
           <Column lg={11} md={6} sm={4}>
-            <p className="section-label">{homeContent.cta.eyebrow}</p>
-            <h2>{homeContent.cta.title}</h2>
-            <p className="contact-copy">{homeContent.cta.description}</p>
+            <p className="section-label" {...cms('cta.eyebrow')}>{homeContent.cta.eyebrow}</p>
+            <h2 {...cms('cta.title')}>{homeContent.cta.title}</h2>
+            <p className="contact-copy" {...cms('cta.description')}>{homeContent.cta.description}</p>
           </Column>
           <Column lg={5} md={2} sm={4} className="contact-action">
-            <Button kind="primary" renderIcon={ArrowRight} as={RouterLink} to={homeContent.cta.url}>{homeContent.cta.label}</Button>
+            <Button {...cms('cta.button')} kind="primary" renderIcon={ArrowRight} as={RouterLink} to={homeContent.cta.url}>{homeContent.cta.label}</Button>
           </Column>
         </Grid>
       </section>

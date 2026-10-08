@@ -1,4 +1,4 @@
-import { auditStatement, cryptoRandomId, nowIso, SYSTEM_ACTOR } from './records.js'
+import { auditStatement, cryptoRandomId, nowIso } from './records.js'
 import { httpError } from './http.js'
 
 export const MAX_UPLOAD_BYTES = 10 * 1024 * 1024
@@ -36,7 +36,7 @@ export async function getMedia(db, id) {
   return { ...toMediaDto(row), usage: await findUsage(db, row) }
 }
 
-export async function uploadMedia(request, env) {
+export async function uploadMedia(request, env, actor) {
   const bucket = requireBucket(env)
   const declaredLength = Number(request.headers.get('content-length') || 0)
   if (declaredLength > MAX_UPLOAD_BYTES + 64 * 1024) {
@@ -92,9 +92,9 @@ export async function uploadMedia(request, env) {
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       ).bind(
         id, r2Key, filename, String(file.name || '').slice(0, 255) || null, detectedType, bytes.byteLength,
-        width, height, altText, publicUrl, createdAt, SYSTEM_ACTOR,
+        width, height, altText, publicUrl, createdAt, actor,
       ),
-      auditStatement(env.CMS_DB, { action: 'media_uploaded', after: { id, r2Key, filename, mimeType: detectedType } }),
+      auditStatement(env.CMS_DB, { action: 'media_uploaded', after: { id, r2Key, filename, mimeType: detectedType }, actor }),
     ])
   } catch (error) {
     await bucket.delete(r2Key)
@@ -104,7 +104,7 @@ export async function uploadMedia(request, env) {
   return getMedia(env.CMS_DB, id)
 }
 
-export async function updateMediaAlt(db, id, altText) {
+export async function updateMediaAlt(db, id, altText, actor) {
   if (typeof altText !== 'string') throw httpError(400, '"altText" must be a string')
   const existing = await db.prepare('SELECT alt_text FROM cms_media WHERE id = ?').bind(id).first()
   if (!existing) return null
@@ -112,12 +112,12 @@ export async function updateMediaAlt(db, id, altText) {
   const nextAlt = cleanAlt(altText)
   await db.batch([
     db.prepare('UPDATE cms_media SET alt_text = ? WHERE id = ?').bind(nextAlt, id),
-    auditStatement(db, { action: 'media_alt_updated', before: { id, altText: existing.alt_text }, after: { id, altText: nextAlt } }),
+    auditStatement(db, { action: 'media_alt_updated', before: { id, altText: existing.alt_text }, after: { id, altText: nextAlt }, actor }),
   ])
   return getMedia(db, id)
 }
 
-export async function deleteMedia(env, id) {
+export async function deleteMedia(env, id, actor) {
   const media = await getMedia(env.CMS_DB, id)
   if (!media) return null
   if (media.usage.length > 0) {
@@ -136,6 +136,7 @@ export async function deleteMedia(env, id) {
   await auditStatement(env.CMS_DB, {
     action: 'media_deleted',
     before: { id, r2Key: media.r2Key, filename: media.filename },
+    actor,
   }).run()
   await requireBucket(env).delete(media.r2Key)
   return { deleted: true, id }

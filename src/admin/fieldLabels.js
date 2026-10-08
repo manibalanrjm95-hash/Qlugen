@@ -65,8 +65,22 @@ export const LINE_ARRAYS = {
 
 export const BLOCK_TYPES = ['paragraph', 'heading', 'quote', 'divider']
 
-export function labelFor(key) {
+// Labels that depend on the surrounding group, e.g. seo.title -> "SEO Title", hero.image -> "Banner Image".
+// The page's top-level group is keyed by '' (so a page's own `title` reads "Page Title").
+const CONTEXT_LABELS = {
+  '': { title: 'Page Title' },
+  seo: { title: 'SEO Title', description: 'Meta Description', ogImage: 'Social Share Image', ogImageAlt: 'Social Share Image Alt Text', breadcrumbLabel: 'Breadcrumb Label' },
+  hero: { title: 'Hero Heading', image: 'Banner Image', cta: 'Button' },
+  cta: { heading: 'Heading', sub: 'Supporting Text', label: 'Button Text', url: 'Button Link' },
+  endCta: { text: 'Heading', label: 'Button Text', url: 'Button Link' },
+  primaryLink: { label: 'Button Text', url: 'Button Link' },
+  secondaryLink: { label: 'Button Text', url: 'Button Link' },
+}
+
+export function labelFor(key, parentKey) {
   if (typeof key === 'number') return `Item ${key + 1}`
+  const contextual = parentKey !== undefined && CONTEXT_LABELS[parentKey]?.[key]
+  if (contextual) return contextual
   if (LABELS[key]) return LABELS[key]
   return friendlyLabel(key)
     .replace(/\bUrl\b/g, 'URL')
@@ -78,8 +92,10 @@ export function labelFor(key) {
     .replace(/\bAlt$/, 'Alt Text')
 }
 
-export function itemNameFor(listKey) {
+// Name for one entry of a list: "Card" for cards.items, "Step" for steps, ...
+export function itemNameFor(listKey, parentKey) {
   if (ITEM_NAMES[listKey]) return ITEM_NAMES[listKey]
+  if (listKey === 'items' && typeof parentKey === 'string' && parentKey) return itemNameFor(parentKey)
   const label = labelFor(listKey)
   if (/ies$/.test(label)) return label.replace(/ies$/, 'y')
   if (/(ss|us)$/.test(label)) return label
