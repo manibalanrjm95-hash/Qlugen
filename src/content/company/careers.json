@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "eyebrow": "Careers",
+    "title": "Build enterprise technology that gets reused.",
+    "description": "Qlugen is a place for people who want to solve hard problems, work across the full breadth of enterprise technology, and see their work create real outcomes.",
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80",
+    "collage": [
+      {
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": ""
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": ""
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "culture": {
+    "eyebrow": "Why Qlugen",
+    "title": "Meaningful problems, exceptional colleagues",
+    "items": [
+      {
+        "title": "Craft",
+        "description": "We care about how things are built. Depth, rigour and quality are how we work — not an afterthought."
+      },
+      {
+        "title": "Impact",
+        "description": "We work on the technology challenges that matter most to large organisations, and we measure ourselves by outcomes."
+      },
+      {
+        "title": "Ownership",
+        "description": "People here take responsibility from first conversation to lasting capability — and grow quickly because of it."
+      }
+    ]
+  },
+  "working": {
+    "eyebrow": "How we work",
+    "title": "Outcomes, ownership and growth",
+    "body": "Our teams start with the outcome, design for the people who use what we build, and take ownership from first conversation to lasting capability.",
+    "linkLabel": "See how we work",
+    "linkUrl": "/how-we-work",
+    "principles": [
+      "Start with the outcome",
+      "Design for real people",
+      "Build for scale from day one",
+      "Leave lasting capability behind"
+    ]
+  },
+  "areas": {
+    "eyebrow": "Areas we hire",
+    "title": "Where you might fit",
+    "items": [
+      "Data Engineers",
+      "AI Engineers",
+      "Cloud Engineers",
+      "Software Engineers",
+      "Analytics Engineers",
+      "Architects / Leads"
+    ]
+  },
+  "openRoles": {
+    "eyebrow": "Open roles",
+    "title": "Introduce yourself",
+    "body": "We don't have published openings right now. You can still introduce yourself — we're always glad to hear from talented people who want to build what enterprises use next.",
+    "linkLabel": "Get in touch",
+    "linkUrl": "/contact"
+  },
+  "cta": {
+    "heading": "Think you'd be a fit?",
+    "sub": "Tell us about yourself and what you'd like to work on.",
+    "label": "Introduce yourself",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Technology Careers | Qlugen",
+    "description": "Explore working at Qlugen, where craft, impact and ownership shape opportunities to solve enterprise technology challenges and build lasting capability.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

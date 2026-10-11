@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "eyebrow": "Industry · Retail & Commerce",
+    "title": "Connect every part of commerce.",
+    "description": "From customer experience to supply chain, Qlugen helps retail and commerce organisations build the connected operations and intelligence needed to compete.",
+    "image": "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=1800&q=80",
+    "journey": [
+      "Physical Store",
+      "Online",
+      "Mobile",
+      "Supply Chain",
+      "Analytics"
+    ]
+  },
+  "challenge": {
+    "eyebrow": "Commerce challenge",
+    "title": "Competing on connected operations",
+    "items": [
+      {
+        "title": "A widening set of channels",
+        "description": "Retail and commerce organisations operate across more channels, fulfilment models and customer expectations than ever. The organisations that compete effectively connect their operations most coherently.",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": ""
+      },
+      {
+        "title": "Experience meets operations",
+        "description": "Customer experience is only as strong as the inventory, supply chain and intelligence behind it. Connecting the front and back of commerce is where advantage is built.",
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "help": {
+    "eyebrow": "Where we help",
+    "title": "Connected commerce, end to end",
+    "areas": [
+      "Customer Experience",
+      "Commerce Platforms",
+      "Inventory Visibility",
+      "Supply Chain",
+      "Retail Analytics",
+      "AI",
+      "Store Technology",
+      "Automation"
+    ]
+  },
+  "connected": {
+    "eyebrow": "Connected commerce",
+    "title": "Five interconnected capabilities",
+    "steps": [
+      "Customer Experience",
+      "Commerce Engine",
+      "Inventory",
+      "Supply Chain",
+      "Intelligence"
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Business priorities",
+    "title": "What retail & commerce leaders focus on",
+    "items": [
+      {
+        "title": "Connected Commerce"
+      },
+      {
+        "title": "Better Experience"
+      },
+      {
+        "title": "Inventory Visibility"
+      },
+      {
+        "title": "Operational Efficiency"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Turn commerce data into timely decisions.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Automation",
+        "description": "Remove friction across commerce operations.",
+        "url": "/capabilities/automation"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "AI & Agent Development",
+        "description": "Intelligent systems for demand and service.",
+        "url": "/capabilities/ai-agent-development"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Transform what comes next.",
+    "sub": "Tell us about your industry challenge.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Retail & Commerce Technology | Qlugen",
+    "description": "Connect customer experiences, supply chains and retail operations with the data and technology foundations needed to compete in commerce.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Retail & Commerce"
+  }
+}

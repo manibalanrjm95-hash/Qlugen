@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "eyebrow": "Capabilities",
+    "title": "Technology that moves the enterprise forward.",
+    "description": "Seven connected capabilities. One enterprise technology partner — Qlugen.",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80"
+  },
+  "grid": {
+    "exploreLabel": "Explore",
+    "items": [
+      {
+        "eyebrow": "Data & Analytics",
+        "title": "Turn data into decisions",
+        "url": "/capabilities/data-analytics",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      },
+      {
+        "eyebrow": "AI & Agent Development",
+        "title": "Intelligent systems that act",
+        "url": "/capabilities/ai-agent-development",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      },
+      {
+        "eyebrow": "Cloud & Infrastructure",
+        "title": "Scale without limits",
+        "url": "/capabilities/cloud-infrastructure",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      },
+      {
+        "eyebrow": "Cybersecurity",
+        "title": "Protect what matters most",
+        "url": "/capabilities/cybersecurity",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      },
+      {
+        "eyebrow": "Automation",
+        "title": "Eliminate friction at scale",
+        "url": "/capabilities/automation",
+        "image": "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      },
+      {
+        "eyebrow": "Digital Transformation",
+        "title": "Reimagine the enterprise",
+        "url": "/capabilities/digital-transformation",
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      },
+      {
+        "eyebrow": "Sustainability",
+        "title": "Build a responsible future",
+        "url": "/capabilities/sustainability",
+        "image": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1600&q=80",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Have a transformation challenge?",
+    "sub": "Talk to our team about your enterprise technology priorities.",
+    "label": "Talk to our team",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Technology Capabilities | Qlugen",
+    "description": "Explore seven connected Qlugen capabilities, from data and AI to cloud, security, automation, digital transformation and sustainability.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Capabilities"
+  }
+}

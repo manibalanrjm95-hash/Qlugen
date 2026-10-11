@@ -3,6 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "imports": {
+    "#seo-content": {
+      "browser": "./src/seo/content.browser.js",
+      "default": "./src/seo/content.node.js"
+    }
+  },
   "engines": {
     "node": ">=22.12.0"
   },
@@ -11,18 +17,50 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "deploy:firebase": "npm run build && firebase deploy --only hosting --project qlugen-enterprise"
+    "cms:migrate": "wrangler d1 migrations apply qlugen-cms-local --local --config worker/wrangler.toml",
+    "cms:seed": "node worker/scripts/seed-d1.mjs",
+    "cms:dev": "wrangler dev --local --config worker/wrangler.toml",
+    "cms:dev:auth": "node worker/scripts/dev-auth.mjs",
+    "cms:fb:build": "npm --prefix functions run build",
+    "cms:fb:test": "npm --prefix functions test",
+    "cms:fb:test:runtime": "node functions/test-emulator/storage-runtime.mjs",
+    "cms:fb:test:auth": "npm --prefix functions run build && node functions/test-emulator/auth-gate.mjs",
+    "cms:fb:test:data": "npm --prefix functions run build && node functions/test-emulator/data-flow.mjs",
+    "cms:fb:emulators": "npm --prefix functions run build && firebase emulators:start --only auth,functions,firestore,storage --project demo-qlugen-cms",
+    "cms:fb:seed": "node functions/scripts/seed-firestore.mjs --emulators",
+    "cms:fb:snapshots": "node functions/scripts/rebuild-snapshots.mjs --emulators",
+    "cms:test": "node worker/scripts/test-api.mjs",
+    "cms:test:admin": "node worker/scripts/test-admin-ui.mjs",
+    "deploy:firebase": "npm run build && firebase deploy --only hosting --project qlugen-enterprise",
+    "cms:test:runtime": "node worker/scripts/test-runtime.mjs",
+    "cms:staging:check": "node worker/scripts/staging.mjs check",
+    "cms:staging:build": "node worker/scripts/staging.mjs build",
+    "cms:staging:migrate": "node worker/scripts/staging.mjs migrate",
+    "cms:staging:seed": "node worker/scripts/staging.mjs seed",
+    "cms:staging:deploy": "node worker/scripts/staging.mjs deploy",
+    "cms:test:cleanup": "node worker/scripts/cleanup-test-media.mjs",
+    "cms:test:pages": "node worker/scripts/test-pages.mjs",
+    "cms:test:editor": "node worker/scripts/test-live-editor.mjs",
+    "cms:test:addpage": "node worker/scripts/test-add-page.mjs",
+    "cms:test:removal": "node worker/scripts/test-page-removal.mjs",
+    "cms:test:auth": "node worker/scripts/test-firebase-auth.mjs",
+    "cms:test:coverage": "node worker/scripts/test-home-coverage.mjs && node worker/scripts/test-template-coverage.mjs"
   },
   "dependencies": {
     "@carbon/icons-react": "^11.86.0",
     "@carbon/react": "^1.114.0",
     "@carbon/styles": "^1.113.0",
+    "firebase": "^13.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.3",
     "sass": "^1.103.1"
   },
   "devDependencies": {
+    "@babel/generator": "^8.0.6",
+    "@babel/parser": "^8.0.6",
+    "@babel/traverse": "^8.0.6",
+    "@babel/types": "^8.0.6",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
@@ -30,6 +68,7 @@
     "oxlint": "^1.79.0",
     "playwright": "^1.62.1",
     "sharp": "^0.35.4",
-    "vite": "^8.2.2"
+    "vite": "^8.2.2",
+    "wrangler": "^4.148.0"
   }
 }

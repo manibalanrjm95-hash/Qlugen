@@ -1,0 +1,129 @@
+{
+  "slug": "ai-readiness-assessment",
+  "title": "AI Readiness Assessment",
+  "hero": {
+    "eyebrow": "Assessment",
+    "title": "AI Readiness Assessment",
+    "description": "Baseline data, platform, governance and use-case readiness before scaling AI.",
+    "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "A readiness scorecard with evidence and prioritized actions.",
+    "items": [
+      {
+        "title": "Data readiness baseline",
+        "description": "Assess the quality, availability and usability of enterprise data sources before AI programs move into delivery."
+      },
+      {
+        "title": "Platform & architecture review",
+        "description": "Review platforms, integration patterns and architecture constraints that influence AI readiness at scale."
+      },
+      {
+        "title": "Governance and risk assessment",
+        "description": "Identify governance, privacy and risk considerations that must be addressed before wider AI adoption."
+      },
+      {
+        "title": "Use-case portfolio",
+        "description": "Prioritize use cases by feasibility, business relevance, data dependency and operational readiness."
+      },
+      {
+        "title": "90-day action roadmap",
+        "description": "Convert readiness findings into a practical near-term action plan for teams, platforms and governance owners."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Architecture & Advisory",
+      "Data & AI Engineering",
+      "AI Governance"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Data readiness baseline",
+        "description": "Assess the quality, availability and usability of enterprise data sources before AI programs move into delivery."
+      },
+      {
+        "title": "Platform & architecture review",
+        "description": "Review platforms, integration patterns and architecture constraints that influence AI readiness at scale."
+      },
+      {
+        "title": "Governance and risk assessment",
+        "description": "Identify governance, privacy and risk considerations that must be addressed before wider AI adoption."
+      },
+      {
+        "title": "Use-case portfolio",
+        "description": "Prioritize use cases by feasibility, business relevance, data dependency and operational readiness."
+      },
+      {
+        "title": "90-day action roadmap",
+        "description": "Convert readiness findings into a practical near-term action plan for teams, platforms and governance owners."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "ai-governance",
+      "qlugen-context"
+    ]
+  },
+  "cta": {
+    "heading": "Start an AI Readiness Assessment conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "AI Readiness Assessment | Qlugen",
+    "description": "Baseline data, platform, governance and use-case readiness before scaling AI with a readiness scorecard and prioritised actions.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "AI Readiness Assessment"
+  }
+}

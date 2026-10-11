@@ -1,0 +1,129 @@
+{
+  "slug": "ai-governance",
+  "title": "AI Governance",
+  "hero": {
+    "eyebrow": "Product Concept",
+    "title": "AI Governance",
+    "description": "Build controls around real AI delivery.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "Evidence-based governance designed to support delivery.",
+    "items": [
+      {
+        "title": "AI use-case registry",
+        "description": "Maintain a governed view of proposed, active and retired AI use cases across business and technology teams."
+      },
+      {
+        "title": "Risk & approval workflows",
+        "description": "Route AI initiatives through risk review, policy checks and approval steps appropriate to their impact."
+      },
+      {
+        "title": "Model / agent inventory",
+        "description": "Track models, agents, tools, owners and dependencies so oversight can follow real AI delivery."
+      },
+      {
+        "title": "Data access controls",
+        "description": "Align AI behavior with governed access to data, systems and enterprise knowledge sources."
+      },
+      {
+        "title": "Evaluation & observability hooks",
+        "description": "Add evaluation and observability hooks so teams can monitor quality, drift, usage and control signals."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Architecture & Advisory",
+      "Data & AI Engineering",
+      "Software Engineering"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "AI use-case registry",
+        "description": "Maintain a governed view of proposed, active and retired AI use cases across business and technology teams."
+      },
+      {
+        "title": "Risk & approval workflows",
+        "description": "Route AI initiatives through risk review, policy checks and approval steps appropriate to their impact."
+      },
+      {
+        "title": "Model / agent inventory",
+        "description": "Track models, agents, tools, owners and dependencies so oversight can follow real AI delivery."
+      },
+      {
+        "title": "Data access controls",
+        "description": "Align AI behavior with governed access to data, systems and enterprise knowledge sources."
+      },
+      {
+        "title": "Evaluation & observability hooks",
+        "description": "Add evaluation and observability hooks so teams can monitor quality, drift, usage and control signals."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "ai-readiness-assessment",
+      "data-agent-platform"
+    ]
+  },
+  "cta": {
+    "heading": "Start an AI Governance conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "AI Governance | Qlugen",
+    "description": "Build evidence-based governance around real AI delivery, including use-case registries, approvals, inventory, controls and evaluation hooks.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "AI Governance"
+  }
+}

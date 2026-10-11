@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "eyebrow": "Products & Platforms",
+    "title": "Reusable technology for repeated enterprise problems.",
+    "description": "Qlugen products, accelerators and roadmap platforms help teams move from strategy to production without starting from a blank page."
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "title": "Product-led engineering across Data, AI, Cloud and Analytics",
+    "body": "Some offers are mature accelerators. Some are concepts or roadmap platforms. The maturity label is part of the product, because enterprise buyers need clarity before commitment."
+  },
+  "model": {
+    "eyebrow": "Qlugen model",
+    "title": "Product thinking. Engineering depth. Enterprise impact.",
+    "body": "Reusable IP reduces time-to-value. Engineering adapts it to your environment. Managed services keep outcomes running and improving.",
+    "steps": [
+      {
+        "label": "Product",
+        "desc": "Reusable IP"
+      },
+      {
+        "label": "Consult",
+        "desc": "Architecture"
+      },
+      {
+        "label": "Implement",
+        "desc": "Engineering"
+      },
+      {
+        "label": "Operate",
+        "desc": "Managed services"
+      },
+      {
+        "label": "Learn",
+        "desc": "Better IP"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Have a transformation problem worth productising?",
+    "sub": "Start with the problem. We will help identify the reusable IP, engineering path and operating model behind it.",
+    "label": "Talk to an Architect",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Products & Platforms | Qlugen",
+    "description": "Explore Qlugen products, accelerators and roadmap platforms for AI readiness, data migration, analytics modernisation, governance and cloud optimisation.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Products & Platforms"
+  }
+}

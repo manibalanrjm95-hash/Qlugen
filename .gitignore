@@ -11,9 +11,12 @@ node_modules
 dist
 dist-ssr
 out/
+out-staging/
 .tmp/
 tmp/
 .firebase/
+worker/.tmp/
+worker/.wrangler/
 graphify-out/
 .agents/
 .claude/

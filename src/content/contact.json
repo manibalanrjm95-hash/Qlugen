@@ -1,0 +1,76 @@
+{
+  "intro": {
+    "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "",
+    "eyebrow": "Start a conversation",
+    "title": "Bring us the transformation problem.",
+    "description": "AI readiness, data migration, analytics modernisation, cloud optimisation, governance, engineering teams or managed platforms. Start with a focused conversation.",
+    "contexts": [
+      {
+        "title": "For enterprise enquiries",
+        "description": "Discuss a technology challenge or transformation priority."
+      },
+      {
+        "title": "For partnership",
+        "description": "Explore working with Qlugen as a technology partner."
+      },
+      {
+        "title": "For careers",
+        "description": "Introduce yourself and tell us what you'd like to build."
+      }
+    ]
+  },
+  "form": {
+    "labels": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Work email",
+      "company": "Company",
+      "role": "Role",
+      "interest": "Area of interest",
+      "resume": "Resume",
+      "message": "Message"
+    },
+    "interestPlaceholder": "Select an area",
+    "interests": [
+      "AI readiness & governance",
+      "Data migration",
+      "Analytics modernisation",
+      "Cloud optimisation",
+      "Engineering teams",
+      "Managed analytics & data platforms",
+      "Something else"
+    ],
+    "resumeHelp": "Optional — upload PDF, DOC, or DOCX.",
+    "submitLabel": "Send message",
+    "errors": {
+      "firstName": "First name is required.",
+      "lastName": "Last name is required.",
+      "emailRequired": "Work email is required.",
+      "emailInvalid": "Enter a valid email address.",
+      "company": "Company is required.",
+      "interest": "Please select an area of interest.",
+      "message": "Please tell us a little about your challenge."
+    },
+    "success": {
+      "title": "Thanks — your message is on its way.",
+      "body": "We've received your details and a member of the Qlugen team will be in touch shortly."
+    }
+  },
+  "location": {
+    "title": "Find us",
+    "mapLinkLabel": "Open in Google Maps",
+    "mapLinkUrl": "https://maps.app.goo.gl/8kiQbfDHqUVA6MDU9",
+    "mapTitle": "Qlugen location on Google Maps",
+    "mapEmbedUrl": "https://www.google.com/maps?q=12.9478593,77.5936611&z=17&output=embed"
+  },
+  "closing": {
+    "accent": "Qlugen",
+    "text": "— enterprise technology for organisations ready to move further."
+  },
+  "seo": {
+    "title": "Contact Qlugen | Discuss Your Technology Priorities",
+    "description": "Talk to Qlugen about your enterprise technology challenges, transformation priorities and the business outcomes you want to achieve.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

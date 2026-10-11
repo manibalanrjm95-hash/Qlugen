@@ -1,0 +1,54 @@
+{
+  "intro": {
+    "eyebrow": "Leadership",
+    "title": "Executive leadership",
+    "description": "Leadership shaped by deep enterprise technology experience."
+  },
+  "leader": {
+    "portrait": "/uploads/vinay-pachunoori.webp",
+    "portraitAlt": "Vinay Pachunoori",
+    "eyebrow": "Executive Leadership",
+    "name": "Vinay Pachunoori",
+    "bio": "Vinay Pachunoori brings 23+ years of experience across enterprise technology, digital platforms and large-scale product ecosystems.",
+    "experienceLabel": "Previous Experience",
+    "experience": [
+      {
+        "name": "Oracle",
+        "logo": "/uploads/logos/oracle.svg",
+        "logoAlt": "Oracle"
+      },
+      {
+        "name": "eBay",
+        "logo": "/uploads/logos/ebay.svg",
+        "logoAlt": "eBay"
+      },
+      {
+        "name": "Amazon",
+        "logo": "/uploads/logos/amazon.svg",
+        "logoAlt": "Amazon"
+      },
+      {
+        "name": "Walmart",
+        "logo": "/uploads/logos/walmart.svg",
+        "logoAlt": "Walmart"
+      },
+      {
+        "name": "Coupang",
+        "logo": "/uploads/logos/coupang.svg",
+        "logoAlt": "Coupang"
+      }
+    ],
+    "linkedinLabel": "LinkedIn",
+    "linkedinUrl": "https://www.linkedin.com/in/vinaypachunoori?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "statValue": "23+ Years",
+    "statLabel": "Enterprise technology leadership"
+  },
+  "seo": {
+    "title": "Executive Leadership | Qlugen",
+    "description": "Meet Vinay Pachunoori and explore the enterprise technology, global platform and product ecosystem experience guiding Qlugen.",
+    "ogImage": "/social/qlugen.png",
+    "personDescription": "Enterprise technology leader with 23+ years of experience across Oracle, eBay, Amazon, Walmart and Coupang.",
+    "personProfileUrl": "https://www.linkedin.com/in/vinaypachunoori",
+    "breadcrumbLabel": "Leadership"
+  }
+}

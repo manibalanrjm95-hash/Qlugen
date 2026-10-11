@@ -1,0 +1,129 @@
+{
+  "slug": "data-agent-platform",
+  "title": "Data Agent Platform",
+  "hero": {
+    "eyebrow": "Roadmap",
+    "title": "Data Agent Platform",
+    "description": "Move from dashboards to governed data agents.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "A governed path from conversational analytics to agentic data workflows.",
+    "items": [
+      {
+        "title": "Agent orchestration",
+        "description": "Coordinate data agents, tools and workflow steps so tasks move through controlled enterprise processes."
+      },
+      {
+        "title": "Tool & data permissions",
+        "description": "Limit agent actions by approved data access, tool permissions and operating context."
+      },
+      {
+        "title": "Guardrails",
+        "description": "Apply policy, safety and business-rule guardrails before agents execute sensitive or high-impact actions."
+      },
+      {
+        "title": "Human approval checkpoints",
+        "description": "Keep human review in the loop where decisions require judgment, accountability or operational signoff."
+      },
+      {
+        "title": "Evaluation & observability",
+        "description": "Measure agent behavior, quality and exceptions so teams can improve workflows with evidence."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Software Engineering",
+      "Data & AI Engineering",
+      "AI Governance"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Agent orchestration",
+        "description": "Coordinate data agents, tools and workflow steps so tasks move through controlled enterprise processes."
+      },
+      {
+        "title": "Tool & data permissions",
+        "description": "Limit agent actions by approved data access, tool permissions and operating context."
+      },
+      {
+        "title": "Guardrails",
+        "description": "Apply policy, safety and business-rule guardrails before agents execute sensitive or high-impact actions."
+      },
+      {
+        "title": "Human approval checkpoints",
+        "description": "Keep human review in the loop where decisions require judgment, accountability or operational signoff."
+      },
+      {
+        "title": "Evaluation & observability",
+        "description": "Measure agent behavior, quality and exceptions so teams can improve workflows with evidence."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "qlugen-context",
+      "analytics-migration-factory"
+    ]
+  },
+  "cta": {
+    "heading": "Start an Data Agent Platform conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Data Agent Platform | Qlugen",
+    "description": "A roadmap platform for governed data agents, conversational analytics and agentic data workflows.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Data Agent Platform"
+  }
+}

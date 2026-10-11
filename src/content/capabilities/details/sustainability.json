@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "eyebrow": "Capability · Sustainability",
+    "title": "Build a responsible future.",
+    "description": "Integrate sustainability into enterprise technology strategy with measurement, visibility and operational progress.",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80",
+    "visualImage": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1200&q=80",
+    "visualImageAlt": ""
+  },
+  "challenge": {
+    "eyebrow": "The challenge",
+    "title": "Pressure to measure and act",
+    "body": "Organisations face growing pressure to measure and demonstrate environmental and social responsibility. Most lack the data foundations needed to report accurately and act meaningfully. Sustainability progress starts with trustworthy measurement — and the technology to sustain it."
+  },
+  "impact": {
+    "eyebrow": "Impact framework",
+    "title": "Five areas where technology creates impact",
+    "items": [
+      {
+        "title": "Measurement Foundations",
+        "description": "The data infrastructure to measure environmental and social performance accurately."
+      },
+      {
+        "title": "Operational Efficiency",
+        "description": "Reducing waste and resource consumption through technology and process change."
+      },
+      {
+        "title": "Reporting Integrity",
+        "description": "Accurate, consistent, auditable sustainability reporting stakeholders can trust."
+      },
+      {
+        "title": "Sustainable Technology",
+        "description": "Factoring sustainability into architecture and investment decisions."
+      },
+      {
+        "title": "Stakeholder Confidence",
+        "description": "Trust built on reliable data and demonstrable progress over time."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we deliver",
+    "title": "Our sustainability services",
+    "items": [
+      {
+        "title": "Sustainability Data Strategy",
+        "description": "Establish the data foundations needed to measure performance accurately."
+      },
+      {
+        "title": "ESG Technology Enablement",
+        "description": "Implement the tools and platforms that support ESG data and reporting."
+      },
+      {
+        "title": "Operational Efficiency",
+        "description": "Identify where technology and process change reduce waste."
+      },
+      {
+        "title": "Reporting Visibility",
+        "description": "Improve the accuracy, consistency and auditability of reporting."
+      },
+      {
+        "title": "Sustainable Planning",
+        "description": "Factor sustainability into technology strategy and investment."
+      }
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Outcomes",
+    "title": "What strong sustainability enablement supports",
+    "items": [
+      {
+        "value": "Measurable",
+        "title": "Progress",
+        "description": "Clear, trackable indicators over time."
+      },
+      {
+        "value": "Accurate",
+        "title": "Reporting",
+        "description": "Reporting teams can stand behind."
+      },
+      {
+        "value": "Efficient",
+        "title": "Operations",
+        "description": "Less waste across operations."
+      },
+      {
+        "value": "Trusted",
+        "title": "Confidence",
+        "description": "Stakeholder trust built on reliable data."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Build the trusted data foundations reporting relies on.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Run efficient, well-managed infrastructure.",
+        "url": "/capabilities/cloud-infrastructure"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn sustainability enablement into measurable progress.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Sustainability Enablement | Qlugen",
+    "description": "Integrate sustainability into enterprise technology strategy with measurement, visibility and operational progress supported by Qlugen.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Sustainability"
+  }
+}

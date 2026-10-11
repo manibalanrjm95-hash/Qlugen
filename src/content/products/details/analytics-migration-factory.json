@@ -1,0 +1,129 @@
+{
+  "slug": "analytics-migration-factory",
+  "title": "Analytics Migration Factory",
+  "hero": {
+    "eyebrow": "Accelerator",
+    "title": "Analytics Migration Factory",
+    "description": "Modernize BI estates without losing business meaning.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "A controlled modernization path including Cognos to Power BI and Tableau to Superset.",
+    "items": [
+      {
+        "title": "Report inventory",
+        "description": "Catalogue reports, dashboards, owners, usage patterns and dependencies across the existing analytics estate."
+      },
+      {
+        "title": "Semantic / metric mapping",
+        "description": "Preserve trusted definitions by mapping metrics, dimensions and semantic rules into the target platform."
+      },
+      {
+        "title": "Conversion accelerators",
+        "description": "Use repeatable conversion patterns to reduce manual rebuild effort while keeping business logic visible."
+      },
+      {
+        "title": "Parallel validation",
+        "description": "Validate legacy and modernized outputs side by side before decommissioning existing reporting paths."
+      },
+      {
+        "title": "User adoption & cutover",
+        "description": "Plan rollout, training and cutover so business users retain confidence during analytics modernization."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Managed Analytics & Data",
+      "Data & AI Engineering",
+      "Architecture & Advisory"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Report inventory",
+        "description": "Catalogue reports, dashboards, owners, usage patterns and dependencies across the existing analytics estate."
+      },
+      {
+        "title": "Semantic / metric mapping",
+        "description": "Preserve trusted definitions by mapping metrics, dimensions and semantic rules into the target platform."
+      },
+      {
+        "title": "Conversion accelerators",
+        "description": "Use repeatable conversion patterns to reduce manual rebuild effort while keeping business logic visible."
+      },
+      {
+        "title": "Parallel validation",
+        "description": "Validate legacy and modernized outputs side by side before decommissioning existing reporting paths."
+      },
+      {
+        "title": "User adoption & cutover",
+        "description": "Plan rollout, training and cutover so business users retain confidence during analytics modernization."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "data-migration-factory",
+      "data-agent-platform"
+    ]
+  },
+  "cta": {
+    "heading": "Start an Analytics Migration Factory conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Analytics Migration Factory | Qlugen",
+    "description": "Modernise BI estates with controlled report inventory, semantic mapping, validation and adoption across tools including Power BI and Superset.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Analytics Migration Factory"
+  }
+}

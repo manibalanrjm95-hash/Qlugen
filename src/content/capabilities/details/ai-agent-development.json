@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "eyebrow": "Capability · AI & Agent Development",
+    "title": "Intelligent systems that act.",
+    "description": "Move beyond AI experimentation with practical copilots, agents and intelligent workflows designed around enterprise operations.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1800&q=80",
+    "diagramCenter": "Enterprise",
+    "diagramNodes": [
+      "Orchestrate",
+      "Build",
+      "Discover",
+      "Govern",
+      "Scale"
+    ]
+  },
+  "challenge": {
+    "eyebrow": "The challenge",
+    "title": "Stuck in pilot mode",
+    "body": "AI experiments rarely survive contact with enterprise complexity. Integration gaps, governance concerns, and unclear ROI keep most organisations in pilot mode, delivering demos but not outcomes.",
+    "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "",
+    "captionLabel": "Governed AI",
+    "caption": "From prototype to production-grade enterprise execution."
+  },
+  "statement": "AI creates value when it is connected to systems, workflows and governance rather than isolated as a demo.",
+  "services": {
+    "eyebrow": "What we deliver",
+    "title": "Our AI & agent development services",
+    "items": [
+      {
+        "title": "Enterprise AI Strategy",
+        "description": "Define where AI creates measurable value and build a roadmap that connects use cases to business outcomes."
+      },
+      {
+        "title": "AI Agents",
+        "description": "Engineer purpose-built agents that carry out multi-step tasks across your systems with reliability and control."
+      },
+      {
+        "title": "Copilots",
+        "description": "Embed assistive AI into the tools your teams already use to accelerate everyday work."
+      },
+      {
+        "title": "Generative AI Applications",
+        "description": "Build production-grade generative applications grounded in your enterprise knowledge and data."
+      },
+      {
+        "title": "AI Integration",
+        "description": "Connect AI capabilities to the data sources, applications and workflows where decisions are made."
+      },
+      {
+        "title": "Model Evaluation & Observability",
+        "description": "Continuously measure quality, cost and behaviour so AI systems stay trustworthy in production."
+      },
+      {
+        "title": "Responsible AI Foundations",
+        "description": "Establish the guardrails, oversight and policies that keep AI safe, explainable and compliant."
+      }
+    ]
+  },
+  "agentic": {
+    "eyebrow": "Go further",
+    "title": "The agentic enterprise",
+    "body": "Individual agents create value. Connected, governed agent ecosystems change how the enterprise operates.",
+    "linkLabel": "Explore Qlugen's Agentic Enterprise approach",
+    "linkUrl": "/agentic-ai",
+    "quote": "Enterprise AI becomes durable when strategy, orchestration, governance and delivery move together."
+  },
+  "outcomes": {
+    "eyebrow": "Outcomes",
+    "title": "What strong AI development enables",
+    "items": [
+      {
+        "title": "Faster Workflows",
+        "description": "Work moves through the enterprise with less delay."
+      },
+      {
+        "title": "Less Repetitive Work",
+        "description": "Teams spend less time on manual tasks."
+      },
+      {
+        "title": "Higher Productivity",
+        "description": "People focus on higher-value work."
+      },
+      {
+        "title": "Scalable Intelligence",
+        "description": "AI capability that compounds over time."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Build the decision-ready data foundations AI depends on.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Agentic AI",
+        "title": "Agentic Enterprise",
+        "description": "Design, build and scale governed agent ecosystems.",
+        "url": "/agentic-ai"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn AI development into business impact.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise AI & Agent Development | Qlugen",
+    "description": "Move beyond AI experimentation with practical copilots, agents and intelligent workflows designed around your enterprise operations.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "AI & Agent Development"
+  }
+}

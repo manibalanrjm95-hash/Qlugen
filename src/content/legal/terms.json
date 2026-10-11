@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "eyebrow": "Legal",
+    "title": "Terms of Service",
+    "updated": "Last updated: August 2026",
+    "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80"
+  },
+  "body": [
+    {
+      "type": "heading",
+      "text": "Acceptance"
+    },
+    {
+      "type": "paragraph",
+      "text": "By accessing or using this website, you agree to these Terms of Service. If you do not agree, please do not use the website. This is a general template and should be reviewed with legal counsel before use."
+    },
+    {
+      "type": "heading",
+      "text": "Services"
+    },
+    {
+      "type": "paragraph",
+      "text": "This website provides information about Qlugen and its enterprise technology services. The content is provided for general informational purposes and may be updated or changed at any time without notice."
+    },
+    {
+      "type": "heading",
+      "text": "Intellectual property"
+    },
+    {
+      "type": "paragraph",
+      "text": "Unless otherwise stated, the content on this website, including text, graphics, logos and design, is owned by or licensed to Qlugen and is protected by applicable intellectual property laws. You may not reproduce or reuse this content without permission."
+    },
+    {
+      "type": "heading",
+      "text": "Limitations"
+    },
+    {
+      "type": "paragraph",
+      "text": "This website and its content are provided \"as is\" without warranties of any kind. To the extent permitted by law, Qlugen is not liable for any loss or damage arising from your use of, or reliance on, the website or its content."
+    },
+    {
+      "type": "heading",
+      "text": "Governing law"
+    },
+    {
+      "type": "paragraph",
+      "text": "These Terms are intended to be governed by the laws applicable to Qlugen's principal place of business. The specific governing law and jurisdiction should be confirmed with legal counsel."
+    },
+    {
+      "type": "heading",
+      "text": "Contact"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you have questions about these Terms, please [contact us](/contact)."
+    }
+  ],
+  "seo": {
+    "title": "Terms of Service | Qlugen",
+    "description": "Review the terms for using the Qlugen website, including information about its content, intellectual property and limitations of use.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

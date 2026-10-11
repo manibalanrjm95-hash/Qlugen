@@ -1,0 +1,129 @@
+{
+  "slug": "data-migration-factory",
+  "title": "Data Migration Factory",
+  "hero": {
+    "eyebrow": "Accelerator",
+    "title": "Data Migration Factory",
+    "description": "Reusable discovery, mapping, migration and validation patterns.",
+    "image": "https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "A measurable migration pipeline with reusable engineering assets.",
+    "items": [
+      {
+        "title": "Discovery & profiling",
+        "description": "Profile source systems, data structures and migration dependencies before defining execution waves."
+      },
+      {
+        "title": "Source-to-target mapping",
+        "description": "Document transformation rules, target models and ownership decisions so migration logic is traceable."
+      },
+      {
+        "title": "Automated reconciliation",
+        "description": "Compare migrated data against source records using repeatable checks for completeness and accuracy."
+      },
+      {
+        "title": "Migration wave management",
+        "description": "Sequence migration work by business priority, technical dependency and operational readiness."
+      },
+      {
+        "title": "Cutover & rollback planning",
+        "description": "Prepare controlled transition plans with rollback paths, validation checkpoints and release coordination."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Data & AI Engineering",
+      "Cloud & Platform Engineering",
+      "Managed Analytics & Data"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Discovery & profiling",
+        "description": "Profile source systems, data structures and migration dependencies before defining execution waves."
+      },
+      {
+        "title": "Source-to-target mapping",
+        "description": "Document transformation rules, target models and ownership decisions so migration logic is traceable."
+      },
+      {
+        "title": "Automated reconciliation",
+        "description": "Compare migrated data against source records using repeatable checks for completeness and accuracy."
+      },
+      {
+        "title": "Migration wave management",
+        "description": "Sequence migration work by business priority, technical dependency and operational readiness."
+      },
+      {
+        "title": "Cutover & rollback planning",
+        "description": "Prepare controlled transition plans with rollback paths, validation checkpoints and release coordination."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "analytics-migration-factory",
+      "data-governance"
+    ]
+  },
+  "cta": {
+    "heading": "Start an Data Migration Factory conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Data Migration Factory | Qlugen",
+    "description": "Reusable discovery, mapping, migration and validation patterns for measurable enterprise data migration pipelines.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Data Migration Factory"
+  }
+}

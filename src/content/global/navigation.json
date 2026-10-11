@@ -1,0 +1,152 @@
+{
+  "logoAlt": "Qlugen",
+  "homeLabel": "Qlugen home",
+  "items": [
+    {
+      "label": "Capabilities",
+      "url": "/capabilities",
+      "items": [
+        {
+          "label": "Data & Analytics",
+          "url": "/capabilities/data-analytics"
+        },
+        {
+          "label": "AI & Agent Development",
+          "url": "/capabilities/ai-agent-development"
+        },
+        {
+          "label": "Cloud & Infrastructure",
+          "url": "/capabilities/cloud-infrastructure"
+        },
+        {
+          "label": "Cybersecurity",
+          "url": "/capabilities/cybersecurity"
+        },
+        {
+          "label": "Automation",
+          "url": "/capabilities/automation"
+        },
+        {
+          "label": "Digital Transformation",
+          "url": "/capabilities/digital-transformation"
+        },
+        {
+          "label": "Sustainability",
+          "url": "/capabilities/sustainability"
+        }
+      ]
+    },
+    {
+      "label": "Products & Platforms",
+      "url": "/products",
+      "items": [
+        {
+          "label": "AI Readiness Assessment",
+          "url": "/products/ai-readiness-assessment"
+        },
+        {
+          "label": "Data Migration Factory",
+          "url": "/products/data-migration-factory"
+        },
+        {
+          "label": "Analytics Migration Factory",
+          "url": "/products/analytics-migration-factory"
+        },
+        {
+          "label": "Cloud Optimize",
+          "url": "/products/cloud-optimize"
+        },
+        {
+          "label": "Data Governance",
+          "url": "/products/data-governance"
+        },
+        {
+          "label": "AI Governance",
+          "url": "/products/ai-governance"
+        },
+        {
+          "label": "Qlugen Context",
+          "url": "/products/qlugen-context"
+        },
+        {
+          "label": "Data Agent Platform",
+          "url": "/products/data-agent-platform"
+        }
+      ]
+    },
+    {
+      "label": "Industries",
+      "url": "/industries",
+      "items": [
+        {
+          "label": "Financial Services",
+          "url": "/industries/financial-services"
+        },
+        {
+          "label": "Healthcare",
+          "url": "/industries/healthcare"
+        },
+        {
+          "label": "Retail & Commerce",
+          "url": "/industries/retail-commerce"
+        },
+        {
+          "label": "Manufacturing",
+          "url": "/industries/manufacturing"
+        },
+        {
+          "label": "Government",
+          "url": "/industries/government"
+        },
+        {
+          "label": "Energy & Utilities",
+          "url": "/industries/energy-utilities"
+        }
+      ]
+    },
+    {
+      "label": "Tech Blogs",
+      "url": "/insights"
+    },
+    {
+      "label": "Technology",
+      "url": "/technology"
+    },
+    {
+      "label": "Company",
+      "url": "/company",
+      "items": [
+        {
+          "label": "About Us",
+          "url": "/about"
+        },
+        {
+          "label": "How We Work",
+          "url": "/how-we-work"
+        },
+        {
+          "label": "Executive Team",
+          "url": "/leadership"
+        },
+        {
+          "label": "Careers",
+          "url": "/careers"
+        },
+        {
+          "label": "Contact Us",
+          "url": "/contact"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "label": "Contact Us",
+    "url": "/contact"
+  },
+  "accessibility": {
+    "primaryNavLabel": "Primary navigation",
+    "mobileNavLabel": "Mobile navigation",
+    "openMenuLabel": "Open menu",
+    "closeMenuLabel": "Close menu"
+  }
+}

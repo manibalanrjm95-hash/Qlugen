@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "eyebrow": "Agentic Enterprise · 01",
+    "title": "Orchestrate your agent ecosystem.",
+    "description": "Connect agents, systems, tools, workflows and human approvals into coordinated enterprise processes.",
+    "image": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1800&q=80",
+    "diagramCenter": "Orchestrator",
+    "diagramCenterCaption": "central",
+    "diagramNodes": [
+      "Data",
+      "Process",
+      "Decision",
+      "Comms",
+      "Integration"
+    ]
+  },
+  "why": {
+    "eyebrow": "Why it matters",
+    "title": "Value comes from coordination, not isolation",
+    "body": "Individual agents deliver point solutions. The enterprise value of AI emerges when agents, tools, data and human decisions are coordinated into end-to-end processes. Orchestration is what turns a collection of capabilities into a working system."
+  },
+  "process": {
+    "eyebrow": "How orchestration works",
+    "title": "Four steps to coordinated processes",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Model the process",
+        "description": "Map the end-to-end workflow, decisions and approvals involved."
+      },
+      {
+        "title": "Assign agents & tools",
+        "description": "Determine which agents and systems handle each step."
+      },
+      {
+        "title": "Coordinate execution",
+        "description": "Run steps in sequence with hand-offs and human checkpoints."
+      },
+      {
+        "title": "Monitor & adapt",
+        "description": "Observe outcomes and refine the orchestration over time."
+      }
+    ]
+  },
+  "deliverables": {
+    "eyebrow": "What Qlugen delivers",
+    "title": "Coordinating the whole",
+    "items": [
+      {
+        "title": "Agent Orchestration",
+        "description": "Coordinate multiple agents into coherent, end-to-end processes."
+      },
+      {
+        "title": "Tool Integration",
+        "description": "Give agents controlled access to the systems they need to act."
+      },
+      {
+        "title": "Workflow Coordination",
+        "description": "Sequence steps, hand-offs and dependencies reliably."
+      },
+      {
+        "title": "Human-in-the-Loop Design",
+        "description": "Insert approvals and oversight where judgement matters."
+      },
+      {
+        "title": "Enterprise Connectivity",
+        "description": "Connect orchestration to the systems where work happens."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Explore the agentic stages",
+    "items": [
+      {
+        "eyebrow": "Stage 02",
+        "title": "Build & Run",
+        "description": "Engineer agents that perform reliably.",
+        "url": "/agentic-ai/build-run"
+      },
+      {
+        "eyebrow": "Stage 04",
+        "title": "Govern",
+        "description": "Keep intelligence within trusted boundaries.",
+        "url": "/agentic-ai/govern"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to orchestrate your agent ecosystem?",
+    "sub": "Talk to Qlugen about connecting agents into coordinated processes.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise AI Agent Orchestration | Qlugen",
+    "description": "Connect AI agents, systems, tools, workflows and human approvals into coordinated enterprise processes with Qlugen.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Orchestrate"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "eyebrow": "Capability · Data & Analytics",
+    "title": "Turn data into decisions.",
+    "description": "Create trusted data foundations that give teams faster access to meaningful, reliable intelligence.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=80",
+    "dashboard": {
+      "caption": "Users · Last 7 days · Median",
+      "title": "Load time vs bounce rate",
+      "stats": [
+        {
+          "value": "57.1%",
+          "label": "Engagement"
+        },
+        {
+          "value": "2.7M",
+          "label": "Page views"
+        },
+        {
+          "value": "40.6%",
+          "label": "Bounce rate"
+        }
+      ]
+    }
+  },
+  "challenge": {
+    "eyebrow": "The challenge",
+    "title": "Data everywhere, intelligence nowhere",
+    "body": "Enterprises sit on vast amounts of data but struggle to turn it into timely, trusted intelligence. Fragmented systems, poor data quality, and siloed ownership slow down decisions and reduce confidence across the organisation.",
+    "statValue": "73%",
+    "statLabel": "of enterprise data goes unused for analytics and decision-making."
+  },
+  "services": {
+    "eyebrow": "What we deliver",
+    "title": "Our data & analytics services",
+    "items": [
+      {
+        "title": "Data Strategy & Architecture",
+        "description": "Define the target-state data architecture, ownership model and roadmap that align data investment with business goals."
+      },
+      {
+        "title": "Data Platforms",
+        "description": "Design and build modern, scalable data platforms that consolidate fragmented sources into trusted foundations."
+      },
+      {
+        "title": "Business Intelligence",
+        "description": "Deliver dashboards and reporting that give teams timely, self-service access to the metrics that matter."
+      },
+      {
+        "title": "Advanced Analytics",
+        "description": "Apply statistical and predictive techniques to surface patterns, forecast outcomes and inform strategy."
+      },
+      {
+        "title": "Data Governance",
+        "description": "Establish quality, lineage, cataloguing and access controls that make enterprise data trustworthy and compliant."
+      },
+      {
+        "title": "AI-Ready Data Foundations",
+        "description": "Prepare clean, well-structured, well-governed data pipelines that make AI and machine learning viable at scale."
+      }
+    ]
+  },
+  "help": {
+    "eyebrow": "How Qlugen helps",
+    "title": "From raw data to reliable intelligence",
+    "items": [
+      {
+        "title": "Unify fragmented data",
+        "description": "Consolidate siloed sources into a single, governed foundation teams can trust."
+      },
+      {
+        "title": "Make insight self-service",
+        "description": "Put timely, reliable metrics in front of the people who make decisions."
+      },
+      {
+        "title": "Prepare for AI",
+        "description": "Build the clean, well-structured pipelines that make analytics and AI viable at scale."
+      }
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Outcomes",
+    "title": "What strong data & analytics enables",
+    "items": [
+      {
+        "value": "73%",
+        "title": "Data Utilisation",
+        "description": "Enterprise data is often unused. We change that."
+      },
+      {
+        "value": "3x",
+        "title": "Faster Reporting",
+        "description": "Reduced time from question to answer."
+      },
+      {
+        "value": "1",
+        "title": "Source of Truth",
+        "description": "Consistent, governed data across teams."
+      },
+      {
+        "value": "100%",
+        "title": "Traceable Lineage",
+        "description": "Every metric backed by clear provenance."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "AI & Agent Development",
+        "description": "Turn decision-ready data into intelligent systems that act.",
+        "url": "/capabilities/ai-agent-development"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Build the scalable foundations modern data platforms depend on.",
+        "url": "/capabilities/cloud-infrastructure"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Turn data & analytics into business impact.",
+    "sub": "Talk to Qlugen about your priorities.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Enterprise Data & Analytics | Qlugen",
+    "description": "Create trusted data foundations with Qlugen, giving enterprise teams faster access to reliable analytics and intelligence for better decisions.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Data & Analytics"
+  }
+}

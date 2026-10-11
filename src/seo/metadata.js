@@ -1,6 +1,6 @@
-import { seoPages } from './pages.js'
+import { seoCatalogue } from './pages.js'
 
-export const socialImagePath = '/social/qlugen.png'
+const { site, pages, articles, breadcrumbs, person } = seoCatalogue
 
 export function normalisePath(pathname) {
   return pathname.split(/[?#]/)[0].replace(/\/+$/, '') || '/'
@@ -20,13 +20,14 @@ export function validateOrigin(origin) {
 export function metadataTags(pathname, origin) {
   validateOrigin(origin)
   const path = normalisePath(pathname)
-  const knownPage = Object.hasOwn(seoPages, path)
-  const page = knownPage ? seoPages[path] : {
-    title: 'Page Not Found | Qlugen',
-    description: 'The requested Qlugen page could not be found. Explore our enterprise technology capabilities or contact our team.',
-  }
+  const knownPage = Object.hasOwn(pages, path)
+  const page = knownPage ? pages[path] : site.notFound
   const canonical = new URL(path, origin).href
-  const image = new URL(socialImagePath, origin).href
+  const imagePath = page.ogImage || site.defaultOgImage
+  const image = new URL(imagePath, origin).href
+  // Dimensions and alt text are known only for the default social card.
+  const defaultImage = imagePath === site.defaultOgImage
+  const imageAlt = defaultImage ? site.ogImageAlt : page.title
   const meta = (key, content) => ({
     tag: 'meta', attrs: { [key.startsWith('og:') ? 'property' : 'name']: key, content },
   })
@@ -37,18 +38,16 @@ export function metadataTags(pathname, origin) {
     meta('og:title', page.title),
     meta('og:description', page.description),
     meta('og:type', path.startsWith('/insights/') && knownPage ? 'article' : 'website'),
-    meta('og:site_name', 'Qlugen'),
+    meta('og:site_name', site.siteName),
     ...(knownPage ? [meta('og:url', canonical)] : []),
     meta('og:image', image),
-    meta('og:image:type', 'image/png'),
-    meta('og:image:width', '1200'),
-    meta('og:image:height', '630'),
-    meta('og:image:alt', 'Qlugen logo'),
+    ...(defaultImage ? [meta('og:image:type', 'image/png'), meta('og:image:width', '1200'), meta('og:image:height', '630')] : []),
+    meta('og:image:alt', imageAlt),
     meta('twitter:card', 'summary_large_image'),
     meta('twitter:title', page.title),
     meta('twitter:description', page.description),
     meta('twitter:image', image),
-    meta('twitter:image:alt', 'Qlugen logo'),
+    meta('twitter:image:alt', imageAlt),
   ]
 }
 
@@ -58,93 +57,42 @@ export function escapeHtml(value) {
   })[character])
 }
 
-const articleData = {
-  '/insights/ai-pilots-to-enterprise-impact': {
-    headline: 'From AI pilots to enterprise impact',
-    description: 'Why enterprise AI depends on operating models, integration and governance as much as the models themselves.',
-    datePublished: '2026-08-01',
-  },
-  '/insights/modernise-without-slowing-business': {
-    headline: 'Modernise without slowing the business',
-    description: 'How organisations can reduce legacy complexity while protecting the operations they depend on today.',
-    datePublished: '2026-07-01',
-  },
-  '/insights/agentic-enterprise-operating-model': {
-    headline: 'Designing the operating model for an agentic enterprise',
-    description: 'What changes when AI agents become active participants in enterprise workflows.',
-    datePublished: '2026-06-01',
-  },
-}
-
-const breadcrumbMap = {
-  '/products/ai-readiness-assessment':      [['Products & Platforms', '/products'], ['AI Readiness Assessment', '/products/ai-readiness-assessment']],
-  '/products/data-migration-factory':       [['Products & Platforms', '/products'], ['Data Migration Factory', '/products/data-migration-factory']],
-  '/products/analytics-migration-factory':  [['Products & Platforms', '/products'], ['Analytics Migration Factory', '/products/analytics-migration-factory']],
-  '/products/cloud-optimize':               [['Products & Platforms', '/products'], ['Cloud Optimize', '/products/cloud-optimize']],
-  '/products/data-governance':              [['Products & Platforms', '/products'], ['Data Governance', '/products/data-governance']],
-  '/products/ai-governance':                [['Products & Platforms', '/products'], ['AI Governance', '/products/ai-governance']],
-  '/products/qlugen-context':               [['Products & Platforms', '/products'], ['Qlugen Context', '/products/qlugen-context']],
-  '/products/data-agent-platform':          [['Products & Platforms', '/products'], ['Data Agent Platform', '/products/data-agent-platform']],
-  '/capabilities/data-analytics':           [['Capabilities', '/capabilities'], ['Data & Analytics', '/capabilities/data-analytics']],
-  '/capabilities/ai-agent-development':     [['Capabilities', '/capabilities'], ['AI & Agent Development', '/capabilities/ai-agent-development']],
-  '/capabilities/cloud-infrastructure':     [['Capabilities', '/capabilities'], ['Cloud & Infrastructure', '/capabilities/cloud-infrastructure']],
-  '/capabilities/cybersecurity':            [['Capabilities', '/capabilities'], ['Cybersecurity', '/capabilities/cybersecurity']],
-  '/capabilities/automation':               [['Capabilities', '/capabilities'], ['Automation', '/capabilities/automation']],
-  '/capabilities/digital-transformation':   [['Capabilities', '/capabilities'], ['Digital Transformation', '/capabilities/digital-transformation']],
-  '/capabilities/sustainability':           [['Capabilities', '/capabilities'], ['Sustainability', '/capabilities/sustainability']],
-  '/industries/financial-services':         [['Industries', '/industries'], ['Financial Services', '/industries/financial-services']],
-  '/industries/healthcare':                 [['Industries', '/industries'], ['Healthcare', '/industries/healthcare']],
-  '/industries/retail-commerce':            [['Industries', '/industries'], ['Retail & Commerce', '/industries/retail-commerce']],
-  '/industries/manufacturing':              [['Industries', '/industries'], ['Manufacturing', '/industries/manufacturing']],
-  '/industries/government':                 [['Industries', '/industries'], ['Government', '/industries/government']],
-  '/industries/energy-utilities':           [['Industries', '/industries'], ['Energy & Utilities', '/industries/energy-utilities']],
-  '/agentic-ai/orchestrate':                [['Agentic AI', '/agentic-ai'], ['Orchestrate', '/agentic-ai/orchestrate']],
-  '/agentic-ai/build-run':                  [['Agentic AI', '/agentic-ai'], ['Build & Run', '/agentic-ai/build-run']],
-  '/agentic-ai/discover':                   [['Agentic AI', '/agentic-ai'], ['Discover', '/agentic-ai/discover']],
-  '/agentic-ai/govern':                     [['Agentic AI', '/agentic-ai'], ['Govern', '/agentic-ai/govern']],
-  '/agentic-ai/scale':                      [['Agentic AI', '/agentic-ai'], ['Scale', '/agentic-ai/scale']],
-  '/insights/ai-pilots-to-enterprise-impact':      [['Insights', '/insights'], ['From AI pilots to enterprise impact', '/insights/ai-pilots-to-enterprise-impact']],
-  '/insights/modernise-without-slowing-business':  [['Insights', '/insights'], ['Modernise without slowing the business', '/insights/modernise-without-slowing-business']],
-  '/insights/agentic-enterprise-operating-model':  [['Insights', '/insights'], ['Designing the operating model for an agentic enterprise', '/insights/agentic-enterprise-operating-model']],
-  '/leadership': [['Company', '/company'], ['Leadership', '/leadership']],
-}
-
 function renderJsonLd(pathname, origin) {
   const path = normalisePath(pathname)
   const graphs = []
-  const qlugenOrg = { '@type': 'Organization', name: 'Qlugen', url: origin + '/' }
+  const qlugenOrg = { '@type': 'Organization', name: site.siteName, url: origin + '/' }
 
   // ── Homepage: WebSite + Organization ──────────────────────────────────────
   if (path === '/') {
     graphs.push(
-      { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Qlugen', url: origin + '/' },
-      { '@context': 'https://schema.org', '@type': 'Organization', name: 'Qlugen', url: origin + '/', logo: origin + '/favicon.png' },
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: site.siteName, url: origin + '/' },
+      { '@context': 'https://schema.org', '@type': 'Organization', name: site.siteName, url: origin + '/', logo: origin + '/favicon.png' },
     )
   }
 
   // ── Leadership: Person ────────────────────────────────────────────────────
-  if (path === '/leadership') {
+  if (path === person.route) {
     graphs.push({
       '@context': 'https://schema.org',
       '@type': 'Person',
-      name: 'Vinay Pachunoori',
-      url: origin + '/leadership',
+      name: person.name,
+      url: origin + person.route,
       worksFor: qlugenOrg,
-      description: 'Enterprise technology leader with 23+ years of experience across Oracle, eBay, Amazon, Walmart and Coupang.',
-      sameAs: ['https://www.linkedin.com/in/vinaypachunoori'],
+      description: person.description,
+      sameAs: person.sameAs,
     })
   }
 
   // ── Insight articles: Article ─────────────────────────────────────────────
-  if (Object.hasOwn(articleData, path)) {
-    const a = articleData[path]
+  if (Object.hasOwn(articles, path)) {
+    const a = articles[path]
     graphs.push({
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: a.headline,
       description: a.description,
       datePublished: a.datePublished,
-      image: origin + '/social/qlugen.png',
+      image: new URL(pages[path].ogImage || site.defaultOgImage, origin).href,
       author: qlugenOrg,
       publisher: { ...qlugenOrg, '@type': 'Organization', logo: { '@type': 'ImageObject', url: origin + '/favicon.png' } },
       url: origin + path,
@@ -153,8 +101,8 @@ function renderJsonLd(pathname, origin) {
   }
 
   // ── BreadcrumbList for hierarchical sub-pages ─────────────────────────────
-  if (Object.hasOwn(breadcrumbMap, path)) {
-    const crumbs = [['Home', '/'], ...breadcrumbMap[path]]
+  if (Object.hasOwn(breadcrumbs, path)) {
+    const crumbs = [[site.homeBreadcrumbLabel, '/'], ...breadcrumbs[path]]
     graphs.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',

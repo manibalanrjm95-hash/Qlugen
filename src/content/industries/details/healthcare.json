@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "eyebrow": "Industry · Healthcare",
+    "title": "Connected technology for better healthcare operations.",
+    "description": "Qlugen helps healthcare organisations connect information, streamline operations and build digital foundations that support better outcomes for clinicians, administrators and patients.",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80",
+    "visualImage": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    "visualImageAlt": "Healthcare professionals in a clinical environment"
+  },
+  "challenges": {
+    "eyebrow": "The challenge",
+    "title": "Three connected challenges",
+    "items": [
+      {
+        "title": "Fragmented information",
+        "description": "Patient and operational data lives across disconnected systems, slowing clinicians and administrators alike."
+      },
+      {
+        "title": "Workforce pressure",
+        "description": "Constrained teams need technology that removes friction rather than adding administrative burden."
+      },
+      {
+        "title": "Security and reliability",
+        "description": "Critical operations depend on secure, reliable digital infrastructure that cannot afford downtime."
+      }
+    ]
+  },
+  "help": {
+    "eyebrow": "Where we help",
+    "title": "Focused on connected, reliable operations",
+    "items": [
+      {
+        "title": "Connected Information",
+        "description": "Unify fragmented data into a trusted, accessible foundation."
+      },
+      {
+        "title": "Operational Workflows",
+        "description": "Streamline the administrative processes behind care."
+      },
+      {
+        "title": "Digital Experiences",
+        "description": "Build experiences that serve clinicians and patients."
+      },
+      {
+        "title": "Analytics",
+        "description": "Surface the insight that supports better decisions."
+      },
+      {
+        "title": "AI-Enabled Productivity",
+        "description": "Free skilled people from repetitive administrative work."
+      },
+      {
+        "title": "Secure Cloud Platforms",
+        "description": "Reliable, protected infrastructure for critical operations."
+      }
+    ]
+  },
+  "pathway": {
+    "eyebrow": "Care pathway",
+    "title": "Technology across the pathway",
+    "steps": [
+      "Patient",
+      "Clinical",
+      "Administrative",
+      "Technology",
+      "Outcomes"
+    ]
+  },
+  "outcomes": {
+    "eyebrow": "Business priorities",
+    "title": "What healthcare leaders focus on",
+    "items": [
+      {
+        "title": "Connected Information"
+      },
+      {
+        "title": "Streamlined Operations"
+      },
+      {
+        "title": "Better Productivity"
+      },
+      {
+        "title": "Secure Infrastructure"
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related capabilities",
+    "items": [
+      {
+        "eyebrow": "Capability",
+        "title": "Data & Analytics",
+        "description": "Connect and make sense of fragmented information.",
+        "url": "/capabilities/data-analytics"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cloud & Infrastructure",
+        "description": "Secure, reliable platforms for critical operations.",
+        "url": "/capabilities/cloud-infrastructure"
+      },
+      {
+        "eyebrow": "Capability",
+        "title": "Cybersecurity",
+        "description": "Protect sensitive information and systems.",
+        "url": "/capabilities/cybersecurity"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Transform what comes next.",
+    "sub": "Tell us about your industry challenge.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Healthcare Technology Services | Qlugen",
+    "description": "Connect healthcare information and streamline operations with digital foundations that support clinicians, administrators and patients.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Healthcare"
+  }
+}

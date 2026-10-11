@@ -1,0 +1,129 @@
+{
+  "slug": "qlugen-context",
+  "title": "Qlugen Context",
+  "hero": {
+    "eyebrow": "Roadmap / Early Access",
+    "title": "Qlugen Context",
+    "description": "Give enterprise AI agents the context they need.",
+    "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=80",
+    "imageAlt": "",
+    "cta": {
+      "label": "Discuss with an Architect",
+      "url": "/contact"
+    }
+  },
+  "outcome": {
+    "eyebrow": "Core outcome",
+    "title": "A semantic context layer for more consistent enterprise agent experiences.",
+    "items": [
+      {
+        "title": "Business glossary",
+        "description": "Create shared business definitions that help teams and AI experiences interpret enterprise language consistently."
+      },
+      {
+        "title": "Metric relationships",
+        "description": "Connect related metrics, dimensions and domain concepts so context follows how the business operates."
+      },
+      {
+        "title": "Semantic metadata",
+        "description": "Attach meaning, ownership and usage guidance to data assets, knowledge sources and analytical models."
+      },
+      {
+        "title": "Governed retrieval",
+        "description": "Retrieve enterprise context through governed paths that respect source authority and access rules."
+      },
+      {
+        "title": "Agent context APIs",
+        "description": "Expose approved context to agent experiences through APIs designed for controlled enterprise retrieval."
+      }
+    ]
+  },
+  "deliveryFlow": {
+    "eyebrow": "Delivery flow",
+    "title": "From current state to operating improvement",
+    "body": "The engagement shape changes by product maturity, but the operating logic stays consistent: discover evidence, design the target state, adapt reusable IP, engineer the integration and improve in production.",
+    "phaseLabel": "Phase",
+    "steps": [
+      {
+        "label": "Discover",
+        "description": "Current state"
+      },
+      {
+        "label": "Design",
+        "description": "Target state"
+      },
+      {
+        "label": "Accelerate",
+        "description": "Reusable IP"
+      },
+      {
+        "label": "Engineer",
+        "description": "Integrate"
+      },
+      {
+        "label": "Operate",
+        "description": "Improve"
+      }
+    ]
+  },
+  "engagementModel": {
+    "eyebrow": "Engagement model",
+    "title": "Products plus consulting, engineering and managed operations.",
+    "services": [
+      "Data & AI Engineering",
+      "Software Engineering",
+      "Architecture & Advisory"
+    ]
+  },
+  "operations": {
+    "eyebrow": "Operations",
+    "title": "Designed for production operations",
+    "body": "Qlugen can support the product beyond implementation with managed improvement, governance routines and operational reporting.",
+    "items": []
+  },
+  "coreCapabilities": {
+    "eyebrow": "Core capabilities",
+    "title": "What the product covers",
+    "items": [
+      {
+        "title": "Business glossary",
+        "description": "Create shared business definitions that help teams and AI experiences interpret enterprise language consistently."
+      },
+      {
+        "title": "Metric relationships",
+        "description": "Connect related metrics, dimensions and domain concepts so context follows how the business operates."
+      },
+      {
+        "title": "Semantic metadata",
+        "description": "Attach meaning, ownership and usage guidance to data assets, knowledge sources and analytical models."
+      },
+      {
+        "title": "Governed retrieval",
+        "description": "Retrieve enterprise context through governed paths that respect source authority and access rules."
+      },
+      {
+        "title": "Agent context APIs",
+        "description": "Expose approved context to agent experiences through APIs designed for controlled enterprise retrieval."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Related products",
+    "items": [
+      "ai-readiness-assessment",
+      "data-agent-platform"
+    ]
+  },
+  "cta": {
+    "heading": "Start an Qlugen Context conversation",
+    "sub": "Bring the problem, current constraints and desired outcome. We will map the product fit and engineering path.",
+    "label": "Start a Discovery",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Qlugen Context | Qlugen",
+    "description": "Qlugen Context is a roadmap and early access semantic context layer for more consistent enterprise agent experiences.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Qlugen Context"
+  }
+}

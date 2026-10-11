@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "eyebrow": "About Us",
+    "title": "Built for what comes next.",
+    "description": "Qlugen is an enterprise technology firm helping ambitious organisations turn data, AI, cloud, automation and digital transformation into lasting business capability.",
+    "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80"
+  },
+  "partner": {
+    "title": "One connected technology partner.",
+    "paragraphs": [
+      "Enterprises no longer face isolated technology problems. Data, AI, cloud, security and automation are deeply interconnected — and solving them well requires a partner who can work across all of them as one connected capability.",
+      "We bring together specialists across data and analytics, AI and agent development, cloud and infrastructure, cybersecurity, automation, digital transformation and sustainability. Working as one team, we help organisations design and deliver technology that moves the business forward."
+    ],
+    "linkLabel": "Explore our capabilities",
+    "linkUrl": "/capabilities"
+  },
+  "values": {
+    "title": "What we stand for",
+    "items": [
+      {
+        "title": "Start with the outcome",
+        "description": "We define success in measurable business terms before choosing a single piece of technology. Clarity of outcome shapes every decision that follows."
+      },
+      {
+        "title": "Design for the people who use it",
+        "description": "Solutions are built around the employees, customers and stakeholders who rely on them. Real adoption is designed, not assumed."
+      },
+      {
+        "title": "Leave lasting capability behind",
+        "description": "We transfer knowledge and build reusable foundations so client teams own and extend what we deliver together."
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "How we work differently",
+    "title": "Rigour meets momentum",
+    "body": "Our delivery model creates progress at every stage — combining clear outcomes, thoughtful design and disciplined execution from first conversation to lasting capability.",
+    "links": [
+      {
+        "label": "See how we work",
+        "url": "/how-we-work"
+      },
+      {
+        "label": "Meet our leadership",
+        "url": "/leadership"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to move further?",
+    "sub": "Tell us what you're looking to transform.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "About Qlugen | Enterprise Technology Partner",
+    "description": "Learn about Qlugen, an enterprise technology firm helping ambitious organisations turn data, AI, cloud and transformation into lasting capability.",
+    "ogImage": "/social/qlugen.png"
+  }
+}

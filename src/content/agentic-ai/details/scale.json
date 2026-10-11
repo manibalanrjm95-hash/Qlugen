@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "eyebrow": "Agentic Enterprise · 05",
+    "title": "Scale what works.",
+    "description": "Extend proven AI capabilities across your enterprise with platform thinking and reusable foundations.",
+    "image": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80"
+  },
+  "why": {
+    "eyebrow": "Why it matters",
+    "title": "Compounding value instead of repeating experiments",
+    "body": "Once an AI capability proves value in one part of the organisation, the question is how to extend it without rebuilding each time. Platform thinking — shared foundations, reusable capabilities and common governance — separates organisations that compound their investments from those that repeat expensive experimentation indefinitely."
+  },
+  "model": {
+    "eyebrow": "Scaling model",
+    "title": "From proof to enterprise platform",
+    "stepLabel": "Step",
+    "stages": [
+      "Proof",
+      "Pilot",
+      "Programme",
+      "Platform",
+      "Enterprise"
+    ]
+  },
+  "enablers": {
+    "eyebrow": "What enables scale",
+    "title": "Five foundations of scalable AI",
+    "items": [
+      {
+        "title": "Reusable Agent Capabilities",
+        "description": "Build once, apply across many use cases and teams."
+      },
+      {
+        "title": "Platform Thinking",
+        "description": "Shared foundations that make each new step cheaper than the last."
+      },
+      {
+        "title": "Cross-Team Adoption",
+        "description": "Patterns and enablement that let teams adopt without rebuilding."
+      },
+      {
+        "title": "Enterprise Integration",
+        "description": "Connectivity to the systems where scaled work happens."
+      },
+      {
+        "title": "Operational Scale",
+        "description": "The runtime discipline to operate many agents reliably."
+      }
+    ]
+  },
+  "related": {
+    "heading": "Explore the agentic stages",
+    "items": [
+      {
+        "eyebrow": "Stage 02",
+        "title": "Build & Run",
+        "description": "Engineer the capabilities you scale.",
+        "url": "/agentic-ai/build-run"
+      },
+      {
+        "eyebrow": "Stage 04",
+        "title": "Govern",
+        "description": "Scale within trusted boundaries.",
+        "url": "/agentic-ai/govern"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to scale what works?",
+    "sub": "Talk to Qlugen about extending AI across your enterprise.",
+    "label": "Talk to Qlugen",
+    "url": "/contact"
+  },
+  "seo": {
+    "title": "Scale Enterprise AI Capabilities | Qlugen",
+    "description": "Extend proven AI capabilities across your enterprise with reusable foundations and platform thinking that build on what already works.",
+    "ogImage": "/social/qlugen.png",
+    "breadcrumbLabel": "Scale"
+  }
+}
