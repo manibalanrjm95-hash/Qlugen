@@ -1,8 +1,10 @@
-// Published-content runtime for the public site (local/staging only).
+// Published-content runtime for the public site.
 //
 // VITE_CMS_RUNTIME_ENABLED=true  -> for each route, load ONLY the CMS records that route renders
 //                                   (its page + global navigation/footer, plus collection records
-//                                   on product/insight listings) from the Worker's read-only API.
+//                                   on product/insight listings): from the published snapshots in
+//                                   Firebase Storage (VITE_CMS_CONTENT_SOURCE=storage), or from the
+//                                   rollback read-only API (see storageUrls.js).
 // unset / anything else          -> no request is made; pages use their local JSON exactly as before.
 //
 // Any failure or timeout falls back to local JSON for the rest of the session. Loaded content is
@@ -11,6 +13,7 @@
 import { stripDesignKeys } from '../lib/designLock'
 import { normalizeMediaContent } from '../lib/media'
 import { contentRegistry } from './contentRegistry'
+import { contentFromStorage, pageSnapshotUrl, resolveCmsMediaUrl, routeSnapshotUrl } from './storageUrls'
 
 export const cmsRuntimeEnabled = import.meta.env.VITE_CMS_RUNTIME_ENABLED === 'true'
 
@@ -47,10 +50,31 @@ export async function loadPublishedContentFor(pathname) {
   if (isCmsContentReady(pathname)) return
 
   const missing = cmsIdsForPath(pathname).filter(id => !cache.has(id))
+  await loadIds(missing)
+}
+
+export async function reloadPublishedContentFor(pathname) {
+  if (!cmsRuntimeEnabled) return
+  const ids = cmsIdsForPath(pathname)
+  ids.forEach(id => cache.delete(id))
+  unavailable = false
+  await loadIds(ids)
+}
+
+async function loadIds(ids) {
+  if (!ids.length) return
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeoutMs)
   try {
-    const response = await fetch(`${apiBase}/api/public/pages?ids=${missing.map(encodeURIComponent).join(',')}`, {
+    if (contentFromStorage) {
+      const loaded = await Promise.all(ids.map(id => fetchSnapshot(pageSnapshotUrl(id), controller.signal)))
+      ids.forEach((id, index) => {
+        const content = loaded[index]?.content
+        cache.set(id, content && typeof content === 'object' && !Array.isArray(content) ? prepare(content) : null)
+      })
+      return
+    }
+    const response = await fetch(`${apiBase}/api/public/pages?ids=${ids.map(encodeURIComponent).join(',')}`, {
       signal: controller.signal,
       headers: { Accept: 'application/json' },
       cache: 'no-store',
@@ -59,7 +83,7 @@ export async function loadPublishedContentFor(pathname) {
     const data = await response.json()
     if (!data?.pages || typeof data.pages !== 'object') throw new Error('Unexpected response')
 
-    for (const id of missing) {
+    for (const id of ids) {
       const content = data.pages[id]
       cache.set(id, content && typeof content === 'object' && !Array.isArray(content) ? prepare(content) : null)
     }
@@ -80,6 +104,12 @@ export async function loadPublishedRoute(pathname) {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeoutMs)
   try {
+    if (contentFromStorage) {
+      // CMS-created pages live at /<slug> (one segment); anything else is not one of them.
+      const slug = /^\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(path) ? path.slice(1) : ''
+      const data = slug ? await fetchSnapshot(routeSnapshotUrl(slug), controller.signal) : null
+      return data?.page?.template && data.page.content ? { template: data.page.template, content: prepare(data.page.content) } : null
+    }
     const response = await fetch(`${apiBase}/api/public/route?path=${encodeURIComponent(path)}`, {
       signal: controller.signal,
       headers: { Accept: 'application/json' },
@@ -107,5 +137,15 @@ function prepare(content) {
 }
 
 function resolveMediaUrl(url) {
-  return typeof url === 'string' && url.startsWith('/media/') ? `${apiBase}${url}` : url
+  return resolveCmsMediaUrl(url, apiBase)
+}
+
+// A published snapshot from Storage: its JSON, or null when the page has no published snapshot
+// (404). Any other failure throws, so the caller falls back to local content.
+async function fetchSnapshot(url, signal) {
+  const separator = url.includes('?') ? '&' : '?'
+  const response = await fetch(`${url}${separator}v=${Date.now()}`, { signal, headers: { Accept: 'application/json' }, cache: 'no-store' })
+  if (response.status === 404) return null
+  if (!response.ok) throw new Error(`HTTP ${response.status}`)
+  return response.json()
 }

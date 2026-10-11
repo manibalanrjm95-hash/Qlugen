@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["https://qlugen.in", "https://www.qlugen.in", "http://localhost:5173", "http://127.0.0.1:5173"],
+    "method": ["GET", "HEAD"],
+    "responseHeader": ["Content-Type", "Cache-Control", "ETag"],
+    "maxAgeSeconds": 3600
+  }
+]

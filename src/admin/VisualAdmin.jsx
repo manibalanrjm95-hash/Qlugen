@@ -33,7 +33,6 @@ import VersionHistory from './VersionHistory'
 import { clone, getAtPath, updateAtPath } from './contentEditor'
 import { adminGroups } from './contentRegistry'
 import {
-  SESSION_EXPIRED_EVENT,
   archivePage,
   deletePage,
   getDraft,
@@ -58,8 +57,7 @@ const PHASE_LABELS = {
   publishSuccess: 'Published',
 }
 
-// identity: as verified by the CMS Worker (passed in by Admin's sign-in gate).
-// onSignOut: present for Firebase sessions only (local development has no sign-in).
+// identity: as verified by the CMS API (passed in by Admin's sign-in gate).
 export default function VisualAdmin({ identity: verifiedIdentity = null, onSignOut = null }) {
   const [pages, setPages] = useState([])
   const [selectedId, setSelectedId] = useState('home')
@@ -79,7 +77,6 @@ export default function VisualAdmin({ identity: verifiedIdentity = null, onSignO
   const revealIdRef = useRef(null) // a newly created page to scroll into view in the sidebar
   const [pageAction, setPageAction] = useState(null) // 'delete' | 'archive' confirmation
   const [identity, setIdentity] = useState(verifiedIdentity)
-  const [sessionExpired, setSessionExpired] = useState(false)
   const [loadError, setLoadError] = useState(null)
   const [loadAttempt, setLoadAttempt] = useState(0)
   const [pageSearch, setPageSearch] = useState('')
@@ -211,17 +208,11 @@ export default function VisualAdmin({ identity: verifiedIdentity = null, onSignO
     }).catch(error => setStatus(error.message))
   }, [])
 
-  // Used on its own (no sign-in gate): ask the Worker who we are.
+  // Used on its own (no sign-in gate): ask the CMS API who we are.
   useEffect(() => {
     if (verifiedIdentity) return
     getIdentity().then(setIdentity).catch(error => setIdentity({ error: error.message }))
   }, [verifiedIdentity])
-
-  useEffect(() => {
-    const onExpired = () => setSessionExpired(true)
-    window.addEventListener(SESSION_EXPIRED_EVENT, onExpired)
-    return () => window.removeEventListener(SESSION_EXPIRED_EVENT, onExpired)
-  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -289,13 +280,13 @@ export default function VisualAdmin({ identity: verifiedIdentity = null, onSignO
     setPublishDialogOpen(false)
     setPhase('publishing')
     try {
-      const { page } = await publishDraft(selectedId, savedDraft.createdAt)
+      const { page, warning } = await publishDraft(selectedId, savedDraft.createdAt)
       setSelectedPage(page)
       setDraftContent(clone(page.content))
       setSavedDraft(null)
       setDirty(false)
       setPhase('publishSuccess')
-      setStatus(`Version ${page.version.versionNumber} published`)
+      setStatus(warning ? `Version ${page.version.versionNumber} published. ${warning}` : `Version ${page.version.versionNumber} published`)
       setVersionsKey(key => key + 1)
       await refreshPages()
     } catch (error) {
@@ -343,9 +334,9 @@ export default function VisualAdmin({ identity: verifiedIdentity = null, onSignO
   }
 
   const handleArchivePage = async () => {
-    await archivePage(selectedPage.id)
+    const { warning } = await archivePage(selectedPage.id)
     await leavePage()
-    setStatus('Page archived')
+    setStatus(warning ? `Page archived. ${warning}` : 'Page archived')
   }
 
   const handleRestorePage = async () => {
@@ -463,14 +454,13 @@ export default function VisualAdmin({ identity: verifiedIdentity = null, onSignO
         <div className="cms-ref__sidebar-foot">
           <button className="cms-ref__media" type="button" onClick={() => setLibrary({ mode: 'manage' })}><Image size={18} aria-hidden="true" />Media Library</button>
           <small className="cms-ref__identity" data-identity={identity?.actor || ''}>
-            {identity?.actor ? (identity.mode === 'firebase' ? `Signed in as ${identity.actor}` : 'Local development (no sign-in)') : identity?.error || 'Checking sign-in...'}
+            {identity?.actor ? `Signed in as ${identity.actor}` : identity?.error || 'Checking sign-in...'}
             {onSignOut && <button className="cms-ref__signout" type="button" onClick={onSignOut}>Sign out</button>}
           </small>
         </div>
       </aside>
 
       <main className="cms-ref__main" data-loaded-page={selectedPage?.id || ''}>
-        {sessionExpired && <div className="cms-ref__session">Your sign-in session has ended. Reload to sign in again.</div>}
         <header className="cms-ref__topbar">
           <div className="cms-ref__crumbs">{loadedGroup?.label || 'Home'} <span>›</span> {loadedLabel}</div>
           <div className={`cms-ref__status is-${baseState}`}><span />{stateLabel}</div>
@@ -715,7 +705,6 @@ function Tabs() {
   return (
     <div className="cms-ref__tabs">
       <button className="is-active" type="button">Content</button>
-      <button type="button">Settings</button>
     </div>
   )
 }

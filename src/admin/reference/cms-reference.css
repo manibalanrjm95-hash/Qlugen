@@ -561,7 +561,7 @@
 
 .cms-ref__tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   margin: 0 18px 16px;
   overflow: hidden;
   border: 1px solid #d7e1ee;

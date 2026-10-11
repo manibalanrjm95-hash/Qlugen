@@ -8,6 +8,9 @@
 // Covers: /admin shows the sign-in screen; invalid login; approved admin signs in and edits (audit
 // actor = verified email); a valid Firebase user who is not an approved admin is refused; an expired
 // token returns to sign-in; Sign out; /api/admin/* protection (and /api/public/* stays open).
+// Localhost modes: VITE_CMS_REQUIRE_AUTH=true shows the real login (main flow, with the
+// sign-in-required Worker like `npm run cms:dev:auth`); with the flag on but a no-sign-in Worker
+// (`npm run cms:dev`) the CMS refuses to open; with the flag unset, localhost keeps "local-admin".
 import { spawn, spawnSync } from 'node:child_process'
 import { mkdirSync, openSync, rmSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
@@ -24,6 +27,9 @@ const PROJECT = 'demo-qlugen-cms' // "demo-" projects never contact real Firebas
 const EMULATOR = '127.0.0.1:9399'
 const api = 'http://127.0.0.1:8807'
 const site = 'http://127.0.0.1:5307'
+const localApi = 'http://127.0.0.1:8808' // plain local Worker (CMS_ENV="local": no sign-in), like `npm run cms:dev`
+const flagSite = 'http://127.0.0.1:5308' // VITE_CMS_REQUIRE_AUTH=true, pointed at the plain local Worker
+const bypassSite = 'http://127.0.0.1:5309' // flag unset, pointed at the plain local Worker
 const ADMIN = { email: 'admin@qlugen.test', password: 'Admin-password-1' }
 const VISITOR = { email: 'visitor@qlugen.test', password: 'Visitor-password-1' }
 
@@ -56,7 +62,19 @@ try {
     VITE_FIREBASE_PROJECT_ID: PROJECT,
     VITE_FIREBASE_APP_ID: 'demo-app',
     VITE_FIREBASE_AUTH_EMULATOR_HOST: EMULATOR,
+    VITE_CMS_REQUIRE_AUTH: 'true',
   }, 'auth-vite'))
+  const firebaseEnv = {
+    VITE_CMS_API_BASE: '',
+    VITE_FIREBASE_API_KEY: 'demo-api-key',
+    VITE_FIREBASE_AUTH_DOMAIN: `${PROJECT}.firebaseapp.com`,
+    VITE_FIREBASE_PROJECT_ID: PROJECT,
+    VITE_FIREBASE_APP_ID: 'demo-app',
+    VITE_FIREBASE_AUTH_EMULATOR_HOST: EMULATOR,
+  }
+  processes.push(spawnLogged(`npx wrangler dev --local --port 8808 --persist-to ${persistDir}-plain`, workerDir, {}, 'auth-plain-worker'))
+  processes.push(spawnLogged('npx vite --host 127.0.0.1 --port 5308 --strictPort', root, { ...firebaseEnv, CMS_DEV_API_TARGET: localApi, VITE_CMS_REQUIRE_AUTH: 'true' }, 'auth-vite-flag'))
+  processes.push(spawnLogged('npx vite --host 127.0.0.1 --port 5309 --strictPort', root, { ...firebaseEnv, CMS_DEV_API_TARGET: localApi, VITE_CMS_REQUIRE_AUTH: '' }, 'auth-vite-bypass'))
   await waitFor(`${api}/api/public/pages?ids=home`)
   await waitFor(`${site}/`)
 
@@ -134,13 +152,42 @@ try {
   console.log('Sign out: back to sign-in; reopening /admin requires signing in again.')
 
   assertEqual(pageErrors.length, 0, `no page errors (${pageErrors.join(' | ')})`)
+  await testLocalhostModes(browser)
+
   console.log('Firebase sign-in tests passed (emulator users and isolated database removed).')
 } finally {
   await browser?.close()
   processes.forEach(stopProcess)
   await wait(800)
   rmSync(path.join(workerDir, persistDir), { recursive: true, force: true })
+  rmSync(path.join(workerDir, `${persistDir}-plain`), { recursive: true, force: true })
   rmSync(emulatorDir, { recursive: true, force: true })
+}
+
+// VITE_CMS_REQUIRE_AUTH on localhost (the main flow above already ran with it on + the
+// sign-in-required Worker): with a plain no-sign-in Worker the login still shows and the CMS then
+// refuses to open; with the flag unset, localhost keeps the "local-admin" shortcut.
+async function testLocalhostModes(browser) {
+  await waitFor(`${localApi}/api/admin/me`)
+  await waitFor(`${flagSite}/`)
+  await waitFor(`${bypassSite}/`)
+
+  const flagged = await browser.newPage({ viewport: { width: 1440, height: 900 } })
+  await flagged.goto(`${flagSite}/admin`)
+  await flagged.getByRole('heading', { name: 'Sign in' }).waitFor()
+  assertEqual(await flagged.locator('.cms-ref__sidebar').count(), 0, 'flag on: no local-admin shortcut, the login is shown')
+  await signInWith(flagged, ADMIN.email, ADMIN.password)
+  await flagged.getByText('the local CMS API is running without sign-in').waitFor()
+  assertEqual(await flagged.locator('.cms-ref__sidebar').count(), 0, 'flag on + no-sign-in Worker: CMS refuses to open')
+  await flagged.close()
+
+  const plain = await browser.newPage({ viewport: { width: 1440, height: 900 } })
+  await plain.goto(`${bypassSite}/admin`)
+  await plain.locator('.cms-ref__identity[data-identity="local-admin"]').waitFor()
+  await plain.getByText('Local development (no sign-in)').waitFor()
+  assertEqual(await plain.getByRole('heading', { name: 'Sign in' }).count(), 0, 'flag unset: no login on localhost')
+  await plain.close()
+  console.log('Localhost modes: flag on -> real login (verified by the sign-in Worker; refused with a plain Worker); flag unset -> local-admin.')
 }
 
 async function testAdminApiProtection(admin, visitor) {

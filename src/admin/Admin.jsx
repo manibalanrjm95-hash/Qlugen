@@ -1,65 +1,62 @@
 import { useEffect, useState } from 'react'
 import LoginScreen from './LoginScreen'
 import VisualAdmin from './VisualAdmin'
-import { SESSION_EXPIRED_EVENT, getIdentity } from './cmsApi'
 import { firebaseConfigured, signIn, signInErrorMessage, signOut, watchUser } from './firebaseAuth'
+import { getIdentity } from './cmsApi'
 
-// /admin: the CMS opens only for an identity the CMS Worker has verified.
-// - Local development: the local Worker answers without sign-in ("local-admin").
-// - Otherwise: Firebase Email/Password sign-in; the Worker verifies the ID token and allows only
-//   approved admins. An expired or rejected session returns here, to the sign-in screen.
-// Local development without Firebase settings (Vite dev server only, never a build): no sign-in
-// gate, so the editor loads straight away and reports CMS API problems itself ("Preview couldn't
-// load." + Retry). Built apps (staging) always go through the gate, and the Worker enforces
-// sign-in on /api/admin/* regardless of what the browser shows.
-const localDevWithoutSignIn = import.meta.env.DEV && !firebaseConfigured
-
+// Auth state machine:
+//   checking   – waiting for Firebase / identity check (initial + after Firebase auth change)
+//   login      – no signed-in user, show LoginScreen
+//   verifying  – Firebase user exists, verifying with CMS API
+//   forbidden  – signed in but not an admin
+//   error      – network or unexpected failure
+//   ready      – verified identity, show VisualAdmin
 export default function Admin() {
-  return localDevWithoutSignIn ? <VisualAdmin /> : <SignInGate />
-}
-
-function SignInGate() {
-  const [state, setState] = useState({ phase: 'checking' }) // checking | login | denied | ready | error
+  const [phase, setPhase] = useState('checking')
+  const [identity, setIdentity] = useState(null)
   const [notice, setNotice] = useState('')
 
-  const resolveIdentity = signedIn => identify(signedIn).then(setState)
-
   useEffect(() => {
+    // If Firebase is not configured, probe the API directly: auth-disabled mode returns identity
+    // immediately; anything else means misconfiguration.
     if (!firebaseConfigured) {
-      identify(false).then(setState)
-      return undefined
+      getIdentity()
+        .then(id => { setIdentity(id); setPhase('ready') })
+        .catch(() => setPhase('error'))
+      return
     }
-    let unsubscribe = () => {}
-    let active = true
-    watchUser(user => {
-      if (!active) return
-      setState({ phase: 'checking' })
-      identify(Boolean(user)).then(next => active && setState(next))
-    }).then(stop => {
-      unsubscribe = stop
-      if (!active) stop()
-    }).catch(error => setState({ phase: 'error', message: error.message }))
-    return () => {
-      active = false
-      unsubscribe()
-    }
-  }, [])
 
-  // A rejected token anywhere in the CMS: sign out and return to the sign-in screen.
-  useEffect(() => {
-    const onExpired = () => {
-      setNotice('Your session has expired. Please sign in again.')
-      signOut().catch(() => {})
-      setState({ phase: 'login' })
-    }
-    window.addEventListener(SESSION_EXPIRED_EVENT, onExpired)
-    return () => window.removeEventListener(SESSION_EXPIRED_EVENT, onExpired)
+    let unsubscribe
+    watchUser(async user => {
+      if (!user) {
+        // No Firebase session. Check if the API is running in auth-disabled mode.
+        try {
+          const id = await getIdentity()
+          if (id.mode === 'disabled') { setIdentity(id); setPhase('ready'); return }
+        } catch { /* auth required */ }
+        setIdentity(null)
+        setPhase('login')
+        return
+      }
+
+      setPhase('verifying')
+      try {
+        const id = await getIdentity()
+        setIdentity(id)
+        setPhase('ready')
+      } catch (error) {
+        setIdentity(null)
+        setPhase(error?.status === 403 ? 'forbidden' : 'error')
+      }
+    }).then(unsub => { unsubscribe = unsub })
+
+    return () => unsubscribe?.()
   }, [])
 
   const handleSignIn = async (email, password) => {
     try {
-      setNotice('')
-      await signIn(email, password) // watchUser then verifies the new session with the Worker
+      await signIn(email, password)
+      // watchUser callback takes over from here
     } catch (error) {
       throw new Error(signInErrorMessage(error))
     }
@@ -67,41 +64,38 @@ function SignInGate() {
 
   const handleSignOut = async () => {
     await signOut()
-    setNotice('You have signed out.')
-    setState({ phase: 'login' })
+    setIdentity(null)
+    setNotice('You have been signed out.')
+    setPhase('login')
   }
 
-  if (state.phase === 'ready') {
-    return <VisualAdmin identity={state.identity} onSignOut={state.identity.mode === 'firebase' ? handleSignOut : null} />
-  }
-  if (state.phase === 'login') return <LoginScreen notice={notice} onSignIn={handleSignIn} />
-  if (state.phase === 'denied') {
+  if (phase === 'checking' || phase === 'verifying') {
     return (
-      <LoginScreen.Message title="Access not allowed" onSignOut={handleSignOut}>
-        {state.message} Ask a CMS administrator to add this account, or sign in with another one.
+      <LoginScreen.Message title="Signing in…" busy>
+        {phase === 'verifying' ? 'Verifying your account…' : 'Checking your session…'}
       </LoginScreen.Message>
     )
   }
-  if (state.phase === 'error') {
+
+  if (phase === 'forbidden') {
     return (
-      <LoginScreen.Message title="The CMS could not start" onRetry={() => { setState({ phase: 'checking' }); resolveIdentity(false) }}>
-        {state.message}
+      <LoginScreen.Message title="Access denied" onSignOut={handleSignOut}>
+        Your account does not have admin access to this CMS.
       </LoginScreen.Message>
     )
   }
-  return <LoginScreen.Message title="Qlugen CMS" busy>Checking your sign-in...</LoginScreen.Message>
-}
 
-// Ask the Worker who we are (it decides; the browser never does). Returns the next screen state.
-async function identify(signedIn) {
-  try {
-    return { phase: 'ready', identity: await getIdentity() }
-  } catch (error) {
-    if (error.status === 403) return { phase: 'denied', message: error.message }
-    if (error.status === 401 && !firebaseConfigured) {
-      return { phase: 'error', message: 'Sign-in is not configured for this CMS build (missing Firebase settings).' }
-    }
-    if (error.status === 401 || !signedIn) return { phase: firebaseConfigured ? 'login' : 'error', message: error.message }
-    return { phase: 'error', message: error.message }
+  if (phase === 'error') {
+    return (
+      <LoginScreen.Message title="Sign-in error" onRetry={() => { setPhase('checking'); window.location.reload() }}>
+        Could not reach the CMS API. Check your connection and try again.
+      </LoginScreen.Message>
+    )
   }
+
+  if (phase === 'login') {
+    return <LoginScreen notice={notice} onSignIn={handleSignIn} />
+  }
+
+  return <VisualAdmin identity={identity} onSignOut={handleSignOut} />
 }

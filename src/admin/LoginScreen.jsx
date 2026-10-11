@@ -20,6 +20,7 @@ export default function LoginScreen({ notice = '', onSignIn }) {
       await onSignIn(email.trim(), password)
     } catch (signInError) {
       setError(signInError.message)
+    } finally {
       setBusy(false)
     }
   }

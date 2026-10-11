@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// Qlugen CMS: browsers never read or write Firestore directly.
+// - Admin reads/writes go through the cmsAdminApi Cloud Function (Admin SDK, verified admin only).
+// - The public website reads published snapshots from Storage, not Firestore.
+// Everything else is denied.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

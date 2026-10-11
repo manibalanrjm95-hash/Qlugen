@@ -2,9 +2,13 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { seoPlugin } from './scripts/seo-plugin.mjs'
 
-// Dev server only (never part of a build): forward CMS calls to the local Worker started by
-// `npm run cms:dev`, so `npm run dev` + /admin work without setting VITE_CMS_API_BASE.
-const cmsDevTarget = process.env.CMS_DEV_API_TARGET || 'http://127.0.0.1:8787'
+// Dev server only (never part of a build): emulator wiring is explicit. By default, local Vite uses
+// real Firebase services; set VITE_FIREBASE_USE_EMULATORS=true to point proxies at local emulators.
+const useFirebaseEmulators = process.env.VITE_FIREBASE_USE_EMULATORS === 'true'
+const cmsDevTarget = process.env.CMS_DEV_API_TARGET || (useFirebaseEmulators
+  ? 'http://127.0.0.1:5001/demo-qlugen-cms/asia-south1/cmsAdminApi'
+  : 'https://asia-south1-qlugen-enterprise.cloudfunctions.net/cmsAdminApi')
+const cmsStorageDevTarget = process.env.CMS_DEV_STORAGE_TARGET || (useFirebaseEmulators ? 'http://127.0.0.1:9199' : 'https://firebasestorage.googleapis.com')
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,16 +17,15 @@ export default defineConfig({
     historyApiFallback: true,
     proxy: {
       // The dev server stands in for the single-origin deployment: admin writes are forwarded with
-      // the Worker's own Origin, so its same-origin write check behaves as in staging.
+      // the Functions emulator origin, so configured CORS/write-origin checks behave locally.
       '/api/admin': {
         target: cmsDevTarget,
         changeOrigin: true,
-        configure: proxy => proxy.on('proxyReq', proxyReq => {
-          if (proxyReq.getHeader('origin')) proxyReq.setHeader('origin', new URL(cmsDevTarget).origin)
-        }),
       },
-      '/api/public': cmsDevTarget,
-      '/media': cmsDevTarget,
+      '/v0': {
+        target: cmsStorageDevTarget,
+        changeOrigin: true,
+      },
     },
   },
   build: {

@@ -132,7 +132,6 @@ export default function CmsReference() {
             </div>
             <div className="cms-ref__tabs">
               <button className="is-active" type="button">Content</button>
-              <button type="button">Settings</button>
             </div>
             <div className="cms-ref__property">
               <h3>☼ Text</h3>

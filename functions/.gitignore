@@ -1,0 +1,6 @@
+node_modules/
+lib/
+# Local parameter values for the emulators / deploy prompts (CMS_ADMIN_UIDS etc.)
+.env.local
+.env.*.local
+.secret.local

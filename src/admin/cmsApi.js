@@ -1,8 +1,10 @@
+import { resolveCmsMediaUrl } from '../cms/storageUrls'
 import { currentIdToken } from './firebaseAuth'
 
 const apiBase = (import.meta.env.VITE_CMS_API_BASE || '').replace(/\/+$/, '')
+const apiLabel = 'Firebase CMS API'
 
-// Identity as verified by the Worker (Firebase admin in staging, "local-admin" in local dev).
+// Identity as verified by the Firebase CMS API.
 export async function getIdentity() {
   return request('/api/admin/me')
 }
@@ -101,31 +103,22 @@ export async function deleteMedia(id) {
   return request(`/api/admin/media/${encodeURIComponent(id)}`, { method: 'DELETE' })
 }
 
-// Worker-served media URLs are relative (/media/...); point them at the CMS API when it runs on another origin.
+// CMS media URLs are stored as "/media/<path>": Firebase Storage when VITE_CMS_STORAGE_BASE is set
+// or in Vite dev, otherwise the rollback Worker origin (see src/cms/storageUrls.js).
 export function mediaSrc(url) {
-  return typeof url === 'string' && url.startsWith('/media/') ? `${apiBase}${url}` : url
+  return resolveCmsMediaUrl(url, apiBase)
 }
 
-// Local development = Vite dev server or a loopback host: connection failures are reported as
-// "CMS API not reachable" (with how to start it).
-const isLocalAdmin = import.meta.env.DEV
-  || ['localhost', '127.0.0.1', '[::1]'].includes(globalThis.location?.hostname)
-
-export const SESSION_EXPIRED_EVENT = 'cms:session-expired'
-const SESSION_EXPIRED_MESSAGE = 'Your sign-in session has ended. Please sign in again.'
-
-// A CMS API that accepts connections but never answers (e.g. a hung local Worker) must not leave
+// A CMS API that accepts connections but never answers must not leave
 // the admin waiting forever: requests time out and surface an error instead.
 const REQUEST_TIMEOUT_MS = 12000
 const UPLOAD_TIMEOUT_MS = 120000
 
 async function request(path, options = {}) {
   const isForm = options.body instanceof FormData
+  const token = await currentIdToken()
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), isForm ? UPLOAD_TIMEOUT_MS : REQUEST_TIMEOUT_MS)
-  // The signed-in admin's Firebase ID token; the Worker verifies it on every request.
-  // (Local development has no sign-in: no token, and the local Worker needs none.)
-  const token = await currentIdToken().catch(() => null)
   let response
   try {
     response = await fetch(`${apiBase}${path}`, {
@@ -139,21 +132,20 @@ async function request(path, options = {}) {
     })
   } catch (error) {
     if (error?.name === 'AbortError') throw apiTimedOut()
-    throw isLocalAdmin ? apiUnreachable() : new Error('Cannot reach the CMS. Check your connection and try again.')
+    throw apiUnreachable()
   } finally {
     clearTimeout(timer)
   }
 
-  let data
+  let data = null
   try {
     data = await response.json()
   } catch {
-    // A non-JSON reply means the request never reached the CMS Worker.
-    throw isLocalAdmin ? apiUnreachable() : new Error('The CMS returned an unexpected response. Please try again.')
+    if (response.status >= 500) throw backendError(response.status)
+    throw new Error(`The ${apiLabel} returned an unexpected response. Please try again.`)
   }
-  // A rejected token (expired, revoked, signed out elsewhere) sends the editor back to sign-in.
-  if (response.status === 401 && token) throw sessionExpired()
   if (!response.ok) {
+    if (response.status >= 500) throw backendError(response.status, data?.error)
     const error = new Error(data.error || `Request failed: ${response.status}`)
     error.status = response.status
     throw error
@@ -162,18 +154,16 @@ async function request(path, options = {}) {
 }
 
 function apiTimedOut() {
-  return new Error(isLocalAdmin
-    ? `The local CMS API${apiBase ? ` at ${apiBase}` : ''} is not responding. Restart it with "npm run cms:dev".`
-    : 'The CMS is not responding. Please try again.')
+  return new Error(`The ${apiLabel}${apiBase ? ` at ${apiBase}` : ''} is not responding. Please try again.`)
 }
 
 function apiUnreachable() {
-  return new Error(`Cannot reach the local CMS API${apiBase ? ` at ${apiBase}` : ''}. Start it with "npm run cms:dev".`)
+  return new Error(`Cannot reach the ${apiLabel}${apiBase ? ` at ${apiBase}` : ''}. Check the function URL and CORS settings.`)
 }
 
-function sessionExpired() {
-  globalThis.dispatchEvent?.(new Event(SESSION_EXPIRED_EVENT))
-  const error = new Error(SESSION_EXPIRED_MESSAGE)
-  error.status = 401
+function backendError(status, message = '') {
+  const error = new Error(`${apiLabel[0].toUpperCase()}${apiLabel.slice(1)} returned ${status}${message ? `: ${message}` : ''}.`)
+  error.status = status
   return error
 }
+

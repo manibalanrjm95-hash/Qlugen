@@ -1,0 +1,20 @@
+rules_version = '2';
+
+// Qlugen CMS Storage.
+// - cms/**         CMS media (images). Public download, immutable files.
+// - cms-public/**  published page snapshots read by the public website (current published versions only).
+// Browsers can only download single files (no listing) and can never upload, change or delete:
+// all writes go through the cmsAdminApi Cloud Function (Admin SDK, verified admin only).
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /cms/{allPaths=**} {
+      allow get: if true;
+    }
+    match /cms-public/{allPaths=**} {
+      allow get: if true;
+    }
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

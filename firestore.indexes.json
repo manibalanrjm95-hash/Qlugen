@@ -1,0 +1,28 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "cms_versions",
+      "fieldPath": "mediaRefs",
+      "indexes": [
+        { "arrayConfig": "CONTAINS", "queryScope": "COLLECTION" },
+        { "arrayConfig": "CONTAINS", "queryScope": "COLLECTION_GROUP" }
+      ]
+    },
+    {
+      "collectionGroup": "cms_versions",
+      "fieldPath": "contentJson",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "cms_audit_log",
+      "fieldPath": "beforeJson",
+      "indexes": []
+    },
+    {
+      "collectionGroup": "cms_audit_log",
+      "fieldPath": "afterJson",
+      "indexes": []
+    }
+  ]
+}

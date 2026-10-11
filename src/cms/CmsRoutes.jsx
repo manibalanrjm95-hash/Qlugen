@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, useLocation } from 'react-router-dom'
-import { isCmsContentReady, loadPublishedContentFor } from './runtime'
+import { isCmsContentReady, loadPublishedContentFor, reloadPublishedContentFor } from './runtime'
 
 // <Routes> that, with the CMS runtime enabled, keeps showing the current page during in-app
 // navigation until the next page's published content has loaded (or failed over to local JSON),
@@ -22,6 +22,25 @@ export default function CmsRoutes({ children }) {
     })
     return () => { cancelled = true }
   }, [location.pathname, ready])
+
+  useEffect(() => {
+    const reload = () => {
+      reloadPublishedContentFor(location.pathname).finally(() => {
+        setLoadCount(count => count + 1)
+      })
+    }
+    const reloadVisible = () => {
+      if (!document.hidden) reload()
+    }
+    window.addEventListener('focus', reload)
+    window.addEventListener('pageshow', reload)
+    document.addEventListener('visibilitychange', reloadVisible)
+    return () => {
+      window.removeEventListener('focus', reload)
+      window.removeEventListener('pageshow', reload)
+      document.removeEventListener('visibilitychange', reloadVisible)
+    }
+  }, [location.pathname])
 
   return <Routes location={ready ? location : shownLocation}>{children}</Routes>
 }
