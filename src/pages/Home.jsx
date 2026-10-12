@@ -545,9 +545,9 @@ export default function Home({ content = defaultHomeContent, cmsEditMode = false
             <p className="section-lede" {...cms('capabilities.description')}>{homeContent.capabilities.description}</p>
           </Column>
         </Grid>
-        <Grid className="capability-grid">
+        <div className="capability-grid">
           {capabilities.map(({ icon: Icon, eyebrow, title, body, artImage, artPosition, artSize, accent, to }, index) => (
-            <Column key={title} lg={16} md={8} sm={4} className={`capability-grid-item capability-grid-item--${index + 1}`}>
+            <div key={title} className={`capability-grid-item capability-grid-item--${index + 1}`}>
               <article
                 {...cms(`capabilities.items.${index}`)}
                 className={`capability-card${activeCapability === index ? ' is-active' : ''}`}
@@ -585,9 +585,9 @@ export default function Home({ content = defaultHomeContent, cmsEditMode = false
                   <RouterLink {...cms(`capabilities.items.${index}.url`, 'capabilities.linkLabel')} to={to} className="capability-card__link">{homeContent.capabilities.linkLabel} <ArrowRight size={16} /></RouterLink>
                 </div>
               </article>
-            </Column>
+            </div>
           ))}
-        </Grid>
+        </div>
       </section>
 
       {/* ── AI Features ── */}
